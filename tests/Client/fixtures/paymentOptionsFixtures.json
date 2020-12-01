@@ -1,0 +1,19 @@
+{
+  "items": [
+    {
+      "payment_method_type": "yoo_money",
+      "confirmation_types": [
+        "redirect"
+      ],
+      "charge": {
+        "value": "10.00",
+        "currency": "RUB"
+      },
+      "fee": {
+        "value": "10.00",
+        "currency": "RUB"
+      },
+      "extra_fee": true
+    }
+  ]
+}

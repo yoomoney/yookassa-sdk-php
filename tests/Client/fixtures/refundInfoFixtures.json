@@ -1,0 +1,17 @@
+{
+  "id": "1ddd77af-0bd7-500d-895b-c475c55fdefc",
+  "payment_id": "1da5c87d-0984-50e8-a7f3-8de646dd9ec9",
+  "status": "succeeded",
+  "error": {
+    "code": "authorization_rejected",
+    "description": "Съешь еще этих мягких французских булок"
+  },
+  "created_at": "2015-11-19T17:05:07+03:00",
+  "authorized_at": "2015-11-19T17:05:31+03:00",
+  "amount": {
+    "value": "10.00",
+    "currency": "RUB"
+  },
+  "receipt_registered": "succeeded",
+  "description": "string"
+}

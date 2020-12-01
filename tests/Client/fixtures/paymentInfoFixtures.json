@@ -1,0 +1,36 @@
+{
+  "id": "1da5c87d-0984-50e8-a7f3-8de646dd9ec9",
+  "status": "succeeded",
+  "error": {
+    "code": "insufficient_funds",
+    "description": "Съешь еще этих мягких французских булок"
+  },
+  "recipient": {
+    "account_id": "123",
+    "gateway_id": "456"
+  },
+  "amount": {
+    "value": "10.00",
+    "currency": "RUB"
+  },
+  "payment_method": {
+    "id": "1da5c87d-0984-50e8-a7f3-8de646dd9ec9",
+    "saved": true,
+    "title": "Основная карта",
+    "type": "qiwi"
+  },
+  "created_at": "2015-11-19T17:05:07+03:00",
+  "captured_at": "2015-11-19T17:05:31+03:00",
+  "confirmation": {
+    "type": "external"
+  },
+  "refunded_amount": {
+    "value": "10.00",
+    "currency": "RUB"
+  },
+  "paid": true,
+  "refundable": true,
+  "test": true,
+  "receipt_registration": "succeeded",
+  "metadata": {}
+}

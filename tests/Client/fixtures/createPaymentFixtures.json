@@ -1,0 +1,39 @@
+{
+  "id": "1da5c87d-0984-50e8-a7f3-8de646dd9ec9",
+  "status": "succeeded",
+  "error": {
+    "code": "insufficient_funds",
+    "description": "Съешь еще этих мягких французских булок"
+  },
+  "recipient": {
+    "account_id": "123",
+    "gateway_id": "456"
+  },
+  "amount": {
+    "value": "10.00",
+    "currency": "RUB"
+  },
+  "created_at": "2015-11-19T17:05:07+03:00",
+  "captured_at": "2015-11-19T17:05:31+03:00",
+  "payment_method": {
+    "type": "yoo_money",
+    "phone": "89990110101",
+    "account_number": "123456789123"
+  },
+  "confirmation": {
+    "type": "redirect",
+    "locale": "ru_RU",
+    "enforce": true,
+    "return_url": "string",
+    "confirmation_url": "string"
+  },
+  "refunded_amount": {
+    "value": "10.00",
+    "currency": "RUB"
+  },
+  "paid": true,
+  "refundable": true,
+  "test": true,
+  "receipt_registration": "succeeded",
+  "metadata": {}
+}

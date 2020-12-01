@@ -1,0 +1,49 @@
+{
+  "id": "rt_1da5c87d-0984-50e8-a7f3-8de646dd9ec9",
+  "type": "payment",
+  "payment_id": "215d8da0-000f-50be-b000-0003308c89be",
+  "status": "pending",
+  "items": [
+    {
+      "description": "Мобильный телефон Хувей",
+      "quantity": "1.00",
+      "amount": {
+        "value": "14000.00",
+        "currency": "RUB"
+      },
+      "vat_code": "2",
+      "payment_mode": "full_payment",
+      "payment_subject": "commodity",
+      "country_of_origin_code": "CN"
+    },
+    {
+      "description": "Переносное зарядное устройство Хувей",
+      "quantity": "1.00",
+      "amount": {
+        "value": "1000.00",
+        "currency": "RUB"
+      },
+      "vat_code": "2",
+      "payment_mode": "full_payment",
+      "payment_subject": "commodity",
+      "country_of_origin_code": "CN"
+    }
+  ],
+  "settlements": [
+    {
+      "type": "prepayment",
+      "amount": {
+        "value": "8000.00",
+        "currency": "RUB"
+      }
+    },
+    {
+      "type": "prepayment",
+      "amount": {
+        "value": "7000.00",
+        "currency": "RUB"
+      }
+    }
+  ],
+  "tax_system_code": 1
+}
