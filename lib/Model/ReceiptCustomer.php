@@ -63,17 +63,6 @@ class ReceiptCustomer extends AbstractObject implements ReceiptCustomerInterface
     private $_inn;
 
     /**
-     * ReceiptCustomer constructor.
-     * @param null|array $data
-     */
-    public function __construct($data = null)
-    {
-        if (!empty($data) && is_array($data)) {
-            $this->fromArray($data);
-        }
-    }
-
-    /**
      * Возвращает для юрлица — название организации, для ИП и физического лица — ФИО
      * @return string Название организации или ФИО
      */
@@ -195,7 +184,8 @@ class ReceiptCustomer extends AbstractObject implements ReceiptCustomerInterface
      */
     public function isEmpty()
     {
-        return empty($this->getFullName() . $this->getEmail() . $this->getPhone() . $this->getInn());
+        $data = $this->getFullName() . $this->getEmail() . $this->getPhone() . $this->getInn();
+        return empty($data);
     }
 
     /**
