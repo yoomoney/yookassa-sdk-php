@@ -185,7 +185,7 @@ class CreatePostReceiptRequestBuilder extends AbstractRequestBuilder
     }
 
     /**
-     * Строит и возвращает объект запроса для отправки в API яндекс денег
+     * Строит и возвращает объект запроса для отправки в API ЮKassa
      * @param array|null $options Массив параметров для установки в объект запроса
      * @return CreatePostReceiptRequest Инстанс объекта запроса
      *
