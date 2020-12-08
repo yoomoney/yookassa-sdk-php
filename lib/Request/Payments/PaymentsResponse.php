@@ -60,6 +60,7 @@ class PaymentsResponse
      * Конструктор, устанавливает свойства объекта из пришедшего из API ассоциативного массива
      *
      * @param array $options Массив настроек, пришедший от API
+     * @throws \Exception
      */
     public function __construct($options)
     {

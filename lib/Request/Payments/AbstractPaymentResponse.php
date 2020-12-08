@@ -57,6 +57,7 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
      * Конструктор, устанавливает настройки платежа из ассоциативного массива
      *
      * @param array $paymentInfo Массив с информацией о платеже, пришедший от API
+     * @throws \Exception
      */
     public function __construct($paymentInfo)
     {

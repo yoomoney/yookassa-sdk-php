@@ -130,7 +130,6 @@ class CreatePaymentRequestSerializer
                 $result['airline']['booking_reference'] = $bookingReference;
             }
 
-            /** @var PassengerInterface $passenger */
             foreach ($airline->getPassengers() as $passenger) {
                 $result['airline']['passengers'][] = array(
                     'first_name' => $passenger->getFirstName(),
@@ -138,7 +137,6 @@ class CreatePaymentRequestSerializer
                 );
             }
 
-            /** @var LegInterface $leg */
             foreach ($airline->getLegs() as $leg) {
                 $result['airline']['legs'][] = array(
                     'departure_airport'   => $leg->getDepartureAirport(),
