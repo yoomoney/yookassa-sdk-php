@@ -39,6 +39,7 @@ abstract class AbstractRefundResponse extends Refund
     /**
      * Конструктор
      * @param array $options Ассоциативный массив с информацией, вернувшейся от API
+     * @throws \Exception
      */
     public function __construct($options)
     {

@@ -29,9 +29,9 @@ define('YOOKASSA_SDK_PSR_LOG_PATH', dirname(__FILE__).'/../vendor/psr/log/Psr/Lo
 
 function yookassaSdkLoadClass($className)
 {
-    if (strncmp('YooKassa', $className, 14) === 0) {
+    if (strncmp('YooKassa', $className, 8) === 0) {
         $path   = YOOKASSA_SDK_ROOT_PATH;
-        $length = 14;
+        $length = 8;
     } elseif (strncmp('Psr\Log', $className, 7) === 0) {
         $path   = YOOKASSA_SDK_PSR_LOG_PATH;
         $length = 7;

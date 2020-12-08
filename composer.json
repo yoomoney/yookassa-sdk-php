@@ -1,13 +1,17 @@
 {
   "name": "yoomoney/yookassa-sdk-php",
+  "description": "This is a developer tool for integration with YooMoney.",
+  "type": "library",
   "license": "MIT",
+  "homepage": "https://yookassa.ru/developers/api",
+  "keywords": ["yoomoney", "yookassa", "payments", "api", "sdk"],
   "authors": [
     {
       "name": "YooMoney",
       "email": "cms@yoomoney.ru"
     }
   ],
-  "version": "2.0.1",
+  "version": "2.0.2",
   "require": {
     "php": ">=5.3.0",
     "ext-curl": "*",
