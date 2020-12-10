@@ -365,6 +365,60 @@ class Receipt extends AbstractObject implements ReceiptInterface
     }
 
     /**
+     * @deprecated 1.3.0 Устарел — данные рекомендуется брать в параметре receipt.customer.phone.
+     * Возвращает номер телефона плательщика в формате ITU-T E.164 на который будет выслан чек
+     *
+     * @return string Номер телефона плательщика
+     */
+    public function getPhone()
+    {
+        return $this->getCustomer() ? $this->getCustomer()->getPhone() : null;
+    }
+
+    /**
+     * @deprecated 1.3.0 Устарел — данные рекомендуется передавать в параметре receipt.customer.phone.
+     * Устанавливливает номер телефона плательщика в формате ITU-T E.164 на который будет выслан чек
+     *
+     * @param string $value Номер телефона плательщика в формате ITU-T E.164
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если в качестве значения была передана не строка
+     */
+    public function setPhone($value)
+    {
+        if (!$this->getCustomer()) {
+            $this->setCustomer(new ReceiptCustomer());
+        }
+        $this->getCustomer()->setPhone($value);
+    }
+
+    /**
+     * @deprecated 1.3.0 Устарел — данные рекомендуется брать в параметре receipt.customer.email.
+     * Возвращает адрес электронной почты на который будет выслан чек
+     *
+     * @return string E-mail адрес плательщика
+     */
+    public function getEmail()
+    {
+        return $this->getCustomer() ? $this->getCustomer()->getEmail() : null;
+    }
+
+    /**
+     * @deprecated 1.3.0 Устарел — данные рекомендуется передавать в параметре receipt.customer.email.
+     * Устанавливает адрес электронной почты на который будет выслан чек
+     *
+     * @param string $value E-mail адрес плательщика
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если в качестве значения была передана не строка
+     */
+    public function setEmail($value)
+    {
+        if (!$this->getCustomer()) {
+            $this->setCustomer(new ReceiptCustomer());
+        }
+        $this->getCustomer()->setEmail($value);
+    }
+
+    /**
      * Устанавливает значения свойств текущего объекта из массива
      * @param array|\Traversable $sourceArray Ассоциативный массив с настройками
      */
