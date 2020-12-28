@@ -26,25 +26,16 @@
 
 namespace YooKassa\Request\Payments;
 
-use YooKassa\Model\AuthorizationDetails;
-use YooKassa\Model\CancellationDetails;
-use YooKassa\Model\Confirmation\ConfirmationRedirect;
-use YooKassa\Model\Confirmation\ConfirmationExternal;
-use YooKassa\Model\ConfirmationType;
-use YooKassa\Model\Metadata;
-use YooKassa\Model\MonetaryAmount;
-use YooKassa\Model\Payment;
+use Exception;
+use YooKassa\Common\AbstractObject;
 use YooKassa\Model\PaymentInterface;
-use YooKassa\Model\PaymentMethod\AbstractPaymentMethod;
-use YooKassa\Model\PaymentMethod\PaymentMethodFactory;
-use YooKassa\Model\Recipient;
 
 /**
  * Класс объекта ответа от API со списком платежей магазина
  *
  * @package YooKassa\Request\Payments
  */
-class PaymentsResponse
+class PaymentsResponse extends AbstractObject
 {
     /**
      * @var PaymentInterface[] Массив платежей
@@ -59,86 +50,18 @@ class PaymentsResponse
     /**
      * Конструктор, устанавливает свойства объекта из пришедшего из API ассоциативного массива
      *
-     * @param array $options Массив настроек, пришедший от API
-     * @throws \Exception
+     * @param array $sourceArray Массив настроек, пришедший от API
+     * @throws Exception
      */
-    public function __construct($options)
+    public function fromArray($sourceArray)
     {
         $this->items = array();
-        foreach ($options['items'] as $paymentInfo) {
-            $payment = new Payment();
-            $payment->setId($paymentInfo['id']);
-            $payment->setStatus($paymentInfo['status']);
-            $payment->setAmount(new MonetaryAmount(
-                $paymentInfo['amount']['value'],
-                $paymentInfo['amount']['currency']
-            ));
-            if (!empty($paymentInfo['description'])) {
-                $payment->setDescription($paymentInfo['description']);
-            }
-            $payment->setCreatedAt(strtotime($paymentInfo['created_at']));
-            if (!empty($paymentInfo['payment_method'])
-                && $method = $this->factoryPaymentMethod($paymentInfo['payment_method'])) {
-                $payment->setPaymentMethod($method);
-            }
-            $payment->setPaid($paymentInfo['paid']);
-            $payment->setRefundable($paymentInfo['refundable']);
-
-            if (!empty($paymentInfo['recipient'])) {
-                $recipient = new Recipient();
-                $recipient->setAccountId($paymentInfo['recipient']['account_id']);
-                $recipient->setGatewayId($paymentInfo['recipient']['gateway_id']);
-                $payment->setRecipient($recipient);
-            }
-            if (!empty($paymentInfo['captured_at'])) {
-                $payment->setCapturedAt(strtotime($paymentInfo['captured_at']));
-            }
-            if (!empty($paymentInfo['confirmation'])) {
-                if ($paymentInfo['confirmation']['type'] === ConfirmationType::REDIRECT) {
-                    $confirmation = new ConfirmationRedirect();
-                    $confirmation->setConfirmationUrl($paymentInfo['confirmation']['confirmation_url']);
-                    if (!empty($paymentInfo['confirmation']['enforce'])) {
-                        $confirmation->setEnforce($paymentInfo['confirmation']['enforce']);
-                    }
-                    if (!empty($paymentInfo['confirmation']['return_url'])) {
-                        $confirmation->setReturnUrl($paymentInfo['confirmation']['return_url']);
-                    }
-                } else {
-                    $confirmation = new ConfirmationExternal();
-                }
-                $payment->setConfirmation($confirmation);
-            }
-            if (!empty($paymentInfo['refunded_amount'])) {
-                $payment->setRefundedAmount(new MonetaryAmount(
-                    $paymentInfo['refunded_amount']['value'], $paymentInfo['refunded_amount']['currency']
-                ));
-            }
-            if (!empty($paymentInfo['receipt_registration'])) {
-                $payment->setReceiptRegistration($paymentInfo['receipt_registration']);
-            }
-            if (!empty($paymentInfo['metadata'])) {
-                $metadata = new Metadata();
-                foreach ($paymentInfo['metadata'] as $key => $value) {
-                    $metadata->offsetSet($key, $value);
-                }
-                $payment->setMetadata($metadata);
-            }
-            if (!empty($paymentInfo['cancellation_details'])) {
-                $cancellationDetails = $paymentInfo['cancellation_details'];
-                $party               = isset($cancellationDetails['party']) ? $cancellationDetails['party'] : null;
-                $reason              = isset($cancellationDetails['reason']) ? $cancellationDetails['reason'] : null;
-                $payment->setCancellationDetails(new CancellationDetails($party, $reason));
-            }
-            if (!empty($paymentInfo['authorization_details'])) {
-                $authorizationDetails = $paymentInfo['authorization_details'];
-                $rrn                  = isset($authorizationDetails['rrn']) ? $authorizationDetails['rrn'] : null;
-                $authCode             = isset($authorizationDetails['auth_code']) ? $authorizationDetails['auth_code'] : null;
-                $payment->setAuthorizationDetails(new AuthorizationDetails($rrn, $authCode));
-            }
+        foreach ($sourceArray['items'] as $paymentInfo) {
+            $payment = new PaymentResponse($paymentInfo);
             $this->items[] = $payment;
         }
-        if (!empty($options['next_cursor'])) {
-            $this->nextCursor = $options['next_cursor'];
+        if (!empty($sourceArray['next_cursor'])) {
+            $this->nextCursor = $sourceArray['next_cursor'];
         }
     }
 
@@ -169,19 +92,4 @@ class PaymentsResponse
         return $this->nextCursor !== null;
     }
 
-    /**
-     * Фабричный метод для создания объектов методов оплаты
-     *
-     * @param array $options Массив настроек метода оплаты
-     *
-     * @return AbstractPaymentMethod Используемый способ оплаты
-     */
-    private function factoryPaymentMethod($options)
-    {
-        if (empty($options)) return null;
-
-        $factory = new PaymentMethodFactory();
-
-        return $factory->factoryFromArray($options);
-    }
 }

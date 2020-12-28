@@ -56,66 +56,66 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
     /**
      * Конструктор, устанавливает настройки платежа из ассоциативного массива
      *
-     * @param array $paymentInfo Массив с информацией о платеже, пришедший от API
+     * @param array $sourceArray Массив с информацией о платеже, пришедший от API
      * @throws \Exception
      */
-    public function __construct($paymentInfo)
+    public function fromArray($sourceArray)
     {
-        $this->setId($paymentInfo['id']);
-        $this->setStatus($paymentInfo['status']);
-        $this->setAmount($this->factoryAmount($paymentInfo['amount']));
-        $this->setCreatedAt($paymentInfo['created_at']);
-        $this->setPaid($paymentInfo['paid']);
-        $this->setRefundable($paymentInfo['refundable']);
-        if (!empty($paymentInfo['test'])) {
-            $this->setTest($paymentInfo['test']);
+        $this->setId($sourceArray['id']);
+        $this->setStatus($sourceArray['status']);
+        $this->setAmount($this->factoryAmount($sourceArray['amount']));
+        $this->setCreatedAt($sourceArray['created_at']);
+        $this->setPaid($sourceArray['paid']);
+        $this->setRefundable($sourceArray['refundable']);
+        if (!empty($sourceArray['test'])) {
+            $this->setTest($sourceArray['test']);
         }
-        if (!empty($paymentInfo['payment_method'])) {
-            $this->setPaymentMethod($this->factoryPaymentMethod($paymentInfo['payment_method']));
-        }
-
-        if (!empty($paymentInfo['description'])) {
-            $this->setDescription($paymentInfo['description']);
+        if (!empty($sourceArray['payment_method'])) {
+            $this->setPaymentMethod($this->factoryPaymentMethod($sourceArray['payment_method']));
         }
 
-        if (!empty($paymentInfo['recipient'])) {
+        if (!empty($sourceArray['description'])) {
+            $this->setDescription($sourceArray['description']);
+        }
+
+        if (!empty($sourceArray['recipient'])) {
             $recipient = new Recipient();
-            if (!empty($paymentInfo['recipient']['account_id'])) {
-                $recipient->setAccountId($paymentInfo['recipient']['account_id']);
+            if (!empty($sourceArray['recipient']['account_id'])) {
+                $recipient->setAccountId($sourceArray['recipient']['account_id']);
             }
-            if (!empty($paymentInfo['recipient']['gateway_id'])) {
-                $recipient->setGatewayId($paymentInfo['recipient']['gateway_id']);
+            if (!empty($sourceArray['recipient']['gateway_id'])) {
+                $recipient->setGatewayId($sourceArray['recipient']['gateway_id']);
             }
             $this->setRecipient($recipient);
         }
-        if (!empty($paymentInfo['captured_at'])) {
-            $this->setCapturedAt(strtotime($paymentInfo['captured_at']));
+        if (!empty($sourceArray['captured_at'])) {
+            $this->setCapturedAt(strtotime($sourceArray['captured_at']));
         }
-        if (!empty($paymentInfo['expires_at'])) {
-            $this->setExpiresAt($paymentInfo['expires_at']);
+        if (!empty($sourceArray['expires_at'])) {
+            $this->setExpiresAt($sourceArray['expires_at']);
         }
-        if (!empty($paymentInfo['confirmation'])) {
-            $confirmationType = $paymentInfo['confirmation']['type'];
+        if (!empty($sourceArray['confirmation'])) {
+            $confirmationType = $sourceArray['confirmation']['type'];
             switch ($confirmationType) {
                 case ConfirmationType::REDIRECT:
                     $confirmation = new ConfirmationRedirect();
-                    if (!empty($paymentInfo['confirmation']['confirmation_url'])) {
-                        $confirmation->setConfirmationUrl($paymentInfo['confirmation']['confirmation_url']);
+                    if (!empty($sourceArray['confirmation']['confirmation_url'])) {
+                        $confirmation->setConfirmationUrl($sourceArray['confirmation']['confirmation_url']);
                     }
-                    if (empty($paymentInfo['confirmation']['enforce'])) {
+                    if (empty($sourceArray['confirmation']['enforce'])) {
                         $confirmation->setEnforce(false);
                     } else {
-                        $confirmation->setEnforce($paymentInfo['confirmation']['enforce']);
+                        $confirmation->setEnforce($sourceArray['confirmation']['enforce']);
                     }
-                    if (!empty($paymentInfo['confirmation']['return_url'])) {
-                        $confirmation->setReturnUrl($paymentInfo['confirmation']['return_url']);
+                    if (!empty($sourceArray['confirmation']['return_url'])) {
+                        $confirmation->setReturnUrl($sourceArray['confirmation']['return_url']);
                     }
                     break;
 
                 case ConfirmationType::EMBEDDED:
                     $confirmation = new ConfirmationEmbedded();
-                    if (!empty($paymentInfo['confirmation']['confirmation_token'])) {
-                        $confirmation->setConfirmationToken($paymentInfo['confirmation']['confirmation_token']);
+                    if (!empty($sourceArray['confirmation']['confirmation_token'])) {
+                        $confirmation->setConfirmationToken($sourceArray['confirmation']['confirmation_token']);
                     }
                     break;
 
@@ -133,8 +133,8 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
 
                 case ConfirmationType::QR:
                     $confirmation = new ConfirmationQr();
-                    if (!empty($paymentInfo['confirmation']['confirmation_data'])) {
-                        $confirmation->setConfirmationData($paymentInfo['confirmation']['confirmation_data']);
+                    if (!empty($sourceArray['confirmation']['confirmation_data'])) {
+                        $confirmation->setConfirmationData($sourceArray['confirmation']['confirmation_data']);
                     }
                     break;
             }
@@ -145,44 +145,44 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
                 throw new InvalidArgumentException('confirmation type '.$confirmationType.' is incorrect');
             }
         }
-        if (!empty($paymentInfo['refunded_amount'])) {
-            $this->setRefundedAmount($this->factoryAmount($paymentInfo['refunded_amount']));
+        if (!empty($sourceArray['refunded_amount'])) {
+            $this->setRefundedAmount($this->factoryAmount($sourceArray['refunded_amount']));
         }
-        if (!empty($paymentInfo['receipt_registration'])) {
-            $this->setReceiptRegistration($paymentInfo['receipt_registration']);
+        if (!empty($sourceArray['receipt_registration'])) {
+            $this->setReceiptRegistration($sourceArray['receipt_registration']);
         }
-        if (!empty($paymentInfo['metadata'])) {
+        if (!empty($sourceArray['metadata'])) {
             $metadata = new Metadata();
-            foreach ($paymentInfo['metadata'] as $key => $value) {
+            foreach ($sourceArray['metadata'] as $key => $value) {
                 $metadata->offsetSet($key, $value);
             }
             $this->setMetadata($metadata);
         }
-        if (!empty($paymentInfo['cancellation_details'])) {
-            $cancellationDetails = $paymentInfo['cancellation_details'];
+        if (!empty($sourceArray['cancellation_details'])) {
+            $cancellationDetails = $sourceArray['cancellation_details'];
             $party               = isset($cancellationDetails['party']) ? $cancellationDetails['party'] : null;
             $reason              = isset($cancellationDetails['reason']) ? $cancellationDetails['reason'] : null;
             $this->setCancellationDetails(new CancellationDetails($party, $reason));
         }
-        if (!empty($paymentInfo['authorization_details'])) {
-            $authorizationDetails = $paymentInfo['authorization_details'];
+        if (!empty($sourceArray['authorization_details'])) {
+            $authorizationDetails = $sourceArray['authorization_details'];
             $rrn                  = isset($authorizationDetails['rrn']) ? $authorizationDetails['rrn'] : null;
             $authCode             = isset($authorizationDetails['auth_code']) ? $authorizationDetails['auth_code'] : null;
             $this->setAuthorizationDetails(new AuthorizationDetails($rrn, $authCode));
         }
-        if (!empty($paymentInfo['transfers'])) {
+        if (!empty($sourceArray['transfers'])) {
             $transfers = array();
-            foreach ($paymentInfo['transfers'] as $transferDefinition) {
+            foreach ($sourceArray['transfers'] as $transferDefinition) {
                 $transfers[] = new Transfer($transferDefinition);
             }
 
             $this->setTransfers($transfers);
         }
-        if (!empty($paymentInfo['income_amount'])) {
-            $this->setIncomeAmount($this->factoryAmount($paymentInfo['income_amount']));
+        if (!empty($sourceArray['income_amount'])) {
+            $this->setIncomeAmount($this->factoryAmount($sourceArray['income_amount']));
         }
-        if (!empty($paymentInfo['requestor'])) {
-            $this->setRequestor($paymentInfo['requestor']);
+        if (!empty($sourceArray['requestor'])) {
+            $this->setRequestor($sourceArray['requestor']);
         }
     }
 
