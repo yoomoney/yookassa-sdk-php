@@ -29,8 +29,11 @@ before_install:
 install:
   composer update --no-interaction --no-ansi --optimize-autoloader --prefer-dist
 
+before_script:
+  - export XDEBUG_MODE=coverage
+
 script:
-  - php vendor/bin/phpunit
+  - php vendor/bin/phpunit --configuration phpunit.xml.dist
 
 # after_success:
 #   - travis_retry php vendor/bin/php-coveralls
