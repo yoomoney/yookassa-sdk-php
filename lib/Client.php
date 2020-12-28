@@ -90,7 +90,7 @@ class Client extends BaseClient
     /**
      * Текущая версия библиотеки
      */
-    const SDK_VERSION = '2.0.3';
+    const SDK_VERSION = '2.0.4';
 
     /**
      * Получить список платежей магазина.
@@ -107,6 +107,7 @@ class Client extends BaseClient
      * @throws TooManyRequestsException
      * @throws UnauthorizedException
      * @throws ExtensionNotFoundException
+     * @throws Exception
      */
     public function getPayments($filter = null)
     {
