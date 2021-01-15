@@ -1052,6 +1052,17 @@ class ClientTest extends TestCase
             ->getPaymentInfo(Random::str(36));
     }
 
+    public function testEncodeMultibyteData()
+    {
+        $instance = new TestClient();
+
+        $value = array('hello' => 'Привет', 'olleh' => 'سلام');
+        $result = $instance->encode($value);
+
+        self::assertTrue(strpos($result, 'Привет') !== false);
+        self::assertTrue(strpos($result, 'سلام') !== false);
+    }
+
     public function testEncodeInvalidData()
     {
         $instance = new TestClient();
