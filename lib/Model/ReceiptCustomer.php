@@ -104,7 +104,7 @@ class ReceiptCustomer extends AbstractObject implements ReceiptCustomerInterface
     }
 
     /**
-     * Устанавливливает номер телефона плательщика в формате ITU-T E.164 на который будет выслан чек
+     * Устанавливает номер телефона плательщика в формате ITU-T E.164 на который будет выслан чек
      *
      * @param string $value Номер телефона плательщика в формате ITU-T E.164
      *
