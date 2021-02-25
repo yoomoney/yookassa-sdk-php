@@ -39,7 +39,7 @@ class PaymentsRequestSerializerTest extends TestCase
             if (isset($options[$field])) {
                 $value = $options[$field];
                 if (!empty($value)) {
-                    $expected[$mapped] = $value instanceof \DateTime ? $value->format(DATE_ATOM) : $value;
+                    $expected[$mapped] = $value instanceof \DateTime ? $value->format(YOOKASSA_DATE) : $value;
                 }
             }
         }
@@ -73,14 +73,14 @@ class PaymentsRequestSerializerTest extends TestCase
         $methods  = PaymentMethodType::getValidValues();
         for ($i = 0; $i < 10; $i++) {
             $request  = array(
-                'createdAtGte'       => date(DATE_ATOM, mt_rand(1, time())),
-                'createdAtGt'        => date(DATE_ATOM, mt_rand(1, time())),
-                'createdAtLte'       => date(DATE_ATOM, mt_rand(1, time())),
-                'createdAtLt'        => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtGte'      => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtGt'       => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtLte'      => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtLt'       => date(DATE_ATOM, mt_rand(1, time())),
+                'createdAtGte'       => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtGt'        => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtLte'       => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtLt'        => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtGte'      => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtGt'       => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtLte'      => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtLt'       => date(YOOKASSA_DATE, mt_rand(1, time())),
                 'paymentMethod'      => $methods[mt_rand(0, count($methods) - 1)],
                 'status'             => $statuses[mt_rand(0, count($statuses) - 1)],
                 'limit'              => mt_rand(1, 100),

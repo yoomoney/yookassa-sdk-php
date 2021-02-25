@@ -89,7 +89,7 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
             $this->setRecipient($recipient);
         }
         if (!empty($sourceArray['captured_at'])) {
-            $this->setCapturedAt(strtotime($sourceArray['captured_at']));
+            $this->setCapturedAt($sourceArray['captured_at']);
         }
         if (!empty($sourceArray['expires_at'])) {
             $this->setExpiresAt($sourceArray['expires_at']);

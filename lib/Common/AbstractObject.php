@@ -26,6 +26,14 @@
 
 namespace YooKassa\Common;
 
+if (!defined('YOOKASSA_DATE')) {
+    if (version_compare(PHP_VERSION, '7.0') >= 0) {
+        define('YOOKASSA_DATE', "Y-m-d\TH:i:s.vP");
+    } else {
+        define('YOOKASSA_DATE', "Y-m-d\TH:i:s.uP");
+    }
+}
+
 if (!interface_exists('JsonSerializable')) {
     require_once dirname(__FILE__) . '/legacy_json_serializable.php';
 }
@@ -217,7 +225,7 @@ abstract class AbstractObject implements \ArrayAccess, \JsonSerializable
         } elseif (is_object($value) && $value instanceof \JsonSerializable) {
             return $value->jsonSerialize();
         } elseif (is_object($value) && $value instanceof \DateTime) {
-            return $value->format(DATE_ATOM);
+            return $value->format(YOOKASSA_DATE);
         }
         return $value;
     }

@@ -29,6 +29,7 @@ namespace YooKassa;
 use Exception;
 use InvalidArgumentException;
 use YooKassa\Client\BaseClient;
+use YooKassa\Common\Exceptions\ApiConnectionException;
 use YooKassa\Common\Exceptions\ApiException;
 use YooKassa\Common\Exceptions\AuthorizeException;
 use YooKassa\Common\Exceptions\BadApiRequestException;
@@ -90,7 +91,7 @@ class Client extends BaseClient
     /**
      * Текущая версия библиотеки
      */
-    const SDK_VERSION = '2.0.5';
+    const SDK_VERSION = '2.0.6';
 
     /**
      * Получить список платежей магазина.
@@ -569,7 +570,7 @@ class Client extends BaseClient
      *
      * @throws ApiException
      * @throws BadApiRequestException
-     * @throws Common\Exceptions\AuthorizeException
+     * @throws AuthorizeException
      * @throws ForbiddenException
      * @throws InternalServerError
      * @throws NotFoundException
@@ -610,7 +611,7 @@ class Client extends BaseClient
      *
      * @throws ApiException
      * @throws BadApiRequestException
-     * @throws Common\Exceptions\AuthorizeException
+     * @throws AuthorizeException
      * @throws ForbiddenException
      * @throws InternalServerError
      * @throws NotFoundException
@@ -689,8 +690,8 @@ class Client extends BaseClient
      *
      * @throws ApiException
      * @throws BadApiRequestException
-     * @throws Common\Exceptions\ApiConnectionException
-     * @throws Common\Exceptions\AuthorizeException
+     * @throws ApiConnectionException
+     * @throws AuthorizeException
      * @throws ForbiddenException
      * @throws InternalServerError
      * @throws NotFoundException
@@ -741,7 +742,7 @@ class Client extends BaseClient
      *
      * @throws ApiException
      * @throws BadApiRequestException
-     * @throws Common\Exceptions\AuthorizeException
+     * @throws AuthorizeException
      * @throws ForbiddenException
      * @throws InternalServerError
      * @throws NotFoundException

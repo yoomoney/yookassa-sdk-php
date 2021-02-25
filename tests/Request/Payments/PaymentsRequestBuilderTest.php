@@ -45,7 +45,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['createdAtGte'])) {
             self::assertNull($instance->getCreatedAtGte());
         } else {
-            self::assertEquals($options['createdAtGte'], $instance->getCreatedAtGte()->format(DATE_ATOM));
+            self::assertEquals($options['createdAtGte'], $instance->getCreatedAtGte()->format(YOOKASSA_DATE));
         }
     }
 
@@ -66,7 +66,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['createdAtGt'])) {
             self::assertNull($instance->getCreatedAtGt());
         } else {
-            self::assertEquals($options['createdAtGt'], $instance->getCreatedAtGt()->format(DATE_ATOM));
+            self::assertEquals($options['createdAtGt'], $instance->getCreatedAtGt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -87,7 +87,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['createdAtLte'])) {
             self::assertNull($instance->getCreatedAtLte());
         } else {
-            self::assertEquals($options['createdAtLte'], $instance->getCreatedAtLte()->format(DATE_ATOM));
+            self::assertEquals($options['createdAtLte'], $instance->getCreatedAtLte()->format(YOOKASSA_DATE));
         }
     }
 
@@ -107,7 +107,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['createdAtLt'])) {
             self::assertNull($instance->getCreatedAtLt());
         } else {
-            self::assertEquals($options['createdAtLt'], $instance->getCreatedAtLt()->format(DATE_ATOM));
+            self::assertEquals($options['createdAtLt'], $instance->getCreatedAtLt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -127,7 +127,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['capturedAtGte'])) {
             self::assertNull($instance->getCapturedAtGte());
         } else {
-            self::assertEquals($options['capturedAtGte'], $instance->getCapturedAtGte()->format(DATE_ATOM));
+            self::assertEquals($options['capturedAtGte'], $instance->getCapturedAtGte()->format(YOOKASSA_DATE));
         }
     }
 
@@ -148,7 +148,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['capturedAtGt'])) {
             self::assertNull($instance->getCapturedAtGt());
         } else {
-            self::assertEquals($options['capturedAtGt'], $instance->getCapturedAtGt()->format(DATE_ATOM));
+            self::assertEquals($options['capturedAtGt'], $instance->getCapturedAtGt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -169,7 +169,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['capturedAtLte'])) {
             self::assertNull($instance->getCapturedAtLte());
         } else {
-            self::assertEquals($options['capturedAtLte'], $instance->getCapturedAtLte()->format(DATE_ATOM));
+            self::assertEquals($options['capturedAtLte'], $instance->getCapturedAtLte()->format(YOOKASSA_DATE));
         }
     }
 
@@ -189,7 +189,7 @@ class PaymentsRequestBuilderTest extends TestCase
         if (empty($options['capturedAtLt'])) {
             self::assertNull($instance->getCapturedAtLt());
         } else {
-            self::assertEquals($options['capturedAtLt'], $instance->getCapturedAtLt()->format(DATE_ATOM));
+            self::assertEquals($options['capturedAtLt'], $instance->getCapturedAtLt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -294,14 +294,14 @@ class PaymentsRequestBuilderTest extends TestCase
         $methods  = PaymentMethodType::getValidValues();
         for ($i = 0; $i < 10; $i++) {
             $request  = array(
-                'createdAtGte'       => date(DATE_ATOM, mt_rand(1, time())),
-                'createdAtGt'        => date(DATE_ATOM, mt_rand(1, time())),
-                'createdAtLte'       => date(DATE_ATOM, mt_rand(1, time())),
-                'createdAtLt'        => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtGte'      => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtGt'       => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtLte'      => date(DATE_ATOM, mt_rand(1, time())),
-                'capturedAtLt'       => date(DATE_ATOM, mt_rand(1, time())),
+                'createdAtGte'       => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtGt'        => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtLte'       => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtLt'        => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtGte'      => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtGt'       => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtLte'      => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'capturedAtLt'       => date(YOOKASSA_DATE, mt_rand(1, time())),
                 'paymentMethod'      => $methods[mt_rand(0, count($methods) - 1)],
                 'status'             => $statuses[mt_rand(0, count($statuses) - 1)],
                 'limit'              => mt_rand(1, 100),
