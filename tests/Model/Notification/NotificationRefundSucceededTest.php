@@ -72,7 +72,7 @@ class NotificationRefundSucceededTest extends AbstractNotificationTest
                     'value'    => Random::float(0.01, 1000000.0),
                     'currency' => Random::value(CurrencyCode::getValidValues()),
                 ),
-                'created_at'           => date(DATE_ATOM, Random::int(1, time())),
+                'created_at'           => date(YOOKASSA_DATE, Random::int(1, time())),
                 'receipt_registration' => Random::value($receiptRegistrations),
                 'description'          => Random::str(1, 128),
             );

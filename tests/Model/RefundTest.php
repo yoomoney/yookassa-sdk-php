@@ -298,13 +298,13 @@ class RefundTest extends TestCase
     {
         return array(
             array(new \DateTime()),
-            array(new \DateTime(date(DATE_ATOM, Random::int(1, time())))),
+            array(new \DateTime(date(YOOKASSA_DATE, Random::int(1, time())))),
             array(time()),
             array(Random::int(1, time())),
-            array(date(DATE_ATOM)),
-            array(date(DATE_ATOM, Random::int(1, time()))),
-            array(new StringObject(date(DATE_ATOM))),
-            array(new StringObject(date(DATE_ATOM, Random::int(1, time())))),
+            array(date(YOOKASSA_DATE)),
+            array(date(YOOKASSA_DATE, Random::int(1, time()))),
+            array(new StringObject(date(YOOKASSA_DATE))),
+            array(new StringObject(date(YOOKASSA_DATE, Random::int(1, time())))),
         );
     }
 

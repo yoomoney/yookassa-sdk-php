@@ -96,7 +96,7 @@ abstract class AbstractPaymentResponseTest extends TestCase
         if (empty($options['created_at'])) {
             self::assertNull($instance->getCreatedAt());
         } else {
-            self::assertEquals($options['created_at'], $instance->getCreatedAt()->format(DATE_ATOM));
+            self::assertEquals($options['created_at'], $instance->getCreatedAt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -110,7 +110,7 @@ abstract class AbstractPaymentResponseTest extends TestCase
         if (empty($options['captured_at'])) {
             self::assertNull($instance->getCapturedAt());
         } else {
-            self::assertEquals($options['captured_at'], $instance->getCapturedAt()->format(DATE_ATOM));
+            self::assertEquals($options['captured_at'], $instance->getCapturedAt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -263,9 +263,9 @@ abstract class AbstractPaymentResponseTest extends TestCase
                 'payment_method' => array(
                     'type' => Random::value(PaymentMethodType::getEnabledValues()),
                 ),
-                'created_at' => date(DATE_ATOM, Random::int(1, time())),
-                'captured_at' => date(DATE_ATOM, Random::int(1, time())),
-                'expires_at' => date(DATE_ATOM, Random::int(1, time())),
+                'created_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'captured_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'expires_at' => date(YOOKASSA_DATE, Random::int(1, time())),
                 'confirmation' => Random::value($confirmations),
                 'refunded_amount' => array(
                     'value' => Random::float(0.01, 1000000.0),
@@ -316,9 +316,9 @@ abstract class AbstractPaymentResponseTest extends TestCase
                 'payment_method' => array(
                     'type' => PaymentMethodType::WECHAT,
                 ),
-                'created_at' => date(DATE_ATOM, Random::int(1, time())),
-                'captured_at' => date(DATE_ATOM, Random::int(1, time())),
-                'expires_at' => date(DATE_ATOM, Random::int(1, time())),
+                'created_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'captured_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'expires_at' => date(YOOKASSA_DATE, Random::int(1, time())),
                 'requestor' => array(
                     'type' => 'RequestorThirdPartyService',
                     'client_id' => Random::int(100000, 999999),

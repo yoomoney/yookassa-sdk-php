@@ -117,7 +117,7 @@ class ReceiptCustomer extends AbstractObject implements ReceiptCustomerInterface
         } elseif (!TypeCast::canCastToString($value)) {
             throw new InvalidPropertyValueTypeException('Invalid phone value type', 0, 'receipt.customer.phone');
         } else {
-            $this->_phone = (string)$value;
+            $this->_phone = (string)preg_replace('/\D/', '', $value);
         }
     }
 

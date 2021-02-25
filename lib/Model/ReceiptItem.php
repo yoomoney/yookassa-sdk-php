@@ -30,6 +30,7 @@ use YooKassa\Common\AbstractObject;
 use YooKassa\Common\Exceptions\EmptyPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
+use YooKassa\Helpers\ProductCode;
 use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\Receipt\AgentType;
 use YooKassa\Model\Receipt\ReceiptItemAmount;
@@ -340,12 +341,15 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
     /**
      * Устанавливает код товара — уникальный номер, который присваивается экземпляру товара при маркировке
      *
-     * @param string $value Код товара
+     * @param string|ProductCode $value Код товара
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в качестве аргумента была передана не строка
      */
     public function setProductCode($value)
     {
+        if ($value instanceof ProductCode) {
+            $value = (string)$value;
+        }
         if ($value === null || $value === '') {
             $this->_productCode = null;
         } elseif (!TypeCast::canCastToString($value)) {

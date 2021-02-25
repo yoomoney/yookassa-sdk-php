@@ -89,8 +89,8 @@ class NotificationSucceededTest extends AbstractNotificationTest
                 'payment_method' => array(
                     'type' => PaymentMethodType::QIWI,
                 ),
-                'created_at' => date(DATE_ATOM, Random::int(1, time())),
-                'captured_at' => date(DATE_ATOM, Random::int(1, time())),
+                'created_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'captured_at' => date(YOOKASSA_DATE, Random::int(1, time())),
                 'confirmation' => Random::value($confirmations),
                 'refunded' => array(
                     'value' => Random::float(0.01, 1000000.0),

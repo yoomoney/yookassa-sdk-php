@@ -76,9 +76,9 @@ class PaymentsRequestTest extends TestCase
         );
         $expected   = null;
         if ($value instanceof \DateTime) {
-            $expected = $value->format(DATE_ATOM);
+            $expected = $value->format(YOOKASSA_DATE);
         } elseif (is_numeric($value)) {
-            $expected = date(DATE_ATOM, $value);
+            $expected = date(YOOKASSA_DATE, $value);
         } else {
             $expected = $value;
         }
@@ -260,7 +260,7 @@ class PaymentsRequestTest extends TestCase
             array(null),
             array(''),
             array(Random::int(0, time())),
-            array(date(DATE_ATOM, Random::int(0, time()))),
+            array(date(YOOKASSA_DATE, Random::int(0, time()))),
             array(new \DateTime()),
         );
     }

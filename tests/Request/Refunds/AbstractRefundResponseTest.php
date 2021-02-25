@@ -58,7 +58,7 @@ abstract class AbstractRefundResponseTest extends TestCase
     {
         $instance = $this->getTestInstance($options);
         self::assertTrue($instance->getCreatedAt() instanceof \DateTime);
-        self::assertEquals($options['created_at'], $instance->getCreatedAt()->format(DATE_ATOM));
+        self::assertEquals($options['created_at'], $instance->getCreatedAt()->format(YOOKASSA_DATE));
     }
 
     /**
@@ -125,8 +125,8 @@ abstract class AbstractRefundResponseTest extends TestCase
                 'id' => Random::str(36),
                 'payment_id' => Random::str(36),
                 'status' => Random::value(RefundStatus::getValidValues()),
-                'created_at' => date(DATE_ATOM, mt_rand(1, time())),
-                'authorized_at' => date(DATE_ATOM, mt_rand(1, time())),
+                'created_at' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'authorized_at' => date(YOOKASSA_DATE, mt_rand(1, time())),
                 'amount' => array(
                     'value' => mt_rand(100, 100000),
                     'currency' => Random::value(CurrencyCode::getValidValues()),

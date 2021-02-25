@@ -34,7 +34,7 @@ class RefundsRequestSerializerTest extends TestCase
             if (isset($options[$field])) {
                 $value = $options[$field];
                 if (!empty($value)) {
-                    $expected[$mapped] = $value instanceof \DateTime ? $value->format(DATE_ATOM) : $value;
+                    $expected[$mapped] = $value instanceof \DateTime ? $value->format(YOOKASSA_DATE) : $value;
                 }
             }
         }
@@ -66,10 +66,10 @@ class RefundsRequestSerializerTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $request = array(
                 'paymentId' => $this->randomString(36),
-                'createAtGte' => date(DATE_ATOM, mt_rand(1, time())),
-                'createAtGt' => date(DATE_ATOM, mt_rand(1, time())),
-                'createAtLte' => date(DATE_ATOM, mt_rand(1, time())),
-                'createAtLt' => date(DATE_ATOM, mt_rand(1, time())),
+                'createAtGte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createAtGt' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createAtLte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createAtLt' => date(YOOKASSA_DATE, mt_rand(1, time())),
                 'status' => $statuses[mt_rand(0, count($statuses) - 1)],
                 'cursor' => uniqid(),
                 'limit' => mt_rand(1, RefundsRequest::MAX_LIMIT_VALUE),

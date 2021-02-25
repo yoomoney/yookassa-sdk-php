@@ -45,7 +45,7 @@ class RefundsRequestBuilderTest extends TestCase
         if (empty($options['createAtGte'])) {
             self::assertNull($instance->getCreatedAtGte());
         } else {
-            self::assertEquals($options['createAtGte'], $instance->getCreatedAtGte()->format(DATE_ATOM));
+            self::assertEquals($options['createAtGte'], $instance->getCreatedAtGte()->format(YOOKASSA_DATE));
         }
     }
 
@@ -65,7 +65,7 @@ class RefundsRequestBuilderTest extends TestCase
         if (empty($options['createAtGt'])) {
             self::assertNull($instance->getCreatedAtGt());
         } else {
-            self::assertEquals($options['createAtGt'], $instance->getCreatedAtGt()->format(DATE_ATOM));
+            self::assertEquals($options['createAtGt'], $instance->getCreatedAtGt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -85,7 +85,7 @@ class RefundsRequestBuilderTest extends TestCase
         if (empty($options['createAtLte'])) {
             self::assertNull($instance->getCreatedAtLte());
         } else {
-            self::assertEquals($options['createAtLte'], $instance->getCreatedAtLte()->format(DATE_ATOM));
+            self::assertEquals($options['createAtLte'], $instance->getCreatedAtLte()->format(YOOKASSA_DATE));
         }
     }
 
@@ -105,7 +105,7 @@ class RefundsRequestBuilderTest extends TestCase
         if (empty($options['createAtLt'])) {
             self::assertNull($instance->getCreatedAtLt());
         } else {
-            self::assertEquals($options['createAtLt'], $instance->getCreatedAtLt()->format(DATE_ATOM));
+            self::assertEquals($options['createAtLt'], $instance->getCreatedAtLt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -201,10 +201,10 @@ class RefundsRequestBuilderTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $request = array(
                 'paymentId' => $this->randomString(36),
-                'createAtGte' => date(DATE_ATOM, mt_rand(1, time())),
-                'createAtGt' => date(DATE_ATOM, mt_rand(1, time())),
-                'createAtLte' => date(DATE_ATOM, mt_rand(1, time())),
-                'createAtLt' => date(DATE_ATOM, mt_rand(1, time())),
+                'createAtGte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createAtGt' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createAtLte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createAtLt' => date(YOOKASSA_DATE, mt_rand(1, time())),
                 'status' => $statuses[mt_rand(0, count($statuses) - 1)],
                 'cursor' => uniqid(),
                 'limit' => mt_rand(1, RefundsRequest::MAX_LIMIT_VALUE),

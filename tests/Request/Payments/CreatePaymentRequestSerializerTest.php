@@ -60,7 +60,7 @@ class CreatePaymentRequestSerializerTest extends TestCase
             if (isset($options[$field])) {
                 $value = $options[$field];
                 if (!empty($value)) {
-                    $expected[$mapped] = $value instanceof \DateTime ? $value->format(DATE_ATOM) : $value;
+                    $expected[$mapped] = $value instanceof \DateTime ? $value->format(YOOKASSA_DATE) : $value;
                 }
             }
         }
