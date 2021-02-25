@@ -31,7 +31,7 @@ class PaymentsResponseTest extends TestCase
             self::assertEquals($options['items'][$index]['status'], $item->getStatus());
             self::assertEquals($options['items'][$index]['amount']['value'], $item->getAmount()->getValue());
             self::assertEquals($options['items'][$index]['amount']['currency'], $item->getAmount()->getCurrency());
-            self::assertEquals($options['items'][$index]['created_at'], $item->getCreatedAt()->format(DATE_ATOM));
+            self::assertEquals($options['items'][$index]['created_at'], $item->getCreatedAt()->format(YOOKASSA_DATE));
             self::assertEquals($options['items'][$index]['payment_method']['type'], $item->getPaymentMethod()->getType());
             self::assertEquals($options['items'][$index]['paid'], $item->getPaid());
             self::assertEquals($options['items'][$index]['refundable'], $item->getRefundable());
@@ -85,7 +85,7 @@ class PaymentsResponseTest extends TestCase
                                 'currency' => CurrencyCode::EUR,
                             ),
                             'description' => Random::str(20),
-                            'created_at' => date(DATE_ATOM),
+                            'created_at' => date(YOOKASSA_DATE),
                             'payment_method' => array(
                                 'type' => PaymentMethodType::QIWI,
                             ),
@@ -106,7 +106,7 @@ class PaymentsResponseTest extends TestCase
                                 'value' => Random::int(1, 100000),
                                 'currency' => CurrencyCode::EUR,
                             ),
-                            'created_at' => date(DATE_ATOM),
+                            'created_at' => date(YOOKASSA_DATE),
                             'payment_method' => array(
                                 'type' => PaymentMethodType::QIWI,
                             ),
@@ -124,7 +124,7 @@ class PaymentsResponseTest extends TestCase
                                 'currency' => CurrencyCode::EUR,
                             ),
                             'description' => Random::str(20),
-                            'created_at' => date(DATE_ATOM),
+                            'created_at' => date(YOOKASSA_DATE),
                             'payment_method' => array(
                                 'type' => PaymentMethodType::QIWI,
                             ),
@@ -135,7 +135,7 @@ class PaymentsResponseTest extends TestCase
                                 'gateway_id' => uniqid(),
                             ),
                             'reference_id' => uniqid(),
-                            'captured_at' => date(DATE_ATOM),
+                            'captured_at' => date(YOOKASSA_DATE),
                             'charge' => array('value' => Random::int(1, 100000), 'currency' => CurrencyCode::RUB),
                             'income' => array('value' => Random::int(1, 100000), 'currency' => CurrencyCode::USD),
                             'refunded' => array('value' => Random::int(1, 100000), 'currency' => CurrencyCode::EUR),
@@ -163,7 +163,7 @@ class PaymentsResponseTest extends TestCase
                                 'currency' => CurrencyCode::EUR,
                             ),
                             'description' => Random::str(20),
-                            'created_at' => date(DATE_ATOM),
+                            'created_at' => date(YOOKASSA_DATE),
                             'payment_method' => array(
                                 'type' => PaymentMethodType::QIWI,
                             ),
@@ -184,7 +184,7 @@ class PaymentsResponseTest extends TestCase
                                 'currency' => CurrencyCode::EUR,
                             ),
                             'description' => Random::str(20),
-                            'created_at' => date(DATE_ATOM),
+                            'created_at' => date(YOOKASSA_DATE),
                             'payment_method' => array(
                                 'type' => PaymentMethodType::QIWI,
                             ),

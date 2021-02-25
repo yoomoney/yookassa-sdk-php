@@ -28,7 +28,7 @@ class RefundsResponseTest extends TestCase
             self::assertEquals($options['items'][$index]['status'], $item->getStatus());
             self::assertEquals($options['items'][$index]['amount']['value'], $item->getAmount()->getValue());
             self::assertEquals($options['items'][$index]['amount']['currency'], $item->getAmount()->getCurrency());
-            self::assertEquals($options['items'][$index]['created_at'], $item->getCreatedAt()->format(DATE_ATOM));
+            self::assertEquals($options['items'][$index]['created_at'], $item->getCreatedAt()->format(YOOKASSA_DATE));
         }
     }
 
@@ -79,7 +79,7 @@ class RefundsResponseTest extends TestCase
                                 'value' => Random::int(1, 100),
                                 'currency' => Random::value(CurrencyCode::getValidValues()),
                             ),
-                            'created_at' => date(DATE_ATOM, Random::int(0, time())),
+                            'created_at' => date(YOOKASSA_DATE, Random::int(0, time())),
                         )
                     ),
                     'next_cursor' => Random::str(1, 64),
@@ -96,7 +96,7 @@ class RefundsResponseTest extends TestCase
                                 'value' => Random::int(1, 100),
                                 'currency' => Random::value(CurrencyCode::getValidValues()),
                             ),
-                            'created_at' => date(DATE_ATOM),
+                            'created_at' => date(YOOKASSA_DATE),
                         ),
                         array(
                             'id' => Random::str(36),
@@ -106,8 +106,8 @@ class RefundsResponseTest extends TestCase
                                 'value' => Random::int(1, 100),
                                 'currency' => Random::value(CurrencyCode::getValidValues()),
                             ),
-                            'created_at' => date(DATE_ATOM, Random::int(0, time())),
-                            'authorized_at' => date(DATE_ATOM, Random::int(0, time())),
+                            'created_at' => date(YOOKASSA_DATE, Random::int(0, time())),
+                            'authorized_at' => date(YOOKASSA_DATE, Random::int(0, time())),
                             'receipt_registered' => Random::value(ReceiptRegistrationStatus::getValidValues()),
                             'description' => Random::str(64, 250),
                         ),

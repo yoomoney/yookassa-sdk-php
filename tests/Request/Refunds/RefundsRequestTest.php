@@ -105,8 +105,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtGte);
         } else {
             self::assertTrue($instance->hasCreatedAtGte());
-            self::assertEquals($options['created_at_gte'], $instance->getCreatedAtGte()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_gte'], $instance->createdAtGte->format(DATE_ATOM));
+            self::assertEquals($options['created_at_gte'], $instance->getCreatedAtGte()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_gte'], $instance->createdAtGte->format(YOOKASSA_DATE));
         }
 
         $instance->setCreatedAtGte('');
@@ -121,8 +121,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtGte);
         } else {
             self::assertTrue($instance->hasCreatedAtGte());
-            self::assertEquals($options['created_at_gte'], $instance->getCreatedAtGte()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_gte'], $instance->createdAtGte->format(DATE_ATOM));
+            self::assertEquals($options['created_at_gte'], $instance->getCreatedAtGte()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_gte'], $instance->createdAtGte->format(YOOKASSA_DATE));
         }
     }
 
@@ -167,8 +167,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtGte);
         } else {
             self::assertTrue($instance->hasCreatedAtGt());
-            self::assertEquals($options['created_at_gt'], $instance->getCreatedAtGt()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_gt'], $instance->createdAtGt->format(DATE_ATOM));
+            self::assertEquals($options['created_at_gt'], $instance->getCreatedAtGt()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_gt'], $instance->createdAtGt->format(YOOKASSA_DATE));
         }
 
         $instance->setCreatedAtGt('');
@@ -183,8 +183,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtGt);
         } else {
             self::assertTrue($instance->hasCreatedAtGt());
-            self::assertEquals($options['created_at_gt'], $instance->getCreatedAtGt()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_gt'], $instance->createdAtGt->format(DATE_ATOM));
+            self::assertEquals($options['created_at_gt'], $instance->getCreatedAtGt()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_gt'], $instance->createdAtGt->format(YOOKASSA_DATE));
         }
     }
 
@@ -229,8 +229,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtLte);
         } else {
             self::assertTrue($instance->hasCreatedAtLte());
-            self::assertEquals($options['created_at_lte'], $instance->getCreatedAtLte()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_lte'], $instance->createdAtLte->format(DATE_ATOM));
+            self::assertEquals($options['created_at_lte'], $instance->getCreatedAtLte()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_lte'], $instance->createdAtLte->format(YOOKASSA_DATE));
         }
 
         $instance->setCreatedAtLte('');
@@ -245,8 +245,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtLte);
         } else {
             self::assertTrue($instance->hasCreatedAtLte());
-            self::assertEquals($options['created_at_lte'], $instance->getCreatedAtLte()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_lte'], $instance->createdAtLte->format(DATE_ATOM));
+            self::assertEquals($options['created_at_lte'], $instance->getCreatedAtLte()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_lte'], $instance->createdAtLte->format(YOOKASSA_DATE));
         }
     }
 
@@ -291,8 +291,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtLt);
         } else {
             self::assertTrue($instance->hasCreatedAtLt());
-            self::assertEquals($options['created_at_lt'], $instance->getCreatedAtLt()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_lt'], $instance->createdAtLt->format(DATE_ATOM));
+            self::assertEquals($options['created_at_lt'], $instance->getCreatedAtLt()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_lt'], $instance->createdAtLt->format(YOOKASSA_DATE));
         }
 
         $instance->setCreatedAtLt('');
@@ -307,8 +307,8 @@ class RefundsRequestTest extends TestCase
             self::assertNull($instance->createdAtLt);
         } else {
             self::assertTrue($instance->hasCreatedAtLt());
-            self::assertEquals($options['created_at_lt'], $instance->getCreatedAtLt()->format(DATE_ATOM));
-            self::assertEquals($options['created_at_lt'], $instance->createdAtLt->format(DATE_ATOM));
+            self::assertEquals($options['created_at_lt'], $instance->getCreatedAtLt()->format(YOOKASSA_DATE));
+            self::assertEquals($options['created_at_lt'], $instance->createdAtLt->format(YOOKASSA_DATE));
         }
     }
 
@@ -526,10 +526,10 @@ class RefundsRequestTest extends TestCase
         $statuses = RefundStatus::getValidValues();
         for ($i = 0; $i < 10; $i++) {
             $request = array(
-                'created_at_gte' => date(DATE_ATOM, mt_rand(1, time())),
-                'created_at_gt' => date(DATE_ATOM, mt_rand(1, time())),
-                'created_at_lte' => date(DATE_ATOM, mt_rand(1, time())),
-                'created_at_lt' => date(DATE_ATOM, mt_rand(1, time())),
+                'created_at_gte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'created_at_gt' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'created_at_lte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'created_at_lt' => date(YOOKASSA_DATE, mt_rand(1, time())),
                 'status' => $statuses[mt_rand(0, count($statuses) - 1)],
                 'payment_id' => $this->randomString(36),
                 'limit' => mt_rand(0, RefundsRequest::MAX_LIMIT_VALUE),

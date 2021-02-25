@@ -156,7 +156,7 @@ class AbstractObjectTest extends TestCase
             'property' => 'propertyValue',
             'property_camel_case' => array(
                 'property' => array('test', 1, 2, 3),
-                'property_camel_case' => $date->format(DATE_ATOM),
+                'property_camel_case' => $date->format(YOOKASSA_DATE),
             ),
         );
         self::assertEquals($expected, $data);
@@ -167,7 +167,7 @@ class AbstractObjectTest extends TestCase
             'property' => 'propertyValue',
             'property_camel_case' => array(
                 'property' => array('test', 1, 2, 3),
-                'property_camel_case' => $date->format(DATE_ATOM),
+                'property_camel_case' => $date->format(YOOKASSA_DATE),
                 'unknown_obj' => array(),
             ),
         );
@@ -185,7 +185,7 @@ class AbstractObjectTest extends TestCase
 
         $instance->unknown_date = $date;
         $data = $instance->jsonSerialize();
-        $expected['unknown_date'] = $date->format(DATE_ATOM);
+        $expected['unknown_date'] = $date->format(YOOKASSA_DATE);
         self::assertEquals($expected, $data);
 
         $obj = new \stdClass();

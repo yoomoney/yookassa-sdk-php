@@ -25,7 +25,6 @@
 
 namespace YooKassa\Client;
 
-
 use Exception;
 use Psr\Log\LoggerInterface;
 use YooKassa\Common\Exceptions\ApiConnectionException;
@@ -265,7 +264,7 @@ class BaseClient
             return '{}';
         }
 
-        if (defined('JSON_UNESCAPED_UNICODE')) {
+        if (defined('JSON_UNESCAPED_UNICODE') && defined('JSON_UNESCAPED_SLASHES')) {
             $encoded = json_encode($serializedData, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
         } else {
             $encoded = self::_unescaped(json_encode($serializedData));

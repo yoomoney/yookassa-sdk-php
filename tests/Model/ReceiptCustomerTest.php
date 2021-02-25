@@ -391,7 +391,7 @@ class ReceiptCustomerTest extends TestCase
         $customer = new ReceiptCustomer();
         $customer->setFullName('John Doe');
         $customer->setEmail('johndoe@yoomoney.ru');
-        $customer->setPhone('79000000000');
+        $customer->setPhone('+79000000000');
         $customer->setInn('6321341814');
 
         return array(
