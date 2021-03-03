@@ -269,13 +269,13 @@ class ProductCode
     }
 
     /**
-     * Переводит десятичное число в шестнадцатеричный вид и дополняет нулями до 14 символов слева
+     * Переводит десятичное число в шестнадцатеричный вид и дополняет нулями до 12 символов слева
      * @param string $string Входящее число (Глобальный номер товарной продукции)
      * @return string
      */
     private function numToHex($string)
     {
-        return str_pad($this->base_convert($string), 14, '0', STR_PAD_LEFT);
+        return str_pad($this->base_convert($string), 12, '0', STR_PAD_LEFT);
     }
 
     /**

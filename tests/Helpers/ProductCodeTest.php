@@ -206,7 +206,7 @@ class ProductCodeTest extends \PHPUnit_Framework_TestCase
                     'gtin' => '04630037591316',
                     'serial' => 'sgEKKPPcS25y5',
                     'dataMatrix' => '010463003407001221SxMGorvNuq6Wk91fgr92sdfsdfghfgjh',
-                    'result' => '00 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
+                    'result' => '04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
                 ),
             ),
             array(
@@ -216,7 +216,7 @@ class ProductCodeTest extends \PHPUnit_Framework_TestCase
                     'gtin' => '4630037591316',
                     'serial' => 'sgEKKPPcS25y5',
                     'dataMatrix' => '010463003407001221SxMGorvNuq6Wk91fgr92sdfsdfghfgjh',
-                    'result' => '44 4D 00 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
+                    'result' => '44 4D 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
                 ),
             ),
             array(
@@ -226,7 +226,7 @@ class ProductCodeTest extends \PHPUnit_Framework_TestCase
                     'gtin' => '04630037591316',
                     'serial' => 'sgEKKPPcS25y5',
                     'dataMatrix' => '010463003407001221SxMGorvNuq6Wk91fgr92sdfsdfghfgjh',
-                    'result' => '00 05 00 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
+                    'result' => '00 05 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
                 ),
             ),
             array(
@@ -236,7 +236,7 @@ class ProductCodeTest extends \PHPUnit_Framework_TestCase
                     'gtin' => '04630037591316',
                     'serial' => 'sgEKKPPcS25y5',
                     'dataMatrix' => '010463003407001221SxMGorvNuq6Wk91fgr92sdfsdfghfgjh',
-                    'result' => '01 F9 00 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
+                    'result' => '01 F9 04 36 03 89 39 FC 53 78 4D 47 6F 72 76 4E 75 71 36 57 6B',
                 ),
             ),
             array(
@@ -246,7 +246,7 @@ class ProductCodeTest extends \PHPUnit_Framework_TestCase
                     'gtin' => '98765432101234',
                     'serial' => 'ABC1234',
                     'dataMatrix' => '019876543210123421ABC123491DmUO92sdfJSf/"fgjh',
-                    'result' => '00 59 D3 9E 7F 19 72 41 42 43 31 32 33 34',
+                    'result' => '59 D3 9E 7F 19 72 41 42 43 31 32 33 34',
                 ),
             ),
             array(
@@ -256,7 +256,7 @@ class ProductCodeTest extends \PHPUnit_Framework_TestCase
                     'gtin' => '98765432101234',
                     'serial' => 'ABC1234',
                     'dataMatrix' => '019876543210123421ABC1234',
-                    'result' => '00 59 D3 9E 7F 19 72 41 42 43 31 32 33 34',
+                    'result' => '59 D3 9E 7F 19 72 41 42 43 31 32 33 34',
                 ),
             ),
             array(
