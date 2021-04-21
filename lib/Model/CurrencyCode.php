@@ -33,12 +33,19 @@ use YooKassa\Common\AbstractEnum;
  */
 class CurrencyCode extends AbstractEnum
 {
+    /** Российский рубль */
     const RUB = 'RUB';
+    /** Доллар США */
     const USD = 'USD';
+    /** Евро */
     const EUR = 'EUR';
+    /** Белорусский рубль */
     const BYN = 'BYN';
+    /** Китайская йена */
     const CNY = 'CNY';
+    /** Казахский тенге */
     const KZT = 'KZT';
+    /** Украинская гривна */
     const UAH = 'UAH';
 
     protected static $validValues = array(

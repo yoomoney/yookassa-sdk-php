@@ -29,8 +29,8 @@ namespace YooKassa\Model\PaymentMethod;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodWebmoney
- * Объект, описывающий метод оплаты, при оплате через Webmoney.
+ * Класс, описывающий метод оплаты, при оплате через Webmoney.
+ *
  * @property string $type Тип объекта
  */
 class PaymentMethodWebmoney extends AbstractPaymentMethod

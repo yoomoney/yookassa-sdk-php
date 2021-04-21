@@ -33,7 +33,7 @@ use YooKassa\Model\SourceInterface;
 /**
  * Интерфейс объекта запроса на возврат
  *
- * @package YooKassa\Request\Refunds
+ * @package YooKassa
  *
  * @property-read string $paymentId Айди платежа для которого создаётся возврат
  * @property-read AmountInterface $amount Сумма возврата
@@ -55,6 +55,12 @@ interface CreateRefundRequestInterface
     function getAmount();
 
     /**
+     * Устанавливает комментарий к возврату
+     * @param string $value Комментарий к операции возврата, основание для возврата средств покупателю
+     */
+    function setDescription($value);
+
+    /**
      * Возвращает комментарий к возврату или null, если комментарий не задан
      * @return string Комментарий к операции возврата, основание для возврата средств покупателю.
      */
@@ -65,6 +71,12 @@ interface CreateRefundRequestInterface
      * @return bool True если комментарий установлен, false если нет
      */
     function hasDescription();
+
+    /**
+     * Устанавливает чек
+     * @param ReceiptInterface|null $value Инстанс чека или null для удаления информации о чеке
+     */
+    function setReceipt($value);
 
     /**
      * Возвращает инстанс чека или null если чек не задан
@@ -79,11 +91,19 @@ interface CreateRefundRequestInterface
     function hasReceipt();
 
     /**
-     * @return SourceInterface[]
+     * Устанавливает информацию о распределении денег — сколько и в какой магазин нужно перевести
+     * @param SourceInterface[] $value Информация о распределении денег
+     */
+    function setSources($value);
+
+    /**
+     * Возвращает информацию о распределении денег — сколько и в какой магазин нужно перевести
+     * @return SourceInterface[] Информация о распределении денег
      */
     function getSources();
 
     /**
+     * Проверяет наличие информации о распределении денег
      * @return bool
      */
     function hasSources();

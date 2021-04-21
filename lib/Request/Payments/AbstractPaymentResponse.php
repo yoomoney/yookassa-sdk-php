@@ -49,7 +49,7 @@ use YooKassa\Model\Transfer;
 /**
  * Абстрактный класс ответа от API, возвращающего информацию о платеже
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  */
 abstract class AbstractPaymentResponse extends Payment implements PaymentInterface
 {

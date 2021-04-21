@@ -27,6 +27,11 @@ namespace YooKassa\Model\PaymentMethod;
 
 use YooKassa\Model\PaymentMethodType;
 
+/**
+ * Класс, описывающий метод оплаты, при оплате через Tinkoff
+ *
+ * @package YooKassa
+ */
 class PaymentMethodTinkoffBank extends AbstractPaymentMethod
 {
     public function __construct()

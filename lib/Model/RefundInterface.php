@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface RefundInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $id Идентификатор возврата платежа
  * @property-read string $paymentId Идентификатор платежа

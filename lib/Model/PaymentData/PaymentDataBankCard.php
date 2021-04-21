@@ -49,6 +49,7 @@ class PaymentDataBankCard extends AbstractPaymentData
     }
 
     /**
+     * Возвращает данные банковской карты
      * @return PaymentDataBankCardCard Данные банковской карты
      */
     public function getCard()
@@ -57,6 +58,7 @@ class PaymentDataBankCard extends AbstractPaymentData
     }
 
     /**
+     * Устанавливает данные банковской карты
      * @param PaymentDataBankCardCard|array $value Данные банковской карты
      */
     public function setCard($value)

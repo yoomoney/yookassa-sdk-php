@@ -29,7 +29,7 @@ namespace YooKassa\Helpers;
 /**
  * Класс хэлпера для генерации случайных значений, используется в тестах
  *
- * @package YooKassa\Helpers
+ * @package YooKassa
  */
 class Random
 {

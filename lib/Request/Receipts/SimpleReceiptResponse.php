@@ -27,10 +27,9 @@
 namespace YooKassa\Request\Receipts;
 
 /**
- * Class SimpleReceiptResponse
- * @package YooKassa\Model
+ * Класс описывающий чек, не привязанный ни к платежу ни к возврату
  *
- * Чек, не привязанный ни к платежу, ни к возврату
+ * @package YooKassa
  */
 class SimpleReceiptResponse extends AbstractReceiptResponse
 {

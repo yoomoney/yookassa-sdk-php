@@ -30,8 +30,9 @@ namespace YooKassa\Request\Receipts;
 use YooKassa\Model\ReceiptType;
 
 /**
- * Class ReceiptResponseFactory
- * @package YooKassa\Request\Receipts
+ * Фабричный класс для работы с чеками
+ *
+ * @package YooKassa
  */
 class ReceiptResponseFactory
 {
@@ -42,9 +43,11 @@ class ReceiptResponseFactory
     );
 
     /**
-     * @param array $data
+     * Фабричный метод для работы с чеками
      *
-     * @return AbstractReceiptResponse
+     * @param array $data Массив с данными чека
+     *
+     * @return AbstractReceiptResponse|SimpleReceiptResponse|PaymentReceiptResponse|RefundReceiptResponse Объект чека определенного типа
      */
     public function factory($data)
     {

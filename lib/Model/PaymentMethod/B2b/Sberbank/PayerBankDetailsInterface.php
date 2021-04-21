@@ -29,7 +29,7 @@ namespace YooKassa\Model\PaymentMethod\B2b\Sberbank;
 /**
  * Interface PayerBankDetailsInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $fullName Полное наименование организации
  * @property-read string $shortName Сокращенное наименование организации

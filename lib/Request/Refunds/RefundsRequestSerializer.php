@@ -29,7 +29,7 @@ namespace YooKassa\Request\Refunds;
 /**
  * Класс сериализатора объектов запросов к API для получения списка возвратов
  *
- * @package YooKassa\Request\Refunds
+ * @package YooKassa
  */
 class RefundsRequestSerializer
 {

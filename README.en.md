@@ -60,4 +60,37 @@ use YooKassa\Client;
 $client = new Client();
 $client->setAuth('shopId', 'secretKey');
 ```
-3. Call the required API method. [More details in our documentation for the YooKassa API](https://yookassa.ru/en/developers/api#create_payment)
+3. Call the required API method. 
+   
+   [More details in our documentation for the YooKassa API](https://yookassa.ru/en/developers/api#create_payment).
+
+   [More details in our documentation for the YooKassa SDK](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/readme.md).
+
+## Examples of using the API SDK
+
+#### [YooKassa SDK Settings](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md)
+* [Authentication](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Аутентификация)
+* [Statistics about the environment used](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Статистические-данные-об-используемом-окружении)
+* [Getting information about the store](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Получение-информации-о-магазине)
+* [Working with Webhook](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Работа-с-Webhook)
+* [Notifications](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Входящие-уведомления)
+
+#### [Working with payments](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md)
+* [Request to create a payment](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-создание-платежа)
+* [Request to create a payment via the builder](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-создание-платежа-через-билдер)
+* [Request for partial payment confirmation](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-частичное-подтверждение-платежа)
+* [Request to cancel an incomplete payment](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-отмену-незавершенного-платежа)
+* [Get payment information](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Получить-информацию-о-платеже)
+* [Get a list of payments with filtering](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Получить-список-платежей-с-фильтрацией)
+
+#### [Working with refunds](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md)
+* [Request to create a refund](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Запрос-на-создание-возврата)
+* [Request to create a refund via the builder](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Запрос-на-создание-возврата-через-билдер)
+* [Get refund information](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Получить-информацию-о-возврате)
+* [Get a list of returns with filtering](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Получить-список-возвратов-с-фильтрацией)
+
+#### [Working with receipts](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md)
+* [Request to create a receipt](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека)
+* [Request to create a receipt via the builder](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека-через-билдер)
+* [Get information about the receipt](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-информацию-о-чеке)
+* [Get a list of receipts with filtering](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-список-чеков-с-фильтрацией)

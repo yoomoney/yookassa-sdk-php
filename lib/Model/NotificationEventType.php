@@ -28,11 +28,26 @@ namespace YooKassa\Model;
 
 use YooKassa\Common\AbstractEnum;
 
+/**
+ * NotificationEventType - Тип уведомления
+ * |Код|Описание|
+ * --- | ---
+ * |payment.waiting_for_capture|Успешно оплачен покупателем, ожидает подтверждения магазином (capture или aviso)|
+ * |payment.succeeded|Успешно оплачен и подтвержден магазином|
+ * |payment.canceled|Неуспех оплаты или отменен магазином|
+ * |refund.succeeded|Успешный возврат|
+ *
+ * @package YooKassa
+ */
 class NotificationEventType extends AbstractEnum
 {
+    /** Успешно оплачен покупателем, ожидает подтверждения магазином */
     const PAYMENT_WAITING_FOR_CAPTURE = 'payment.waiting_for_capture';
+    /** Успешно оплачен и подтвержден магазином */
     const PAYMENT_SUCCEEDED = 'payment.succeeded';
+    /** Неуспех оплаты или отменен магазином */
     const PAYMENT_CANCELED = 'payment.canceled';
+    /** Успешный возврат */
     const REFUND_SUCCEEDED = 'refund.succeeded';
 
     protected static $validValues = array(

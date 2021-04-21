@@ -34,10 +34,19 @@ use YooKassa\Model\Refund;
 use YooKassa\Model\RefundInterface;
 use YooKassa\Request\Refunds\RefundResponse;
 
+/**
+ * Класс объекта, присылаемого API при изменении статуса возврата на "succeeded"
+ *
+ * @example 03-notification.php 3 Пример скрипта обработки уведомления
+ *
+ * @package YooKassa
+ *
+ * @property-read RefundInterface $object Объект с информацией о возврате
+ */
 class NotificationRefundSucceeded extends AbstractNotification
 {
     /**
-     * Объект возварата, для которого пришла нотификация. Так как нотификация может быть сгенерирована и поставлена в
+     * Объект возврата, для которого пришла нотификация. Так как нотификация может быть сгенерирована и поставлена в
      * очередь на отправку гораздо раньше, чем она будет получена на сайте, то опираться на статус пришедшего
      * возврата не стоит, лучше запросить текущую информацию о возврате у API.
      *
@@ -54,7 +63,7 @@ class NotificationRefundSucceeded extends AbstractNotification
      *
      * @param array $source Ассоциативный массив с информацией о уведомлении
      *
-     * @throws InvalidPropertyValueException Генерируется если значение типа нотификации или события не равны
+     * @throws InvalidPropertyValueException|\Exception Генерируется если значение типа нотификации или события не равны
      * "notification" и "refund.succeeded" соответственно, что может говорить о том, что переданные в
      * конструктор данные не являются уведомлением нужного типа.
      */

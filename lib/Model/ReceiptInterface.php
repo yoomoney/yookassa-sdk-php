@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface ReceiptInterface
  * 
- * @package YooKassa\Model
+ * @package YooKassa
  * 
  * @property-read ReceiptCustomerInterface $customer Информация о плательщике
  * @property-read ReceiptItemInterface[] $items Список товаров в заказе

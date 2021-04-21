@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface AmountInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $value Сумма
  * @property-read string $currency Код валюты
@@ -43,7 +43,8 @@ interface AmountInterface
     public function getValue();
 
     /**
-     * @param $value
+     * Устанавливает значение суммы
+     * @param numeric $value Сумма
      */
     public function setValue($value);
 

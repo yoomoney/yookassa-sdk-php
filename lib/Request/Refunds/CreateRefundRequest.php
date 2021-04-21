@@ -39,10 +39,13 @@ use YooKassa\Model\SourceInterface;
 /**
  * Класс объекта запроса для создания возврата
  *
+ * @example 02-builder.php 148 35 Пример использования билдера
+ *
  * @property string $paymentId Айди платежа для которого создаётся возврат
  * @property AmountInterface $amount Сумма возврата
  * @property string $description Комментарий к операции возврата, основание для возврата средств покупателю.
  * @property ReceiptInterface|null $receipt Инстанс чека или null
+ * @property SourceInterface[]|null $sources Информация о распределении денег — сколько и в какой магазин нужно перевести
  */
 class CreateRefundRequest extends AbstractPaymentRequest implements CreateRefundRequestInterface
 {
@@ -62,8 +65,8 @@ class CreateRefundRequest extends AbstractPaymentRequest implements CreateRefund
     private $_sources;
 
     /**
-     * Возвращает айди платежа для которого создаётся возврат средств
-     * @return string Айди платежа для которого создаётся возврат
+     * Возвращает идентификатор платежа для которого создаётся возврат средств
+     * @return string Идентификатор платежа для которого создаётся возврат
      */
     public function getPaymentId()
     {
@@ -71,12 +74,12 @@ class CreateRefundRequest extends AbstractPaymentRequest implements CreateRefund
     }
 
     /**
-     * Устанавливает айди платежа для которого создаётся возврат
-     * @param string $value Айди платежа
+     * Устанавливает идентификатор платежа для которого создаётся возврат
+     * @param string $value Идентификатор платежа
      *
-     * @throws EmptyPropertyValueException Выбрасывается если передано пустое значение айди платежа
+     * @throws EmptyPropertyValueException Выбрасывается если передано пустое значение идентификатора платежа
      * @throws InvalidPropertyValueException Выбрасывается если переданное значение является строкой, но не является
-     * валидным значением айди платежа
+     * валидным значением идентификатора платежа
      * @throws InvalidPropertyValueTypeException Выбрасывается если передано значение не валидного типа
      */
     public function setPaymentId($value)
@@ -138,8 +141,8 @@ class CreateRefundRequest extends AbstractPaymentRequest implements CreateRefund
     }
 
     /**
-     * Устанавливает transfers (массив распределения денег между магазинами)
-     * @param SourceInterface[]|array $value
+     * Устанавливает sources (массив распределения денег между магазинами)
+     * @param SourceInterface[]|array $value Массив распределения денег между магазинами
      */
     public function setSources($value)
     {
@@ -165,7 +168,8 @@ class CreateRefundRequest extends AbstractPaymentRequest implements CreateRefund
     }
 
     /**
-     * @return SourceInterface[]
+     * Возвращает информацию о распределении денег — сколько и в какой магазин нужно перевести
+     * @return SourceInterface[] Информация о распределении денег
      */
     public function getSources()
     {
@@ -173,6 +177,7 @@ class CreateRefundRequest extends AbstractPaymentRequest implements CreateRefund
     }
 
     /**
+     * Проверяет наличие информации о распределении денег
      * @return bool
      */
     public function hasSources()

@@ -41,7 +41,9 @@ use YooKassa\Request\Payments\PaymentResponse;
  * указанный в настройках API посылается уведомление о том, что платёж теперь может быть проведён. В классе описана
  * структура такого объекта для магазинов, которые получают уведомления на HTTPS endpoint.
  *
- * @package YooKassa\Model\Notification
+ * @example 03-notification.php 3 Пример скрипта обработки уведомления
+ *
+ * @package YooKassa
  *
  * @property-read PaymentInterface $object Объект с информацией о платеже, который можно подтвердить или отменить
  */

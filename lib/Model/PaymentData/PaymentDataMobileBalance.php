@@ -51,6 +51,7 @@ class PaymentDataMobileBalance extends AbstractPaymentData
     }
 
     /**
+     * Возвращает номер телефона в формате ITU-T E.164
      * @return string
      */
     public function getPhone()
@@ -59,6 +60,7 @@ class PaymentDataMobileBalance extends AbstractPaymentData
     }
 
     /**
+     * Устанавливает номер телефона в формате ITU-T E.164
      * @param string $value
      */
     public function setPhone($value)

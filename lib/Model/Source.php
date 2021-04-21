@@ -33,6 +33,10 @@ use YooKassa\Helpers\TypeCast;
 
 /**
  * Класс объекта распределения денег в магазин
+ *
+ * @property AmountInterface $amount Сумма возврата
+ * @property AmountInterface $platform_fee_amount Комиссия, которую вы удержали при оплате, и хотите вернуть
+ * @property string $accountId Идентификатор магазина, для которого вы хотите провести возврат
  */
 class Source extends AbstractObject implements SourceInterface
 {

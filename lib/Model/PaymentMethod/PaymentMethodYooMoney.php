@@ -33,11 +33,11 @@ use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodYooMoney
- * Объект, описывающий метод оплаты, при оплате через ЮMoney
+ * Класс, описывающий метод оплаты, при оплате через ЮMoney
+ *
  * @property string $type Тип объекта
- * @property string $accountNumber Номер кошелька в ЮMoney с которого была произведена оплата.
- * @property string $account_number Номер кошелька в ЮMoney с которого была произведена оплата.
+ * @property string $accountNumber Номер кошелька в ЮMoney, с которого была произведена оплата
+ * @property string $account_number Номер кошелька в ЮMoney, с которого была произведена оплата
  */
 class PaymentMethodYooMoney extends AbstractPaymentMethod
 {
@@ -52,7 +52,8 @@ class PaymentMethodYooMoney extends AbstractPaymentMethod
     }
 
     /**
-     * @return string Номер кошелька в ЮMoney с которого была произведена оплата.
+     * Возвращает номер кошелька в ЮMoney, с которого была произведена оплата
+     * @return string Номер кошелька в ЮMoney
      */
     public function getAccountNumber()
     {
@@ -60,7 +61,8 @@ class PaymentMethodYooMoney extends AbstractPaymentMethod
     }
 
     /**
-     * @param string $value Номер кошелька в ЮMoney с которого была произведена оплата.
+     * Устанавливает номер кошелька в ЮMoney, с которого была произведена оплата
+     * @param string $value Номер кошелька в ЮMoney
      */
     public function setAccountNumber($value)
     {

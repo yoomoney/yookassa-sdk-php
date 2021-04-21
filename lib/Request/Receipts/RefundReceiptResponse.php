@@ -31,14 +31,16 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\TypeCast;
 
 /**
- * Class RefundReceipt
- * @package YooKassa\Model
+ * Класс описывающий чек, привязанный к возврату
+ *
+ * @package YooKassa
  *
  * @property string $refund_id Идентификатор возврата в ЮKassa.
  * @property string $refundId Идентификатор возврата в ЮKassa.
  */
 class RefundReceiptResponse extends AbstractReceiptResponse
 {
+    /** Длина идентификатора возврата */
     const LENGTH_REFUND_ID = 36;
 
     private $_refund_id;
@@ -56,7 +58,9 @@ class RefundReceiptResponse extends AbstractReceiptResponse
     }
 
     /**
-     * @return string
+     * Возвращает идентификатор возврата
+     *
+     * @return string Идентификатор возврата
      */
     public function getRefundId()
     {

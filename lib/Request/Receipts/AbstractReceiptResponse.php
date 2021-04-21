@@ -40,12 +40,14 @@ use YooKassa\Model\SettlementInterface;
 /**
  * Class AbstractReceipt
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property string $id Идентификатор чека в ЮKassa.
  * @property string $type Тип чека в онлайн-кассе: приход "payment" или возврат "refund".
  * @property string $status Статус доставки данных для чека в онлайн-кассу ("pending", "succeeded" или "canceled").
  * @property string $fiscalAttribute Фискальный признак чека. Формируется фискальным накопителем на основе данных, переданных для регистрации чека.
+ * @property string $objectId Идентификатор объекта чека.
+ * @property string $object_id Идентификатор объекта чека.
  * @property string $fiscal_attribute Фискальный признак чека. Формируется фискальным накопителем на основе данных, переданных для регистрации чека.
  * @property string $fiscalDocumentNumber Номер фискального документа.
  * @property string $fiscal_document_number Номер фискального документа.
@@ -60,9 +62,11 @@ use YooKassa\Model\SettlementInterface;
  * @property ReceiptResponseItemInterface[] $items Список товаров в заказе
  * @property SettlementInterface[] $settlements Перечень совершенных расчетов.
  * @property string $onBehalfOf Идентификатор магазина
+ * @property string $on_behalf_of Идентификатор магазина
  */
 abstract class AbstractReceiptResponse extends AbstractObject implements ReceiptResponseInterface
 {
+    /** Длина идентификатора чека */
     const LENGTH_RECEIPT_ID = 39;
 
     /** @var string Идентификатор чека в ЮKassa. */
@@ -80,7 +84,7 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     /** @var string Номер фискального накопителя в кассовом аппарате. */
     private $_fiscalStorageNumber;
 
-    /** @var string идентификатор объекта чека */
+    /** @var string Идентификатор объекта чека */
     private $_object_id;
 
     /**
@@ -173,6 +177,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
+     * @inheritdoc
+     *
      * @return string
      */
     public function getId()
@@ -200,6 +206,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
+     * @inheritdoc
+     *
      * @return string
      */
     public function getType()
@@ -270,6 +278,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
+     * @inheritdoc
+     *
      * @return string
      */
     public function getStatus()
@@ -307,7 +317,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @return string
+     * Возвращает номер фискального документа
+     * @return string Номер фискального документа
      */
     public function getFiscalDocumentNumber()
     {
@@ -334,7 +345,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @return string
+     * Возвращает номер фискального накопителя в кассовом аппарате
+     * @return string Номер фискального накопителя в кассовом аппарате
      */
     public function getFiscalStorageNumber()
     {
@@ -342,7 +354,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @param string $fiscal_storage_number
+     * Устанавливает номер фискального накопителя в кассовом аппарате
+     * @param string $fiscal_storage_number Номер фискального накопителя в кассовом аппарате
      */
     public function setFiscalStorageNumber($fiscal_storage_number)
     {
@@ -350,7 +363,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @return string
+     * Возвращает фискальный признак чека
+     * @return string Фискальный признак чека
      */
     public function getFiscalAttribute()
     {
@@ -358,7 +372,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @param string $fiscal_attribute
+     * Устанавливает фискальный признак чека
+     * @param string $fiscal_attribute Фискальный признак чека
      */
     public function setFiscalAttribute($fiscal_attribute)
     {
@@ -366,7 +381,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @return DateTime
+     * Возвращает дату и время формирования чека в фискальном накопителе
+     * @return DateTime Дата и время формирования чека в фискальном накопителе
      */
     public function getRegisteredAt()
     {
@@ -374,7 +390,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @param DateTime $registered_at
+     * Устанавливает дату и время формирования чека в фискальном накопителе
+     * @param DateTime $registered_at Дата и время формирования чека в фискальном накопителе
      */
     public function setRegisteredAt($registered_at)
     {
@@ -382,7 +399,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @return string
+     * Возвращает идентификатор чека в онлайн-кассе
+     * @return string Идентификатор чека в онлайн-кассе
      */
     public function getFiscalProviderId()
     {
@@ -390,7 +408,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @param string $fiscal_provider_id
+     * Устанавливает идентификатор чека в онлайн-кассе
+     * @param string $fiscal_provider_id Идентификатор чека в онлайн-кассе
      */
     public function setFiscalProviderId($fiscal_provider_id)
     {
@@ -398,7 +417,9 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @return ReceiptResponseItem[]
+     * @inheritdoc
+     *
+     * @return ReceiptResponseItem[]|ReceiptResponseItemInterface[]
      */
     public function getItems()
     {
@@ -461,6 +482,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
+     * Устанавливает массив оплат, обеспечивающих выдачу товара
+     *
      * @param SettlementInterface[] $value
      */
     public function setSettlements($value)
@@ -486,6 +509,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
+     * Добавляет оплату в массив
+     *
      * @param SettlementInterface $value
      */
     public function addSettlement(SettlementInterface $value)
@@ -495,6 +520,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
 
 
     /**
+     * @inheritdoc
+     *
      * @return int
      */
     public function getTaxSystemCode()
@@ -530,6 +557,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
+     * @inheritdoc
+     *
      * @return string|null
      */
     public function getOnBehalfOf()
@@ -538,7 +567,8 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
     }
 
     /**
-     * @param string $value
+     * Возвращает идентификатор магазина, от имени которого нужно отправить чек
+     * @param string $value Идентификатор магазина, от имени которого нужно отправить чек
      */
     public function setOnBehalfOf($value)
     {

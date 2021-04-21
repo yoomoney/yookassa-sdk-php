@@ -31,7 +31,7 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Class ConfirmationAttributesFactory
  *
- * @package YooKassa\Model\ConfirmationAttributes
+ * @package YooKassa
  */
 class ConfirmationAttributesFactory
 {

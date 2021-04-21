@@ -26,6 +26,7 @@
 
 namespace YooKassa\Request\Refunds;
 
+use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\AbstractRequestBuilder;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
@@ -33,7 +34,7 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 /**
  * Класс билдера объектов запросов к API списка возвратов
  *
- * @package YooKassa\Request\Refunds
+ * @package YooKassa
  */
 class RefundsRequestBuilder extends AbstractRequestBuilder
 {
@@ -172,7 +173,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
     /**
      * Собирает и возвращает объект запроса списка возвратов магазина
      * @param array|null $options Массив с настройками запроса
-     * @return RefundsRequestInterface Инстанс объекта запроса к API для получения списка возвратов магазина
+     * @return RefundsRequestInterface|AbstractRequest Инстанс объекта запроса к API для получения списка возвратов магазина
      */
     public function build(array $options = null)
     {

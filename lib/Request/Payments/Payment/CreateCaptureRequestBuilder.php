@@ -27,12 +27,14 @@
 namespace YooKassa\Request\Payments\Payment;
 
 use YooKassa\Common\AbstractPaymentRequestBuilder;
+use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\Exceptions\InvalidPropertyException;
 use YooKassa\Common\Exceptions\InvalidRequestException;
 
 class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
 {
     /**
+     * Собираемый объект запроса
      * @var CreateCaptureRequest
      */
     protected $currentObject;
@@ -50,7 +52,7 @@ class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
     /**
      * Осуществляет сборку объекта запроса к API
      * @param array|null $options Массив дополнительных настроек объекта
-     * @return CreateCaptureRequestInterface Иснатс объекта запроса к API
+     * @return CreateCaptureRequestInterface|AbstractRequest Иснатс объекта запроса к API
      *
      * @throws InvalidRequestException Выбрасывается если при валидации запроса произошла ошибка
      * @throws InvalidPropertyException Выбрасывается если не удалось установить один из параметров, переданных в

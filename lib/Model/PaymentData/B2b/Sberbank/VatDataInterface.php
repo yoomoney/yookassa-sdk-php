@@ -31,7 +31,7 @@ use YooKassa\Model\AmountInterface;
 /**
  * Interface VatDataInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $type Способ расчёта НДС
  * @property-read string $rate Данные об НДС в случае, если сумма НДС включена в сумму платежа

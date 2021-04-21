@@ -29,8 +29,8 @@ namespace YooKassa\Model\PaymentMethod;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodApplePay
- * Объект, описывающий метод оплаты, при оплате через Apple Pay
+ * Класс, описывающий метод оплаты, при оплате через Apple Pay
+ *
  * @property string $type Тип объекта
  */
 class PaymentMethodApplePay extends AbstractPaymentMethod

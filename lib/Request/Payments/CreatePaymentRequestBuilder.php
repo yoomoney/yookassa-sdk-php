@@ -26,7 +26,9 @@
 
 namespace YooKassa\Request\Payments;
 
+use YooKassa\Common\AbstractPaymentRequest;
 use YooKassa\Common\AbstractPaymentRequestBuilder;
+use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\Exceptions\EmptyPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
@@ -44,12 +46,15 @@ use YooKassa\Model\RecipientInterface;
 /**
  * Класс билдера объектов запрсов к API на создание платежа
  *
- * @package YooKassa\Request\Payments
+ * @example 02-builder.php 11 78 Пример использования билдера
+ *
+ * @package YooKassa
  */
 class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
 {
     /**
-     * @var CreatePaymentRequest Собираемый объект запроса
+     * Собираемый объект запроса
+     * @var CreatePaymentRequest
      */
     protected $currentObject;
 
@@ -137,6 +142,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     }
 
     /**
+     * Устанавливает информацию об авиабилетах
      * @param AirlineInterface|array $value объект данных длинной записи или ассоциативный массив с данными
      *
      * @return CreatePaymentRequestBuilder
@@ -300,7 +306,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     /**
      * Строит и возвращает объект запроса для отправки в API ЮKassa
      * @param array|null $options Массив параметров для установки в объект запроса
-     * @return CreatePaymentRequestInterface Инстанс объекта запроса
+     * @return CreatePaymentRequestInterface|AbstractPaymentRequest|AbstractRequest Инстанс объекта запроса
      *
      * @throws InvalidRequestException Выбрасывается если собрать объект запроса не удалось
      */

@@ -40,9 +40,13 @@ use YooKassa\Common\AbstractEnum;
  */
 class PaymentStatus extends AbstractEnum
 {
+    /** Ожидает оплаты покупателем */
     const PENDING = 'pending';
+    /** Ожидает подтверждения магазином */
     const WAITING_FOR_CAPTURE = 'waiting_for_capture';
+    /** Успешно оплачен и подтвержден магазином */
     const SUCCEEDED = 'succeeded';
+    /** Неуспех оплаты или отменен магазином */
     const CANCELED = 'canceled';
 
     protected static $validValues = array(

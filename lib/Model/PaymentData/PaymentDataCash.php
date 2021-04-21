@@ -34,7 +34,7 @@ use YooKassa\Model\PaymentMethodType;
 /**
  * PaymentDataCash
  * Платежные данные для проведения оплаты Qiwi.
- * @property string $phone
+ * @property string $phone Номер телефона в формате ITU-T E.164
  */
 class PaymentDataCash extends AbstractPaymentData
 {
@@ -50,7 +50,8 @@ class PaymentDataCash extends AbstractPaymentData
     }
 
     /**
-     * @return string
+     * Возвращает номер телефона в формате ITU-T E.164
+     * @return string Номер телефона в формате ITU-T E.164
      */
     public function getPhone()
     {
@@ -58,7 +59,8 @@ class PaymentDataCash extends AbstractPaymentData
     }
 
     /**
-     * @param string $value
+     * Устанавливает номер телефона в формате ITU-T E.164
+     * @param string $value Номер телефона в формате ITU-T E.164
      */
     public function setPhone($value)
     {

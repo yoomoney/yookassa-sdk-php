@@ -32,12 +32,13 @@ use YooKassa\Common\Exceptions\InvalidRequestException;
 /**
  * Базовый класс билдера запросов
  *
- * @package YooKassa\Common
+ * @package YooKassa
  */
 abstract class AbstractRequestBuilder
 {
     /**
-     * @var AbstractRequest Инстанс собираемого запроса
+     * Инстанс собираемого запроса
+     * @var AbstractRequest
      */
     protected $currentObject;
 

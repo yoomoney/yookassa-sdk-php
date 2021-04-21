@@ -29,7 +29,7 @@ namespace YooKassa\Request\Refunds;
 /**
  * Класс объекта ответа от API при создании нового возврата
  *
- * @package YooKassa\Request\Refunds
+ * @package YooKassa
  */
 class CreateRefundResponse extends AbstractRefundResponse
 {}

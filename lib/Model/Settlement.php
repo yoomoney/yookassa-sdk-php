@@ -36,7 +36,7 @@ use YooKassa\Model\Receipt\SettlementType;
 
 /**
  * Class Settlement
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property string $type Вид оплаты в чеке
  * @property AmountInterface $amount Размер оплаты

@@ -36,12 +36,18 @@ use YooKassa\Common\AbstractObject;
  */
 class Metadata extends AbstractObject implements \IteratorAggregate, \Countable
 {
+    /**
+     * @inheritdoc
+     *
+     * @return array
+     */
     public function toArray()
     {
         return $this->getUnknownProperties();
     }
 
     /**
+     * Возвращает объект ArrayIterator для метаданных
      * @return \Iterator
      */
     public function getIterator()
@@ -50,6 +56,7 @@ class Metadata extends AbstractObject implements \IteratorAggregate, \Countable
     }
 
     /**
+     * Возвращает количество метаданных
      * @return int
      */
     public function count()

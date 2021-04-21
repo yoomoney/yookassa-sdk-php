@@ -11,6 +11,8 @@ Russian | [English](https://github.com/yoomoney/yookassa-sdk-php/blob/master/REA
 Клиент для работы с платежами по [API ЮKassa](https://yookassa.ru/developers/api)
 Подходит тем, у кого способ подключения к ЮKassa называется API.
 
+[Документация по данному SDK](docs/readme.md).
+
 ## Требования
 PHP 5.3.2 (и выше) с расширением libcurl
 
@@ -60,4 +62,37 @@ use YooKassa\Client;
 $client = new Client();
 $client->setAuth('shopId', 'secretKey');
 ```
-3. Вызовите нужный метод API. [Подробнее в документации к API ЮKassa](https://yookassa.ru/developers/api#create_payment)
+3. Вызовите нужный метод API. 
+   
+   [Подробнее в документации к API ЮKassa](https://yookassa.ru/developers/api#create_payment).
+   
+   [Подробнее в документации к SDK ЮKassa](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/readme.md).
+
+## Примеры использования SDK
+
+#### [Настройки SDK API ЮKassa](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md)
+* [Аутентификация](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Аутентификация)
+* [Статистические данные об используемом окружении](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Статистические-данные-об-используемом-окружении)
+* [Получение информации о магазине](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Получение-информации-о-магазине)
+* [Работа с Webhook](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Работа-с-Webhook)
+* [Входящие уведомления](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Входящие-уведомления)
+
+#### [Работа с платежами](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md)
+* [Запрос на создание платежа](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-создание-платежа)
+* [Запрос на создание платежа через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-создание-платежа-через-билдер)
+* [Запрос на частичное подтверждение платежа](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-частичное-подтверждение-платежа)
+* [Запрос на отмену незавершенного платежа](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-отмену-незавершенного-платежа)
+* [Получить информацию о платеже](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Получить-информацию-о-платеже)
+* [Получить список платежей с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Получить-список-платежей-с-фильтрацией)
+
+#### [Работа с возвратами](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md)
+* [Запрос на создание возврата](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Запрос-на-создание-возврата)
+* [Запрос на создание возврата через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Запрос-на-создание-возврата-через-билдер)
+* [Получить информацию о возврате](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Получить-информацию-о-возврате)
+* [Получить список возвратов с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Получить-список-возвратов-с-фильтрацией)
+
+#### [Работа с чеками](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md)
+* [Запрос на создание чека](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека)
+* [Запрос на создание чека через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека-через-билдер)
+* [Получить информацию о чеке](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-информацию-о-чеке)
+* [Получить список чеков с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-список-чеков-с-фильтрацией)

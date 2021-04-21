@@ -29,8 +29,8 @@ namespace YooKassa\Model\PaymentMethod;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodInstallments
- * Объект, описывающий метод оплаты при оплате по частям
+ * Класс, описывающий метод оплаты при оплате по частям
+ *
  * @property string $type Тип объекта
  */
 class PaymentMethodInstallments extends AbstractPaymentMethod

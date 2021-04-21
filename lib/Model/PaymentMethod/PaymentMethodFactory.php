@@ -28,6 +28,11 @@ namespace YooKassa\Model\PaymentMethod;
 
 use YooKassa\Model\PaymentMethodType;
 
+/**
+ * Фабрика создания объекта платежных методов из массива
+ *
+ * @package YooKassa
+ */
 class PaymentMethodFactory
 {
     private $typeClassMap = array(
@@ -56,7 +61,9 @@ class PaymentMethodFactory
     );
 
     /**
-     * @param string $type
+     * Фабричный метод создания объекта платежных данных по типу
+     *
+     * @param string $type Тип платежного метода
      *
      * @return AbstractPaymentMethod
      */
@@ -74,8 +81,10 @@ class PaymentMethodFactory
     }
 
     /**
-     * @param array $data
-     * @param string|null $type
+     * Фабричный метод создания объекта платежных данных из массива
+     *
+     * @param array $data Массив платежных данных
+     * @param string|null $type Тип платежного метода
      *
      * @return AbstractPaymentMethod
      */

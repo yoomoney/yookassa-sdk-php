@@ -33,7 +33,7 @@ use YooKassa\Model\PaymentInterface;
 /**
  * Класс объекта ответа от API со списком платежей магазина
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  */
 class PaymentsResponse extends AbstractObject
 {

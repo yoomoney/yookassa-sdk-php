@@ -29,16 +29,16 @@ namespace YooKassa\Helpers;
 /**
  * Класс для формирования тега 1162 на основе кода в формате Data Matrix
  *
- * @example $receiptItem->setProductCode(new \YooKassa\Helpers\ProductCode('010463003759131691sgEKKPPcS25y592FLduM/='));
- * @example array(... 'product_code' => (string)(new \YooKassa\Helpers\ProductCode('010463003759131691sgEKKPPcS25y5') ...);
+ * @example 04-product-code.php 6 6 Вариант через метод
+ * @example 04-product-code.php 14 6 Вариант через массив
  *
  * @link https://github.com/yoomoney/yookassa-sdk-php/blob/master/lib/Helpers/ProductCode.php
  *
- * Class ProductCode
- * @package YooKassa\Helpers
+ * @package YooKassa
  */
 class ProductCode
 {
+    /** Код типа маркировки DataMatrix */
     const PREFIX_DATA_MATRIX = '444D';
 
     /** @var string Код типа маркировки */
@@ -121,7 +121,7 @@ class ProductCode
 
     /**
      * Устанавливает Глобальный номер товарной продукции
-     * @param string$gtin Глобальный номер товарной продукции
+     * @param string $gtin Глобальный номер товарной продукции
      * @return ProductCode
      */
     public function setGtin($gtin)
