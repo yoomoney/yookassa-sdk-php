@@ -31,7 +31,8 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Сценарий при котором необходимо ожидать пока пользователь самостоятельно подтвердит платеж. Например,
  * пользователь подтверждает платеж ответом на SMS или в приложении партнера
- * @package YooKassa\Model\ConfirmationAttributes
+ *
+ * @package YooKassa
  */
 class ConfirmationAttributesExternal extends AbstractConfirmationAttributes
 {

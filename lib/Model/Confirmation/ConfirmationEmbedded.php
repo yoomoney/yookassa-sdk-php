@@ -39,7 +39,7 @@ class ConfirmationEmbedded extends AbstractConfirmation
 
     public function __construct()
     {
-        $this->_setType(ConfirmationType::EMBEDDED);
+        $this->setType(ConfirmationType::EMBEDDED);
     }
 
     /**

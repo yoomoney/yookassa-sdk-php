@@ -38,8 +38,11 @@ use YooKassa\Common\AbstractEnum;
  */
 class VatDataType extends AbstractEnum
 {
+    /** Сумма НДС включена в сумму платежа */
     const CALCULATED = 'calculated';
+    /** Разные ставки НДС для разных товаров */
     const MIXED      = 'mixed';
+    /** Сумма платежа НДС не облагается */
     const UNTAXED    = 'untaxed';
 
     protected static $validValues = array(

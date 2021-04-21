@@ -31,8 +31,8 @@ use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodAlfaBank
- * Объект, описывающий метод оплаты, при оплате через Альфа Банк.
+ * Класс, описывающий метод оплаты, при оплате через Альфа Банк
+ *
  * @property string $type Тип объекта
  * @property string $login Имя пользователя в Альфа-Клике
  */
@@ -49,6 +49,7 @@ class PaymentMethodAlfaBank extends AbstractPaymentMethod
     }
 
     /**
+     * Возвращает имя пользователя в Альфа-Клике
      * @return string Имя пользователя в Альфа-Клике
      */
     public function getLogin()
@@ -57,6 +58,7 @@ class PaymentMethodAlfaBank extends AbstractPaymentMethod
     }
 
     /**
+     * Устанавливает имя пользователя в Альфа-Клике
      * @param string $value Имя пользователя в Альфа-Клике
      */
     public function setLogin($value)

@@ -40,7 +40,7 @@ class ConfirmationQr extends AbstractConfirmation
 
     public function __construct()
     {
-        $this->_setType(ConfirmationType::QR);
+        $this->setType(ConfirmationType::QR);
     }
 
     /**

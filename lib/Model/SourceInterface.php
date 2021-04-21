@@ -29,11 +29,11 @@ namespace YooKassa\Model;
 /**
  * Interface TransferInterface
  *
- * @package YooKassa\Model
+ * @property AmountInterface $amount Сумма возврата
+ * @property AmountInterface $platform_fee_amount Комиссия, которую вы удержали при оплате, и хотите вернуть
+ * @property string $accountId Идентификатор магазина, для которого вы хотите провести возврат
  *
- * @property AmountInterface $amount
- * @property AmountInterface $platform_fee_amount
- * @property string $accountId
+ * @package YooKassa
  */
 interface SourceInterface
 {

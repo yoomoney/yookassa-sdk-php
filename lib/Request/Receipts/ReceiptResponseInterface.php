@@ -31,7 +31,7 @@ use YooKassa\Model\SettlementInterface;
 /**
  * Interface ReceiptInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $id Идентификатор чека в ЮKassa.
  * @property-read string $type Тип чека в онлайн-кассе: приход "payment" или возврат "refund".

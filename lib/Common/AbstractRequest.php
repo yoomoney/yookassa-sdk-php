@@ -29,7 +29,7 @@ namespace YooKassa\Common;
 /**
  * Базовый класс объекта запроса, передаваемого в методы клиента API
  *
- * @package YooKassa\Common
+ * @package YooKassa
  */
 abstract class AbstractRequest extends AbstractObject
 {

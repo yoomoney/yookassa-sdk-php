@@ -32,12 +32,12 @@ use YooKassa\Model\ConfirmationType;
  * Сценарий при котором необходимо ожидать пока пользователь самостоятельно подтвердит платеж. Например,
  * пользователь подтверждает платеж ответом на SMS или в приложении партнера
  *
- * @package YooKassa\Model\Confirmation
+ * @package YooKassa
  */
 class ConfirmationExternal extends AbstractConfirmation
 {
     public function __construct()
     {
-        $this->_setType(ConfirmationType::EXTERNAL);
+        $this->setType(ConfirmationType::EXTERNAL);
     }
 }

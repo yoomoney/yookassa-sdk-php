@@ -29,8 +29,8 @@ namespace YooKassa\Model\PaymentMethod;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodQiwi
- * Объект, описывающий метод оплаты, при оплате через Qiwi.
+ * Класс, описывающий метод оплаты, при оплате через Qiwi
+ *
  * @property string $type Тип объекта
  */
 class PaymentMethodQiwi extends AbstractPaymentMethod

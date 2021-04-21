@@ -42,24 +42,27 @@ use YooKassa\Model\TransferInterface;
 /**
  * Базовый класс объекта платежного запроса, передаваемого в методы клиента API
  *
- * @package YooKassa\Common
+ * @package YooKassa
  *
  * @since 1.0.18
  */
 abstract class AbstractPaymentRequestBuilder extends AbstractRequestBuilder
 {
     /**
-     * @var MonetaryAmount Сумма
+     * Сумма
+     * @var MonetaryAmount
      */
     protected $amount;
 
     /**
-     * @var Receipt Объект с информацией о чеке
+     * Объект с информацией о чеке
+     * @var Receipt
      */
     protected $receipt;
 
     /**
-     * @var TransferInterface[] Массив платежей в пользу разных мерчантов
+     * Массив платежей в пользу разных мерчантов
+     * @var TransferInterface[]
      */
     protected $transfers;
 
@@ -109,29 +112,23 @@ abstract class AbstractPaymentRequestBuilder extends AbstractRequestBuilder
     /**
      * Устанавливает трансферы
      *
-     * @param array|string $value Массив трансферов
+     * @param TransferInterface[]|array|null $value Массив трансферов
      *
      * @return self Инстанс билдера запросов
      */
     public function setTransfers($value)
     {
-        $value = (array)$value;
-        $this->transfers = array();
-
-        foreach ($value as $item) {
-            $transfer = new Transfer();
-
-            if ($item instanceof TransferInterface) {
-                $transfer->setAmount($item->getAmount());
-                $transfer->setAccountId($item->getAccountId());
-                if ($item->hasPlatformFeeAmount()) {
-                    $transfer->setPlatformFeeAmount($item->getPlatformFeeAmount());
+        if (is_array($value)) {
+            $this->transfers = array();
+            foreach ($value as $item) {
+                if ($item instanceof TransferInterface) {
+                    $this->transfers[] = $item;
+                } elseif (is_array($item)) {
+                    $this->transfers[] = new Transfer($item);
                 }
-            } elseif (is_array($item)) {
-                $transfer->fromArray($item);
             }
-
-            $this->transfers[] = $transfer;
+        } else {
+            $this->transfers = array();
         }
 
         return $this;

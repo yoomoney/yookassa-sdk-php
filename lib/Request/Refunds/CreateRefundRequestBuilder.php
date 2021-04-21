@@ -27,6 +27,7 @@
 namespace YooKassa\Request\Refunds;
 
 use YooKassa\Common\AbstractPaymentRequestBuilder;
+use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\Exceptions\EmptyPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
@@ -35,13 +36,16 @@ use YooKassa\Model\SourceInterface;
 /**
  * Класс билдера запросов к API на создание возврата средств
  *
- * @package YooKassa\Request\Refunds
+ * @example 02-builder.php 148 35 Пример использования билдера
+ *
+ * @package YooKassa
  */
 class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
 {
 
     /**
-     * @var CreateRefundRequest Собираемый объет запроса к API
+     * Собираемый объет запроса к API
+     * @var CreateRefundRequest
      */
     protected $currentObject;
 
@@ -100,7 +104,7 @@ class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
     /**
      * Строит объект запроса к API
      * @param array|null $options Устаналвиваемые параметры запроса
-     * @return CreateRefundRequestInterface Инстанс сгенерированного объекта запроса к API
+     * @return CreateRefundRequestInterface|AbstractRequest Инстанс сгенерированного объекта запроса к API
      */
     public function build(array $options = null)
     {

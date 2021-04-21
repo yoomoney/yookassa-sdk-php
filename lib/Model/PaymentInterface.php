@@ -31,18 +31,21 @@ use YooKassa\Model\PaymentMethod\AbstractPaymentMethod;
 /**
  * Interface PaymentInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $id Идентификатор платежа
  * @property-read string $status Текущее состояние платежа
  * @property-read RecipientInterface $recipient Получатель платежа
  * @property-read AmountInterface $amount Сумма заказа
+ * @property-read string $description Описание транзакции
  * @property-read AbstractPaymentMethod $paymentMethod Способ проведения платежа
  * @property-read AbstractPaymentMethod $payment_method Способ проведения платежа
  * @property-read \DateTime $createdAt Время создания заказа
  * @property-read \DateTime $created_at Время создания заказа
  * @property-read \DateTime $capturedAt Время подтверждения платежа магазином
  * @property-read \DateTime $captured_at Время подтверждения платежа магазином
+ * @property-read \DateTime $expiresAt Время, до которого можно бесплатно отменить или подтвердить платеж
+ * @property-read \DateTime $expires_at Время, до которого можно бесплатно отменить или подтвердить платеж
  * @property-read Confirmation\AbstractConfirmation $confirmation Способ подтверждения платежа
  * @property-read AmountInterface $refundedAmount Сумма возвращенных средств платежа
  * @property-read AmountInterface $refunded_amount Сумма возвращенных средств платежа
@@ -51,6 +54,15 @@ use YooKassa\Model\PaymentMethod\AbstractPaymentMethod;
  * @property-read string $receiptRegistration Состояние регистрации фискального чека
  * @property-read string $receipt_registration Состояние регистрации фискального чека
  * @property-read Metadata $metadata Метаданные платежа указанные мерчантом
+ * @property-read bool $test Признак тестовой операции
+ * @property-read CancellationDetailsInterface $cancellationDetails Комментарий к отмене платежа
+ * @property-read CancellationDetailsInterface $cancellation_details Комментарий к отмене платежа
+ * @property-read AuthorizationDetailsInterface $authorizationDetails Данные об авторизации платежа
+ * @property-read AuthorizationDetailsInterface $authorization_details Данные об авторизации платежа
+ * @property-read TransferInterface[] $transfers Данные о распределении платежа между магазинами
+ * @property-read AmountInterface $incomeAmount Сумма платежа, которую получит магазин
+ * @property-read AmountInterface $income_amount Сумма платежа, которую получит магазин
+ * @property-read Requestor $requestor Инициатор платежа
  */
 interface PaymentInterface
 {
@@ -166,6 +178,7 @@ interface PaymentInterface
     public function getIncomeAmount();
 
     /**
+     * Возвращает инициатора платежа
      * @return RequestorInterface
      */
     public function getRequestor();

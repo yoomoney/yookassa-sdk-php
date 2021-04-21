@@ -31,7 +31,7 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Сценарий при котором необходимо получить одноразовый код от плательщика для подтверждения платежа
  *
- * @package YooKassa\Model\ConfirmationAttributes
+ * @package YooKassa
  */
 class ConfirmationAttributesCodeVerification extends AbstractConfirmationAttributes
 {

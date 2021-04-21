@@ -32,7 +32,7 @@ use Exception;
 /**
  * Класс хэлпер для преобразования типов значений
  *
- * @package YooKassa\Helpers
+ * @package YooKassa
  */
 class TypeCast
 {

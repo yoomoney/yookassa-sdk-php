@@ -27,8 +27,9 @@
 namespace YooKassa\Request\Receipts;
 
 /**
- * Class ReceiptsResponse
- * @package YooKassa\Request\Receipts
+ * Класс для работы со списком чеков
+ *
+ * @package YooKassa
  */
 class ReceiptsResponse
 {

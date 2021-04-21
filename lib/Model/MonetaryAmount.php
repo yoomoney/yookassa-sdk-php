@@ -52,7 +52,7 @@ class MonetaryAmount extends AbstractObject implements AmountInterface
 
     /**
      * MonetaryAmount constructor.
-     * @param string|null $value Сумма
+     * @param numeric|null $value Сумма
      * @param string|null $currency Код валюты
      */
     public function __construct($value = null, $currency = null)

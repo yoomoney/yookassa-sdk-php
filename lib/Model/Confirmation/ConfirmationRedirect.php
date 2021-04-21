@@ -63,7 +63,7 @@ class ConfirmationRedirect extends AbstractConfirmation
 
     public function __construct()
     {
-        $this->_setType(ConfirmationType::REDIRECT);
+        $this->setType(ConfirmationType::REDIRECT);
     }
 
     /**

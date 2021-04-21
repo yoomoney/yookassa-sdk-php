@@ -41,8 +41,11 @@ use YooKassa\Model\Settlement;
 use YooKassa\Model\SettlementInterface;
 
 /**
- * Class AbstractPostReceiptRequest
- * @package YooKassa\Request\Receipts
+ * Класс объекта запроса к API на создание чека
+ *
+ * @example 02-builder.php 91 56 Пример использования билдера
+ *
+ * @package YooKassa
  */
 class CreatePostReceiptRequest extends AbstractRequest implements CreatePostReceiptRequestInterface
 {
@@ -92,7 +95,7 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
     /**
      * Устанавливает Id объекта чека
      *
-     * @param string $value
+     * @param string $value Id объекта чека
      */
     public function setObjectId($value)
     {
@@ -100,6 +103,8 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
     }
 
     /**
+     * Проверяет наличие данных о плательщике
+     *
      * @return bool
      */
     public function hasCustomer()
@@ -152,8 +157,9 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
      * позиций. Все передаваемые значения в массиве позиций должны быть объектами класса, реализующего интерфейс
      * ReceiptItemInterface, в противном случае будет выброшено исключение InvalidPropertyValueTypeException.
      *
-     * @param ReceiptItemInterface[] $value Список товаров в заказе
+     * @param ReceiptItemInterface[]|array $value Список товаров в заказе
      *
+     * @return CreatePostReceiptRequest
      * @throws EmptyPropertyValueException Выбрасывается если передали пустой массив значений
      * @throws InvalidPropertyValueTypeException Выбрасывается если в качестве значения был передан не массив и не
      * итератор, либо если одно из переданных значений не реализует интерфейс ReceiptItemInterface
@@ -169,27 +175,32 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
             );
         }
         $this->_items = array();
-        foreach ($value as $key => $val) {
-            if (is_array($val)) {
-                $this->addItem(new ReceiptItem($val));
-            } elseif (is_object($val) && $val instanceof ReceiptItemInterface) {
-                $this->addItem($val);
+        foreach ($value as $key => $item) {
+            if (is_array($item)) {
+                $this->addItem(new ReceiptItem($item));
+            } elseif (is_object($item) && $item instanceof ReceiptItemInterface) {
+                $this->addItem($item);
             } else {
                 throw new InvalidPropertyValueTypeException(
-                    'Invalid item value type in receipt', 0, 'Receipt.items['.$key.']', $val
+                    'Invalid item value type in receipt', 0, 'Receipt.items['.$key.']', $item
                 );
             }
         }
+
+        return $this;
     }
 
     /**
      * Добавляет товар в чек
      *
-     * @param ReceiptItemInterface $value Объект добавляемой в чек позиции
+     * @param ReceiptItemInterface|array $value Объект добавляемой в чек позиции
+     * @return CreatePostReceiptRequest
      */
     public function addItem($value)
     {
         $this->_items[] = $value;
+
+        return $this;
     }
 
     /**
@@ -333,6 +344,10 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
     }
 
     /**
+     * Возвращает идентификатор магазина, от имени которого нужно отправить чек.
+     * Выдается ЮKassa, отображается в разделе Продавцы личного кабинета (столбец shopId).
+     * Необходимо передавать, если вы используете решение ЮKassa для платформ.
+     *
      * @return string
      */
     public function getOnBehalfOf()
@@ -341,6 +356,10 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
     }
 
     /**
+     * Устанавливает идентификатор магазина, от имени которого нужно отправить чек.
+     * Выдается ЮKassa, отображается в разделе Продавцы личного кабинета (столбец shopId).
+     * Необходимо передавать, если вы используете решение ЮKassa для платформ.
+     *
      * @param string $value
      */
     public function setOnBehalfOf($value)

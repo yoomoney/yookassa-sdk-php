@@ -27,19 +27,27 @@ namespace YooKassa\Request\Webhook;
 
 use YooKassa\Model\Webhook\Webhook;
 
+/**
+ * Актуальный список объектов webhook для переданного OAuth-токена
+ *
+ * @package YooKassa
+ */
 class WebhookListResponse
 {
+    /**
+     * Тип ответа
+     * @var string
+     */
     private $type;
 
     /**
-     * Список способов оплаты подходящих для оплаты заказа
-     * Если нет ни одного доступного способа оплаты, список будет пустым
-     * @var Webhook[] Список способов оплаты
+     * Список установленных webhook для переданного OAuth-токена
+     * @var Webhook[] Список установленных webhook
      */
     private $items;
 
     /**
-     * Конструктор, устанавливает список полученныз от API способов оплаты
+     * Конструктор, устанавливает список полученных от API установленных webhook для переданного OAuth-токена
      *
      * @param array $response Разобранный ответ от API в виде массива
      */
@@ -55,9 +63,17 @@ class WebhookListResponse
     }
 
     /**
-     * Возаращает список способов оплаты подходящих для оплаты заказа
-     * Если нет ни одного доступного способа оплаты, список будет пустым
-     * @return Webhook[] Список способов оплаты
+     * Возвращает тип ответа. Доступен только `list`
+     * @return string
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * Возвращает список установленных webhook для переданного OAuth-токена
+     * @return Webhook[] Список установленных webhook
      */
     public function getItems()
     {

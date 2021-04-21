@@ -32,6 +32,16 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\TypeCast;
 
+/**
+ * Класс описывающий данные пассажира
+ *
+ * @package YooKassa
+ *
+ * @property string $firstName Имя пассажира
+ * @property string $first_name Имя пассажира
+ * @property string $lastName Фамилия пассажира
+ * @property string $last_name Фамилия пассажира
+ */
 class Passenger extends AbstractObject implements PassengerInterface
 {
     /**
@@ -53,6 +63,7 @@ class Passenger extends AbstractObject implements PassengerInterface
     }
 
     /**
+     * @inheritdoc
      * @param $value
      */
     public function setFirstName($value)
@@ -86,6 +97,7 @@ class Passenger extends AbstractObject implements PassengerInterface
     }
 
     /**
+     * @inheritdoc
      * @param $value
      */
     public function setLastName($value)

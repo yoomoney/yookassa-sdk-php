@@ -31,7 +31,7 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Class ConfirmationFactory
  *
- * @package YooKassa\Model\Confirmation
+ * @package YooKassa
  */
 class ConfirmationFactory
 {
@@ -45,7 +45,9 @@ class ConfirmationFactory
     );
 
     /**
-     * @param string $type
+     * Возвращает объект, соответствующий типу подтверждения платежа
+     *
+     * @param string $type Тип подтверждения платежа
      *
      * @return AbstractConfirmation
      */
@@ -63,8 +65,10 @@ class ConfirmationFactory
     }
 
     /**
-     * @param array $data
-     * @param string|null $type
+     * Возвращает объект, соответствующий типу подтверждения платежа, из массива данных
+     *
+     * @param array $data Массив данных подтверждения платежа
+     * @param string|null $type Тип подтверждения платежа
      *
      * @return AbstractConfirmation
      */

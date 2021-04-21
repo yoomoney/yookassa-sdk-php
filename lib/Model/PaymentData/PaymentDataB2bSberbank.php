@@ -57,6 +57,7 @@ class PaymentDataB2bSberbank extends AbstractPaymentData
     }
 
     /**
+     * Возвращает назначение платежа
      * @return string Назначение платежа
      */
     public function getPaymentPurpose()
@@ -65,6 +66,7 @@ class PaymentDataB2bSberbank extends AbstractPaymentData
     }
 
     /**
+     * Устанавливает назначение платежа
      * @param string $value Назначение платежа
      */
     public function setPaymentPurpose($value)
@@ -88,6 +90,7 @@ class PaymentDataB2bSberbank extends AbstractPaymentData
     }
 
     /**
+     * Возвращает назначение платежа
      * @return VatData Данные об НДС
      */
     public function getVatData()
@@ -96,6 +99,7 @@ class PaymentDataB2bSberbank extends AbstractPaymentData
     }
 
     /**
+     * Устанавливает назначение платежа
      * @param VatData|array|null $value Данные об НДС
      */
     public function setVatData($value)

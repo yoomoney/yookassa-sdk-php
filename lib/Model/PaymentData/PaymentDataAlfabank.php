@@ -49,6 +49,7 @@ class PaymentDataAlfabank extends AbstractPaymentData
     }
 
     /**
+     * Возвращает имя пользователя в Альфа-Клике
      * @return string Имя пользователя в Альфа-Клике
      */
     public function getLogin()
@@ -57,6 +58,7 @@ class PaymentDataAlfabank extends AbstractPaymentData
     }
 
     /**
+     * Устанавливает имя пользователя в Альфа-Клике
      * @param string $value Имя пользователя в Альфа-Клике
      */
     public function setLogin($value)

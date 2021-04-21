@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface AuthorizationDetailsInterface - Данные об авторизации платежа
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $rrn Retrieval Reference Number — уникальный идентификатор транзакции в системе эмитента
  * @property-read string $authCode Код авторизации банковской карты

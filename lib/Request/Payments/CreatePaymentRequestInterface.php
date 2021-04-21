@@ -27,6 +27,7 @@
 namespace YooKassa\Request\Payments;
 
 use YooKassa\Model\Airline;
+use YooKassa\Model\AirlineInterface;
 use YooKassa\Model\AmountInterface;
 use YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes;
 use YooKassa\Model\Metadata;
@@ -38,7 +39,7 @@ use YooKassa\Model\TransferInterface;
 /**
  * Interface CreatePaymentRequestInterface
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  *
  * @property-read RecipientInterface|null $recipient Получатель платежа, если задан
  * @property-read AmountInterface $amount Сумма создаваемого платежа
@@ -53,11 +54,10 @@ use YooKassa\Model\TransferInterface;
  * @property-read bool $savePaymentMethod Сохранить платежные данные для последующего использования
  * @property-read bool $save_payment_method Сохранить платежные данные для последующего использования
  * @property-read bool $capture Автоматически принять поступившую оплату
- * @property-read string $clientIp IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес
- * TCP-подключения.
- * @property-read string $client_ip IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес
- * TCP-подключения.
+ * @property-read string $clientIp IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения.
+ * @property-read string $client_ip IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения.
  * @property-read Metadata $metadata Метаданные привязанные к платежу
+ * @property-read TransferInterface[] $transfers Метаданные привязанные к платежу
  */
 interface CreatePaymentRequestInterface
 {
@@ -72,6 +72,12 @@ interface CreatePaymentRequestInterface
      * @return bool True если получатель платежа задан, false если нет
      */
     function hasRecipient();
+
+    /**
+     * Устанавливает объект с информацией о получателе платежа
+     * @param RecipientInterface|null $value Инстанс объекта информации о получателе платежа или null
+     */
+    public function setRecipient($value);
 
     /**
      * Возвращает сумму заказа
@@ -90,6 +96,12 @@ interface CreatePaymentRequestInterface
      * @return bool True если описание транзакции установлено, false если нет
      */
     function hasDescription();
+
+    /**
+     * Устанавливает описание транзакции
+     * @param string $value Описание транзакции
+     */
+    public function setDescription($value);
 
     /**
      * Возвращает чек, если он есть
@@ -116,6 +128,12 @@ interface CreatePaymentRequestInterface
     function hasPaymentToken();
 
     /**
+     * Устанавливает одноразовый токен для проведения оплаты, сформированный YooKassa JS widget
+     * @param string $value Одноразовый токен для проведения оплаты
+     */
+    public function setPaymentToken($value);
+
+    /**
      * Устанавливает идентификатор закиси платёжных данных покупателя
      * @return string Идентификатор записи о сохраненных платежных данных покупателя
      */
@@ -126,6 +144,12 @@ interface CreatePaymentRequestInterface
      * @return bool True если идентификатор задан, false если нет
      */
     function hasPaymentMethodId();
+
+    /**
+     * Устанавливает идентификатор записи о сохранённых данных покупателя
+     * @param string $value Идентификатор записи о сохраненных платежных данных покупателя
+     */
+    public function setPaymentMethodId($value);
 
     /**
      * Возвращает данные для создания метода оплаты
@@ -140,6 +164,12 @@ interface CreatePaymentRequestInterface
     function hasPaymentMethodData();
 
     /**
+     * Устанавливает объект с информацией для создания метода оплаты
+     * @param AbstractPaymentData|null $value Объект с создания метода оплаты или null
+     */
+    public function setPaymentMethodData($value);
+
+    /**
      * Возвращает способ подтверждения платежа
      * @return AbstractConfirmationAttributes Способ подтверждения платежа
      */
@@ -150,6 +180,12 @@ interface CreatePaymentRequestInterface
      * @return bool True если способ подтверждения платежа был установлен, false если нет
      */
     function hasConfirmation();
+
+    /**
+     * Устанавливает способ подтверждения платежа
+     * @param AbstractConfirmationAttributes|null $value Способ подтверждения платежа
+     */
+    public function setConfirmation($value);
 
     /**
      * Возвращает флаг сохранения платёжных данных
@@ -164,6 +200,12 @@ interface CreatePaymentRequestInterface
     function hasSavePaymentMethod();
 
     /**
+     * Устанавливает флаг сохранения платёжных данных. Значение true инициирует создание многоразового payment_method.
+     * @param bool $value Сохранить платежные данные для последующего использования
+     */
+    public function setSavePaymentMethod($value);
+
+    /**
      * Возвращает флаг автоматического принятия поступившей оплаты
      * @return bool True если требуется автоматически принять поступившую оплату, false если нет
      */
@@ -174,6 +216,12 @@ interface CreatePaymentRequestInterface
      * @return bool True если флаг автоматического принятия оплаты был установлен, false если нет
      */
     function hasCapture();
+
+    /**
+     * Устанавливает флаг автоматического принятия поступившей оплаты
+     * @param bool $value Автоматически принять поступившую оплату
+     */
+    public function setCapture($value);
 
     /**
      * Возвращает IPv4 или IPv6-адрес покупателя
@@ -188,6 +236,12 @@ interface CreatePaymentRequestInterface
     function hasClientIp();
 
     /**
+     * Устанавливает IP адрес покупателя
+     * @param string $value IPv4 или IPv6-адрес покупателя
+     */
+    public function setClientIp($value);
+
+    /**
      * Возвращает данные оплаты установленные мерчантом
      * @return Metadata Метаданные привязанные к платежу
      */
@@ -200,10 +254,10 @@ interface CreatePaymentRequestInterface
     function hasMetadata();
 
     /**
-     * Проверяет были ли установлены данные длинной записи
-     * @return bool
+     * Устанавливает метаданные, привязанные к платежу
+     * @param Metadata|array|null $value Метаданные платежа, устанавливаемые мерчантом
      */
-    function hasAirline();
+    public function setMetadata($value);
 
     /**
      * Возвращает данные длинной записи
@@ -212,12 +266,38 @@ interface CreatePaymentRequestInterface
     function getAirline();
 
     /**
+     * Проверяет были ли установлены данные длинной записи
+     * @return bool
+     */
+    function hasAirline();
+
+    /**
+     * Устанавливает данные авиабилетов
+     * @param AirlineInterface $value Данные авиабилетов
+     */
+    public function setAirline($value);
+
+    /**
+     * Проверяет наличие данных о распределении денег
      * @return bool
      */
     function hasTransfers();
 
     /**
-     * @return TransferInterface[]
+     * Возвращает данные о распределении денег — сколько и в какой магазин нужно перевести.
+     * Присутствует, если вы используете решение ЮKassa для платформ.
+     * (https://yookassa.ru/developers/special-solutions/checkout-for-platforms/basics)
+     *
+     * @return TransferInterface[] Данные о распределении денег
      */
     function getTransfers();
+
+    /**
+     * Устанавливает данные о распределении денег — сколько и в какой магазин нужно перевести.
+     * Присутствует, если вы используете решение ЮKassa для платформ.
+     * (https://yookassa.ru/developers/special-solutions/checkout-for-platforms/basics)
+     *
+     * @param TransferInterface[]|array|null Данные о распределении денег
+     */
+    function setTransfers($value);
 }

@@ -31,7 +31,7 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Сценарий при котором необходимо направить плательщика в приложение партнера
  *
- * @package YooKassa\Model\ConfirmationAttributes
+ * @package YooKassa
  */
 class ConfirmationAttributesDeepLink extends AbstractConfirmationAttributes
 {

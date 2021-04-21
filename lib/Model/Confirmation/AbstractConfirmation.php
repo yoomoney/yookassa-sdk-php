@@ -38,18 +38,20 @@ use YooKassa\Model\ConfirmationType;
  *
  * @property-read string $type
  *
- * @method getConfirmationUrl
- * @method getConfirmationToken
- * @method getConfirmationData
+ * @method string getConfirmationUrl() Для ConfirmationRedirect
+ * @method string getConfirmationToken() Для ConfirmationEmbedded
+ * @method string getConfirmationData() Для ConfirmationQr
  */
 abstract class AbstractConfirmation extends AbstractObject
 {
     /**
+     * Тип подтверждения платежа
      * @var string
      */
     private $_type;
 
     /**
+     * Возвращает тип подтверждения платежа
      * @return string
      */
     public function getType()
@@ -58,9 +60,10 @@ abstract class AbstractConfirmation extends AbstractObject
     }
 
     /**
+     * Устанавливает тип подтверждения платежа
      * @param string $value
      */
-    protected function _setType($value)
+    protected function setType($value)
     {
         if ($value === null || $value === '') {
             throw new EmptyPropertyValueException(

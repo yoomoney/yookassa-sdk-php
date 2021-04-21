@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface CancellationDetailsInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $party Участник процесса платежа, который принял решение об отмене транзакции.
  * @property-read string $reason Причина отмены платежа.

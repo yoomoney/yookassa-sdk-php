@@ -29,7 +29,7 @@ namespace YooKassa\Helpers;
 /**
  * Класс объекта, кастящегося в строку, используется только в тестах
  *
- * @package YooKassa\Helpers
+ * @package YooKassa
  */
 class StringObject
 {

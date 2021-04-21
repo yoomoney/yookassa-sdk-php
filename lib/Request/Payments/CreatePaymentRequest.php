@@ -42,7 +42,9 @@ use YooKassa\Model\RecipientInterface;
 /**
  * Класс объекта запроса к API на проведение нового платежа
  *
- * @package YooKassa\Request\Payments
+ * @example 02-builder.php 11 78 Пример использования билдера
+ *
+ * @package YooKassa
  *
  * @property RecipientInterface $recipient Получатель платежа, если задан
  * @property AmountInterface $amount Сумма создаваемого платежа
@@ -55,10 +57,8 @@ use YooKassa\Model\RecipientInterface;
  * @property AbstractPaymentData $paymentMethodData Данные используемые для создания метода оплаты
  * @property AbstractPaymentData $payment_method_data Данные используемые для создания метода оплаты
  * @property AbstractConfirmationAttributes $confirmation Способ подтверждения платежа
- * @property bool $savePaymentMethod Сохранить платежные данные для последующего использования. Значение true
- * инициирует создание многоразового payment_method.
- * @property bool $save_payment_method Сохранить платежные данные для последующего использования. Значение true
- * инициирует создание многоразового payment_method.
+ * @property bool $savePaymentMethod Сохранить платежные данные для последующего использования. Значение true инициирует создание многоразового payment_method.
+ * @property bool $save_payment_method Сохранить платежные данные для последующего использования. Значение true инициирует создание многоразового payment_method.
  * @property bool $capture Автоматически принять поступившую оплату
  * @property string $clientIp IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения.
  * @property string $client_ip IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения.
@@ -480,29 +480,30 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * @return AirlineInterface
+     * Возвращает данные авиабилетов
+     * @return AirlineInterface Данные авиабилетов
      */
     public function getAirline()
     {
         return $this->_airline;
     }
 
-
     /**
-     * @param AirlineInterface $value
-     */
-    public function setAirline(AirlineInterface $value)
-    {
-        $this->_airline = $value;
-    }
-
-    /**
-     * Проверяет были ли установлены данные длинной записи
+     * Проверяет были ли установлены данные авиабилетов
      * @return bool
      */
     function hasAirline()
     {
         return $this->_airline !== null;
+    }
+
+    /**
+     * Устанавливает данные авиабилетов
+     * @param AirlineInterface $value Данные авиабилетов
+     */
+    public function setAirline($value)
+    {
+        $this->_airline = $value;
     }
 
     /**

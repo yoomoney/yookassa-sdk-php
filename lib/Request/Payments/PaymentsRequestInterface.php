@@ -29,7 +29,7 @@ namespace YooKassa\Request\Payments;
 /**
  * Interface PaymentsRequestInterface
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  *
  * @property-read string|null $cursor Страница выдачи результатов, которую необходимо отобразить
  * @property-read \DateTime|null $createdAtGte Время создания, от (включительно)

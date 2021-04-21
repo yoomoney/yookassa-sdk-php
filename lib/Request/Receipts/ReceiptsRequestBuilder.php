@@ -26,6 +26,7 @@
 
 namespace YooKassa\Request\Receipts;
 
+use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\AbstractRequestBuilder;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
@@ -33,7 +34,7 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 /**
  * Класс билдера объектов запросов к API списка чеков
  *
- * @package YooKassa\Request\Receipts
+ * @package YooKassa
  */
 class ReceiptsRequestBuilder extends AbstractRequestBuilder
 {
@@ -186,7 +187,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
     /**
      * Собирает и возвращает объект запроса списка чеков магазина
      * @param array|null $options Массив с настройками запроса
-     * @return ReceiptsRequestInterface Инстанс объекта запроса к API для получения списка чеков магазина
+     * @return ReceiptsRequestInterface|AbstractRequest Инстанс объекта запроса к API для получения списка чеков магазина
      */
     public function build(array $options = null)
     {

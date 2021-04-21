@@ -32,7 +32,7 @@ use YooKassa\Model\Refund;
 /**
  * Абстрактный класс ответа от API с информацией о возврате
  *
- * @package YooKassa\Request\Refunds
+ * @package YooKassa
  */
 abstract class AbstractRefundResponse extends Refund
 {
