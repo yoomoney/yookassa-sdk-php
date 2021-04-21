@@ -33,13 +33,15 @@ use YooKassa\Model\Settlement;
 /**
  * Класс сериалайзера объекта запроса к API создание чека
  *
- * @package YooKassa\Request\Receipts
+ * @package YooKassa
  */
 class CreatePostReceiptRequestSerializer
 {
     /**
-     * @param CreatePostReceiptRequestInterface $request
-     * @return array
+     * Сериализует объект запроса к API для дальнейшей его отправки
+     *
+     * @param CreatePostReceiptRequestInterface $request Сериализуемый объект
+     * @return array Массив с информацией, отправляемый в дальнейшем в API
      */
     public function serialize(CreatePostReceiptRequestInterface $request)
     {

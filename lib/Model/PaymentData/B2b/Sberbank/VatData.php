@@ -76,6 +76,7 @@ class VatData extends AbstractObject implements VatDataInterface
     }
 
     /**
+     * Возвращает способ расчёта НДС
      * @return string Способ расчёта НДС
      */
     public function getType()
@@ -106,6 +107,7 @@ class VatData extends AbstractObject implements VatDataInterface
     }
 
     /**
+     * Возвращает налоговую ставку НДС
      * @return string Налоговая ставка НДС
      */
     public function getRate()

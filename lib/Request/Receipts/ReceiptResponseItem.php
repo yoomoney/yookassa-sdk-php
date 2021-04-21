@@ -38,9 +38,9 @@ use YooKassa\Model\Supplier;
 use YooKassa\Model\SupplierInterface;
 
 /**
- * Interface ReceiptItemInterface
+ * Класс, описывающий товар в чеке
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property string $description Название товара (не более 128 символов).
  * @property float $quantity Количество товара. Максимально возможное значение зависит от модели вашей онлайн-кассы.

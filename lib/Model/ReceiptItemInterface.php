@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface ReceiptItemInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $description Наименование товара
  * @property-read float $quantity Количество

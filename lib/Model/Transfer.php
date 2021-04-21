@@ -34,6 +34,17 @@ use YooKassa\Helpers\TypeCast;
 
 /**
  * Класс объекта распределения денег в магазин
+ *
+ * Данные о распределении денег — сколько и в какой магазин нужно перевести.
+ * Присутствует, если вы используете решение ЮKassa для платформ.
+ *
+ * @property AmountInterface $amount Сумма, которую необходимо перечислить магазину
+ * @property AmountInterface $platform_fee_amount Комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу
+ * @property string $accountId Идентификатор магазина, в пользу которого вы принимаете оплату
+ * @property string $status Статус распределения денег между магазинами. Возможные значения: `pending`, `waiting_for_capture`, `succeeded`, `canceled`
+ * @property Metadata $metadata Любые дополнительные данные, которые нужны вам для работы с платежами (например, номер заказа)
+ *
+ * @package YooKassa
  */
 class Transfer extends AbstractObject implements TransferInterface
 {
@@ -56,6 +67,11 @@ class Transfer extends AbstractObject implements TransferInterface
      * @var string
      */
     private $_status;
+
+    /**
+     * @var string
+     */
+    private $_metadata;
 
     /**
      * Transfer constructor.
@@ -201,6 +217,40 @@ class Transfer extends AbstractObject implements TransferInterface
     public function getStatus()
     {
         return $this->_status;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function setMetadata($value)
+    {
+        if ($value === null || $value === '') {
+            $this->_metadata = null;
+        } elseif (is_array($value)) {
+            $this->_metadata = new Metadata($value);
+        } elseif ($value instanceof Metadata) {
+            $this->_metadata = $value;
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid value type for "metadata" parameter in Transfer', 0, 'transfer.metadata', $value
+            );
+        }
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function getMetadata()
+    {
+        return $this->_metadata;
+    }
+
+    /**
+     * @inheritDoc
+     */
+    public function hasMetadata()
+    {
+        return !empty($this->_metadata);
     }
 
     /**

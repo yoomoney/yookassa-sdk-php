@@ -29,7 +29,7 @@ namespace YooKassa\Request\Payments;
 /**
  * Класс сериализатора объектов запросов к API для получения списка платежей
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  */
 class PaymentsRequestSerializer
 {

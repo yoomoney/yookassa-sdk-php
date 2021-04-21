@@ -29,8 +29,8 @@ namespace YooKassa\Model\PaymentMethod;
 use YooKassa\Model\PaymentMethodType;
 
 /**
- * PaymentMethodGooglePay
- * Объект, описывающий метод оплаты, при оплате через Google Pay
+ * Класс, описывающий метод оплаты, при оплате через Google Pay
+ *
  * @property string $type Тип объекта
  */
 class PaymentMethodGooglePay extends AbstractPaymentMethod

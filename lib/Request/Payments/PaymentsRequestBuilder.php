@@ -34,9 +34,9 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 
 /**
- * Билдер объектов запросов к API для пролучения списка платежей магазина
+ * Класс билдера запросов к API для получения списка платежей магазина
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  */
 class PaymentsRequestBuilder extends AbstractRequestBuilder
 {

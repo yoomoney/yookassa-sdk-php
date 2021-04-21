@@ -36,7 +36,7 @@ use YooKassa\Model\RefundStatus;
 /**
  * Класс объекта запроса к API списка возвратов магазина
  *
- * @package YooKassa\Request\Receipts
+ * @package YooKassa
  *
  * @property \DateTime $createdAtGte Время создания, от (включительно)
  * @property \DateTime $createdAtGt Время создания, от (не включая)
@@ -50,6 +50,7 @@ use YooKassa\Model\RefundStatus;
  */
 class ReceiptsRequest extends AbstractRequest implements ReceiptsRequestInterface
 {
+    /** Максимальное количество объектов чеков в выборке */
     const MAX_LIMIT_VALUE = 100;
 
     /**

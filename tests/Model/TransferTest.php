@@ -37,6 +37,7 @@ class TransferTest extends TestCase
         self::assertNull($instance->platform_fee_amount);
         self::assertNull($instance->accountId);
         self::assertNull($instance->status);
+        self::assertNull($instance->metadata);
 
         $instance->fromArray($value);
 
@@ -48,6 +49,8 @@ class TransferTest extends TestCase
         self::assertSame($value['platform_fee_amount'], $instance->platform_fee_amount->jsonSerialize());
         self::assertSame($value['status'], $instance->getStatus());
         self::assertSame($value['status'], $instance->status);
+        self::assertSame($value['metadata'], $instance->getMetadata()->toArray());
+        self::assertSame($value['metadata'], $instance->metadata->toArray());
 
         self::assertSame($value, $instance->jsonSerialize());
     }
@@ -99,7 +102,10 @@ class TransferTest extends TestCase
                     'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
                     'currency' => Random::value(CurrencyCode::getValidValues())
                 ),
-                'status' => Random::value(TransferStatus::getValidValues())
+                'status' => Random::value(TransferStatus::getValidValues()),
+                'metadata' => array(
+                    Random::str(2, 16) => Random::str(2, 512),
+                )
             );
         }
         return array($result);

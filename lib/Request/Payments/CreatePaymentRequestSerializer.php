@@ -47,7 +47,7 @@ use YooKassa\Model\TransferInterface;
 /**
  * Класс сериалайзера объекта запроса к API на проведение платежа
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  */
 class CreatePaymentRequestSerializer
 {
@@ -75,6 +75,12 @@ class CreatePaymentRequestSerializer
         PaymentMethodType::WECHAT         => 'serializePaymentData',
     );
 
+    /**
+     * Формирует ассоциативный массив данных из объекта запроса
+     *
+     * @param CreatePaymentRequestInterface $request Объект запроса
+     * @return array Массив данных для дальнейшего кодирования в JSON
+     */
     public function serialize(CreatePaymentRequestInterface $request)
     {
         $result = array();

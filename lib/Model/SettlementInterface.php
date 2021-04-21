@@ -29,7 +29,7 @@ namespace YooKassa\Model;
 /**
  * Interface PostReceiptResponseSettlementInterface
  *
- * @package YooKassa\Model
+ * @package YooKassa
  *
  * @property-read string $type Вид оплаты в чеке
  * @property-read AmountInterface $amount Размер оплаты

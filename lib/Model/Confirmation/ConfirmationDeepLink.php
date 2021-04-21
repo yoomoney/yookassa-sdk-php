@@ -31,12 +31,12 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Сценарий при котором необходимо направить плательщика в приложение партнера
  *
- * @package YooKassa\Model\Confirmation
+ * @package YooKassa
  */
 class ConfirmationDeepLink extends AbstractConfirmation
 {
     public function __construct()
     {
-        $this->_setType(ConfirmationType::DEEPLINK);
+        $this->setType(ConfirmationType::DEEPLINK);
     }
 }

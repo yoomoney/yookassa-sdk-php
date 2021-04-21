@@ -31,12 +31,12 @@ use YooKassa\Model\ConfirmationType;
 /**
  * Сценарий при котором необходимо получить одноразовый код от плательщика для подтверждения платежа
  *
- * @package YooKassa\Model\Confirmation
+ * @package YooKassa
  */
 class ConfirmationCodeVerification extends AbstractConfirmation
 {
     public function __construct()
     {
-        $this->_setType(ConfirmationType::CODE_VERIFICATION);
+        $this->setType(ConfirmationType::CODE_VERIFICATION);
     }
 }

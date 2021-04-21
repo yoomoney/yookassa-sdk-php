@@ -29,7 +29,7 @@ namespace YooKassa\Request\Refunds;
 /**
  * Интерфейс объекта запроса списка возвратов
  *
- * @package YooKassa\Request\Refunds
+ * @package YooKassa
  *
  * @property-read string $paymentId Идентификатор платежа
  * @property-read \DateTime $createdAtGte Время создания, от (включительно)

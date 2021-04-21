@@ -33,7 +33,7 @@ use YooKassa\Model\TransferInterface;
 /**
  * Класс объекта осуществляющего сериализацию запроса к API на подтверждение заказа
  *
- * @package YooKassa\Request\Payments\Payment
+ * @package YooKassa
  */
 class CreateCaptureRequestSerializer
 {

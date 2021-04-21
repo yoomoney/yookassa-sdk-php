@@ -97,7 +97,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает полное наименование организации
+     * @param string $value Полное наименование организации
      */
     public function setFullName($value)
     {
@@ -114,7 +115,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает сокращенное наименование организации
+     * @param string $value Сокращенное наименование организации
      */
     public function setShortName($value)
     {
@@ -131,7 +133,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает адрес организации
+     * @param string $value Адрес организации
      */
     public function setAddress($value)
     {
@@ -148,7 +151,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает ИНН организации
+     * @param string $value ИНН организации
      */
     public function setInn($value)
     {
@@ -165,7 +169,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает КПП организации
+     * @param string $value КПП организации
      */
     public function setKpp($value)
     {
@@ -182,7 +187,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает наименование банка организации
+     * @param string $value Наименование банка организации
      */
     public function setBankName($value)
     {
@@ -199,7 +205,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает отделение банка организации
+     * @param string $value Отделение банка организации
      */
     public function setBankBranch($value)
     {
@@ -216,7 +223,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает БИК банка организации
+     * @param string $value БИК банка организации
      */
     public function setBankBik($value)
     {
@@ -233,7 +241,8 @@ class PayerBankDetails extends AbstractObject implements PayerBankDetailsInterfa
     }
 
     /**
-     * @param string $value
+     * Устанавливает номер счета организации
+     * @param string $value Номер счета организации
      */
     public function setAccount($value)
     {

@@ -31,7 +31,7 @@ use YooKassa\Request\Payments\AbstractPaymentResponse;
 /**
  * Класс объекта ответа от API на запрос подтверждения платежа
  *
- * @package YooKassa\Request\Payments\Payment
+ * @package YooKassa
  */
 class CreateCaptureResponse extends AbstractPaymentResponse
 {}

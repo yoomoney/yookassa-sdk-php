@@ -29,7 +29,7 @@ namespace YooKassa\Common;
 /**
  * Базовый класс генерируемых enum'ов
  *
- * @package YooKassa\Common
+ * @package YooKassa
  */
 abstract class AbstractEnum
 {

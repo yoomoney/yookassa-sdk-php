@@ -52,6 +52,7 @@ use YooKassa\Model\PaymentStatus;
  */
 class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterface
 {
+    /** Максимальное количество объектов платежа в выборке */
     const MAX_LIMIT_VALUE = 100;
 
     /**

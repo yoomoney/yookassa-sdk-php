@@ -30,12 +30,26 @@ namespace YooKassa\Model;
 interface PassengerInterface
 {
     /**
+     * Возвращает имя пассажира
      * @return string
      */
     public function getFirstName();
 
     /**
+     * Устанавливает имя пассажира
+     * @param string $value Имя пассажира
+     */
+    public function setFirstName($value);
+
+    /**
+     * Возвращает фамилию пассажира
      * @return string
      */
     public function getLastName();
+
+    /**
+     * Устанавливает фамилию пассажира
+     * @param string $value Фамилия пассажира
+     */
+    public function setLastName($value);
 }

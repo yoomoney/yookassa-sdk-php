@@ -324,7 +324,7 @@ class Refund extends AbstractObject implements RefundInterface
     }
 
     /**
-     * @return SourceInterface[]
+     * @inheritdoc
      */
     public function getSources()
     {
@@ -359,7 +359,8 @@ class Refund extends AbstractObject implements RefundInterface
     }
 
     /**
-     * @return RequestorInterface
+     * Возвращает инициатора платежа или возврата
+     * @return RequestorInterface Инициатор платежа или возврата
      */
     public function getRequestor()
     {
@@ -367,7 +368,8 @@ class Refund extends AbstractObject implements RefundInterface
     }
 
     /**
-     * @param $value
+     * Устанавливает инициатора платежа или возврата
+     * @param RequestorInterface|array $value Инициатор платежа или возврата
      */
     public function setRequestor($value)
     {

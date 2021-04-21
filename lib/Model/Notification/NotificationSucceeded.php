@@ -37,7 +37,9 @@ use YooKassa\Request\Payments\PaymentResponse;
 /**
  * Класс объекта, присылаемого API при изменении статуса платежа на "succeeded"
  *
- * @package YooKassa\Model\Notification
+ * @example 03-notification.php 3 Пример скрипта обработки уведомления
+ *
+ * @package YooKassa
  *
  * @property-read PaymentInterface $object Объект с информацией о платеже
  */

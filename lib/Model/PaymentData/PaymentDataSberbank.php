@@ -55,6 +55,7 @@ class PaymentDataSberbank extends AbstractPaymentData
     }
 
     /**
+     * Возвращает номер телефона в формате ITU-T E.164
      * @return string
      */
     public function getPhone()
@@ -63,6 +64,7 @@ class PaymentDataSberbank extends AbstractPaymentData
     }
 
     /**
+     * Устанавливает номер телефона в формате ITU-T E.164
      * @param string $value
      */
     public function setPhone($value)

@@ -39,9 +39,13 @@ use YooKassa\Common\AbstractEnum;
  */
 class VatDataRate extends AbstractEnum
 {
+    /** 7% */
     const RATE_7  = '7';
+    /** 10% */
     const RATE_10 = '10';
+    /** 18% */
     const RATE_18 = '18';
+    /** 20% */
     const RATE_20 = '20';
 
     protected static $validValues = array(

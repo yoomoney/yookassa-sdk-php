@@ -29,7 +29,7 @@ namespace YooKassa\Request\Payments;
 /**
  * Класс объекта ответа, возвращаемого API при запросе конкретного платежа
  *
- * @package YooKassa\Request\Payments
+ * @package YooKassa
  */
 class PaymentResponse extends AbstractPaymentResponse
 {}
