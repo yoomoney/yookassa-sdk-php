@@ -154,19 +154,15 @@ try {
         array(
             'account_id' => 123456,
             'amount' => array(
-                array(
-                    'value' => 1000,
-                    'currency' => \YooKassa\Model\CurrencyCode::RUB
-                )
+                'value' => 1000,
+                'currency' => \YooKassa\Model\CurrencyCode::RUB
             ),
         ),
         array(
             'account_id' => 654321,
             'amount' => array(
-                array(
-                    'value' => 2000,
-                    'currency' => \YooKassa\Model\CurrencyCode::RUB
-                )
+                'value' => 2000,
+                'currency' => \YooKassa\Model\CurrencyCode::RUB
             ),
         )
     ));
