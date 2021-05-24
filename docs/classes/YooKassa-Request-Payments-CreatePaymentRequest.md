@@ -150,7 +150,7 @@ var_dump($response);
 | public | [getTransfers()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_getTransfers) |  | Возвращает данные о распределении денег — сколько и в какой магазин нужно перевести. |
 | public | [hasAirline()](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md#method_hasAirline) |  | Проверяет были ли установлены данные авиабилетов |
 | public | [hasAmount()](../classes/YooKassa-Common-AbstractPaymentRequest.md#method_hasAmount) |  | Проверяет была ли установлена сумма оплаты |
-| public | [hasCapture()](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md#method_hasCapture) |  | Проверяет был ли установлен флаг автоматического приняти поступившей оплаты |
+| public | [hasCapture()](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md#method_hasCapture) |  | Проверяет был ли установлен флаг автоматического принятия поступившей оплаты |
 | public | [hasClientIp()](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md#method_hasClientIp) |  | Проверяет был ли установлен IPv4 или IPv6-адрес покупателя |
 | public | [hasConfirmation()](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md#method_hasConfirmation) |  | Проверяет был ли установлен способ подтверждения платежа |
 | public | [hasDescription()](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md#method_hasDescription) |  | Проверяет наличие описания транзакции в создаваемом платеже |
@@ -458,7 +458,7 @@ IPv4 или IPv6-адрес покупателя. Если не указан, и
 #### public __construct() : mixed
 
 ```php
-public __construct(array  data = array()) : mixed
+public __construct(array $data = array()) : mixed
 ```
 
 **Summary**
@@ -479,7 +479,7 @@ AbstractObject constructor.
 #### public __get() : mixed
 
 ```php
-public __get(string  propertyName) : mixed
+public __get(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -500,7 +500,7 @@ public __get(string  propertyName) : mixed
 #### public __isset() : bool
 
 ```php
-public __isset(string  propertyName) : bool
+public __isset(string $propertyName) : bool
 ```
 
 **Summary**
@@ -521,7 +521,7 @@ public __isset(string  propertyName) : bool
 #### public __set() : mixed
 
 ```php
-public __set(string  propertyName, mixed  value) : mixed
+public __set(string $propertyName, mixed $value) : mixed
 ```
 
 **Summary**
@@ -543,7 +543,7 @@ public __set(string  propertyName, mixed  value) : mixed
 #### public __unset() : mixed
 
 ```php
-public __unset(string  propertyName) : mixed
+public __unset(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -574,7 +574,7 @@ Static public builder() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequest](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md)
 
-**Returns:** \YooKassa\Request\Payments\CreatePaymentRequestBuilder - Инстанс билдера объектов запрсов
+**Returns:** \YooKassa\Request\Payments\CreatePaymentRequestBuilder - Инстанс билдера объектов запросов
 
 
 <a name="method_clearValidationError" class="anchor"></a>
@@ -598,7 +598,7 @@ public clearValidationError() : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable  sourceArray) : mixed
+public fromArray(array|\Traversable $sourceArray) : mixed
 ```
 
 **Summary**
@@ -918,7 +918,7 @@ public hasCapture() : bool
 
 **Summary**
 
-Проверяет был ли установлен флаг автоматического приняти поступившей оплаты
+Проверяет был ли установлен флаг автоматического принятия поступившей оплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequest](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md)
@@ -1093,7 +1093,7 @@ public hasSavePaymentMethod() : bool
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequest](../classes/YooKassa-Request-Payments-CreatePaymentRequest.md)
 
-**Returns:** bool - True если флыг был установлен, false если нет
+**Returns:** bool - True если флаг был установлен, false если нет
 
 
 <a name="method_hasTransfers" class="anchor"></a>
@@ -1134,7 +1134,7 @@ public jsonSerialize() : array
 #### public offsetExists() : bool
 
 ```php
-public offsetExists(string  offset) : bool
+public offsetExists(string $offset) : bool
 ```
 
 **Summary**
@@ -1155,7 +1155,7 @@ public offsetExists(string  offset) : bool
 #### public offsetGet() : mixed
 
 ```php
-public offsetGet(string  offset) : mixed
+public offsetGet(string $offset) : mixed
 ```
 
 **Summary**
@@ -1176,7 +1176,7 @@ public offsetGet(string  offset) : mixed
 #### public offsetSet() : mixed
 
 ```php
-public offsetSet(string  offset, mixed  value) : mixed
+public offsetSet(string $offset, mixed $value) : mixed
 ```
 
 **Summary**
@@ -1198,7 +1198,7 @@ public offsetSet(string  offset, mixed  value) : mixed
 #### public offsetUnset() : mixed
 
 ```php
-public offsetUnset(string  offset) : mixed
+public offsetUnset(string $offset) : mixed
 ```
 
 **Summary**
@@ -1236,7 +1236,7 @@ public removeReceipt() : mixed
 #### public setAirline() : mixed
 
 ```php
-public setAirline(\YooKassa\Model\AirlineInterface  value) : mixed
+public setAirline(\YooKassa\Model\AirlineInterface $value) : mixed
 ```
 
 **Summary**
@@ -1257,7 +1257,7 @@ public setAirline(\YooKassa\Model\AirlineInterface  value) : mixed
 #### public setAmount() : mixed
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface  value) : mixed
+public setAmount(\YooKassa\Model\AmountInterface $value) : mixed
 ```
 
 **Summary**
@@ -1278,7 +1278,7 @@ public setAmount(\YooKassa\Model\AmountInterface  value) : mixed
 #### public setCapture() : mixed
 
 ```php
-public setCapture(bool  value) : mixed
+public setCapture(bool $value) : mixed
 ```
 
 **Summary**
@@ -1303,7 +1303,7 @@ public setCapture(bool  value) : mixed
 #### public setClientIp() : mixed
 
 ```php
-public setClientIp(string  value) : mixed
+public setClientIp(string $value) : mixed
 ```
 
 **Summary**
@@ -1328,7 +1328,7 @@ public setClientIp(string  value) : mixed
 #### public setConfirmation() : mixed
 
 ```php
-public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes|null  value) : mixed
+public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes|null $value) : mixed
 ```
 
 **Summary**
@@ -1353,7 +1353,7 @@ public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmati
 #### public setDescription() : mixed
 
 ```php
-public setDescription(string  value) : mixed
+public setDescription(string $value) : mixed
 ```
 
 **Summary**
@@ -1379,7 +1379,7 @@ public setDescription(string  value) : mixed
 #### public setMetadata() : mixed
 
 ```php
-public setMetadata(\YooKassa\Model\Metadata|array|null  value) : mixed
+public setMetadata(\YooKassa\Model\Metadata|array|null $value) : mixed
 ```
 
 **Summary**
@@ -1404,7 +1404,7 @@ public setMetadata(\YooKassa\Model\Metadata|array|null  value) : mixed
 #### public setPaymentMethodData() : mixed
 
 ```php
-public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|null  value) : mixed
+public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|null $value) : mixed
 ```
 
 **Summary**
@@ -1429,7 +1429,7 @@ public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|null
 #### public setPaymentMethodId() : mixed
 
 ```php
-public setPaymentMethodId(string  value) : mixed
+public setPaymentMethodId(string $value) : mixed
 ```
 
 **Summary**
@@ -1454,7 +1454,7 @@ public setPaymentMethodId(string  value) : mixed
 #### public setPaymentToken() : mixed
 
 ```php
-public setPaymentToken(string  value) : mixed
+public setPaymentToken(string $value) : mixed
 ```
 
 **Summary**
@@ -1480,7 +1480,7 @@ public setPaymentToken(string  value) : mixed
 #### public setReceipt() : mixed
 
 ```php
-public setReceipt(\YooKassa\Model\ReceiptInterface|null  value) : mixed
+public setReceipt(\YooKassa\Model\ReceiptInterface|null $value) : mixed
 ```
 
 **Summary**
@@ -1505,7 +1505,7 @@ public setReceipt(\YooKassa\Model\ReceiptInterface|null  value) : mixed
 #### public setRecipient() : mixed
 
 ```php
-public setRecipient(\YooKassa\Model\RecipientInterface|null  value) : mixed
+public setRecipient(\YooKassa\Model\RecipientInterface|null $value) : mixed
 ```
 
 **Summary**
@@ -1526,7 +1526,7 @@ public setRecipient(\YooKassa\Model\RecipientInterface|null  value) : mixed
 #### public setSavePaymentMethod() : mixed
 
 ```php
-public setSavePaymentMethod(bool  value) : mixed
+public setSavePaymentMethod(bool $value) : mixed
 ```
 
 **Summary**
@@ -1551,7 +1551,7 @@ public setSavePaymentMethod(bool  value) : mixed
 #### public setTransfers() : mixed
 
 ```php
-public setTransfers(\YooKassa\Model\TransferInterface[]|array|null  value) : mixed
+public setTransfers(\YooKassa\Model\TransferInterface[]|array|null $value) : mixed
 ```
 
 **Summary**
@@ -1624,7 +1624,7 @@ protected getUnknownProperties() : array
 #### protected setValidationError() : mixed
 
 ```php
-protected setValidationError(string  value) : mixed
+protected setValidationError(string $value) : mixed
 ```
 
 **Summary**
@@ -1657,6 +1657,6 @@ protected setValidationError(string  value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -100,7 +100,7 @@ try {
 #### public factory() : \YooKassa\Model\Notification\AbstractNotification
 
 ```php
-public factory(array  data) : \YooKassa\Model\Notification\AbstractNotification
+public factory(array $data) : \YooKassa\Model\Notification\AbstractNotification
 ```
 
 **Details:**
@@ -129,6 +129,6 @@ public factory(array  data) : \YooKassa\Model\Notification\AbstractNotification
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

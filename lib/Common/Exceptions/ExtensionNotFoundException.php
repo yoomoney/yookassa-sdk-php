@@ -28,6 +28,11 @@ namespace YooKassa\Common\Exceptions;
 
 use Exception;
 
+/**
+ * Требуемое PHP расширение не установлено.
+ *
+ * @package YooKassa
+ */
 class ExtensionNotFoundException extends Exception
 {
     /**

@@ -3,6 +3,10 @@
 # Class: \YooKassa\Common\Exceptions\ApiException
 ### Namespace: [\YooKassa\Common\Exceptions](../namespaces/yookassa-common-exceptions.md)
 ---
+**Summary:**
+
+Неожиданный код ошибки.
+
 ---
 ### Constants
 * No constants found
@@ -22,7 +26,7 @@
 ---
 ### Details
 * File: [lib/Common/Exceptions/ApiException.php](../../lib/Common/Exceptions/ApiException.php)
-* Package: Default
+* Package: YooKassa
 * Class Hierarchy: 
   * [\Exception](\Exception)
   * \YooKassa\Common\Exceptions\ApiException
@@ -51,7 +55,7 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(string  message = &quot;&quot;, int  code, string[]  responseHeaders = array(), mixed  responseBody = null) : mixed
+public __construct(string $message = &quot;&quot;, int $code, string[] $responseHeaders = array(), mixed $responseBody = null) : mixed
 ```
 
 **Summary**
@@ -113,6 +117,6 @@ public getResponseHeaders() : string[]
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

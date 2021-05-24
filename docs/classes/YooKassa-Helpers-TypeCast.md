@@ -32,7 +32,7 @@
 #### public canCastToBoolean() : bool
 
 ```php
-Static public canCastToBoolean(mixed  value) : bool
+Static public canCastToBoolean(mixed $value) : bool
 ```
 
 **Summary**
@@ -53,7 +53,7 @@ Static public canCastToBoolean(mixed  value) : bool
 #### public canCastToDateTime() : bool
 
 ```php
-Static public canCastToDateTime(mixed  value) : bool
+Static public canCastToDateTime(mixed $value) : bool
 ```
 
 **Summary**
@@ -74,7 +74,7 @@ Static public canCastToDateTime(mixed  value) : bool
 #### public canCastToEnumString() : bool
 
 ```php
-Static public canCastToEnumString(mixed  value) : bool
+Static public canCastToEnumString(mixed $value) : bool
 ```
 
 **Summary**
@@ -95,7 +95,7 @@ Static public canCastToEnumString(mixed  value) : bool
 #### public canCastToString() : bool
 
 ```php
-Static public canCastToString(mixed  value) : bool
+Static public canCastToString(mixed $value) : bool
 ```
 
 **Summary**
@@ -116,7 +116,7 @@ Static public canCastToString(mixed  value) : bool
 #### public castToDateTime() : \DateTime|null
 
 ```php
-Static public castToDateTime(string|int|\DateTime  value) : \DateTime|null
+Static public castToDateTime(string|int|\DateTime $value) : \DateTime|null
 ```
 
 **Summary**
@@ -153,6 +153,6 @@ Static public castToDateTime(string|int|\DateTime  value) : \DateTime|null
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

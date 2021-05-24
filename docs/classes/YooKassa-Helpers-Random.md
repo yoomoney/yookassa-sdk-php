@@ -55,7 +55,7 @@ Static public bool() : bool
 #### public bytes() : string
 
 ```php
-Static public bytes(int  length, bool  useBest = true) : string
+Static public bytes(int $length, bool $useBest = true) : string
 ```
 
 **Summary**
@@ -81,7 +81,7 @@ Static public bytes(int  length, bool  useBest = true) : string
 #### public float() : float
 
 ```php
-Static public float(float|null  min = null, float|null  max = null, bool  useBest = true) : float
+Static public float(float|null $min = null, float|null $max = null, bool $useBest = true) : float
 ```
 
 **Summary**
@@ -108,7 +108,7 @@ Static public float(float|null  min = null, float|null  max = null, bool  useBes
 #### public hex() : string
 
 ```php
-Static public hex(int  length, bool  useBest = true) : string
+Static public hex(int $length, bool $useBest = true) : string
 ```
 
 **Summary**
@@ -134,7 +134,7 @@ Static public hex(int  length, bool  useBest = true) : string
 #### public int() : int
 
 ```php
-Static public int(int|null  min = null, int|null  max = null, bool  useBest = true) : int
+Static public int(int|null $min = null, int|null $max = null, bool $useBest = true) : int
 ```
 
 **Summary**
@@ -161,7 +161,7 @@ Static public int(int|null  min = null, int|null  max = null, bool  useBest = tr
 #### public str() : string
 
 ```php
-Static public str(int  length, int|null  maxLength = null, string|array|null  characters = null, bool  useBest = true) : string
+Static public str(int $length, int|null $maxLength = null, string|array|null $characters = null, bool $useBest = true) : string
 ```
 
 **Summary**
@@ -189,7 +189,7 @@ Static public str(int  length, int|null  maxLength = null, string|array|null  ch
 #### public value() : mixed
 
 ```php
-Static public value(array  values, bool  useBest = true) : mixed
+Static public value(array $values, bool $useBest = true) : mixed
 ```
 
 **Summary**
@@ -227,6 +227,6 @@ Static public value(array  values, bool  useBest = true) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

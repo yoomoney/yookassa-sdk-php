@@ -26,6 +26,11 @@
 
 namespace YooKassa\Common\Exceptions;
 
+/**
+ * Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+ *
+ * @package YooKassa
+ */
 class BadApiRequestException extends ApiException
 {
     const HTTP_CODE = 400;

@@ -309,7 +309,10 @@ class Payment extends AbstractObject implements PaymentInterface
             $length = mb_strlen((string)$value, 'utf-8');
             if ($length > self::MAX_LENGTH_DESCRIPTION) {
                 throw new InvalidPropertyValueException(
-                    'Invalid description value', 0, 'CreatePaymentRequest.description', $value
+                    'The value of the description parameter is too long. Max length is ' . self::MAX_LENGTH_DESCRIPTION,
+                    0,
+                    'CreatePaymentRequest.description',
+                    $value
                 );
             }
             $this->_description = (string)$value;

@@ -79,7 +79,7 @@ PREFIX_DATA_MATRIX = '444D'
 #### public __construct() : mixed
 
 ```php
-public __construct(string|null  codeDataMatrix = null, bool|string  usePrefix = false) : mixed
+public __construct(string|null $codeDataMatrix = null, bool|string $usePrefix = false) : mixed
 ```
 
 **Summary**
@@ -220,7 +220,7 @@ public isUsePrefix() : bool
 #### public setGtin() : \YooKassa\Helpers\ProductCode
 
 ```php
-public setGtin(string  gtin) : \YooKassa\Helpers\ProductCode
+public setGtin(string $gtin) : \YooKassa\Helpers\ProductCode
 ```
 
 **Summary**
@@ -241,7 +241,7 @@ public setGtin(string  gtin) : \YooKassa\Helpers\ProductCode
 #### public setPrefix() : \YooKassa\Helpers\ProductCode
 
 ```php
-public setPrefix(string|int  prefix) : \YooKassa\Helpers\ProductCode
+public setPrefix(string|int $prefix) : \YooKassa\Helpers\ProductCode
 ```
 
 **Summary**
@@ -262,7 +262,7 @@ public setPrefix(string|int  prefix) : \YooKassa\Helpers\ProductCode
 #### public setSerial() : \YooKassa\Helpers\ProductCode
 
 ```php
-public setSerial(string  serial) : \YooKassa\Helpers\ProductCode
+public setSerial(string $serial) : \YooKassa\Helpers\ProductCode
 ```
 
 **Summary**
@@ -283,7 +283,7 @@ public setSerial(string  serial) : \YooKassa\Helpers\ProductCode
 #### public setUsePrefix() : \YooKassa\Helpers\ProductCode
 
 ```php
-public setUsePrefix(bool  usePrefix) : \YooKassa\Helpers\ProductCode
+public setUsePrefix(bool $usePrefix) : \YooKassa\Helpers\ProductCode
 ```
 
 **Summary**
@@ -333,6 +333,6 @@ public validate() : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

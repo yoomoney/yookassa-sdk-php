@@ -74,7 +74,7 @@ public getObjectId() : string
 #### public setObjectId() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setObjectId(string  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setObjectId(string $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -112,7 +112,7 @@ public getType() : string
 #### public setType() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setType(string  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setType(string $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -154,7 +154,7 @@ public getSend() : mixed
 #### public setSend() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setSend(bool  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setSend(bool $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -196,7 +196,7 @@ public getTaxSystemCode() : mixed
 #### public setTaxSystemCode() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setTaxSystemCode(int  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setTaxSystemCode(int $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -234,7 +234,7 @@ public getCustomer() : \YooKassa\Model\ReceiptCustomerInterface
 #### public setCustomer() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setCustomer(\YooKassa\Model\ReceiptCustomerInterface  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setCustomer(\YooKassa\Model\ReceiptCustomerInterface $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -276,7 +276,7 @@ public getItems() : mixed
 #### public setItems() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setItems(\YooKassa\Model\ReceiptItemInterface[]|array  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setItems(\YooKassa\Model\ReceiptItemInterface[]|array $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -297,7 +297,7 @@ public setItems(\YooKassa\Model\ReceiptItemInterface[]|array  value) : \YooKassa
 #### public addItem() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public addItem(\YooKassa\Model\ReceiptItemInterface|array  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public addItem(\YooKassa\Model\ReceiptItemInterface|array $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -339,7 +339,7 @@ public getSettlements() : mixed
 #### public setSettlements() : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 
 ```php
-public setSettlements(\YooKassa\Model\SettlementInterface[]|array  value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
+public setSettlements(\YooKassa\Model\SettlementInterface[]|array $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface
 ```
 
 **Summary**
@@ -377,7 +377,7 @@ public getOnBehalfOf() : string|null
 #### public setOnBehalfOf() : mixed
 
 ```php
-public setOnBehalfOf(string  value) : mixed
+public setOnBehalfOf(string $value) : mixed
 ```
 
 **Summary**
@@ -433,6 +433,6 @@ public notEmpty() : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

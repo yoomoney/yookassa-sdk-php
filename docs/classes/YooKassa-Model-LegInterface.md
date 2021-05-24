@@ -78,7 +78,7 @@ public getDepartureDate() : string
 #### public setDepartureAirport() : mixed
 
 ```php
-public setDepartureAirport(string  value) : mixed
+public setDepartureAirport(string $value) : mixed
 ```
 
 **Summary**
@@ -99,7 +99,7 @@ public setDepartureAirport(string  value) : mixed
 #### public setDestinationAirport() : mixed
 
 ```php
-public setDestinationAirport(string  value) : mixed
+public setDestinationAirport(string $value) : mixed
 ```
 
 **Summary**
@@ -120,7 +120,7 @@ public setDestinationAirport(string  value) : mixed
 #### public setDepartureDate() : mixed
 
 ```php
-public setDepartureDate(\DateTime|string  value) : mixed
+public setDepartureDate(\DateTime|string $value) : mixed
 ```
 
 **Summary**
@@ -154,6 +154,6 @@ public setDepartureDate(\DateTime|string  value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -94,7 +94,7 @@ class Client extends BaseClient
     /**
      * Текущая версия библиотеки
      */
-    const SDK_VERSION = '2.1.0';
+    const SDK_VERSION = '2.1.1';
 
     /**
      * Получить список платежей магазина
@@ -109,16 +109,17 @@ class Client extends BaseClient
      *
      * @param PaymentsRequestInterface|array|null $filter
      *
-     * @return PaymentsResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @return PaymentsResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function getPayments($filter = null)
@@ -174,18 +175,19 @@ class Client extends BaseClient
      * @example 01-client.php 21 28 Запрос на создание платежа
      *
      * @param CreatePaymentRequestInterface|array $payment
-     * @param string|null $idempotenceKey {@link https://yookassa.ru/developers/using-api/basics?lang=php#idempotence}
+     * @param string|null $idempotenceKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
      *
-     * @return CreatePaymentResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws Exception
+     * @return CreatePaymentResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      */
     public function createPayment($payment, $idempotenceKey = null)
     {
@@ -227,18 +229,19 @@ class Client extends BaseClient
      *
      * @example 01-client.php 162 8 Получить информацию о платеже
      *
-     * @param string $paymentId
+     * @param string $paymentId Идентификатор платежа
      *
-     * @return PaymentInterface
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @return PaymentInterface|null Объект платежа
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      */
     public function getPaymentInfo($paymentId)
     {
@@ -279,18 +282,20 @@ class Client extends BaseClient
      * @example 01-client.php 51 34 Подтверждение платежа
      *
      * @param CreateCaptureRequestInterface|array $captureRequest
-     * @param $paymentId
-     * @param $idempotencyKey {@link https://yookassa.ru/developers/using-api/basics?lang=php#idempotence}
+     * @param string $paymentId Идентификатор платежа
+     * @param string|null $idempotencyKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
      *
-     * @return CreateCaptureResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
+     * @return CreateCaptureResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function capturePayment($captureRequest, $paymentId, $idempotencyKey = null)
@@ -343,18 +348,20 @@ class Client extends BaseClient
      *
      * @example 01-client.php 87 9 Отменить незавершенную оплату заказа
      *
-     * @param $paymentId
-     * @param $idempotencyKey {@link https://yookassa.ru/developers/using-api/basics?lang=php#idempotence}
+     * @param string $paymentId Идентификатор платежа
+     * @param string|null $idempotencyKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
      *
-     * @return CancelResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
+     * @return CancelResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function cancelPayment($paymentId, $idempotencyKey = null)
@@ -401,16 +408,17 @@ class Client extends BaseClient
      *
      * @param RefundsRequestInterface|array|null $filter
      *
-     * @return RefundsResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @return RefundsResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function getRefunds($filter = null)
@@ -450,17 +458,19 @@ class Client extends BaseClient
      * @example 01-client.php 134 26 Запрос на создание возврата
      *
      * @param CreateRefundRequestInterface|array $request
-     * @param null $idempotencyKey {@link https://yookassa.ru/developers/using-api/basics?lang=php#idempotence}
+     * @param string|null $idempotencyKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
      *
-     * @return CreateRefundResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
+     * @return CreateRefundResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function createRefund($request, $idempotencyKey = null)
@@ -503,18 +513,19 @@ class Client extends BaseClient
      *
      * @example 01-client.php 182 8 Получить информацию о возврате
      *
-     * @param $refundId
+     * @param string $refundId Идентификатор возврата
      *
-     * @return RefundResponse
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @return RefundResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function getRefundInfo($refundId)
@@ -548,19 +559,19 @@ class Client extends BaseClient
      *
      * @example 01-client.php 192 32 Создание Webhook
      *
-     * @param $request
-     * @param null $idempotencyKey
+     * @param Webhook|array $request
+     * @param string|null $idempotencyKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
      * @return Webhook|null
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws AuthorizeException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function addWebhook($request, $idempotencyKey = null)
@@ -607,20 +618,20 @@ class Client extends BaseClient
      *
      * @example 01-client.php 192 32 Удаление Webhook
      *
-     * @param $webhookId
-     * @param null $idempotencyKey
+     * @param string $webhookId Идентификатор Webhook
+     * @param string|null $idempotencyKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
 
      * @return Webhook|null
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws AuthorizeException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function removeWebhook($webhookId, $idempotencyKey = null)
@@ -656,16 +667,16 @@ class Client extends BaseClient
      *
      * @return WebhookListResponse|null
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws AuthorizeException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     * @throws AuthorizeException Ошибка авторизации. Не установлен заголовок.
      */
     public function getWebhooks()
     {
@@ -700,15 +711,15 @@ class Client extends BaseClient
      *
      * @return ReceiptsResponse
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws Exception
      */
     public function getReceipts($filter = null)
@@ -747,20 +758,20 @@ class Client extends BaseClient
      * @example 01-client.php 98 34 Запрос на создание чека
      *
      * @param CreatePostReceiptRequestInterface|array $receipt
-     * @param string|null $idempotenceKey
+     * @param string|null $idempotenceKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
      *
      * @return AbstractReceiptResponse|null
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ApiConnectionException
-     * @throws AuthorizeException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     * @throws AuthorizeException Ошибка авторизации. Не установлен заголовок.
      * @throws Exception
      */
     public function createReceipt($receipt, $idempotenceKey = null)
@@ -805,19 +816,19 @@ class Client extends BaseClient
      *
      * @example 01-client.php 172 8 Получить информацию о чеке
      *
-     * @param string $receiptId
+     * @param string $receiptId Идентификатор чека
      *
-     * @return ReceiptResponseInterface
+     * @return ReceiptResponseInterface|null
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      */
     public function getReceiptInfo($receiptId)
     {
@@ -854,16 +865,16 @@ class Client extends BaseClient
      *
      * @return array|null Массив с информацией о магазине
      *
-     * @throws ApiException
-     * @throws BadApiRequestException
-     * @throws AuthorizeException
-     * @throws ForbiddenException
-     * @throws InternalServerError
-     * @throws NotFoundException
-     * @throws ResponseProcessingException
-     * @throws TooManyRequestsException
-     * @throws UnauthorizedException
-     * @throws ExtensionNotFoundException
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     * @throws AuthorizeException Ошибка авторизации. Не установлен заголовок.
      */
     public function me()
     {

@@ -3,6 +3,14 @@
 # Class: \YooKassa\Common\Exceptions\InternalServerError
 ### Namespace: [\YooKassa\Common\Exceptions](../namespaces/yookassa-common-exceptions.md)
 ---
+**Summary:**
+
+Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+
+**Description:**
+
+Рекомендуется повторять запрос с периодичностью один раз в минуту до тех пор, пока ЮKassa не сообщит результат обработки операции.
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
@@ -26,7 +34,7 @@
 ---
 ### Details
 * File: [lib/Common/Exceptions/InternalServerError.php](../../lib/Common/Exceptions/InternalServerError.php)
-* Package: Default
+* Package: YooKassa
 * Class Hierarchy:  
   * [\Exception](\Exception)
   * [\YooKassa\Common\Exceptions\ApiException](../classes/YooKassa-Common-Exceptions-ApiException.md)
@@ -81,7 +89,7 @@ HTTP_CODE = 500
 #### public __construct() : mixed
 
 ```php
-public __construct(mixed  responseHeaders = array(), mixed  responseBody = null) : mixed
+public __construct(mixed $responseHeaders = array(), mixed $responseBody = null) : mixed
 ```
 
 **Summary**
@@ -141,6 +149,6 @@ public getResponseHeaders() : string[]
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -260,7 +260,7 @@ MAX_LIMIT_VALUE = 100
 #### public __construct() : mixed
 
 ```php
-public __construct(array  data = array()) : mixed
+public __construct(array $data = array()) : mixed
 ```
 
 **Summary**
@@ -281,7 +281,7 @@ AbstractObject constructor.
 #### public __get() : mixed
 
 ```php
-public __get(string  propertyName) : mixed
+public __get(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -302,7 +302,7 @@ public __get(string  propertyName) : mixed
 #### public __isset() : bool
 
 ```php
-public __isset(string  propertyName) : bool
+public __isset(string $propertyName) : bool
 ```
 
 **Summary**
@@ -323,7 +323,7 @@ public __isset(string  propertyName) : bool
 #### public __set() : mixed
 
 ```php
-public __set(string  propertyName, mixed  value) : mixed
+public __set(string $propertyName, mixed $value) : mixed
 ```
 
 **Summary**
@@ -345,7 +345,7 @@ public __set(string  propertyName, mixed  value) : mixed
 #### public __unset() : mixed
 
 ```php
-public __unset(string  propertyName) : mixed
+public __unset(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -400,7 +400,7 @@ public clearValidationError() : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable  sourceArray) : mixed
+public fromArray(array|\Traversable $sourceArray) : mixed
 ```
 
 **Summary**
@@ -863,7 +863,7 @@ public jsonSerialize() : array
 #### public offsetExists() : bool
 
 ```php
-public offsetExists(string  offset) : bool
+public offsetExists(string $offset) : bool
 ```
 
 **Summary**
@@ -884,7 +884,7 @@ public offsetExists(string  offset) : bool
 #### public offsetGet() : mixed
 
 ```php
-public offsetGet(string  offset) : mixed
+public offsetGet(string $offset) : mixed
 ```
 
 **Summary**
@@ -905,7 +905,7 @@ public offsetGet(string  offset) : mixed
 #### public offsetSet() : mixed
 
 ```php
-public offsetSet(string  offset, mixed  value) : mixed
+public offsetSet(string $offset, mixed $value) : mixed
 ```
 
 **Summary**
@@ -927,7 +927,7 @@ public offsetSet(string  offset, mixed  value) : mixed
 #### public offsetUnset() : mixed
 
 ```php
-public offsetUnset(string  offset) : mixed
+public offsetUnset(string $offset) : mixed
 ```
 
 **Summary**
@@ -948,7 +948,7 @@ public offsetUnset(string  offset) : mixed
 #### public setCapturedAtGt() : mixed
 
 ```php
-public setCapturedAtGt(\DateTime|string|int|null  value) : mixed
+public setCapturedAtGt(\DateTime|string|int|null $value) : mixed
 ```
 
 **Summary**
@@ -974,7 +974,7 @@ public setCapturedAtGt(\DateTime|string|int|null  value) : mixed
 #### public setCapturedAtGte() : mixed
 
 ```php
-public setCapturedAtGte(\DateTime|string|int|null  value) : mixed
+public setCapturedAtGte(\DateTime|string|int|null $value) : mixed
 ```
 
 **Summary**
@@ -1000,7 +1000,7 @@ public setCapturedAtGte(\DateTime|string|int|null  value) : mixed
 #### public setCapturedAtLt() : mixed
 
 ```php
-public setCapturedAtLt(\DateTime|string|int|null  value) : mixed
+public setCapturedAtLt(\DateTime|string|int|null $value) : mixed
 ```
 
 **Summary**
@@ -1026,7 +1026,7 @@ public setCapturedAtLt(\DateTime|string|int|null  value) : mixed
 #### public setCapturedAtLte() : mixed
 
 ```php
-public setCapturedAtLte(\DateTime|string|int|null  value) : mixed
+public setCapturedAtLte(\DateTime|string|int|null $value) : mixed
 ```
 
 **Summary**
@@ -1052,7 +1052,7 @@ public setCapturedAtLte(\DateTime|string|int|null  value) : mixed
 #### public setCreatedAtGt() : void
 
 ```php
-public setCreatedAtGt(\DateTime|string|int|null  value) : void
+public setCreatedAtGt(\DateTime|string|int|null $value) : void
 ```
 
 **Summary**
@@ -1078,7 +1078,7 @@ public setCreatedAtGt(\DateTime|string|int|null  value) : void
 #### public setCreatedAtGte() : void
 
 ```php
-public setCreatedAtGte(\DateTime|string|int|null  value) : void
+public setCreatedAtGte(\DateTime|string|int|null $value) : void
 ```
 
 **Summary**
@@ -1104,7 +1104,7 @@ public setCreatedAtGte(\DateTime|string|int|null  value) : void
 #### public setCreatedAtLt() : void
 
 ```php
-public setCreatedAtLt(\DateTime|string|int|null  value) : void
+public setCreatedAtLt(\DateTime|string|int|null $value) : void
 ```
 
 **Summary**
@@ -1130,7 +1130,7 @@ public setCreatedAtLt(\DateTime|string|int|null  value) : void
 #### public setCreatedAtLte() : void
 
 ```php
-public setCreatedAtLte(\DateTime|string|int|null  value) : void
+public setCreatedAtLte(\DateTime|string|int|null $value) : void
 ```
 
 **Summary**
@@ -1156,7 +1156,7 @@ public setCreatedAtLte(\DateTime|string|int|null  value) : void
 #### public setCursor() : void
 
 ```php
-public setCursor(string  value) : void
+public setCursor(string $value) : void
 ```
 
 **Summary**
@@ -1181,7 +1181,7 @@ public setCursor(string  value) : void
 #### public setLimit() : void
 
 ```php
-public setLimit(int|null  value) : void
+public setLimit(int|null $value) : void
 ```
 
 **Summary**
@@ -1206,7 +1206,7 @@ public setLimit(int|null  value) : void
 #### public setPaymentMethod() : mixed
 
 ```php
-public setPaymentMethod(string  value) : mixed
+public setPaymentMethod(string $value) : mixed
 ```
 
 **Summary**
@@ -1232,7 +1232,7 @@ public setPaymentMethod(string  value) : mixed
 #### public setStatus() : void
 
 ```php
-public setStatus(string  value) : void
+public setStatus(string $value) : void
 ```
 
 **Summary**
@@ -1310,7 +1310,7 @@ protected getUnknownProperties() : array
 #### protected setValidationError() : mixed
 
 ```php
-protected setValidationError(string  value) : mixed
+protected setValidationError(string $value) : mixed
 ```
 
 **Summary**
@@ -1343,6 +1343,6 @@ protected setValidationError(string  value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

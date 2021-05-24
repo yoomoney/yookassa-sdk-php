@@ -221,7 +221,7 @@ public __construct() : mixed
 #### public addReceiptItem() : self
 
 ```php
-public addReceiptItem(string  title, string  price, float  quantity, int  vatCode, null|string  paymentMode = null, null|string  paymentSubject = null) : self
+public addReceiptItem(string $title, string $price, float $quantity, int $vatCode, null|string $paymentMode = null, null|string $paymentSubject = null) : self
 ```
 
 **Summary**
@@ -250,7 +250,7 @@ public addReceiptItem(string  title, string  price, float  quantity, int  vatCod
 #### public addReceiptShipping() : self
 
 ```php
-public addReceiptShipping(string  title, string  price, int  vatCode, null|string  paymentMode = null, null|string  paymentSubject = null) : self
+public addReceiptShipping(string $title, string $price, int $vatCode, null|string $paymentMode = null, null|string $paymentSubject = null) : self
 ```
 
 **Summary**
@@ -278,7 +278,7 @@ public addReceiptShipping(string  title, string  price, int  vatCode, null|strin
 #### public build() : \YooKassa\Request\Payments\CreatePaymentRequestInterface|\YooKassa\Common\AbstractPaymentRequest|\YooKassa\Common\AbstractRequest
 
 ```php
-public build(array|null  options = null) : \YooKassa\Request\Payments\CreatePaymentRequestInterface|\YooKassa\Common\AbstractPaymentRequest|\YooKassa\Common\AbstractRequest
+public build(array|null $options = null) : \YooKassa\Request\Payments\CreatePaymentRequestInterface|\YooKassa\Common\AbstractPaymentRequest|\YooKassa\Common\AbstractRequest
 ```
 
 **Summary**
@@ -303,7 +303,7 @@ public build(array|null  options = null) : \YooKassa\Request\Payments\CreatePaym
 #### public setAccountId() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setAccountId(string  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setAccountId(string $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -329,7 +329,7 @@ public setAccountId(string  value) : \YooKassa\Request\Payments\CreatePaymentReq
 #### public setAirline() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setAirline(\YooKassa\Model\AirlineInterface|array  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setAirline(\YooKassa\Model\AirlineInterface|array $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -350,7 +350,7 @@ public setAirline(\YooKassa\Model\AirlineInterface|array  value) : \YooKassa\Req
 #### public setAmount() : self
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface|array|string  value) : self
+public setAmount(\YooKassa\Model\AmountInterface|array|string $value) : self
 ```
 
 **Summary**
@@ -371,7 +371,7 @@ public setAmount(\YooKassa\Model\AmountInterface|array|string  value) : self
 #### public setCapture() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setCapture(bool  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setCapture(bool $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -396,7 +396,7 @@ public setCapture(bool  value) : \YooKassa\Request\Payments\CreatePaymentRequest
 #### public setClientIp() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setClientIp(string  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setClientIp(string $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -421,7 +421,7 @@ public setClientIp(string  value) : \YooKassa\Request\Payments\CreatePaymentRequ
 #### public setConfirmation() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes|string|array|null  value, array|null  options = null) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes|string|array|null $value, array|null $options = null) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -447,7 +447,7 @@ public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmati
 #### public setCurrency() : self
 
 ```php
-public setCurrency(string  value) : self
+public setCurrency(string $value) : self
 ```
 
 **Summary**
@@ -468,7 +468,7 @@ public setCurrency(string  value) : self
 #### public setDescription() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setDescription(string  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setDescription(string $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -494,7 +494,7 @@ public setDescription(string  value) : \YooKassa\Request\Payments\CreatePaymentR
 #### public setGatewayId() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setGatewayId(string  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setGatewayId(string $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -520,7 +520,7 @@ public setGatewayId(string  value) : \YooKassa\Request\Payments\CreatePaymentReq
 #### public setMetadata() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setMetadata(\YooKassa\Model\Metadata|array|null  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setMetadata(\YooKassa\Model\Metadata|array|null $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -545,7 +545,7 @@ public setMetadata(\YooKassa\Model\Metadata|array|null  value) : \YooKassa\Reque
 #### public setOptions() : \YooKassa\Common\AbstractRequestBuilder
 
 ```php
-public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractRequestBuilder
+public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractRequestBuilder
 ```
 
 **Summary**
@@ -571,7 +571,7 @@ public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractReques
 #### public setPaymentMethodData() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|string|array|null  value, array  options = null) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|string|array|null $value, array $options = null) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -597,7 +597,7 @@ public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|stri
 #### public setPaymentMethodId() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setPaymentMethodId(string  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setPaymentMethodId(string $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -622,7 +622,7 @@ public setPaymentMethodId(string  value) : \YooKassa\Request\Payments\CreatePaym
 #### public setPaymentToken() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setPaymentToken(string  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setPaymentToken(string $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -648,7 +648,7 @@ public setPaymentToken(string  value) : \YooKassa\Request\Payments\CreatePayment
 #### public setReceipt() : self
 
 ```php
-public setReceipt(\YooKassa\Model\ReceiptInterface|array  value) : self
+public setReceipt(\YooKassa\Model\ReceiptInterface|array $value) : self
 ```
 
 **Summary**
@@ -673,7 +673,7 @@ public setReceipt(\YooKassa\Model\ReceiptInterface|array  value) : self
 #### public setReceiptEmail() : self
 
 ```php
-public setReceiptEmail(string  value) : self
+public setReceiptEmail(string $value) : self
 ```
 
 **Summary**
@@ -694,7 +694,7 @@ public setReceiptEmail(string  value) : self
 #### public setReceiptItems() : self
 
 ```php
-public setReceiptItems(array  value) : self
+public setReceiptItems(array $value) : self
 ```
 
 **Summary**
@@ -719,7 +719,7 @@ public setReceiptItems(array  value) : self
 #### public setReceiptPhone() : self
 
 ```php
-public setReceiptPhone(string  value) : self
+public setReceiptPhone(string $value) : self
 ```
 
 **Summary**
@@ -744,7 +744,7 @@ public setReceiptPhone(string  value) : self
 #### public setRecipient() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setRecipient(\YooKassa\Model\RecipientInterface|array  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setRecipient(\YooKassa\Model\RecipientInterface|array $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -769,7 +769,7 @@ public setRecipient(\YooKassa\Model\RecipientInterface|array  value) : \YooKassa
 #### public setSavePaymentMethod() : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 
 ```php
-public setSavePaymentMethod(bool  value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
+public setSavePaymentMethod(bool $value) : \YooKassa\Request\Payments\CreatePaymentRequestBuilder
 ```
 
 **Summary**
@@ -794,7 +794,7 @@ public setSavePaymentMethod(bool  value) : \YooKassa\Request\Payments\CreatePaym
 #### public setTaxSystemCode() : self
 
 ```php
-public setTaxSystemCode(int  value) : self
+public setTaxSystemCode(int $value) : self
 ```
 
 **Summary**
@@ -815,7 +815,7 @@ public setTaxSystemCode(int  value) : self
 #### public setTransfers() : self
 
 ```php
-public setTransfers(\YooKassa\Model\TransferInterface[]|array|null  value) : self
+public setTransfers(\YooKassa\Model\TransferInterface[]|array|null $value) : self
 ```
 
 **Summary**
@@ -899,6 +899,6 @@ protected initCurrentObject() : \YooKassa\Request\Payments\CreatePaymentRequest
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

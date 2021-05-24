@@ -96,7 +96,7 @@ public hasCursor() : bool
 #### public setCursor() : void
 
 ```php
-public setCursor(string  value) : void
+public setCursor(string $value) : void
 ```
 
 **Summary**
@@ -151,7 +151,7 @@ public hasCreatedAtGte() : bool
 #### public setCreatedAtGte() : void
 
 ```php
-public setCreatedAtGte(\DateTime  value) : void
+public setCreatedAtGte(\DateTime $value) : void
 ```
 
 **Summary**
@@ -206,7 +206,7 @@ public hasCreatedAtGt() : bool
 #### public setCreatedAtGt() : void
 
 ```php
-public setCreatedAtGt(\DateTime  value) : void
+public setCreatedAtGt(\DateTime $value) : void
 ```
 
 **Summary**
@@ -261,7 +261,7 @@ public hasCreatedAtLte() : bool
 #### public setCreatedAtLte() : void
 
 ```php
-public setCreatedAtLte(\DateTime  value) : void
+public setCreatedAtLte(\DateTime $value) : void
 ```
 
 **Summary**
@@ -316,7 +316,7 @@ public hasCreatedAtLt() : bool
 #### public setCreatedAtLt() : void
 
 ```php
-public setCreatedAtLt(\DateTime  value) : void
+public setCreatedAtLt(\DateTime $value) : void
 ```
 
 **Summary**
@@ -371,7 +371,7 @@ public hasLimit() : bool
 #### public setLimit() : void
 
 ```php
-public setLimit(int  value) : void
+public setLimit(int $value) : void
 ```
 
 **Summary**
@@ -426,7 +426,7 @@ public hasStatus() : bool
 #### public setStatus() : void
 
 ```php
-public setStatus(string  value) : void
+public setStatus(string $value) : void
 ```
 
 **Summary**
@@ -460,6 +460,6 @@ public setStatus(string  value) : void
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

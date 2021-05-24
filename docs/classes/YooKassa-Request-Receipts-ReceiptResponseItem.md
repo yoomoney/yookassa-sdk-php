@@ -194,7 +194,7 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(array  itemData) : mixed
+public __construct(array $itemData) : mixed
 ```
 
 **Summary**
@@ -215,7 +215,7 @@ public __construct(array  itemData) : mixed
 #### public __get() : mixed
 
 ```php
-public __get(string  propertyName) : mixed
+public __get(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -236,7 +236,7 @@ public __get(string  propertyName) : mixed
 #### public __isset() : bool
 
 ```php
-public __isset(string  propertyName) : bool
+public __isset(string $propertyName) : bool
 ```
 
 **Summary**
@@ -257,7 +257,7 @@ public __isset(string  propertyName) : bool
 #### public __set() : mixed
 
 ```php
-public __set(string  propertyName, mixed  value) : mixed
+public __set(string $propertyName, mixed $value) : mixed
 ```
 
 **Summary**
@@ -279,7 +279,7 @@ public __set(string  propertyName, mixed  value) : mixed
 #### public __unset() : mixed
 
 ```php
-public __unset(string  propertyName) : mixed
+public __unset(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -300,7 +300,7 @@ public __unset(string  propertyName) : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable  sourceArray) : mixed
+public fromArray(array|\Traversable $sourceArray) : mixed
 ```
 
 **Summary**
@@ -474,7 +474,7 @@ public jsonSerialize() : array
 #### public offsetExists() : bool
 
 ```php
-public offsetExists(string  offset) : bool
+public offsetExists(string $offset) : bool
 ```
 
 **Summary**
@@ -495,7 +495,7 @@ public offsetExists(string  offset) : bool
 #### public offsetGet() : mixed
 
 ```php
-public offsetGet(string  offset) : mixed
+public offsetGet(string $offset) : mixed
 ```
 
 **Summary**
@@ -516,7 +516,7 @@ public offsetGet(string  offset) : mixed
 #### public offsetSet() : mixed
 
 ```php
-public offsetSet(string  offset, mixed  value) : mixed
+public offsetSet(string $offset, mixed $value) : mixed
 ```
 
 **Summary**
@@ -538,7 +538,7 @@ public offsetSet(string  offset, mixed  value) : mixed
 #### public offsetUnset() : mixed
 
 ```php
-public offsetUnset(string  offset) : mixed
+public offsetUnset(string $offset) : mixed
 ```
 
 **Summary**
@@ -559,7 +559,7 @@ public offsetUnset(string  offset) : mixed
 #### public setDescription() : mixed
 
 ```php
-public setDescription(string  value) : mixed
+public setDescription(string $value) : mixed
 ```
 
 **Summary**
@@ -585,7 +585,7 @@ public setDescription(string  value) : mixed
 #### public setPaymentMode() : mixed
 
 ```php
-public setPaymentMode(string  value) : mixed
+public setPaymentMode(string $value) : mixed
 ```
 
 **Summary**
@@ -610,7 +610,7 @@ public setPaymentMode(string  value) : mixed
 #### public setPaymentSubject() : mixed
 
 ```php
-public setPaymentSubject(string  value) : mixed
+public setPaymentSubject(string $value) : mixed
 ```
 
 **Summary**
@@ -635,7 +635,7 @@ public setPaymentSubject(string  value) : mixed
 #### public setPrice() : mixed
 
 ```php
-public setPrice(\YooKassa\Model\AmountInterface  value) : mixed
+public setPrice(\YooKassa\Model\AmountInterface $value) : mixed
 ```
 
 **Summary**
@@ -656,7 +656,7 @@ public setPrice(\YooKassa\Model\AmountInterface  value) : mixed
 #### public setQuantity() : mixed
 
 ```php
-public setQuantity(int  value) : mixed
+public setQuantity(int $value) : mixed
 ```
 
 **Summary**
@@ -683,7 +683,7 @@ public setQuantity(int  value) : mixed
 #### public setSupplier() : mixed
 
 ```php
-public setSupplier(\YooKassa\Model\SupplierInterface|array  value) : mixed
+public setSupplier(\YooKassa\Model\SupplierInterface|array $value) : mixed
 ```
 
 **Summary**
@@ -704,7 +704,7 @@ public setSupplier(\YooKassa\Model\SupplierInterface|array  value) : mixed
 #### public setVatCode() : mixed
 
 ```php
-public setVatCode(int  value) : mixed
+public setVatCode(int $value) : mixed
 ```
 
 **Summary**
@@ -777,6 +777,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

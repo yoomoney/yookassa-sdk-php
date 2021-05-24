@@ -76,7 +76,7 @@ public __construct() : mixed
 #### public build() : \YooKassa\Request\Refunds\RefundsRequestInterface|\YooKassa\Common\AbstractRequest
 
 ```php
-public build(array|null  options = null) : \YooKassa\Request\Refunds\RefundsRequestInterface|\YooKassa\Common\AbstractRequest
+public build(array|null $options = null) : \YooKassa\Request\Refunds\RefundsRequestInterface|\YooKassa\Common\AbstractRequest
 ```
 
 **Summary**
@@ -97,7 +97,7 @@ public build(array|null  options = null) : \YooKassa\Request\Refunds\RefundsRequ
 #### public setCreatedAtGt() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setCreatedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setCreatedAtGt(\DateTime|string|int|null $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -123,7 +123,7 @@ public setCreatedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Refu
 #### public setCreatedAtGte() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setCreatedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setCreatedAtGte(\DateTime|string|int|null $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -149,7 +149,7 @@ public setCreatedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Ref
 #### public setCreatedAtLt() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setCreatedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setCreatedAtLt(\DateTime|string|int|null $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -175,7 +175,7 @@ public setCreatedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Refu
 #### public setCreatedAtLte() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setCreatedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setCreatedAtLte(\DateTime|string|int|null $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -201,7 +201,7 @@ public setCreatedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Ref
 #### public setCursor() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setCursor(string  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setCursor(string $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -226,7 +226,7 @@ public setCursor(string  value) : \YooKassa\Request\Refunds\RefundsRequestBuilde
 #### public setLimit() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setLimit(string  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setLimit(string $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -251,7 +251,7 @@ public setLimit(string  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 #### public setOptions() : \YooKassa\Common\AbstractRequestBuilder
 
 ```php
-public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractRequestBuilder
+public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractRequestBuilder
 ```
 
 **Summary**
@@ -277,7 +277,7 @@ public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractReques
 #### public setPaymentId() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setPaymentId(string|null  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setPaymentId(string|null $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -303,7 +303,7 @@ public setPaymentId(string|null  value) : \YooKassa\Request\Refunds\RefundsReque
 #### public setStatus() : \YooKassa\Request\Refunds\RefundsRequestBuilder
 
 ```php
-public setStatus(string  value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
+public setStatus(string $value) : \YooKassa\Request\Refunds\RefundsRequestBuilder
 ```
 
 **Summary**
@@ -358,6 +358,6 @@ protected initCurrentObject() : \YooKassa\Request\Refunds\RefundsRequest
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
