@@ -77,7 +77,7 @@ public __construct() : mixed
 #### public build() : \YooKassa\Request\Receipts\ReceiptsRequestInterface|\YooKassa\Common\AbstractRequest
 
 ```php
-public build(array|null  options = null) : \YooKassa\Request\Receipts\ReceiptsRequestInterface|\YooKassa\Common\AbstractRequest
+public build(array|null $options = null) : \YooKassa\Request\Receipts\ReceiptsRequestInterface|\YooKassa\Common\AbstractRequest
 ```
 
 **Summary**
@@ -98,7 +98,7 @@ public build(array|null  options = null) : \YooKassa\Request\Receipts\ReceiptsRe
 #### public setCreatedAtGt() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setCreatedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setCreatedAtGt(\DateTime|string|int|null $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -124,7 +124,7 @@ public setCreatedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Rece
 #### public setCreatedAtGte() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setCreatedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setCreatedAtGte(\DateTime|string|int|null $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -150,7 +150,7 @@ public setCreatedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Rec
 #### public setCreatedAtLt() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setCreatedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setCreatedAtLt(\DateTime|string|int|null $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -176,7 +176,7 @@ public setCreatedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Rece
 #### public setCreatedAtLte() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setCreatedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setCreatedAtLte(\DateTime|string|int|null $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -202,7 +202,7 @@ public setCreatedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Rec
 #### public setCursor() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setCursor(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setCursor(string $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -227,7 +227,7 @@ public setCursor(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuil
 #### public setLimit() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setLimit(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setLimit(string $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -252,7 +252,7 @@ public setLimit(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuild
 #### public setOptions() : \YooKassa\Common\AbstractRequestBuilder
 
 ```php
-public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractRequestBuilder
+public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractRequestBuilder
 ```
 
 **Summary**
@@ -278,7 +278,7 @@ public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractReques
 #### public setPaymentId() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setPaymentId(string|null  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setPaymentId(string|null $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -304,7 +304,7 @@ public setPaymentId(string|null  value) : \YooKassa\Request\Receipts\ReceiptsReq
 #### public setRefundId() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setRefundId(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setRefundId(string $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -330,7 +330,7 @@ public setRefundId(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBu
 #### public setStatus() : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 
 ```php
-public setStatus(string  value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
+public setStatus(string $value) : \YooKassa\Request\Receipts\ReceiptsRequestBuilder
 ```
 
 **Summary**
@@ -385,6 +385,6 @@ protected initCurrentObject() : \YooKassa\Request\Receipts\ReceiptsRequest
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

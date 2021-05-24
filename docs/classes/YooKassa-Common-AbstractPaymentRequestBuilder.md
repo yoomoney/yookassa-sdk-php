@@ -123,7 +123,7 @@ public __construct() : mixed
 #### public addReceiptItem() : self
 
 ```php
-public addReceiptItem(string  title, string  price, float  quantity, int  vatCode, null|string  paymentMode = null, null|string  paymentSubject = null) : self
+public addReceiptItem(string $title, string $price, float $quantity, int $vatCode, null|string $paymentMode = null, null|string $paymentSubject = null) : self
 ```
 
 **Summary**
@@ -152,7 +152,7 @@ public addReceiptItem(string  title, string  price, float  quantity, int  vatCod
 #### public addReceiptShipping() : self
 
 ```php
-public addReceiptShipping(string  title, string  price, int  vatCode, null|string  paymentMode = null, null|string  paymentSubject = null) : self
+public addReceiptShipping(string $title, string $price, int $vatCode, null|string $paymentMode = null, null|string $paymentSubject = null) : self
 ```
 
 **Summary**
@@ -180,7 +180,7 @@ public addReceiptShipping(string  title, string  price, int  vatCode, null|strin
 #### public build() : \YooKassa\Common\AbstractRequest
 
 ```php
-public build(array  options = null) : \YooKassa\Common\AbstractRequest
+public build(array $options = null) : \YooKassa\Common\AbstractRequest
 ```
 
 **Summary**
@@ -201,7 +201,7 @@ public build(array  options = null) : \YooKassa\Common\AbstractRequest
 #### public setAmount() : self
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface|array|string  value) : self
+public setAmount(\YooKassa\Model\AmountInterface|array|string $value) : self
 ```
 
 **Summary**
@@ -222,7 +222,7 @@ public setAmount(\YooKassa\Model\AmountInterface|array|string  value) : self
 #### public setCurrency() : self
 
 ```php
-public setCurrency(string  value) : self
+public setCurrency(string $value) : self
 ```
 
 **Summary**
@@ -243,7 +243,7 @@ public setCurrency(string  value) : self
 #### public setOptions() : \YooKassa\Common\AbstractRequestBuilder
 
 ```php
-public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractRequestBuilder
+public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractRequestBuilder
 ```
 
 **Summary**
@@ -269,7 +269,7 @@ public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractReques
 #### public setReceipt() : self
 
 ```php
-public setReceipt(\YooKassa\Model\ReceiptInterface|array  value) : self
+public setReceipt(\YooKassa\Model\ReceiptInterface|array $value) : self
 ```
 
 **Summary**
@@ -294,7 +294,7 @@ public setReceipt(\YooKassa\Model\ReceiptInterface|array  value) : self
 #### public setReceiptEmail() : self
 
 ```php
-public setReceiptEmail(string  value) : self
+public setReceiptEmail(string $value) : self
 ```
 
 **Summary**
@@ -315,7 +315,7 @@ public setReceiptEmail(string  value) : self
 #### public setReceiptItems() : self
 
 ```php
-public setReceiptItems(array  value) : self
+public setReceiptItems(array $value) : self
 ```
 
 **Summary**
@@ -340,7 +340,7 @@ public setReceiptItems(array  value) : self
 #### public setReceiptPhone() : self
 
 ```php
-public setReceiptPhone(string  value) : self
+public setReceiptPhone(string $value) : self
 ```
 
 **Summary**
@@ -365,7 +365,7 @@ public setReceiptPhone(string  value) : self
 #### public setTaxSystemCode() : self
 
 ```php
-public setTaxSystemCode(int  value) : self
+public setTaxSystemCode(int $value) : self
 ```
 
 **Summary**
@@ -386,7 +386,7 @@ public setTaxSystemCode(int  value) : self
 #### public setTransfers() : self
 
 ```php
-public setTransfers(\YooKassa\Model\TransferInterface[]|array|null  value) : self
+public setTransfers(\YooKassa\Model\TransferInterface[]|array|null $value) : self
 ```
 
 **Summary**
@@ -436,6 +436,6 @@ protected initCurrentObject() : self
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

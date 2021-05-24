@@ -61,7 +61,7 @@ public getName() : string|null
 #### public setName() : mixed
 
 ```php
-public setName(string|null  value) : mixed
+public setName(string|null $value) : mixed
 ```
 
 **Summary**
@@ -99,7 +99,7 @@ public getPhone() : string|null
 #### public setPhone() : mixed
 
 ```php
-public setPhone(string|null  value) : mixed
+public setPhone(string|null $value) : mixed
 ```
 
 **Summary**
@@ -137,7 +137,7 @@ public getInn() : string|null
 #### public setInn() : mixed
 
 ```php
-public setInn( value) : mixed
+public setInn($value) : mixed
 ```
 
 **Summary**
@@ -171,6 +171,6 @@ public setInn( value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

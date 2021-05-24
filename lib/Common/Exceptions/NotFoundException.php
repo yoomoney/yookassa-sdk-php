@@ -26,6 +26,11 @@
 
 namespace YooKassa\Common\Exceptions;
 
+/**
+ * Ресурс не найден.
+ *
+ * @package YooKassa
+ */
 class NotFoundException extends ApiException
 {
     const HTTP_CODE = 404;

@@ -57,7 +57,7 @@ public getType() : string
 #### public setType() : mixed
 
 ```php
-public setType(string  value) : mixed
+public setType(string $value) : mixed
 ```
 
 **Summary**
@@ -95,7 +95,7 @@ public getAccountId() : string|null
 #### public setAccountId() : mixed
 
 ```php
-public setAccountId(string  value) : mixed
+public setAccountId(string $value) : mixed
 ```
 
 **Summary**
@@ -133,7 +133,7 @@ public getClientId() : string|null
 #### public setClientId() : mixed
 
 ```php
-public setClientId(string  value) : mixed
+public setClientId(string $value) : mixed
 ```
 
 **Summary**
@@ -171,7 +171,7 @@ public getClientName() : string|null
 #### public setClientName() : mixed
 
 ```php
-public setClientName(string  value) : mixed
+public setClientName(string $value) : mixed
 ```
 
 **Summary**
@@ -205,6 +205,6 @@ public setClientName(string  value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

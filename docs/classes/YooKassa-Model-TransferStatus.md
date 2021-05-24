@@ -121,7 +121,7 @@ Static public getValidValues() : array
 #### public valueExists() : bool
 
 ```php
-Static public valueExists(mixed  value) : bool
+Static public valueExists(mixed $value) : bool
 ```
 
 **Summary**
@@ -154,6 +154,6 @@ Static public valueExists(mixed  value) : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

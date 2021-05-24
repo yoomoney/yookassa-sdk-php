@@ -494,7 +494,7 @@ MAX_LENGTH_DESCRIPTION = 128
 #### public __construct() : mixed
 
 ```php
-public __construct(array  data = array()) : mixed
+public __construct(array $data = array()) : mixed
 ```
 
 **Summary**
@@ -515,7 +515,7 @@ AbstractObject constructor.
 #### public __get() : mixed
 
 ```php
-public __get(string  propertyName) : mixed
+public __get(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -536,7 +536,7 @@ public __get(string  propertyName) : mixed
 #### public __isset() : bool
 
 ```php
-public __isset(string  propertyName) : bool
+public __isset(string $propertyName) : bool
 ```
 
 **Summary**
@@ -557,7 +557,7 @@ public __isset(string  propertyName) : bool
 #### public __set() : mixed
 
 ```php
-public __set(string  propertyName, mixed  value) : mixed
+public __set(string $propertyName, mixed $value) : mixed
 ```
 
 **Summary**
@@ -579,7 +579,7 @@ public __set(string  propertyName, mixed  value) : mixed
 #### public __unset() : mixed
 
 ```php
-public __unset(string  propertyName) : mixed
+public __unset(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -600,7 +600,7 @@ public __unset(string  propertyName) : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable  sourceArray) : mixed
+public fromArray(array|\Traversable $sourceArray) : mixed
 ```
 
 **Summary**
@@ -1007,7 +1007,7 @@ public jsonSerialize() : array
 #### public offsetExists() : bool
 
 ```php
-public offsetExists(string  offset) : bool
+public offsetExists(string $offset) : bool
 ```
 
 **Summary**
@@ -1028,7 +1028,7 @@ public offsetExists(string  offset) : bool
 #### public offsetGet() : mixed
 
 ```php
-public offsetGet(string  offset) : mixed
+public offsetGet(string $offset) : mixed
 ```
 
 **Summary**
@@ -1049,7 +1049,7 @@ public offsetGet(string  offset) : mixed
 #### public offsetSet() : mixed
 
 ```php
-public offsetSet(string  offset, mixed  value) : mixed
+public offsetSet(string $offset, mixed $value) : mixed
 ```
 
 **Summary**
@@ -1071,7 +1071,7 @@ public offsetSet(string  offset, mixed  value) : mixed
 #### public offsetUnset() : mixed
 
 ```php
-public offsetUnset(string  offset) : mixed
+public offsetUnset(string $offset) : mixed
 ```
 
 **Summary**
@@ -1092,7 +1092,7 @@ public offsetUnset(string  offset) : mixed
 #### public setAmount() : mixed
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface  value) : mixed
+public setAmount(\YooKassa\Model\AmountInterface $value) : mixed
 ```
 
 **Summary**
@@ -1113,7 +1113,7 @@ public setAmount(\YooKassa\Model\AmountInterface  value) : mixed
 #### public setAuthorizationDetails() : mixed
 
 ```php
-public setAuthorizationDetails(\YooKassa\Model\AuthorizationDetailsInterface  value) : mixed
+public setAuthorizationDetails(\YooKassa\Model\AuthorizationDetailsInterface $value) : mixed
 ```
 
 **Summary**
@@ -1134,7 +1134,7 @@ public setAuthorizationDetails(\YooKassa\Model\AuthorizationDetailsInterface  va
 #### public setCancellationDetails() : mixed
 
 ```php
-public setCancellationDetails(\YooKassa\Model\CancellationDetailsInterface  value) : mixed
+public setCancellationDetails(\YooKassa\Model\CancellationDetailsInterface $value) : mixed
 ```
 
 **Summary**
@@ -1155,7 +1155,7 @@ public setCancellationDetails(\YooKassa\Model\CancellationDetailsInterface  valu
 #### public setCapturedAt() : mixed
 
 ```php
-public setCapturedAt(\DateTime|string|int|null  value) : mixed
+public setCapturedAt(\DateTime|string|int|null $value) : mixed
 ```
 
 **Summary**
@@ -1181,7 +1181,7 @@ public setCapturedAt(\DateTime|string|int|null  value) : mixed
 #### public setConfirmation() : mixed
 
 ```php
-public setConfirmation(\YooKassa\Model\Confirmation\AbstractConfirmation  value) : mixed
+public setConfirmation(\YooKassa\Model\Confirmation\AbstractConfirmation $value) : mixed
 ```
 
 **Summary**
@@ -1202,7 +1202,7 @@ public setConfirmation(\YooKassa\Model\Confirmation\AbstractConfirmation  value)
 #### public setCreatedAt() : mixed
 
 ```php
-public setCreatedAt(\DateTime|string|int  value) : mixed
+public setCreatedAt(\DateTime|string|int $value) : mixed
 ```
 
 **Summary**
@@ -1229,7 +1229,7 @@ public setCreatedAt(\DateTime|string|int  value) : mixed
 #### public setDescription() : mixed
 
 ```php
-public setDescription(string  value) : mixed
+public setDescription(string $value) : mixed
 ```
 
 **Summary**
@@ -1255,7 +1255,7 @@ public setDescription(string  value) : mixed
 #### public setExpiresAt() : mixed
 
 ```php
-public setExpiresAt(\DateTime|string|int|null  value) : mixed
+public setExpiresAt(\DateTime|string|int|null $value) : mixed
 ```
 
 **Summary**
@@ -1285,7 +1285,7 @@ public setExpiresAt(\DateTime|string|int|null  value) : mixed
 #### public setId() : mixed
 
 ```php
-public setId(string  value) : mixed
+public setId(string $value) : mixed
 ```
 
 **Summary**
@@ -1311,7 +1311,7 @@ public setId(string  value) : mixed
 #### public setIncomeAmount() : mixed
 
 ```php
-public setIncomeAmount(\YooKassa\Model\MonetaryAmount  amount) : mixed
+public setIncomeAmount(\YooKassa\Model\MonetaryAmount $amount) : mixed
 ```
 
 **Summary**
@@ -1332,7 +1332,7 @@ public setIncomeAmount(\YooKassa\Model\MonetaryAmount  amount) : mixed
 #### public setMetadata() : mixed
 
 ```php
-public setMetadata(\YooKassa\Model\Metadata  value) : mixed
+public setMetadata(\YooKassa\Model\Metadata $value) : mixed
 ```
 
 **Summary**
@@ -1353,7 +1353,7 @@ public setMetadata(\YooKassa\Model\Metadata  value) : mixed
 #### public setPaid() : mixed
 
 ```php
-public setPaid(bool  value) : mixed
+public setPaid(bool $value) : mixed
 ```
 
 **Summary**
@@ -1379,7 +1379,7 @@ public setPaid(bool  value) : mixed
 #### public setPaymentMethod() : mixed
 
 ```php
-public setPaymentMethod(\YooKassa\Model\PaymentMethod\AbstractPaymentMethod  value) : mixed
+public setPaymentMethod(\YooKassa\Model\PaymentMethod\AbstractPaymentMethod $value) : mixed
 ```
 
 **Summary**
@@ -1400,7 +1400,7 @@ public setPaymentMethod(\YooKassa\Model\PaymentMethod\AbstractPaymentMethod  val
 #### public setReceiptRegistration() : mixed
 
 ```php
-public setReceiptRegistration(string  value) : mixed
+public setReceiptRegistration(string $value) : mixed
 ```
 
 **Summary**
@@ -1426,7 +1426,7 @@ public setReceiptRegistration(string  value) : mixed
 #### public setRecipient() : mixed
 
 ```php
-public setRecipient(\YooKassa\Model\RecipientInterface  value) : mixed
+public setRecipient(\YooKassa\Model\RecipientInterface $value) : mixed
 ```
 
 **Summary**
@@ -1447,7 +1447,7 @@ public setRecipient(\YooKassa\Model\RecipientInterface  value) : mixed
 #### public setRefundable() : mixed
 
 ```php
-public setRefundable(bool  value) : mixed
+public setRefundable(bool $value) : mixed
 ```
 
 **Summary**
@@ -1473,7 +1473,7 @@ public setRefundable(bool  value) : mixed
 #### public setRefundedAmount() : mixed
 
 ```php
-public setRefundedAmount(\YooKassa\Model\AmountInterface  value) : mixed
+public setRefundedAmount(\YooKassa\Model\AmountInterface $value) : mixed
 ```
 
 **Summary**
@@ -1494,7 +1494,7 @@ public setRefundedAmount(\YooKassa\Model\AmountInterface  value) : mixed
 #### public setRequestor() : mixed
 
 ```php
-public setRequestor(\YooKassa\Model\RequestorInterface|array  value) : mixed
+public setRequestor(\YooKassa\Model\RequestorInterface|array $value) : mixed
 ```
 
 **Summary**
@@ -1515,7 +1515,7 @@ public setRequestor(\YooKassa\Model\RequestorInterface|array  value) : mixed
 #### public setStatus() : mixed
 
 ```php
-public setStatus(string  value) : mixed
+public setStatus(string $value) : mixed
 ```
 
 **Summary**
@@ -1541,7 +1541,7 @@ public setStatus(string  value) : mixed
 #### public setTest() : mixed
 
 ```php
-public setTest(bool  test) : mixed
+public setTest(bool $test) : mixed
 ```
 
 **Summary**
@@ -1562,7 +1562,7 @@ public setTest(bool  test) : mixed
 #### public setTransfers() : mixed
 
 ```php
-public setTransfers(\YooKassa\Model\TransferInterface[]  value) : mixed
+public setTransfers(\YooKassa\Model\TransferInterface[] $value) : mixed
 ```
 
 **Summary**
@@ -1630,6 +1630,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

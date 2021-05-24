@@ -39,7 +39,7 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(mixed  message = &quot;&quot;, mixed  code, mixed  previous = null) : mixed
+public __construct(mixed $message = &quot;&quot;, mixed $code, mixed $previous = null) : mixed
 ```
 
 **Details:**
@@ -70,6 +70,6 @@ public __construct(mixed  message = &quot;&quot;, mixed  code, mixed  previous =
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

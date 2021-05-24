@@ -76,7 +76,7 @@ public __construct() : mixed
 #### public __get() : mixed
 
 ```php
-public __get(string  propertyName) : mixed
+public __get(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -97,7 +97,7 @@ public __get(string  propertyName) : mixed
 #### public __isset() : bool
 
 ```php
-public __isset(string  propertyName) : bool
+public __isset(string $propertyName) : bool
 ```
 
 **Summary**
@@ -118,7 +118,7 @@ public __isset(string  propertyName) : bool
 #### public __set() : mixed
 
 ```php
-public __set(string  propertyName, mixed  value) : mixed
+public __set(string $propertyName, mixed $value) : mixed
 ```
 
 **Summary**
@@ -140,7 +140,7 @@ public __set(string  propertyName, mixed  value) : mixed
 #### public __unset() : mixed
 
 ```php
-public __unset(string  propertyName) : mixed
+public __unset(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -161,7 +161,7 @@ public __unset(string  propertyName) : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable  sourceArray) : mixed
+public fromArray(array|\Traversable $sourceArray) : mixed
 ```
 
 **Summary**
@@ -225,7 +225,7 @@ public jsonSerialize() : array
 #### public offsetExists() : bool
 
 ```php
-public offsetExists(string  offset) : bool
+public offsetExists(string $offset) : bool
 ```
 
 **Summary**
@@ -246,7 +246,7 @@ public offsetExists(string  offset) : bool
 #### public offsetGet() : mixed
 
 ```php
-public offsetGet(string  offset) : mixed
+public offsetGet(string $offset) : mixed
 ```
 
 **Summary**
@@ -267,7 +267,7 @@ public offsetGet(string  offset) : mixed
 #### public offsetSet() : mixed
 
 ```php
-public offsetSet(string  offset, mixed  value) : mixed
+public offsetSet(string $offset, mixed $value) : mixed
 ```
 
 **Summary**
@@ -289,7 +289,7 @@ public offsetSet(string  offset, mixed  value) : mixed
 #### public offsetUnset() : mixed
 
 ```php
-public offsetUnset(string  offset) : mixed
+public offsetUnset(string $offset) : mixed
 ```
 
 **Summary**
@@ -310,7 +310,7 @@ public offsetUnset(string  offset) : mixed
 #### public setLocale() : mixed
 
 ```php
-public setLocale(string  value) : mixed
+public setLocale(string $value) : mixed
 ```
 
 **Details:**
@@ -345,7 +345,7 @@ public toArray() : array
 #### protected _setType() : mixed
 
 ```php
-protected _setType(string  value) : mixed
+protected _setType(string $value) : mixed
 ```
 
 **Details:**
@@ -391,6 +391,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

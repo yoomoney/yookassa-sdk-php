@@ -26,6 +26,11 @@
 
 namespace YooKassa\Common\Exceptions;
 
+/**
+ * Запрос был принят на обработку, но она не завершена.
+ *
+ * @package YooKassa
+ */
 class ResponseProcessingException extends ApiException
 {
     const HTTP_CODE = 202;

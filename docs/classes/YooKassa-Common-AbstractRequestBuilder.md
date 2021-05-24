@@ -67,7 +67,7 @@ public __construct() : mixed
 #### public build() : \YooKassa\Common\AbstractRequest
 
 ```php
-public build(array  options = null) : \YooKassa\Common\AbstractRequest
+public build(array $options = null) : \YooKassa\Common\AbstractRequest
 ```
 
 **Summary**
@@ -93,7 +93,7 @@ public build(array  options = null) : \YooKassa\Common\AbstractRequest
 #### public setOptions() : \YooKassa\Common\AbstractRequestBuilder
 
 ```php
-public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractRequestBuilder
+public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractRequestBuilder
 ```
 
 **Summary**
@@ -148,6 +148,6 @@ Abstract protected initCurrentObject() : \YooKassa\Common\AbstractRequest
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

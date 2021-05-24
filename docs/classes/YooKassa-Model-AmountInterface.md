@@ -53,7 +53,7 @@ public getValue() : string
 #### public setValue() : mixed
 
 ```php
-public setValue(\YooKassa\Model\numeric  value) : mixed
+public setValue(\YooKassa\Model\numeric $value) : mixed
 ```
 
 **Summary**
@@ -108,7 +108,7 @@ public getCurrency() : string
 #### public setCurrency() : mixed
 
 ```php
-public setCurrency(string  value) : mixed
+public setCurrency(string $value) : mixed
 ```
 
 **Summary**
@@ -142,6 +142,6 @@ public setCurrency(string  value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

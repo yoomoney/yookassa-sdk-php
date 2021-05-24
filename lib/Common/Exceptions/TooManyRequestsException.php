@@ -26,6 +26,11 @@
 
 namespace YooKassa\Common\Exceptions;
 
+/**
+ * Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+ *
+ * @package YooKassa
+ */
 class TooManyRequestsException extends ApiException
 {
     const HTTP_CODE = 429;

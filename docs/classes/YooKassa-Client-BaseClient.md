@@ -236,7 +236,7 @@ shopId магазина
 #### public __construct() : mixed
 
 ```php
-public __construct(\YooKassa\Client\ApiClientInterface|null  apiClient = null, \YooKassa\Helpers\Config\ConfigurationLoaderInterface|null  configLoader = null) : mixed
+public __construct(\YooKassa\Client\ApiClientInterface|null $apiClient = null, \YooKassa\Helpers\Config\ConfigurationLoaderInterface|null $configLoader = null) : mixed
 ```
 
 **Summary**
@@ -292,7 +292,7 @@ public getConfig() : array
 #### public setApiClient() : $this
 
 ```php
-public setApiClient(\YooKassa\Client\ApiClientInterface  apiClient) : $this
+public setApiClient(\YooKassa\Client\ApiClientInterface $apiClient) : $this
 ```
 
 **Summary**
@@ -313,7 +313,7 @@ public setApiClient(\YooKassa\Client\ApiClientInterface  apiClient) : $this
 #### public setAuth() : $this
 
 ```php
-public setAuth(string  login, string  password) : $this
+public setAuth(string $login, string $password) : $this
 ```
 
 **Summary**
@@ -342,7 +342,7 @@ $client->setAuth('xxxxxx', 'test_XXXXXXX');
 #### public setAuthToken() : $this
 
 ```php
-public setAuthToken(string  token) : $this
+public setAuthToken(string $token) : $this
 ```
 
 **Summary**
@@ -370,7 +370,7 @@ $client->setAuthToken('token_XXXXXXX');
 #### public setConfig() : mixed
 
 ```php
-public setConfig(array  config) : mixed
+public setConfig(array $config) : mixed
 ```
 
 **Summary**
@@ -391,7 +391,7 @@ public setConfig(array  config) : mixed
 #### public setLogger() : mixed
 
 ```php
-public setLogger(null|callable|object|\Psr\Log\LoggerInterface  value) : mixed
+public setLogger(null|callable|object|\Psr\Log\LoggerInterface $value) : mixed
 ```
 
 **Summary**
@@ -412,7 +412,7 @@ public setLogger(null|callable|object|\Psr\Log\LoggerInterface  value) : mixed
 #### public setMaxRequestAttempts() : $this
 
 ```php
-public setMaxRequestAttempts(int  attempts) : $this
+public setMaxRequestAttempts(int $attempts) : $this
 ```
 
 **Summary**
@@ -433,7 +433,7 @@ public setMaxRequestAttempts(int  attempts) : $this
 #### public setRetryTimeout() : $this
 
 ```php
-public setRetryTimeout(int  timeout) : $this
+public setRetryTimeout(int $timeout) : $this
 ```
 
 **Summary**
@@ -454,7 +454,7 @@ public setRetryTimeout(int  timeout) : $this
 #### protected decodeData() : array
 
 ```php
-protected decodeData(\YooKassa\Common\ResponseObject  response) : array
+protected decodeData(\YooKassa\Common\ResponseObject $response) : array
 ```
 
 **Summary**
@@ -475,7 +475,7 @@ protected decodeData(\YooKassa\Common\ResponseObject  response) : array
 #### protected delay() : mixed
 
 ```php
-protected delay(\YooKassa\Common\ResponseObject  response) : mixed
+protected delay(\YooKassa\Common\ResponseObject $response) : mixed
 ```
 
 **Summary**
@@ -496,7 +496,7 @@ protected delay(\YooKassa\Common\ResponseObject  response) : mixed
 #### protected encodeData() : string
 
 ```php
-protected encodeData(array  serializedData) : string
+protected encodeData(array $serializedData) : string
 ```
 
 **Summary**
@@ -521,7 +521,7 @@ protected encodeData(array  serializedData) : string
 #### protected execute() : mixed|\YooKassa\Common\ResponseObject
 
 ```php
-protected execute(string  path, string  method, array  queryParams, null  httpBody = null, array  headers = array()) : mixed|\YooKassa\Common\ResponseObject
+protected execute(string $path, string $method, array $queryParams, null $httpBody = null, array $headers = array()) : mixed|\YooKassa\Common\ResponseObject
 ```
 
 **Summary**
@@ -553,7 +553,7 @@ protected execute(string  path, string  method, array  queryParams, null  httpBo
 #### protected handleError() : mixed
 
 ```php
-protected handleError(\YooKassa\Common\ResponseObject  response) : mixed
+protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 ```
 
 **Summary**
@@ -597,6 +597,6 @@ protected handleError(\YooKassa\Common\ResponseObject  response) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

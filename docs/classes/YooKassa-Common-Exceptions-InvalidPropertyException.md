@@ -26,7 +26,7 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(string  message = &quot;&quot;, int  code, string  property = &quot;&quot;) : mixed
+public __construct(string $message = &quot;&quot;, int $code, string $property = &quot;&quot;) : mixed
 ```
 
 **Summary**
@@ -74,6 +74,6 @@ public getProperty() : string
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

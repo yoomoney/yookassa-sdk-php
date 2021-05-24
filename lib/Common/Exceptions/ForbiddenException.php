@@ -26,6 +26,11 @@
 
 namespace YooKassa\Common\Exceptions;
 
+/**
+ * Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+ *
+ * @package YooKassa
+ */
 class ForbiddenException extends ApiException
 {
     const HTTP_CODE = 403;

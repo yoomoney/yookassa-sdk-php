@@ -119,7 +119,7 @@ public hasRecipient() : bool
 #### public setRecipient() : mixed
 
 ```php
-public setRecipient(\YooKassa\Model\RecipientInterface|null  value) : mixed
+public setRecipient(\YooKassa\Model\RecipientInterface|null $value) : mixed
 ```
 
 **Summary**
@@ -191,7 +191,7 @@ public hasDescription() : bool
 #### public setDescription() : mixed
 
 ```php
-public setDescription(string  value) : mixed
+public setDescription(string $value) : mixed
 ```
 
 **Summary**
@@ -280,7 +280,7 @@ public hasPaymentToken() : bool
 #### public setPaymentToken() : mixed
 
 ```php
-public setPaymentToken(string  value) : mixed
+public setPaymentToken(string $value) : mixed
 ```
 
 **Summary**
@@ -335,7 +335,7 @@ public hasPaymentMethodId() : bool
 #### public setPaymentMethodId() : mixed
 
 ```php
-public setPaymentMethodId(string  value) : mixed
+public setPaymentMethodId(string $value) : mixed
 ```
 
 **Summary**
@@ -390,7 +390,7 @@ public hasPaymentMethodData() : bool
 #### public setPaymentMethodData() : mixed
 
 ```php
-public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|null  value) : mixed
+public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|null $value) : mixed
 ```
 
 **Summary**
@@ -445,7 +445,7 @@ public hasConfirmation() : bool
 #### public setConfirmation() : mixed
 
 ```php
-public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes|null  value) : mixed
+public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes|null $value) : mixed
 ```
 
 **Summary**
@@ -500,7 +500,7 @@ public hasSavePaymentMethod() : bool
 #### public setSavePaymentMethod() : mixed
 
 ```php
-public setSavePaymentMethod(bool  value) : mixed
+public setSavePaymentMethod(bool $value) : mixed
 ```
 
 **Summary**
@@ -555,7 +555,7 @@ public hasCapture() : bool
 #### public setCapture() : mixed
 
 ```php
-public setCapture(bool  value) : mixed
+public setCapture(bool $value) : mixed
 ```
 
 **Summary**
@@ -610,7 +610,7 @@ public hasClientIp() : bool
 #### public setClientIp() : mixed
 
 ```php
-public setClientIp(string  value) : mixed
+public setClientIp(string $value) : mixed
 ```
 
 **Summary**
@@ -665,7 +665,7 @@ public hasMetadata() : bool
 #### public setMetadata() : mixed
 
 ```php
-public setMetadata(\YooKassa\Model\Metadata|array|null  value) : mixed
+public setMetadata(\YooKassa\Model\Metadata|array|null $value) : mixed
 ```
 
 **Summary**
@@ -720,7 +720,7 @@ public hasAirline() : bool
 #### public setAirline() : mixed
 
 ```php
-public setAirline(\YooKassa\Model\AirlineInterface  value) : mixed
+public setAirline(\YooKassa\Model\AirlineInterface $value) : mixed
 ```
 
 **Summary**
@@ -780,7 +780,7 @@ public getTransfers() : \YooKassa\Model\TransferInterface[]
 #### public setTransfers() : mixed
 
 ```php
-public setTransfers(mixed  value) : mixed
+public setTransfers(mixed $value) : mixed
 ```
 
 **Summary**
@@ -819,6 +819,6 @@ public setTransfers(mixed  value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

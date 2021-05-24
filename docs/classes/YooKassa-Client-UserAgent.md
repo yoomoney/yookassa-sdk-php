@@ -89,7 +89,7 @@ public __construct() : mixed
 #### public createVersion() : string
 
 ```php
-public createVersion(string  name, string  version) : string
+public createVersion(string $name, string $version) : string
 ```
 
 **Summary**
@@ -230,7 +230,7 @@ public getSdk() : string
 #### public setCms() : mixed
 
 ```php
-public setCms(string  name, string  version) : mixed
+public setCms(string $name, string $version) : mixed
 ```
 
 **Summary**
@@ -252,7 +252,7 @@ public setCms(string  name, string  version) : mixed
 #### public setFramework() : mixed
 
 ```php
-public setFramework(string  name, string  version) : mixed
+public setFramework(string $name, string $version) : mixed
 ```
 
 **Summary**
@@ -274,7 +274,7 @@ public setFramework(string  name, string  version) : mixed
 #### public setModule() : mixed
 
 ```php
-public setModule(string  name, string  version) : mixed
+public setModule(string $name, string $version) : mixed
 ```
 
 **Summary**
@@ -308,6 +308,6 @@ public setModule(string  name, string  version) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

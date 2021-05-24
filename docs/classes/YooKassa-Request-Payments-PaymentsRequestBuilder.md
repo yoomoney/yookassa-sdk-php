@@ -80,7 +80,7 @@ public __construct() : mixed
 #### public build() : \YooKassa\Common\AbstractRequest
 
 ```php
-public build(array|null  options = null) : \YooKassa\Common\AbstractRequest
+public build(array|null $options = null) : \YooKassa\Common\AbstractRequest
 ```
 
 **Summary**
@@ -101,7 +101,7 @@ public build(array|null  options = null) : \YooKassa\Common\AbstractRequest
 #### public setCapturedAtGt() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCapturedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCapturedAtGt(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -127,7 +127,7 @@ public setCapturedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Pay
 #### public setCapturedAtGte() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCapturedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCapturedAtGte(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -153,7 +153,7 @@ public setCapturedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Pa
 #### public setCapturedAtLt() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCapturedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCapturedAtLt(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -179,7 +179,7 @@ public setCapturedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Pay
 #### public setCapturedAtLte() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCapturedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCapturedAtLte(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -205,7 +205,7 @@ public setCapturedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Pa
 #### public setCreatedAtGt() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCreatedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCreatedAtGt(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -231,7 +231,7 @@ public setCreatedAtGt(\DateTime|string|int|null  value) : \YooKassa\Request\Paym
 #### public setCreatedAtGte() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCreatedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCreatedAtGte(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -257,7 +257,7 @@ public setCreatedAtGte(\DateTime|string|int|null  value) : \YooKassa\Request\Pay
 #### public setCreatedAtLt() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCreatedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCreatedAtLt(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -283,7 +283,7 @@ public setCreatedAtLt(\DateTime|string|int|null  value) : \YooKassa\Request\Paym
 #### public setCreatedAtLte() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCreatedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCreatedAtLte(\DateTime|string|int|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -309,7 +309,7 @@ public setCreatedAtLte(\DateTime|string|int|null  value) : \YooKassa\Request\Pay
 #### public setCursor() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setCursor(string|null  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setCursor(string|null $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -334,7 +334,7 @@ public setCursor(string|null  value) : \YooKassa\Request\Payments\PaymentsReques
 #### public setLimit() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setLimit(string  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setLimit(string $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -359,7 +359,7 @@ public setLimit(string  value) : \YooKassa\Request\Payments\PaymentsRequestBuild
 #### public setOptions() : \YooKassa\Common\AbstractRequestBuilder
 
 ```php
-public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractRequestBuilder
+public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractRequestBuilder
 ```
 
 **Summary**
@@ -385,7 +385,7 @@ public setOptions(array|\Traversable  options) : \YooKassa\Common\AbstractReques
 #### public setPaymentMethod() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setPaymentMethod(string  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setPaymentMethod(string $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -411,7 +411,7 @@ public setPaymentMethod(string  value) : \YooKassa\Request\Payments\PaymentsRequ
 #### public setStatus() : \YooKassa\Request\Payments\PaymentsRequestBuilder
 
 ```php
-public setStatus(string  value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
+public setStatus(string $value) : \YooKassa\Request\Payments\PaymentsRequestBuilder
 ```
 
 **Summary**
@@ -466,6 +466,6 @@ protected initCurrentObject() : \YooKassa\Request\Payments\PaymentsRequest
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

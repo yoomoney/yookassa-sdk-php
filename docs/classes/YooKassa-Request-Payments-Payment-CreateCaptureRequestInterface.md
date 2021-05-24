@@ -74,7 +74,7 @@ public hasAmount() : bool
 #### public setAmount() : mixed
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface  value) : mixed
+public setAmount(\YooKassa\Model\AmountInterface $value) : mixed
 ```
 
 **Summary**
@@ -137,7 +137,7 @@ public hasReceipt() : bool
 #### public setReceipt() : mixed
 
 ```php
-public setReceipt(\YooKassa\Model\ReceiptInterface|null  value) : mixed
+public setReceipt(\YooKassa\Model\ReceiptInterface|null $value) : mixed
 ```
 
 **Summary**
@@ -196,7 +196,7 @@ public getTransfers() : \YooKassa\Model\TransferInterface[]
 #### public setTransfers() : mixed
 
 ```php
-public setTransfers(\YooKassa\Model\TransferInterface[]|array|null  value) : mixed
+public setTransfers(\YooKassa\Model\TransferInterface[]|array|null $value) : mixed
 ```
 
 **Summary**
@@ -230,6 +230,6 @@ public setTransfers(\YooKassa\Model\TransferInterface[]|array|null  value) : mix
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

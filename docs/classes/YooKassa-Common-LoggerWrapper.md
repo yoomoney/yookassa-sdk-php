@@ -35,7 +35,7 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(object|callable  wrapped) : mixed
+public __construct(object|callable $wrapped) : mixed
 ```
 
 **Summary**
@@ -56,7 +56,7 @@ LoggerWrapper constructor.
 #### public alert() : void
 
 ```php
-public alert(string  message, array  context = array()) : void
+public alert(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -83,7 +83,7 @@ trigger the SMS alerts and wake you up.
 #### public critical() : void
 
 ```php
-public critical(string  message, array  context = array()) : void
+public critical(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -109,7 +109,7 @@ Example: Application component unavailable, unexpected exception.
 #### public debug() : void
 
 ```php
-public debug(string  message, array  context = array()) : void
+public debug(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -131,7 +131,7 @@ Detailed debug information.
 #### public emergency() : void
 
 ```php
-public emergency(string  message, array  context = array()) : void
+public emergency(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -153,7 +153,7 @@ System is unusable.
 #### public error() : void
 
 ```php
-public error(string  message, array  context = array()) : void
+public error(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -176,7 +176,7 @@ be logged and monitored.
 #### public info() : void
 
 ```php
-public info(string  message, array  context = array()) : void
+public info(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -202,7 +202,7 @@ Example: User logs in, SQL logs.
 #### public log() : void
 
 ```php
-public log(mixed  level, string  message, array  context = array()) : void
+public log(mixed $level, string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -225,7 +225,7 @@ Logs with an arbitrary level.
 #### public notice() : void
 
 ```php
-public notice(string  message, array  context = array()) : void
+public notice(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -247,7 +247,7 @@ Normal but significant events.
 #### public warning() : void
 
 ```php
-public warning(string  message, array  context = array()) : void
+public warning(string $message, array $context = array()) : void
 ```
 
 **Summary**
@@ -286,6 +286,6 @@ that are not necessarily wrong.
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -365,7 +365,7 @@ LENGTH_RECEIPT_ID = 39
 #### public __construct() : mixed
 
 ```php
-public __construct(mixed  receiptData) : mixed
+public __construct(mixed $receiptData) : mixed
 ```
 
 **Summary**
@@ -390,7 +390,7 @@ AbstractReceiptResponse constructor.
 #### public __get() : mixed
 
 ```php
-public __get(string  propertyName) : mixed
+public __get(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -411,7 +411,7 @@ public __get(string  propertyName) : mixed
 #### public __isset() : bool
 
 ```php
-public __isset(string  propertyName) : bool
+public __isset(string $propertyName) : bool
 ```
 
 **Summary**
@@ -432,7 +432,7 @@ public __isset(string  propertyName) : bool
 #### public __set() : mixed
 
 ```php
-public __set(string  propertyName, mixed  value) : mixed
+public __set(string $propertyName, mixed $value) : mixed
 ```
 
 **Summary**
@@ -454,7 +454,7 @@ public __set(string  propertyName, mixed  value) : mixed
 #### public __unset() : mixed
 
 ```php
-public __unset(string  propertyName) : mixed
+public __unset(string $propertyName) : mixed
 ```
 
 **Summary**
@@ -475,7 +475,7 @@ public __unset(string  propertyName) : mixed
 #### public addItem() : mixed
 
 ```php
-public addItem(\YooKassa\Request\Receipts\ReceiptResponseItemInterface  value) : mixed
+public addItem(\YooKassa\Request\Receipts\ReceiptResponseItemInterface $value) : mixed
 ```
 
 **Summary**
@@ -496,7 +496,7 @@ public addItem(\YooKassa\Request\Receipts\ReceiptResponseItemInterface  value) :
 #### public addSettlement() : mixed
 
 ```php
-public addSettlement(\YooKassa\Model\SettlementInterface  value) : mixed
+public addSettlement(\YooKassa\Model\SettlementInterface $value) : mixed
 ```
 
 **Summary**
@@ -517,7 +517,7 @@ public addSettlement(\YooKassa\Model\SettlementInterface  value) : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable  sourceArray) : mixed
+public fromArray(array|\Traversable $sourceArray) : mixed
 ```
 
 **Summary**
@@ -817,7 +817,7 @@ public notEmpty() : bool
 #### public offsetExists() : bool
 
 ```php
-public offsetExists(string  offset) : bool
+public offsetExists(string $offset) : bool
 ```
 
 **Summary**
@@ -838,7 +838,7 @@ public offsetExists(string  offset) : bool
 #### public offsetGet() : mixed
 
 ```php
-public offsetGet(string  offset) : mixed
+public offsetGet(string $offset) : mixed
 ```
 
 **Summary**
@@ -859,7 +859,7 @@ public offsetGet(string  offset) : mixed
 #### public offsetSet() : mixed
 
 ```php
-public offsetSet(string  offset, mixed  value) : mixed
+public offsetSet(string $offset, mixed $value) : mixed
 ```
 
 **Summary**
@@ -881,7 +881,7 @@ public offsetSet(string  offset, mixed  value) : mixed
 #### public offsetUnset() : mixed
 
 ```php
-public offsetUnset(string  offset) : mixed
+public offsetUnset(string $offset) : mixed
 ```
 
 **Summary**
@@ -902,7 +902,7 @@ public offsetUnset(string  offset) : mixed
 #### public setFiscalAttribute() : mixed
 
 ```php
-public setFiscalAttribute(string  fiscal_attribute) : mixed
+public setFiscalAttribute(string $fiscal_attribute) : mixed
 ```
 
 **Summary**
@@ -923,7 +923,7 @@ public setFiscalAttribute(string  fiscal_attribute) : mixed
 #### public setFiscalDocumentNumber() : mixed
 
 ```php
-public setFiscalDocumentNumber(string  value) : mixed
+public setFiscalDocumentNumber(string $value) : mixed
 ```
 
 **Summary**
@@ -948,7 +948,7 @@ public setFiscalDocumentNumber(string  value) : mixed
 #### public setFiscalProviderId() : mixed
 
 ```php
-public setFiscalProviderId(string  fiscal_provider_id) : mixed
+public setFiscalProviderId(string $fiscal_provider_id) : mixed
 ```
 
 **Summary**
@@ -969,7 +969,7 @@ public setFiscalProviderId(string  fiscal_provider_id) : mixed
 #### public setFiscalStorageNumber() : mixed
 
 ```php
-public setFiscalStorageNumber(string  fiscal_storage_number) : mixed
+public setFiscalStorageNumber(string $fiscal_storage_number) : mixed
 ```
 
 **Summary**
@@ -990,7 +990,7 @@ public setFiscalStorageNumber(string  fiscal_storage_number) : mixed
 #### public setId() : mixed
 
 ```php
-public setId(string  value) : mixed
+public setId(string $value) : mixed
 ```
 
 **Summary**
@@ -1016,7 +1016,7 @@ public setId(string  value) : mixed
 #### public setItems() : mixed
 
 ```php
-public setItems(\YooKassa\Request\Receipts\ReceiptResponseItemInterface[]  value) : mixed
+public setItems(\YooKassa\Request\Receipts\ReceiptResponseItemInterface[] $value) : mixed
 ```
 
 **Summary**
@@ -1048,7 +1048,7 @@ ReceiptItemInterface, в противном случае будет выброш
 #### public setObjectId() : mixed
 
 ```php
-public setObjectId( value) : mixed
+public setObjectId($value) : mixed
 ```
 
 **Summary**
@@ -1069,7 +1069,7 @@ public setObjectId( value) : mixed
 #### public setOnBehalfOf() : mixed
 
 ```php
-public setOnBehalfOf(string  value) : mixed
+public setOnBehalfOf(string $value) : mixed
 ```
 
 **Summary**
@@ -1090,7 +1090,7 @@ public setOnBehalfOf(string  value) : mixed
 #### public setRegisteredAt() : mixed
 
 ```php
-public setRegisteredAt(\DateTime  registered_at) : mixed
+public setRegisteredAt(\DateTime $registered_at) : mixed
 ```
 
 **Summary**
@@ -1111,7 +1111,7 @@ public setRegisteredAt(\DateTime  registered_at) : mixed
 #### public setSettlements() : mixed
 
 ```php
-public setSettlements(\YooKassa\Model\SettlementInterface[]  value) : mixed
+public setSettlements(\YooKassa\Model\SettlementInterface[] $value) : mixed
 ```
 
 **Summary**
@@ -1132,7 +1132,7 @@ public setSettlements(\YooKassa\Model\SettlementInterface[]  value) : mixed
 #### public setSpecificProperties() : void
 
 ```php
-Abstract public setSpecificProperties(array  receiptData) : void
+Abstract public setSpecificProperties(array $receiptData) : void
 ```
 
 **Summary**
@@ -1153,7 +1153,7 @@ Abstract public setSpecificProperties(array  receiptData) : void
 #### public setStatus() : \YooKassa\Request\Receipts\AbstractReceiptResponse
 
 ```php
-public setStatus(string  value) : \YooKassa\Request\Receipts\AbstractReceiptResponse
+public setStatus(string $value) : \YooKassa\Request\Receipts\AbstractReceiptResponse
 ```
 
 **Summary**
@@ -1179,7 +1179,7 @@ public setStatus(string  value) : \YooKassa\Request\Receipts\AbstractReceiptResp
 #### public setTaxSystemCode() : mixed
 
 ```php
-public setTaxSystemCode(int  value) : mixed
+public setTaxSystemCode(int $value) : mixed
 ```
 
 **Summary**
@@ -1205,7 +1205,7 @@ public setTaxSystemCode(int  value) : mixed
 #### public setType() : mixed
 
 ```php
-public setType(string  value) : mixed
+public setType(string $value) : mixed
 ```
 
 **Summary**
@@ -1278,6 +1278,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

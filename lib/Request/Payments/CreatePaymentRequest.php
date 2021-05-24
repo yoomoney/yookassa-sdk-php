@@ -165,7 +165,10 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
             $length = mb_strlen((string)$value, 'utf-8');
             if ($length > Payment::MAX_LENGTH_DESCRIPTION) {
                 throw new InvalidPropertyValueException(
-                    'Invalid description value', 0, 'CreatePaymentRequest.description', $value
+                    'The value of the description parameter is too long. Max length is ' . Payment::MAX_LENGTH_DESCRIPTION,
+                    0,
+                    'CreatePaymentRequest.description',
+                    $value
                 );
             }
             $this->_description = (string)$value;
@@ -376,7 +379,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
 
     /**
      * Проверяет был ли установлен флаг сохранения платёжных данных
-     * @return bool True если флыг был установлен, false если нет
+     * @return bool True если флаг был установлен, false если нет
      */
     public function hasSavePaymentMethod()
     {
@@ -415,7 +418,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет был ли установлен флаг автоматического приняти поступившей оплаты
+     * Проверяет был ли установлен флаг автоматического принятия поступившей оплаты
      * @return bool True если флаг автоматического принятия оплаты был установлен, false если нет
      */
     public function hasCapture()
@@ -578,7 +581,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
 
     /**
      * Возвращает билдер объектов запросов создания платежа
-     * @return CreatePaymentRequestBuilder Инстанс билдера объектов запрсов
+     * @return CreatePaymentRequestBuilder Инстанс билдера объектов запросов
      */
     public static function builder()
     {

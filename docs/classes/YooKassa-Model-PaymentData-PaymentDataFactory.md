@@ -29,7 +29,7 @@
 #### public factory() : \YooKassa\Model\PaymentData\AbstractPaymentData
 
 ```php
-public factory(string  type) : \YooKassa\Model\PaymentData\AbstractPaymentData
+public factory(string $type) : \YooKassa\Model\PaymentData\AbstractPaymentData
 ```
 
 **Summary**
@@ -50,7 +50,7 @@ public factory(string  type) : \YooKassa\Model\PaymentData\AbstractPaymentData
 #### public factoryFromArray() : \YooKassa\Model\PaymentData\AbstractPaymentData
 
 ```php
-public factoryFromArray(array  data, string|null  type = null) : \YooKassa\Model\PaymentData\AbstractPaymentData
+public factoryFromArray(array $data, string|null $type = null) : \YooKassa\Model\PaymentData\AbstractPaymentData
 ```
 
 **Summary**
@@ -84,6 +84,6 @@ public factoryFromArray(array  data, string|null  type = null) : \YooKassa\Model
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

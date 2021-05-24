@@ -52,7 +52,7 @@ Interface TransferInterface
 #### public setAccountId() : void
 
 ```php
-public setAccountId(string  value) : void
+public setAccountId(string $value) : void
 ```
 
 **Summary**
@@ -124,7 +124,7 @@ public hasAmount() : bool
 #### public setAmount() : mixed
 
 ```php
-public setAmount(\YooKassa\Model\AmountInterface|array  value) : mixed
+public setAmount(\YooKassa\Model\AmountInterface|array $value) : mixed
 ```
 
 **Summary**
@@ -179,7 +179,7 @@ public hasPlatformFeeAmount() : bool
 #### public setPlatformFeeAmount() : mixed
 
 ```php
-public setPlatformFeeAmount(\YooKassa\Model\AmountInterface|array  value) : mixed
+public setPlatformFeeAmount(\YooKassa\Model\AmountInterface|array $value) : mixed
 ```
 
 **Summary**
@@ -217,7 +217,7 @@ public getStatus() : string|null
 #### public setStatus() : mixed
 
 ```php
-public setStatus(string|null  value) : mixed
+public setStatus(string|null $value) : mixed
 ```
 
 **Summary**
@@ -238,7 +238,7 @@ public setStatus(string|null  value) : mixed
 #### public setMetadata() : mixed
 
 ```php
-public setMetadata(\YooKassa\Model\Metadata|array  value) : mixed
+public setMetadata(\YooKassa\Model\Metadata|array $value) : mixed
 ```
 
 **Summary**
@@ -306,6 +306,6 @@ public hasMetadata() : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

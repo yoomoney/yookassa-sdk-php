@@ -28,6 +28,11 @@ namespace YooKassa\Common\Exceptions;
 
 use Exception;
 
+/**
+ * Неожиданный код ошибки.
+ *
+ * @package YooKassa
+ */
 class ApiException extends Exception
 {
     /**

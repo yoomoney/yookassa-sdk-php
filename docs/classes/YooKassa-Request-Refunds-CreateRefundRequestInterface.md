@@ -78,7 +78,7 @@ public getAmount() : \YooKassa\Model\AmountInterface
 #### public setDescription() : mixed
 
 ```php
-public setDescription(string  value) : mixed
+public setDescription(string $value) : mixed
 ```
 
 **Summary**
@@ -133,7 +133,7 @@ public hasDescription() : bool
 #### public setReceipt() : mixed
 
 ```php
-public setReceipt(\YooKassa\Model\ReceiptInterface|null  value) : mixed
+public setReceipt(\YooKassa\Model\ReceiptInterface|null $value) : mixed
 ```
 
 **Summary**
@@ -188,7 +188,7 @@ public hasReceipt() : bool
 #### public setSources() : mixed
 
 ```php
-public setSources(\YooKassa\Model\SourceInterface[]  value) : mixed
+public setSources(\YooKassa\Model\SourceInterface[] $value) : mixed
 ```
 
 **Summary**
@@ -256,6 +256,6 @@ public hasSources() : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-04-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
