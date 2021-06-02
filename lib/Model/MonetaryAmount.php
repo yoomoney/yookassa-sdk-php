@@ -52,16 +52,20 @@ class MonetaryAmount extends AbstractObject implements AmountInterface
 
     /**
      * MonetaryAmount constructor.
-     * @param numeric|null $value Сумма
+     * @param array|numeric|null $value Сумма
      * @param string|null $currency Код валюты
      */
     public function __construct($value = null, $currency = null)
     {
-        if ($value !== null && $value > 0.0) {
-            $this->setValue($value);
-        }
-        if ($currency !== null) {
-            $this->setCurrency($currency);
+        if (is_array($value)) {
+            $this->fromArray($value);
+        } else {
+            if ($value !== null && $value > 0.0) {
+                $this->setValue($value);
+            }
+            if ($currency !== null) {
+                $this->setCurrency($currency);
+            }
         }
     }
 

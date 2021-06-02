@@ -37,6 +37,24 @@ class MonetaryAmountTest extends TestCase
     }
 
     /**
+     * @dataProvider validArrayDataProvider
+     *
+     * @param $data
+     */
+    public function testArrayConstructor($data)
+    {
+        $instance = new MonetaryAmount();
+
+        self::assertEquals(self::DEFAULT_VALUE, $instance->getValue());
+        self::assertEquals(self::DEFAULT_CURRENCY, $instance->getCurrency());
+
+        $instance = new MonetaryAmount($data);
+
+        self::assertEquals(number_format($data['value'], 2, '.', ''), $instance->getValue());
+        self::assertEquals(strtoupper($data['currency']), $instance->getCurrency());
+    }
+
+    /**
      * @dataProvider validValueDataProvider
      *
      * @param $value
@@ -140,6 +158,18 @@ class MonetaryAmountTest extends TestCase
             if (isset($result[$index])) {
                 $result[$index][] = $tmp[0];
             }
+        }
+        return $result;
+    }
+
+    public function validArrayDataProvider()
+    {
+        $result = array();
+        foreach (range(1, 10) as $i) {
+            $result[$i][] = array(
+                'value' => Random::float(0, 9999.99),
+                'currency' => Random::value(CurrencyCode::getValidValues()),
+            );
         }
         return $result;
     }

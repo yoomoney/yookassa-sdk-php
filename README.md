@@ -26,12 +26,12 @@ composer require yoomoney/yookassa-sdk-php
 ```
 
 ### В файле composer.json своего проекта
-1. Добавьте строку `"yoomoney/yookassa-sdk-php": "^2.0"` в список зависимостей вашего проекта в файле composer.json
+1. Добавьте строку `"yoomoney/yookassa-sdk-php": "^2.1"` в список зависимостей вашего проекта в файле composer.json
 ```
 ...
     "require": {
         "php": ">=5.3.2",
-        "yoomoney/yookassa-sdk-php": "^2.0"
+        "yoomoney/yookassa-sdk-php": "^2.1"
 ...
 ```
 2. Обновите зависимости проекта. В консоли перейдите в каталог, где лежит composer.json, и выполните команду:

@@ -37,7 +37,7 @@
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [__construct()](../classes/YooKassa-Model-ReceiptItem.md#method___construct) |  | ReceiptItem constructor. |
+| public | [__construct()](../classes/YooKassa-Common-AbstractObject.md#method___construct) |  | AbstractObject constructor. |
 | public | [__get()](../classes/YooKassa-Common-AbstractObject.md#method___get) |  | Возвращает значение свойства |
 | public | [__isset()](../classes/YooKassa-Common-AbstractObject.md#method___isset) |  | Проверяет наличие свойства |
 | public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
@@ -326,19 +326,19 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(array|null $data = null) : mixed
+public __construct(array $data = array()) : mixed
 ```
 
 **Summary**
 
-ReceiptItem constructor.
+AbstractObject constructor.
 
 **Details:**
-* Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">array OR null</code> | data  | Массив для инициализации нового объекта |
+| <code lang="php">array</code> | data  |  |
 
 **Returns:** mixed - 
 
@@ -1230,6 +1230,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-06-02 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

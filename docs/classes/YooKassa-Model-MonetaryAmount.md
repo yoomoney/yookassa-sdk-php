@@ -82,7 +82,7 @@ MonetaryAmount - Сумма определенная в валюте
 #### public __construct() : mixed
 
 ```php
-public __construct(\YooKassa\Model\numeric|null $value = null, string|null $currency = null) : mixed
+public __construct(array|\YooKassa\Model\numeric|null $value = null, string|null $currency = null) : mixed
 ```
 
 **Summary**
@@ -94,7 +94,7 @@ MonetaryAmount constructor.
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\numeric OR null</code> | value  | Сумма |
+| <code lang="php">array OR \YooKassa\Model\numeric OR null</code> | value  | Сумма |
 | <code lang="php">string OR null</code> | currency  | Код валюты |
 
 **Returns:** mixed - 
@@ -518,6 +518,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-06-02 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
