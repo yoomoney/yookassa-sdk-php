@@ -533,8 +533,7 @@ class ReceiptTest extends TestCase
      */
     public function testFromArray($source, $expected)
     {
-        $receipt = new Receipt();
-        $receipt->fromArray($source);
+        $receipt = new Receipt($source);
 
         if (!empty($expected)) {
             foreach ($expected as $property => $value) {
@@ -603,10 +602,16 @@ class ReceiptTest extends TestCase
                         array(
                             'description' => 'test',
                             'quantity' => 322,
-                            'amount' => array(
+                            'amount' => new ReceiptItemAmount(5, 'USD'),
+                            'vat_code' => 4,
+                        ),
+                        array(
+                            'description' => 'test',
+                            'quantity' => 322,
+                            'amount' => new ReceiptItemAmount(array(
                                 'value' => 5,
                                 'currency' => 'USD',
-                            ),
+                            )),
                             'vat_code' => 4,
                         ),
                     ),
@@ -620,6 +625,7 @@ class ReceiptTest extends TestCase
                     'items' => array(
                         $receiptItem,
                         new ReceiptItem(),
+                        $receiptItem,
                         $receiptItem,
                     ),
                 ),

@@ -214,6 +214,6 @@ public getSources() : \YooKassa\Model\SourceInterface[]
 
 ---
 
-This document was automatically generated from source code comments on 2021-05-24 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-06-02 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

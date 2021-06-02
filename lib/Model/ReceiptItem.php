@@ -126,17 +126,6 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
     private $_shipping = false;
 
     /**
-     * ReceiptItem constructor.
-     * @param array|null $data Массив для инициализации нового объекта
-     */
-    public function __construct($data = null)
-    {
-        if (!empty($data) && is_array($data)) {
-            $this->fromArray($data);
-        }
-    }
-
-    /**
      * Возвращает наименование товара
      * @return string Наименование товара
      */
@@ -642,10 +631,16 @@ class ReceiptItem extends AbstractObject implements ReceiptItemInterface
      */
     public function fromArray($sourceArray)
     {
-        $amount = new ReceiptItemAmount();
-        $amount->fromArray($sourceArray['amount']);
-        $sourceArray['price'] = $amount;
-        unset($sourceArray['amount']);
+        if (isset($sourceArray['amount'])) {
+            if (is_array($sourceArray['amount'])) {
+                $amount = new ReceiptItemAmount();
+                $amount->fromArray($sourceArray['amount']);
+                $sourceArray['price'] = $amount;
+            } elseif ($sourceArray['amount'] instanceof AmountInterface) {
+                $sourceArray['price'] = $sourceArray['amount'];
+            }
+            unset($sourceArray['amount']);
+        }
 
         parent::fromArray($sourceArray);
     }
