@@ -43,7 +43,7 @@ MonetaryAmount - Сумма определенная в валюте
 ---
 ### Details
 * File: [lib/Model/MonetaryAmount.php](../../lib/Model/MonetaryAmount.php)
-* Package: Default
+* Package: YooKassa
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
   * \YooKassa\Model\MonetaryAmount
@@ -64,13 +64,13 @@ MonetaryAmount - Сумма определенная в валюте
 
 
 <a name="property_value"></a>
-#### public $value : string
+#### public $value : int
 ---
 ***Description***
 
 Сумма
 
-**Type:** <a href="../string"><abbr title="string">string</abbr></a>
+**Type:** <a href="../int"><abbr title="int">int</abbr></a>
 
 **Details:**
 
@@ -518,6 +518,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-06-02 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-07-26 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
