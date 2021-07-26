@@ -36,9 +36,11 @@ use YooKassa\Model\CurrencyCode;
 
 /**
  * Class ReceiptItemAmount
+ *
  * @package YooKassa
  *
- * @method fromArray($sourceArray)
+ * @property int $value Сумма
+ * @property string $currency Код валюты
  */
 class ReceiptItemAmount extends AbstractObject implements AmountInterface
 {
@@ -60,7 +62,7 @@ class ReceiptItemAmount extends AbstractObject implements AmountInterface
     public function __construct($value = null, $currency = null)
     {
         if (is_array($value)) {
-            $this->fromArray($value);
+            parent::__construct($value);
         } else {
             if ($value !== null && $value > 0.0) {
                 $this->setValue($value);
@@ -217,7 +219,7 @@ class ReceiptItemAmount extends AbstractObject implements AmountInterface
     public function jsonSerialize()
     {
         return array(
-            'value' => sprintf('%.2f',$this->_value / 100.0),
+            'value' => number_format($this->_value / 100.0, 2, '.', ''),
             'currency' => $this->_currency,
         );
     }

@@ -11,6 +11,12 @@ Class ReceiptItemAmount
 ### Constants
 * No constants found
 ---
+### Properties
+| Visibility | Name | Flag | Summary |
+| ----------:| ---- | ---- | ------- |
+| public | [$currency](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md#property_currency) |  | Код валюты |
+| public | [$value](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md#property_value) |  | Сумма |
+---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
@@ -20,7 +26,6 @@ Class ReceiptItemAmount
 | public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
 | public | [__unset()](../classes/YooKassa-Common-AbstractObject.md#method___unset) |  | Удаляет свойство |
 | public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
-| public | [fromArray()](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
 | public | [getCurrency()](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md#method_getCurrency) |  | Возвращает валюту |
 | public | [getIntegerValue()](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md#method_getIntegerValue) |  | Возвращает сумму в копейках в виде целого числа |
 | public | [getValue()](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md#method_getValue) |  | Возвращает значение суммы |
@@ -44,6 +49,32 @@ Class ReceiptItemAmount
   * \YooKassa\Model\Receipt\ReceiptItemAmount
 * Implements:
   * [\YooKassa\Model\AmountInterface](../classes/YooKassa-Model-AmountInterface.md)
+---
+## Properties
+<a name="property_currency"></a>
+#### public $currency : string
+---
+***Description***
+
+Код валюты
+
+**Type:** <a href="../string"><abbr title="string">string</abbr></a>
+
+**Details:**
+
+
+<a name="property_value"></a>
+#### public $value : int
+---
+***Description***
+
+Сумма
+
+**Type:** <a href="../int"><abbr title="int">int</abbr></a>
+
+**Details:**
+
+
 
 ---
 ## Methods
@@ -173,27 +204,6 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 | <code lang="php">array OR \Traversable</code> | sourceArray  | Ассоциативный массив с настройками |
 
 **Returns:** mixed - 
-
-
-<a name="method_fromArray" class="anchor"></a>
-#### public fromArray() 
-
-```php
-public fromArray(mixed $sourceArray) 
-```
-
-**Summary**
-
-Устанавливает значения свойств текущего объекта из массива
-
-**Details:**
-* Inherited From: [\YooKassa\Model\Receipt\ReceiptItemAmount](../classes/YooKassa-Model-Receipt-ReceiptItemAmount.md)
-##### Parameters:
-| Type | Name | Description |
-| ---- | ---- | ----------- |
-| <code lang="php">mixed</code> | sourceArray  | Ассоциативный массив с настройками |
-
-**Returns:**  - 
 
 
 <a name="method_getCurrency" class="anchor"></a>
@@ -506,6 +516,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-06-02 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-07-26 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
