@@ -86,6 +86,9 @@ class Transfer extends AbstractObject implements TransferInterface
             if (!empty($data['amount'])) {
                 $this->setAmount($this->factoryAmount($data['amount']));
             }
+            if (!empty($data['metadata'])) {
+                $this->setMetadata($data['metadata']);
+            }
             if (!empty($data['platform_fee_amount'])) {
                 $this->setPlatformFeeAmount($this->factoryAmount($data['platform_fee_amount']));
             }
