@@ -354,7 +354,8 @@ class CreatePaymentRequestSerializer
         foreach ($transfers as $transfer) {
             $result[] = array(
                 'account_id' => $transfer->getAccountId(),
-                'amount' => $this->serializeAmount($transfer->getAmount())
+                'amount' => $this->serializeAmount($transfer->getAmount()),
+                'metadata' => $transfer->getMetadata(),
             );
         }
 
