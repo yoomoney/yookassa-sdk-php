@@ -28,6 +28,7 @@ use YooKassa\Model\PaymentData\PaymentDataYooMoney;
 use YooKassa\Model\PaymentMethodType;
 use YooKassa\Model\Receipt\PaymentMode;
 use YooKassa\Model\Receipt\PaymentSubject;
+use YooKassa\Model\TransferStatus;
 use YooKassa\Request\Payments\CreatePaymentRequest;
 use YooKassa\Request\Payments\CreatePaymentRequestSerializer;
 
@@ -184,6 +185,29 @@ class CreatePaymentRequestSerializerTest extends TestCase
             );
         }
 
+        if (!empty($options['transfers'])) {
+            foreach ($options['transfers'] as $item) {
+                $itemArray = $item;
+
+                if (!empty($item['account_id'])) {
+                    $itemArray['account_id'] = $item['account_id'];
+                }
+                if (!empty($item['amount'])) {
+                    $itemArray['amount'] = $item['amount'];
+                }
+                if (!empty($item['status'])) {
+                    $itemArray['status'] = $item['status'];
+                }
+                if (!empty($item['platform_fee_amount'])) {
+                    $itemArray['platform_fee_amount'] = $item['platform_fee_amount'];
+                }
+                if (!empty($item['metadata'])) {
+                    $itemArray['metadata'] = $item['metadata'];
+                }
+                $expected['transfers'][] = $itemArray;
+            }
+        }
+
         self::assertEquals($expected, $data);
     }
 
@@ -248,6 +272,21 @@ class CreatePaymentRequestSerializerTest extends TestCase
                             ),
                         ),
                     ),
+                    'transfers' => array(
+                        array(
+                            'account_id' => (string)Random::int(11111111, 99999999),
+                            'amount' => array(
+                                'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
+                                'currency' => Random::value(CurrencyCode::getValidValues())
+                            ),
+                            'status' => Random::value(TransferStatus::getValidValues()),
+                            'platform_fee_amount' => array(
+                                'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
+                                'currency' => Random::value(CurrencyCode::getValidValues())
+                            ),
+                            'metadata' => array('test' => Random::str(10, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')),
+                        )
+                    )
                 ),
             ),
         );

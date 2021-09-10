@@ -13,6 +13,7 @@ use YooKassa\Model\Receipt;
 use YooKassa\Model\ReceiptItem;
 use YooKassa\Model\Recipient;
 use YooKassa\Model\Transfer;
+use YooKassa\Model\TransferStatus;
 use YooKassa\Request\Payments\CreatePaymentRequest;
 use YooKassa\Request\Payments\CreatePaymentRequestBuilder;
 
@@ -562,6 +563,8 @@ class CreatePaymentRequestTest extends TestCase
      */
     public function validTransfers()
     {
+        $metadata = new Metadata();
+        $metadata->test = 'test';
         $transfers = array();
         for($i = 0; $i < 10; $i++) {
             $transfers[$i][] = array(
@@ -570,10 +573,12 @@ class CreatePaymentRequestTest extends TestCase
                     'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
                     'currency' => Random::value(CurrencyCode::getValidValues())
                 ),
+                'status' => Random::value(TransferStatus::getValidValues()),
                 'platform_fee_amount' => array(
                     'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
                     'currency' => Random::value(CurrencyCode::getValidValues())
-                )
+                ),
+                'metadata' => $i == 0 ? $metadata : array('test' => 'test'),
             );
         }
         $transfers[$i][] = array(new Transfer($transfers[0]));
@@ -743,6 +748,21 @@ class CreatePaymentRequestTest extends TestCase
                 'capture' => mt_rand(0, 1) ? true : false,
                 'clientIp' => long2ip(mt_rand(0, pow(2, 32))),
                 'metadata' => $i == 0 ? $metadata : array('test' => 'test'),
+                'transfers' => array(
+                    array(
+                        'account_id' => (string)Random::int(11111111, 99999999),
+                        'amount' => array(
+                            'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
+                            'currency' => Random::value(CurrencyCode::getValidValues())
+                        ),
+                        'status' => Random::value(TransferStatus::getValidValues()),
+                        'platform_fee_amount' => array(
+                            'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
+                            'currency' => Random::value(CurrencyCode::getValidValues())
+                        ),
+                        'metadata' => $i == 0 ? $metadata : array('test' => 'test'),
+                    )
+                )
             );
             $result[] = array($request);
         }

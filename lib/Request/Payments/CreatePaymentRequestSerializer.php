@@ -352,10 +352,18 @@ class CreatePaymentRequestSerializer
     {
         $result = array();
         foreach ($transfers as $transfer) {
-            $result[] = array(
+            $item = array(
                 'account_id' => $transfer->getAccountId(),
-                'amount' => $this->serializeAmount($transfer->getAmount())
+                'amount' => $this->serializeAmount($transfer->getAmount()),
+                'status' => $transfer->getStatus(),
             );
+            if ($transfer->hasPlatformFeeAmount()) {
+                $item['platform_fee_amount'] = $this->serializeAmount($transfer->getPlatformFeeAmount());
+            }
+            if ($transfer->hasMetadata()) {
+                $item['metadata'] = $transfer->getMetadata()->toArray();
+            }
+            $result[] = $item;
         }
 
         return $result;
