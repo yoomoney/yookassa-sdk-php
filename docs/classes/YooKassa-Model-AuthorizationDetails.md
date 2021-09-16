@@ -28,7 +28,7 @@ AuthorizationDetails - Данные об авторизации платежа
 | public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
 | public | [getAuthCode()](../classes/YooKassa-Model-AuthorizationDetails.md#method_getAuthCode) |  | Возвращает код авторизации банковской карты |
 | public | [getRrn()](../classes/YooKassa-Model-AuthorizationDetails.md#method_getRrn) |  | Возвращает уникальный идентификатор транзакции |
-| public | [jsonSerialize()](../classes/YooKassa-Model-AuthorizationDetails.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
+| public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
 | public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
@@ -248,9 +248,9 @@ public jsonSerialize() : array
 Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации
 
 **Details:**
-* Inherited From: [\YooKassa\Model\AuthorizationDetails](../classes/YooKassa-Model-AuthorizationDetails.md)
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
 
-**Returns:** array - 
+**Returns:** array - Ассоциативный массив со свойствами текущего объекта
 
 
 <a name="method_offsetExists" class="anchor"></a>
@@ -431,6 +431,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-10 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

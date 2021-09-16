@@ -85,17 +85,6 @@ class CancellationDetails extends AbstractObject implements CancellationDetailsI
     }
 
     /**
-     * @return array
-     */
-    public function jsonSerialize()
-    {
-        return array(
-            'party'    => $this->_party,
-            'reason' => $this->_reason,
-        );
-    }
-
-    /**
      * Устанавливает участника процесса платежа, который принял решение об отмене транзакции
      * @param $value
      */

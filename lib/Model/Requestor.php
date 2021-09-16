@@ -48,15 +48,6 @@ class Requestor extends AbstractObject implements RequestorInterface
     private $_clientName;
 
     /**
-     * Requestor constructor.
-     * @param null|array $data
-     */
-    public function __construct($data = null)
-    {
-        $this->fromArray($data);
-    }
-
-    /**
      * @inheritdoc
      * @param string $value Тип инициатора
      */
