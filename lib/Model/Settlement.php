@@ -54,22 +54,6 @@ class Settlement extends AbstractObject implements SettlementInterface
     private $_amount;
 
     /**
-     * Settlement constructor.
-     * @param array $data
-     */
-    public function __construct($data = null)
-    {
-        if (isset($data) && is_array($data)) {
-            if (!empty($data['type'])) {
-                $this->setType($data['type']);
-            }
-            if (!empty($data['amount'])) {
-                $this->setAmount($this->factoryAmount($data['amount']));
-            }
-        }
-    }
-
-    /**
      * Возвращает вид оплаты в чеке (cashless | prepayment | postpayment | consideration)
      * @return string Вид оплаты в чеке
      */

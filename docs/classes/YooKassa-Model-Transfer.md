@@ -28,7 +28,7 @@
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [__construct()](../classes/YooKassa-Model-Transfer.md#method___construct) |  | Transfer constructor. |
+| public | [__construct()](../classes/YooKassa-Common-AbstractObject.md#method___construct) |  | AbstractObject constructor. |
 | public | [__get()](../classes/YooKassa-Common-AbstractObject.md#method___get) |  | Возвращает значение свойства |
 | public | [__isset()](../classes/YooKassa-Common-AbstractObject.md#method___isset) |  | Проверяет наличие свойства |
 | public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
@@ -132,15 +132,15 @@
 #### public __construct() : mixed
 
 ```php
-public __construct(array $data = null) : mixed
+public __construct(array $data = array()) : mixed
 ```
 
 **Summary**
 
-Transfer constructor.
+AbstractObject constructor.
 
 **Details:**
-* Inherited From: [\YooKassa\Model\Transfer](../classes/YooKassa-Model-Transfer.md)
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -697,6 +697,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-10 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

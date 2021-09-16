@@ -83,17 +83,6 @@ class AuthorizationDetails extends AbstractObject implements AuthorizationDetail
     }
 
     /**
-     * @return array
-     */
-    public function jsonSerialize()
-    {
-        return array(
-            'rrn'       => $this->_rrn,
-            'auth_code' => $this->_authCode,
-        );
-    }
-
-    /**
      * Устанавливает уникальный идентификатор транзакции
      * @param $value
      */

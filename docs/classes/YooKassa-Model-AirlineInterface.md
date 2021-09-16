@@ -106,6 +106,6 @@ public getLegs() : \YooKassa\Model\LegInterface[]
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-10 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -56,25 +56,6 @@ class Source extends AbstractObject implements SourceInterface
     private $_platform_fee_amount;
 
     /**
-     * Transfer constructor.
-     * @param array $data
-     */
-    public function __construct($data = null)
-    {
-        if (isset($data) && is_array($data)) {
-            if (!empty($data['account_id'])) {
-                $this->setAccountId($data['account_id']);
-            }
-            if (!empty($data['amount'])) {
-                $this->setAmount($this->factoryAmount($data['amount']));
-            }
-            if (!empty($data['platform_fee_amount'])) {
-                $this->setPlatformFeeAmount($this->factoryAmount($data['platform_fee_amount']));
-            }
-        }
-    }
-
-    /**
      * @inheritDoc
      */
     public function setAccountId($value)

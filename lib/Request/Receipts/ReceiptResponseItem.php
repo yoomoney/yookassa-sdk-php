@@ -358,30 +358,4 @@ class ReceiptResponseItem extends AbstractObject implements ReceiptResponseItemI
 
         return $amount;
     }
-
-    /**
-     * @return array
-     */
-    public function jsonSerialize()
-    {
-        $result = array(
-            'description'     => $this->getDescription(),
-            'amount'          => array(
-                'value'    => $this->getPrice()->getValue(),
-                'currency' => $this->getPrice()->getCurrency(),
-            ),
-            'quantity'        => $this->getQuantity(),
-            'vat_code'        => $this->getVatCode(),
-        );
-
-        if ($this->getPaymentSubject()) {
-            $result['payment_subject'] = $this->getPaymentSubject();
-        }
-
-        if ($this->getPaymentMode()) {
-            $result['payment_mode'] = $this->getPaymentMode();
-        }
-
-        return $result;
-    }
 }

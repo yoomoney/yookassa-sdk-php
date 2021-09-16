@@ -55,17 +55,6 @@ class Supplier extends AbstractObject implements SupplierInterface
     private $_inn;
 
     /**
-     * Supplier constructor.
-     * @param null|array $data
-     */
-    public function __construct($data = null)
-    {
-        if (!empty($data) && is_array($data)) {
-            $this->fromArray($data);
-        }
-    }
-
-    /**
      * @return string
      */
     public function getName()

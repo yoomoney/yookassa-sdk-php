@@ -28,7 +28,7 @@ CancellationDetails - Комментарий к отмене платежа
 | public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
 | public | [getParty()](../classes/YooKassa-Model-CancellationDetails.md#method_getParty) |  | Возвращает участника процесса платежа, который принял решение об отмене транзакции |
 | public | [getReason()](../classes/YooKassa-Model-CancellationDetails.md#method_getReason) |  | Возвращает причину отмены платежа |
-| public | [jsonSerialize()](../classes/YooKassa-Model-CancellationDetails.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
+| public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
 | public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
@@ -249,9 +249,9 @@ public jsonSerialize() : array
 Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации
 
 **Details:**
-* Inherited From: [\YooKassa\Model\CancellationDetails](../classes/YooKassa-Model-CancellationDetails.md)
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
 
-**Returns:** array - 
+**Returns:** array - Ассоциативный массив со свойствами текущего объекта
 
 
 <a name="method_offsetExists" class="anchor"></a>
@@ -432,6 +432,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-10 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

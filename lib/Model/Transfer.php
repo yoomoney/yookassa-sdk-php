@@ -74,31 +74,6 @@ class Transfer extends AbstractObject implements TransferInterface
     private $_metadata;
 
     /**
-     * Transfer constructor.
-     * @param array $data
-     */
-    public function __construct($data = null)
-    {
-        if (isset($data) && is_array($data)) {
-            if (!empty($data['account_id'])) {
-                $this->setAccountId($data['account_id']);
-            }
-            if (!empty($data['amount'])) {
-                $this->setAmount($this->factoryAmount($data['amount']));
-            }
-            if (!empty($data['metadata'])) {
-                $this->setMetadata($data['metadata']);
-            }
-            if (!empty($data['platform_fee_amount'])) {
-                $this->setPlatformFeeAmount($this->factoryAmount($data['platform_fee_amount']));
-            }
-            if (!empty($data['status'])) {
-                $this->setStatus($data['status']);
-            }
-        }
-    }
-
-    /**
      * @inheritDoc
      */
     public function setAccountId($value)
