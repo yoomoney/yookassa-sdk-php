@@ -33,7 +33,7 @@ before_script:
   - export XDEBUG_MODE=coverage
 
 script:
-  - php vendor/bin/phpunit --configuration phpunit.xml.dist
+  - php vendor/bin/phpunit --configuration phpunit.xml.dist --no-coverage
 
 # after_success:
 #   - travis_retry php vendor/bin/php-coveralls

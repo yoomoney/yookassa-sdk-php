@@ -31,7 +31,6 @@ use YooKassa\Model\AmountInterface;
 use YooKassa\Model\AuthorizationDetails;
 use YooKassa\Model\CancellationDetails;
 use YooKassa\Model\Confirmation\ConfirmationCodeVerification;
-use YooKassa\Model\Confirmation\ConfirmationDeepLink;
 use YooKassa\Model\Confirmation\ConfirmationEmbedded;
 use YooKassa\Model\Confirmation\ConfirmationQr;
 use YooKassa\Model\Confirmation\ConfirmationRedirect;
@@ -125,10 +124,6 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
 
                 case ConfirmationType::CODE_VERIFICATION:
                     $confirmation = new ConfirmationCodeVerification();
-                    break;
-
-                case ConfirmationType::DEEPLINK:
-                    $confirmation = new ConfirmationDeepLink();
                     break;
 
                 case ConfirmationType::QR:

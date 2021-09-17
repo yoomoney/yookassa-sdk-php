@@ -37,7 +37,6 @@ class ConfirmationAttributesFactory
 {
     private $typeClassMap = array(
         ConfirmationType::CODE_VERIFICATION => 'ConfirmationAttributesCodeVerification',
-        ConfirmationType::DEEPLINK          => 'ConfirmationAttributesDeepLink',
         ConfirmationType::EXTERNAL          => 'ConfirmationAttributesExternal',
         ConfirmationType::REDIRECT          => 'ConfirmationAttributesRedirect',
         ConfirmationType::EMBEDDED          => 'ConfirmationAttributesEmbedded',

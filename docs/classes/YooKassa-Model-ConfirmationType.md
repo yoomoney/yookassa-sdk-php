@@ -10,7 +10,6 @@ ConfirmationType - Тип пользовательского процесса п
 --- | ---
 |redirect|Необходимо направить плательщика на страницу партнера|
 |external|Необходимо ождать пока плательщик самостоятельно подтвердит платеж|
-|deeplink|Необходимо направить плательщика в приложение партнера|
 |code_verification|Необходимо получить одноразовый код от плательщика для подтверждения платежа|
 |embedded|Необходимо получить токен для checkout.js|
 |qr|Необходимо получить QR-код|
@@ -21,7 +20,6 @@ ConfirmationType - Тип пользовательского процесса п
 | ----------:| ---- | ---- | ------- |
 | public | [REDIRECT](../classes/YooKassa-Model-ConfirmationType.md#constant_REDIRECT) |  |  |
 | public | [EXTERNAL](../classes/YooKassa-Model-ConfirmationType.md#constant_EXTERNAL) |  |  |
-| public | [DEEPLINK](../classes/YooKassa-Model-ConfirmationType.md#constant_DEEPLINK) |  |  |
 | public | [CODE_VERIFICATION](../classes/YooKassa-Model-ConfirmationType.md#constant_CODE_VERIFICATION) |  |  |
 | public | [EMBEDDED](../classes/YooKassa-Model-ConfirmationType.md#constant_EMBEDDED) |  |  |
 | public | [QR](../classes/YooKassa-Model-ConfirmationType.md#constant_QR) |  |  |
@@ -57,13 +55,6 @@ REDIRECT = 'redirect'
 ###### EXTERNAL
 ```php
 EXTERNAL = 'external'
-```
-
-
-<a name="constant_DEEPLINK" class="anchor"></a>
-###### DEEPLINK
-```php
-DEEPLINK = 'deeplink'
 ```
 
 
@@ -172,6 +163,6 @@ Static public valueExists(mixed $value) : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-17 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

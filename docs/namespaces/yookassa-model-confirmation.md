@@ -7,7 +7,6 @@
 | ---- | ------- |
 | [\YooKassa\Model\Confirmation\AbstractConfirmation](../classes/YooKassa-Model-Confirmation-AbstractConfirmation.md) | Способ подтверждения платежа. |
 | [\YooKassa\Model\Confirmation\ConfirmationCodeVerification](../classes/YooKassa-Model-Confirmation-ConfirmationCodeVerification.md) | Сценарий при котором необходимо получить одноразовый код от плательщика для подтверждения платежа |
-| [\YooKassa\Model\Confirmation\ConfirmationDeepLink](../classes/YooKassa-Model-Confirmation-ConfirmationDeepLink.md) | Сценарий при котором необходимо направить плательщика в приложение партнера |
 | [\YooKassa\Model\Confirmation\ConfirmationEmbedded](../classes/YooKassa-Model-Confirmation-ConfirmationEmbedded.md) | Способ подтверждения платежа. |
 | [\YooKassa\Model\Confirmation\ConfirmationExternal](../classes/YooKassa-Model-Confirmation-ConfirmationExternal.md) | Сценарий при котором необходимо ожидать пока пользователь самостоятельно подтвердит платеж. Например, пользователь подтверждает платеж ответом на SMS или в приложении партнера |
 | [\YooKassa\Model\Confirmation\ConfirmationFactory](../classes/YooKassa-Model-Confirmation-ConfirmationFactory.md) | Class ConfirmationFactory |
@@ -29,6 +28,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-17 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
