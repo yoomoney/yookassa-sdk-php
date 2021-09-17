@@ -38,7 +38,7 @@
 | [\YooKassa\Model\CancellationDetails](../classes/YooKassa-Model-CancellationDetails.md) | CancellationDetails - Комментарий к отмене платежа |
 | [\YooKassa\Model\CancellationDetailsPartyCode](../classes/YooKassa-Model-CancellationDetailsPartyCode.md) | CancellationDetailsPartyCode - Возможные инициаторы отмены платежа |
 | [\YooKassa\Model\CancellationDetailsReasonCode](../classes/YooKassa-Model-CancellationDetailsReasonCode.md) | CancellationDetailsReasonCode - Возможные причины отмены платежа |
-| [\YooKassa\Model\ConfirmationType](../classes/YooKassa-Model-ConfirmationType.md) | ConfirmationType - Тип пользовательского процесса подтверждения платежа |Код|Описание| --- | --- |redirect|Необходимо направить плательщика на страницу партнера| |external|Необходимо ождать пока плательщик самостоятельно подтвердит платеж| |deeplink|Необходимо направить плательщика в приложение партнера| |code_verification|Необходимо получить одноразовый код от плательщика для подтверждения платежа| |embedded|Необходимо получить токен для checkout.js| |qr|Необходимо получить QR-код| |
+| [\YooKassa\Model\ConfirmationType](../classes/YooKassa-Model-ConfirmationType.md) | ConfirmationType - Тип пользовательского процесса подтверждения платежа |Код|Описание| --- | --- |redirect|Необходимо направить плательщика на страницу партнера| |external|Необходимо ождать пока плательщик самостоятельно подтвердит платеж| |code_verification|Необходимо получить одноразовый код от плательщика для подтверждения платежа| |embedded|Необходимо получить токен для checkout.js| |qr|Необходимо получить QR-код| |
 | [\YooKassa\Model\CurrencyCode](../classes/YooKassa-Model-CurrencyCode.md) | CurrencyCode - Код валюты, ISO-4217 3-alpha currency symbol |
 | [\YooKassa\Model\Leg](../classes/YooKassa-Model-Leg.md) | Класс, описывающий маршрут |
 | [\YooKassa\Model\Metadata](../classes/YooKassa-Model-Metadata.md) | Metadata - Метаданные платежа указанные мерчантом. |
@@ -79,6 +79,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-16 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-17 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
