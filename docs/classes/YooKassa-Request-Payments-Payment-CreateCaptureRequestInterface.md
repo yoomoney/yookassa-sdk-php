@@ -230,6 +230,6 @@ public setTransfers(\YooKassa\Model\TransferInterface[]|array|null $value) : mix
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-17 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-09-28 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
