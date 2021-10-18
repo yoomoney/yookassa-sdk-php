@@ -1063,7 +1063,7 @@ public setPaymentSubject(string $value) : mixed
 #### public setPrice() : mixed
 
 ```php
-public setPrice(\YooKassa\Model\AmountInterface $value) : mixed
+public setPrice(\YooKassa\Model\AmountInterface|array $value) : mixed
 ```
 
 **Summary**
@@ -1075,7 +1075,7 @@ public setPrice(\YooKassa\Model\AmountInterface $value) : mixed
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\AmountInterface</code> | value  | Цена товара |
+| <code lang="php">\YooKassa\Model\AmountInterface OR array</code> | value  | Цена товара |
 
 **Returns:** mixed - 
 
@@ -1230,6 +1230,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-09-28 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-10-18 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

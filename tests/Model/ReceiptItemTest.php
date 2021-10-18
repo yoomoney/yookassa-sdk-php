@@ -3,6 +3,7 @@
 namespace Tests\YooKassa\Model;
 
 use PHPUnit\Framework\TestCase;
+use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\Random;
 use YooKassa\Helpers\StringObject;
 use YooKassa\Model\AmountInterface;
@@ -518,6 +519,12 @@ class ReceiptItemTest extends TestCase
     {
         return array(
             array(
+                new ReceiptItemAmount(array(
+                    'value' => Random::int(1, 100),
+                    'currency' => Random::value(CurrencyCode::getValidValues()),
+                )),
+            ),
+            array(
                 new ReceiptItemAmount(
                     Random::int(1, 100),
                     Random::value(CurrencyCode::getValidValues())
@@ -536,8 +543,8 @@ class ReceiptItemTest extends TestCase
      */
     public function testSetInvalidPrice($value)
     {
-        if (class_exists('TypeError')) {
-            self::setExpectedException('TypeError');
+        if (class_exists('InvalidPropertyValueTypeException')) {
+            self::setExpectedException('InvalidPropertyValueTypeException');
             $this->getTestInstance()->setPrice($value);
         }
     }
@@ -549,8 +556,8 @@ class ReceiptItemTest extends TestCase
      */
     public function testSetterInvalidPrice($value)
     {
-        if (class_exists('TypeError')) {
-            self::setExpectedException('TypeError');
+        if (class_exists('InvalidPropertyValueTypeException')) {
+            self::setExpectedException('InvalidPropertyValueTypeException');
             $this->getTestInstance()->price = $value;
         }
     }
