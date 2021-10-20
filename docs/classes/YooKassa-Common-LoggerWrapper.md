@@ -286,6 +286,6 @@ that are not necessarily wrong.
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-18 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

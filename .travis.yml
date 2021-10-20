@@ -23,8 +23,6 @@ cache:
     - $HOME/.composer
 
 before_install:
-  - sudo sed 's/mozilla.DST_Root_CA_X3.crt/!mozilla\/DST_Root_CA_X3.crt/' -i /etc/ca-certificates.conf
-  - sudo update-ca-certificates
   - composer self-update
   - composer clear-cache
 

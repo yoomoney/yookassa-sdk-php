@@ -198,7 +198,7 @@ DEFAULT_ATTEMPTS_COUNT = 3
 Текущая версия библиотеки
 
 ```php
-SDK_VERSION = '2.1.8'
+SDK_VERSION = '2.1.9'
 ```
 
 
@@ -1271,7 +1271,7 @@ var_dump($response);
 #### public me() : array|null
 
 ```php
-public me() : array|null
+public me(array|string|int|null $filter = null) : array|null
 ```
 
 **Summary**
@@ -1284,6 +1284,10 @@ public me() : array|null
 
 **Details:**
 * Inherited From: [\YooKassa\Client](../classes/YooKassa-Client.md)
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array OR string OR int OR null</code> | filter  | Параметры поиска. В настоящее время доступен только `on_behalf_of` |
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1701,6 +1705,6 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-18 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
