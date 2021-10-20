@@ -94,7 +94,7 @@ class Client extends BaseClient
     /**
      * Текущая версия библиотеки
      */
-    const SDK_VERSION = '2.1.8';
+    const SDK_VERSION = '2.1.9';
 
     /**
      * Получить список платежей магазина
@@ -863,6 +863,8 @@ class Client extends BaseClient
      *
      * @example 01-client.php 12 7 Информация о магазине
      *
+     * @param array|string|int|null $filter Параметры поиска. В настоящее время доступен только `on_behalf_of`
+     *
      * @return array|null Массив с информацией о магазине
      *
      * @throws ApiException Неожиданный код ошибки.
@@ -876,11 +878,18 @@ class Client extends BaseClient
      * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
      * @throws AuthorizeException Ошибка авторизации. Не установлен заголовок.
      */
-    public function me()
+    public function me($filter = null)
     {
         $path = self::ME_PATH;
 
-        $response = $this->execute($path, HttpVerb::GET, null);
+        $queryParams = array();
+        if (is_array($filter)) {
+            $queryParams = $filter;
+        } elseif (is_string($filter) || is_int($filter)) {
+            $queryParams['on_behalf_of'] = $filter;
+        }
+
+        $response = $this->execute($path, HttpVerb::GET, $queryParams);
 
         $result = null;
         if ($response->getCode() == 200) {
