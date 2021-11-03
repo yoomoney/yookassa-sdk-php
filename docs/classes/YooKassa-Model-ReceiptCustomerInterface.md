@@ -10,6 +10,7 @@ Interface ReceiptCustomerInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -24,6 +25,7 @@ Interface ReceiptCustomerInterface
 ### Details
 * File: [lib/Model/ReceiptCustomerInterface.php](../../lib/Model/ReceiptCustomerInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -33,6 +35,7 @@ Interface ReceiptCustomerInterface
 | property-read |  | Номер телефона плательщика в формате ITU-T E.164 на который будет выслан чек. |
 | property-read |  | E-mail адрес плательщика на который будет выслан чек. |
 | property-read |  | ИНН плательщика (10 или 12 цифр). |
+
 ---
 ## Methods
 <a name="method_getFullName" class="anchor"></a>
@@ -49,7 +52,7 @@ public getFullName() : string
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptCustomerInterface](../classes/YooKassa-Model-ReceiptCustomerInterface.md)
 
-**Returns:** string - название организации или ФИО физического лица
+**Returns:** string - Название организации или ФИО физического лица
 
 
 <a name="method_getPhone" class="anchor"></a>
@@ -133,10 +136,10 @@ public jsonSerialize() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

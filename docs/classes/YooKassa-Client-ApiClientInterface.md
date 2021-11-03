@@ -10,6 +10,7 @@ Interface ApiClientInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -26,6 +27,7 @@ Interface ApiClientInterface
 ### Details
 * File: [lib/Client/ApiClientInterface.php](../../lib/Client/ApiClientInterface.php)
 * Package: \YooKassa
+
 ---
 ## Methods
 <a name="method_call" class="anchor"></a>
@@ -41,6 +43,7 @@ public call(string $path, string $method, array $queryParams, string|null $httpB
 
 **Details:**
 * Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -66,6 +69,7 @@ public setLogger(\Psr\Log\LoggerInterface|null $logger) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -104,6 +108,7 @@ public setShopId(string|int $shopId) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -125,6 +130,7 @@ public setShopPassword(string $shopPassword) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -146,6 +152,7 @@ public setBearerToken(string $bearerToken) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -167,6 +174,7 @@ public setConfig(array $config) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\ApiClientInterface](../classes/YooKassa-Client-ApiClientInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -188,10 +196,10 @@ public setConfig(array $config) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

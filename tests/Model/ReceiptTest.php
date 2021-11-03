@@ -4,11 +4,15 @@ namespace Tests\YooKassa\Model;
 
 use PHPUnit\Framework\TestCase;
 use YooKassa\Helpers\Random;
+use YooKassa\Model\CurrencyCode;
 use YooKassa\Model\MonetaryAmount;
+use YooKassa\Model\Payment;
 use YooKassa\Model\Receipt;
 use YooKassa\Model\Receipt\ReceiptItemAmount;
+use YooKassa\Model\Receipt\SettlementType;
 use YooKassa\Model\ReceiptCustomer;
 use YooKassa\Model\ReceiptItem;
+use YooKassa\Model\Settlement;
 
 class ReceiptTest extends TestCase
 {
@@ -134,6 +138,27 @@ class ReceiptTest extends TestCase
         self::assertFalse($instance->notEmpty());
     }
 
+    /**
+     * @dataProvider validSettlementsDataProvider
+     * @param $value
+     */
+    public function testSetSettlements($value)
+    {
+        $instance = new Receipt();
+        $instance->setSettlements($value);
+    }
+
+    /**
+     * @dataProvider invalidSettlementsDataProvider
+     * @expectedException \InvalidArgumentException
+     * @param $value
+     */
+    public function testInvalidSetSettlements($value)
+    {
+        $instance = new Receipt();
+        $instance->setSettlements($value);
+    }
+
     public function validDataProvider()
     {
         $result = array(
@@ -145,6 +170,15 @@ class ReceiptTest extends TestCase
                         'phone'       => '',
                         'email'       => '',
                     ),
+                    'settlements' => array(
+                        array(
+                            'type' => 'cashless',
+                            'amount' => array(
+                                'value' => '10.00',
+                                'currency' => 'RUB'
+                            )
+                        )
+                    )
                 ),
             ),
             array(
@@ -155,6 +189,15 @@ class ReceiptTest extends TestCase
                         'phone'       => '',
                         'email'       => '',
                     ),
+                    'settlements' => array(
+                        array(
+                            'type' => Random::value(SettlementType::getValidValues()),
+                            'amount' => array(
+                                'value' => round(Random::float(0.1, 99.99), 2),
+                                'currency' => Random::value(CurrencyCode::getValidValues())
+                            )
+                        )
+                    )
                 ),
             ),
             array(
@@ -165,6 +208,15 @@ class ReceiptTest extends TestCase
                         'email'       => '',
                     ),
                     'tax_system_code' => '',
+                    'settlements' => array(
+                        array(
+                            'type' => Random::value(SettlementType::getValidValues()),
+                            'amount' => array(
+                                'value' => round(Random::float(0.1, 99.99), 2),
+                                'currency' => Random::value(CurrencyCode::getValidValues())
+                            )
+                        )
+                    )
                 ),
             ),
             array(
@@ -175,6 +227,15 @@ class ReceiptTest extends TestCase
                         'email'       => '',
                     ),
                     'tax_system_code' => '',
+                    'settlements' => array(
+                        array(
+                            'type' => Random::value(SettlementType::getValidValues()),
+                            'amount' => array(
+                                'value' => round(Random::float(0.1, 99.99), 2),
+                                'currency' => Random::value(CurrencyCode::getValidValues())
+                            )
+                        )
+                    )
                 ),
             ),
             array(
@@ -185,6 +246,15 @@ class ReceiptTest extends TestCase
                         'email'       => '',
                     ),
                     'tax_system_code' => '',
+                    'settlements' => array(
+                        array(
+                            'type' => Random::value(SettlementType::getValidValues()),
+                            'amount' => array(
+                                'value' => round(Random::float(0.1, 99.99), 2),
+                                'currency' => Random::value(CurrencyCode::getValidValues())
+                            )
+                        )
+                    )
                 ),
             ),
         );
@@ -198,6 +268,44 @@ class ReceiptTest extends TestCase
             $result[] = array($receipt);
         }
         return $result;
+    }
+
+    public function validSettlementsDataProvider()
+    {
+        $result = array(
+            array(
+                array(new Settlement(
+                    array(
+                        'type' => 'cashless',
+                        'amount' => array(
+                            'value' => '10.00',
+                            'currency' => 'RUB'
+                        )
+                    )
+                )
+            )
+        ));
+        for ($i = 1; $i < 9; $i++) {
+            $receipt = array(
+                new Settlement(
+                    array(
+                        'type' => Random::value(SettlementType::getValidValues()),
+                        'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB')
+                    )
+                )
+            );
+            $result[] = array($receipt);
+        }
+        return $result;
+    }
+
+    public function invalidSettlementsDataProvider()
+    {
+        return array(
+            array(null),
+            array('test'),
+            array(array(new Payment()))
+        );
     }
 
     public function invalidItemsProvider()
@@ -541,7 +649,15 @@ class ReceiptTest extends TestCase
             }
         } else {
             self::assertEquals(array(), $receipt->getItems());
+            self::assertEquals(array(), $receipt->getSettlements());
         }
+    }
+
+    public function testGetObjectId()
+    {
+        $instance = new Receipt();
+        self::assertSame(null, $instance->getObjectId());
+        self::assertNull($instance->getObjectId());
     }
 
     public function fromArrayDataProvider()
@@ -551,6 +667,10 @@ class ReceiptTest extends TestCase
         $receiptItem->setQuantity(322);
         $receiptItem->setVatCode(4);
         $receiptItem->setPrice(new ReceiptItemAmount(5, 'USD'));
+
+        $settlement = new Settlement();
+        $settlement->setType(SettlementType::PREPAYMENT);
+        $settlement->setAmount(new MonetaryAmount(123, 'USD'));
 
         return array(
             array(
@@ -568,6 +688,9 @@ class ReceiptTest extends TestCase
                     'items' => array(
                         new ReceiptItem(),
                     ),
+                    'settlements' => array(
+                        new Settlement()
+                    )
                 ),
                 array(
                     'tax_system_code' => 2,
@@ -578,6 +701,9 @@ class ReceiptTest extends TestCase
                     'items' => array(
                         new ReceiptItem(),
                     ),
+                    'settlements' => array(
+                        new Settlement()
+                    )
                 ),
             ),
 
@@ -615,6 +741,23 @@ class ReceiptTest extends TestCase
                             'vat_code' => 4,
                         ),
                     ),
+                    'settlements' => array(
+                        array(
+                            'type' => SettlementType::PREPAYMENT,
+                            'amount' => array(
+                                'value' => 123,
+                                'currency' => 'USD'
+                            )
+                        ),
+                        new Settlement(),
+                        array(
+                            'type' => SettlementType::PREPAYMENT,
+                            'amount' => array(
+                                'value' => 123,
+                                'currency' => 'USD'
+                            )
+                        )
+                    ),
                 ),
                 array(
                     'taxSystemCode' => 3,
@@ -628,6 +771,11 @@ class ReceiptTest extends TestCase
                         $receiptItem,
                         $receiptItem,
                     ),
+                    'settlements' => array(
+                        $settlement,
+                        new Settlement(),
+                        $settlement
+                    )
                 ),
             ),
         );
@@ -693,48 +841,7 @@ class ReceiptTest extends TestCase
                 array(
                     'customer' => $customer
                 ),
-            ),
-
-            array(
-                array(
-                    'customer' => array(
-                        'full_name' => 'John Doe',
-                        'inn' => '6321341814',
-                        'email' => 'johndoe@yoomoney.ru',
-                        'phone' => '79000000000',
-                    ),
-                ),
-                array(
-                    'customer' => $customer
-                ),
-            ),
-
-            array(
-                array(
-                    'customer' => array(
-                        'full_name' => 'John Doe',
-                        'inn' => '6321341814',
-                        'email' => 'johndoe@yoomoney.ru',
-                        'phone' => '79000000000',
-                    ),
-                ),
-                array(
-                    'customer' => $customer
-                ),
-            ),
-            array(
-                array(
-                    'customer' => array(
-                        'full_name' => 'John Doe',
-                        'inn' => '6321341814',
-                        'email' => 'johndoe@yoomoney.ru',
-                        'phone' => '79000000000',
-                    ),
-                ),
-                array(
-                    'customer' => $customer
-                ),
-            ),
+            )
         );
     }
 }

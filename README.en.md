@@ -94,3 +94,12 @@ $client->setAuth('shopId', 'secretKey');
 * [Request to create a receipt via the builder](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека-через-билдер)
 * [Get information about the receipt](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-информацию-о-чеке)
 * [Get a list of receipts with filtering](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-список-чеков-с-фильтрацией)
+
+#### [Working with deals](docs/examples/05-deals.md)
+* [Request to create a deal](docs/examples/05-deals.md#Запрос-на-создание-сделки)
+* [Request to create a deal via the builder](docs/examples/05-deals.md#Запрос-на-создание-сделки-через-билдер)
+* [Request to create a payment with info about deal](docs/examples/05-deals.md#Запрос-на-создание-платежа-с-привязкой-к-сделке)
+* [Request to create a payout](docs/examples/05-deals.md#Запрос-на-выплату-продавцу)
+* [Get deal information](docs/examples/05-deals.md#Получить-информацию-о-сделке)
+* [Get a list of deals with filtering](docs/examples/05-deals.md#Получить-список-сделок-с-фильтрацией)
+* [Get payout information](docs/examples/05-deals.md#Получить-информацию-о-выплате)

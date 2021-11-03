@@ -37,7 +37,7 @@ use Exception;
 class TypeCast
 {
     /**
-     * Проверяет может ли переданное значение быть преобразовано в строку
+     * Проверяет, может ли переданное значение быть преобразовано в строку
      * @param mixed $value Проверяемое значение
      * @return bool True если значение преобразовать в строку можно, false если нет
      */
@@ -89,7 +89,7 @@ class TypeCast
     /**
      * Преобразует переданне значение в объект типа \DateTime
      * @param string|int|DateTime $value Преобразуемое значение
-     * @return DateTime|null Объект типа \DateTime или null если при парсинг даты не удался
+     * @return DateTime|null Объект типа \DateTime или null, если при парсинг даты не удался
      * @throws Exception
      */
     public static function castToDateTime($value)

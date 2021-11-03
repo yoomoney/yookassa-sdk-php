@@ -13,6 +13,7 @@ NotificationEventType - Тип уведомления
 |payment.canceled|Неуспех оплаты или отменен магазином|
 |refund.succeeded|Успешный возврат|
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
@@ -21,11 +22,13 @@ NotificationEventType - Тип уведомления
 | public | [PAYMENT_SUCCEEDED](../classes/YooKassa-Model-NotificationEventType.md#constant_PAYMENT_SUCCEEDED) |  | Успешно оплачен и подтвержден магазином |
 | public | [PAYMENT_CANCELED](../classes/YooKassa-Model-NotificationEventType.md#constant_PAYMENT_CANCELED) |  | Неуспех оплаты или отменен магазином |
 | public | [REFUND_SUCCEEDED](../classes/YooKassa-Model-NotificationEventType.md#constant_REFUND_SUCCEEDED) |  | Успешный возврат |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$validValues](../classes/YooKassa-Model-NotificationEventType.md#property_validValues) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -33,6 +36,7 @@ NotificationEventType - Тип уведомления
 | public | [getEnabledValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getEnabledValues) |  | Возвращает значения в enum'е значения которых разрешены |
 | public | [getValidValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getValidValues) |  | Возвращает все значения в enum'e |
 | public | [valueExists()](../classes/YooKassa-Common-AbstractEnum.md#method_valueExists) |  | Проверяет наличие значения в enum'e |
+
 ---
 ### Details
 * File: [lib/Model/NotificationEventType.php](../../lib/Model/NotificationEventType.php)
@@ -40,6 +44,7 @@ NotificationEventType - Тип уведомления
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
   * \YooKassa\Model\NotificationEventType
+
 ---
 ## Constants
 <a name="constant_PAYMENT_WAITING_FOR_CAPTURE" class="anchor"></a>
@@ -76,6 +81,7 @@ PAYMENT_CANCELED = 'payment.canceled'
 ```php
 REFUND_SUCCEEDED = 'refund.succeeded'
 ```
+
 
 
 ---
@@ -138,6 +144,7 @@ Static public valueExists(mixed $value) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -158,10 +165,10 @@ Static public valueExists(mixed $value) : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

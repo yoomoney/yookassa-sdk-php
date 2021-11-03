@@ -52,6 +52,12 @@ class ReceiptResponseFactory
     public function factory($data)
     {
         if (array_key_exists('type', $data)) {
+            if (!is_string($data['type'])) {
+                throw new \InvalidArgumentException('Invalid receipt type value in receipt factory');
+            }
+            if (!in_array($data['type'], ReceiptType::getEnabledValues())) {
+                throw new \InvalidArgumentException('Invalid receipt data type "' . $data['type'] . '"');
+            }
             if (array_key_exists('refund_id', $data)) {
                 $type = ReceiptType::REFUND;
             } elseif (array_key_exists('payment_id', $data)) {
@@ -64,12 +70,7 @@ class ReceiptResponseFactory
                 'Parameter type not specified in ReceiptResponseFactory.factory()'
             );
         }
-        if (!is_string($type)) {
-            throw new \InvalidArgumentException('Invalid receipt type value in receipt factory');
-        }
-        if (!in_array($type, ReceiptType::getValidValues())) {
-            throw new \InvalidArgumentException('Invalid receipt data type "' . $type . '"');
-        }
+
         $className = __NAMESPACE__ . '\\' . $this->typeClassMap[$type];
 
         return new $className($data);

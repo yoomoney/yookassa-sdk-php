@@ -120,7 +120,7 @@ interface CreatePostReceiptRequestInterface
     /**
      * Устанавливает информацию о пользователе
      *
-     * @param ReceiptCustomerInterface $value информация о плательщике
+     * @param ReceiptCustomerInterface $value Информация о плательщике
      * @return CreatePostReceiptRequestInterface
      */
     public function setCustomer($value);
@@ -135,7 +135,7 @@ interface CreatePostReceiptRequestInterface
     /**
      * Устанавливает список товаров чека
      *
-     * @param ReceiptItemInterface[]|array $value список товаров чека
+     * @param ReceiptItemInterface[]|array $value Список товаров чека
      * @return CreatePostReceiptRequestInterface
      */
     public function setItems($value);

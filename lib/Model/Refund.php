@@ -31,6 +31,7 @@ use YooKassa\Common\Exceptions\EmptyPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\TypeCast;
+use YooKassa\Model\Deal\RefundDealInfo;
 
 /**
  * Класс объекта с информацией о возврате платежа
@@ -45,6 +46,7 @@ use YooKassa\Helpers\TypeCast;
  * @property string $receiptRegistration Статус регистрации чека
  * @property string $receipt_registration Статус регистрации чека
  * @property string $description Комментарий, основание для возврата средств покупателю
+ * @property RefundDealInfo $deal Данные о сделке, в составе которой проходит возврат
  */
 class Refund extends AbstractObject implements RefundInterface
 {
@@ -89,10 +91,9 @@ class Refund extends AbstractObject implements RefundInterface
     private $_sources;
 
     /**
-     * @var RequestorInterface
+     * @var RefundDealInfo Данные о сделке, в составе которой проходит возврат
      */
-    private $_requestor;
-
+    private $_deal;
 
     /**
      * Возвращает идентификатор возврата платежа
@@ -359,28 +360,47 @@ class Refund extends AbstractObject implements RefundInterface
     }
 
     /**
-     * Возвращает инициатора платежа или возврата
-     * @return RequestorInterface Инициатор платежа или возврата
+     * @deprecated Не используется. Будет удален в следующих версиях
      */
     public function getRequestor()
     {
-        return $this->_requestor;
+        return null;
     }
 
     /**
-     * Устанавливает инициатора платежа или возврата
-     * @param RequestorInterface|array $value Инициатор платежа или возврата
+     * @deprecated Не используется. Будет удален в следующих версиях
      */
     public function setRequestor($value)
+    {}
+
+    /**
+     * Возвращает данные о сделке, в составе которой проходит возврат
+     * @return RefundDealInfo|null Данные о сделке, в составе которой проходит возврат
+     */
+    public function getDeal()
     {
-        if (is_array($value)) {
-            $value = new Requestor($value);
-        }
-
-        if (!($value instanceof RequestorInterface)) {
-            throw new InvalidPropertyValueTypeException('Invalid Requestor type', 0, 'Refund.requestor', $value);
-        }
-
-        $this->_requestor = $value;
+        return $this->_deal;
     }
+
+    /**
+     * Устанавливает данные о сделке, в составе которой проходит возврат.
+     * @param RefundDealInfo|array|null $value Данные о сделке, в составе которой проходит возврат
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если переданные данные не удалось интерпретировать как данные сделки
+     */
+    public function setDeal($value)
+    {
+        if ($value === null || (is_array($value) && empty($value))) {
+            $this->_deal = null;
+        } elseif ($value instanceof RefundDealInfo) {
+            $this->_deal = $value;
+        } elseif (is_array($value)) {
+            $this->_deal = new RefundDealInfo($value);
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid deal value type in Refund', 0, 'Refund.deal', $value
+            );
+        }
+    }
+
 }

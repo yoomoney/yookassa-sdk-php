@@ -31,6 +31,7 @@ use YooKassa\Common\AbstractRequest;
 use YooKassa\Common\Exceptions\EmptyPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
+use YooKassa\Model\Deal\RefundDealData;
 use YooKassa\Model\SourceInterface;
 
 /**
@@ -44,14 +45,14 @@ class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
 {
 
     /**
-     * Собираемый объет запроса к API
+     * Собираемый объект запроса к API
      * @var CreateRefundRequest
      */
     protected $currentObject;
 
     /**
      * Возвращает новый объект для сборки
-     * @return CreateRefundRequest Собираемый объет запроса к API
+     * @return CreateRefundRequest Собираемый объект запроса к API
      */
     protected function initCurrentObject()
     {
@@ -102,8 +103,21 @@ class CreateRefundRequestBuilder extends AbstractPaymentRequestBuilder
     }
 
     /**
+     * Устанавливает данные о сделке, в составе которой проходит возврат
+     *
+     * @param RefundDealData|array|null $value Данные о сделке, в составе которой проходит возврат
+     *
+     * @return self Инстанс билдера запросов
+     */
+    public function setDeal($value)
+    {
+        $this->currentObject->setDeal($value);
+        return $this;
+    }
+
+    /**
      * Строит объект запроса к API
-     * @param array|null $options Устаналвиваемые параметры запроса
+     * @param array|null $options Устанавливаемые параметры запроса
      * @return CreateRefundRequestInterface|AbstractRequest Инстанс сгенерированного объекта запроса к API
      */
     public function build(array $options = null)

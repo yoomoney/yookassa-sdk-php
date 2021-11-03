@@ -7,9 +7,11 @@
 
 Класс клиента Curl запросов
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -34,6 +36,7 @@
 | public | [setShopId()](../classes/YooKassa-Client-CurlClient.md#method_setShopId) |  | Устанавливает shopId магазина |
 | public | [setShopPassword()](../classes/YooKassa-Client-CurlClient.md#method_setShopPassword) |  | Устанавливает секретный ключ магазина |
 | public | [setTimeout()](../classes/YooKassa-Client-CurlClient.md#method_setTimeout) |  | Устанавливает значение параметра CURLOPT_TIMEOUT |
+
 ---
 ### Details
 * File: [lib/Client/CurlClient.php](../../lib/Client/CurlClient.php)
@@ -75,6 +78,7 @@ public call(string $path, string $method, array $queryParams, string|null $httpB
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -83,6 +87,7 @@ public call(string $path, string $method, array $queryParams, string|null $httpB
 | <code lang="php">array</code> | queryParams  | Массив GET параметров запроса |
 | <code lang="php">string OR null</code> | httpBody  | Тело запроса |
 | <code lang="php">array</code> | headers  | Массив заголовков запроса |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -217,6 +222,7 @@ public sendRequest() : array
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -238,6 +244,7 @@ public setBearerToken(string $bearerToken) : $this
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -259,6 +266,7 @@ public setBody(string $method, string $httpBody) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -281,6 +289,7 @@ public setConfig(array $config) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -302,6 +311,7 @@ public setConnectionTimeout(int $connectionTimeout) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -323,6 +333,7 @@ public setCurlOption(string $optionName, mixed $optionValue) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -345,6 +356,7 @@ public setKeepAlive(bool $keepAlive) : $this
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -366,6 +378,7 @@ public setLogger(\Psr\Log\LoggerInterface|null $logger) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -387,6 +400,7 @@ public setProxy(string $proxy) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -412,6 +426,7 @@ public setShopId(mixed $shopId) : $this
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -433,6 +448,7 @@ public setShopPassword(mixed $shopPassword) : $this
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -454,6 +470,7 @@ public setTimeout(int $timeout) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\CurlClient](../classes/YooKassa-Client-CurlClient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -474,10 +491,10 @@ public setTimeout(int $timeout) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

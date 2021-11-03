@@ -26,6 +26,7 @@
 
 namespace YooKassa\Model;
 
+use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\PaymentMethod\AbstractPaymentMethod;
 
 /**
@@ -62,7 +63,6 @@ use YooKassa\Model\PaymentMethod\AbstractPaymentMethod;
  * @property-read TransferInterface[] $transfers Данные о распределении платежа между магазинами
  * @property-read AmountInterface $incomeAmount Сумма платежа, которую получит магазин
  * @property-read AmountInterface $income_amount Сумма платежа, которую получит магазин
- * @property-read Requestor $requestor Инициатор платежа
  */
 interface PaymentInterface
 {
@@ -80,7 +80,7 @@ interface PaymentInterface
 
     /**
      * Возвращает получателя платежа
-     * @return RecipientInterface|null Получатель платежа или null если получатель не задан
+     * @return RecipientInterface|null Получатель платежа или null, если получатель не задан
      */
     public function getRecipient();
 
@@ -103,7 +103,7 @@ interface PaymentInterface
     public function getCreatedAt();
 
     /**
-     * Возвращает время подтверждения платежа магазином или null если если время не задано
+     * Возвращает время подтверждения платежа магазином или null, если время не задано
      * @return \DateTime|null Время подтверждения платежа магазином
      */
     public function getCapturedAt();
@@ -121,7 +121,7 @@ interface PaymentInterface
     public function getRefundedAmount();
 
     /**
-     * Проверяет был ли уже оплачен заказ
+     * Проверяет, был ли уже оплачен заказ
      * @return bool Признак оплаты заказа, true если заказ оплачен, false если нет
      */
     public function getPaid();
@@ -145,7 +145,7 @@ interface PaymentInterface
     public function getMetadata();
 
     /**
-     * Возвращает время до которого можно бесплатно отменить или подтвердить платеж или null если оно не задано
+     * Возвращает время до которого можно бесплатно отменить или подтвердить платеж, или null, если оно не задано
      * @return \DateTime|null Время, до которого можно бесплатно отменить или подтвердить платеж
      * @since 1.0.2
      */
@@ -178,8 +178,9 @@ interface PaymentInterface
     public function getIncomeAmount();
 
     /**
-     * Возвращает инициатора платежа
-     * @return RequestorInterface
+     * Возвращает сделку, в рамках которой нужно провести платеж.
+     *
+     * @return PaymentDealInfo Сделка, в рамках которой нужно провести платеж
      */
-    public function getRequestor();
+    public function getDeal();
 }

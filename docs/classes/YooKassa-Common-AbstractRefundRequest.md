@@ -7,15 +7,18 @@
 
 Класс объекта запроса к API
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [$amount](../classes/YooKassa-Common-AbstractRefundRequest.md#property_amount) |  | Сумма возврата |
 | public | [$paymentId](../classes/YooKassa-Common-AbstractRefundRequest.md#property_paymentId) |  | Идентификатор платежа для которого создаётся возврат |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -30,7 +33,10 @@
 | public | [getAmount()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_getAmount) |  | Возвращает сумму возврата |
 | public | [getLastValidationError()](../classes/YooKassa-Common-AbstractRequest.md#method_getLastValidationError) |  | Возвращает последнюю ошибку валидации |
 | public | [getPaymentId()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_getPaymentId) |  | Возвращает идентификатор платежа для которого создаётся возврат средств |
-| public | [hasAmount()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_hasAmount) |  | Проверяет была ли установлена сумма возврата |
+| public | [getReceipt()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_getReceipt) |  | Возвращает чек, если он есть |
+| public | [hasAmount()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_hasAmount) |  | Проверяет, была ли установлена сумма возврата |
+| public | [hasPaymentId()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_hasPaymentId) |  | Проверяет, был ли установлена идентификатор платежа |
+| public | [hasReceipt()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_hasReceipt) |  | Проверяет наличие чека |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
@@ -38,10 +44,12 @@
 | public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
 | public | [setAmount()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_setAmount) |  | Устанавливает сумму |
 | public | [setPaymentId()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_setPaymentId) |  | Устанавливает идентификатор платежа для которого создаётся возврат |
+| public | [setReceipt()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_setReceipt) |  | Устанавливает чек |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | public | [validate()](../classes/YooKassa-Common-AbstractRefundRequest.md#method_validate) |  | Валидирует объект запроса |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
 | protected | [setValidationError()](../classes/YooKassa-Common-AbstractRequest.md#method_setValidationError) |  | Устанавливает ошибку валидации |
+
 ---
 ### Details
 * File: [lib/Common/AbstractRefundRequest.php](../../lib/Common/AbstractRefundRequest.php)
@@ -50,11 +58,13 @@
   * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
   * [\YooKassa\Common\AbstractRequest](../classes/YooKassa-Common-AbstractRequest.md)
   * \YooKassa\Common\AbstractRefundRequest
+
 ---
 ### Tags
 | Tag | Version | Description |
 | --- | ------- | ----------- |
 | since | 2.1.0 |  |
+
 ---
 ## Properties
 <a name="property_amount"></a>
@@ -97,6 +107,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -118,6 +129,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -139,6 +151,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -160,6 +173,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -182,6 +196,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -220,6 +235,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -279,6 +295,23 @@ public getPaymentId() : string
 **Returns:** string - Идентификатор платежа для которого создаётся возврат
 
 
+<a name="method_getReceipt" class="anchor"></a>
+#### public getReceipt() : \YooKassa\Model\ReceiptInterface|null
+
+```php
+public getReceipt() : \YooKassa\Model\ReceiptInterface|null
+```
+
+**Summary**
+
+Возвращает чек, если он есть
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
+
+**Returns:** \YooKassa\Model\ReceiptInterface|null - Данные фискального чека 54-ФЗ или null, если чека нет
+
+
 <a name="method_hasAmount" class="anchor"></a>
 #### public hasAmount() : bool
 
@@ -288,12 +321,46 @@ public hasAmount() : bool
 
 **Summary**
 
-Проверяет была ли установлена сумма возврата
+Проверяет, была ли установлена сумма возврата
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
 
 **Returns:** bool - True если сумма возврата была установлена, false если нет
+
+
+<a name="method_hasPaymentId" class="anchor"></a>
+#### public hasPaymentId() : bool
+
+```php
+public hasPaymentId() : bool
+```
+
+**Summary**
+
+Проверяет, был ли установлена идентификатор платежа
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
+
+**Returns:** bool - True если идентификатор платежа был установлен, false если нет
+
+
+<a name="method_hasReceipt" class="anchor"></a>
+#### public hasReceipt() : bool
+
+```php
+public hasReceipt() : bool
+```
+
+**Summary**
+
+Проверяет наличие чека
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
+
+**Returns:** bool - True если чек есть, false если нет
 
 
 <a name="method_jsonSerialize" class="anchor"></a>
@@ -326,6 +393,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -347,6 +415,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -368,6 +437,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -390,6 +460,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -411,6 +482,7 @@ public setAmount(\YooKassa\Model\AmountInterface|array|string $value) : self
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -432,16 +504,45 @@ public setPaymentId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Идентификатор платежа |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
 | \YooKassa\Common\Exceptions\EmptyPropertyValueException | Выбрасывается если передано пустое значение идентификатора платежа |
 | \YooKassa\Common\Exceptions\InvalidPropertyValueException | Выбрасывается если переданное значение является строкой, но не является валидным значением идентификатора платежа |
 | \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Выбрасывается если передано значение не валидного типа |
+
+**Returns:** mixed - 
+
+
+<a name="method_setReceipt" class="anchor"></a>
+#### public setReceipt() : mixed
+
+```php
+public setReceipt(\YooKassa\Model\ReceiptInterface|array|null $value) : mixed
+```
+
+**Summary**
+
+Устанавливает чек
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractRefundRequest](../classes/YooKassa-Common-AbstractRefundRequest.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\ReceiptInterface OR array OR null</code> | value  | Инстанс чека или null для удаления информации о чеке |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Выбрасывается если передан не инстанс класса чека и не null |
 
 **Returns:** mixed - 
 
@@ -511,6 +612,7 @@ protected setValidationError(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRequest](../classes/YooKassa-Common-AbstractRequest.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -531,10 +633,10 @@ protected setValidationError(string $value) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -8,9 +8,11 @@
 Данные банковской карты
 Необходим при оплате PCI-DSS данными.
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -22,6 +24,7 @@
 | public | [$expiryMonth](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md#property_expiryMonth) |  | Срок действия, месяц, MM |
 | public | [$expiryYear](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md#property_expiryYear) |  | Срок действия, год, YY |
 | public | [$number](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md#property_number) |  | Номер банковской карты |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -49,6 +52,7 @@
 | public | [setNumber()](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md#method_setNumber) |  | Устанавливает номер банковской карты |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/PaymentData/PaymentDataBankCardCard.php](../../lib/Model/PaymentData/PaymentDataBankCardCard.php)
@@ -56,6 +60,7 @@
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
   * \YooKassa\Model\PaymentData\PaymentDataBankCardCard
+
 ---
 ## Properties
 <a name="property_cardholder"></a>
@@ -158,6 +163,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -179,6 +185,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -200,6 +207,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -221,6 +229,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -243,6 +252,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -264,6 +274,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -387,6 +398,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -408,6 +420,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -429,6 +442,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -451,6 +465,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -472,6 +487,7 @@ public setCardholder(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\PaymentDataBankCardCard](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -493,6 +509,7 @@ public setCsc(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\PaymentDataBankCardCard](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -514,6 +531,7 @@ public setExpiryMonth(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\PaymentDataBankCardCard](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -535,6 +553,7 @@ public setExpiryYear(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\PaymentDataBankCardCard](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -556,6 +575,7 @@ public setNumber(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\PaymentDataBankCardCard](../classes/YooKassa-Model-PaymentData-PaymentDataBankCardCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -611,10 +631,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

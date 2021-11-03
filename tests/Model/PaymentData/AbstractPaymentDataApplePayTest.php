@@ -95,7 +95,7 @@ abstract class AbstractPaymentDataApplePayTest extends AbstractPaymentDataTest
     public function validPaymentDataDataProvider()
     {
         return array(
-            array('http://test.ru'),
+            array('https://test.ru'),
             array(Random::str(256)),
             array(Random::str(1024)),
         );

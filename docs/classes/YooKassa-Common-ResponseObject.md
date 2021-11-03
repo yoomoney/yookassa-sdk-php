@@ -7,9 +7,11 @@
 
 Класс HTTP ответа
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -17,6 +19,7 @@
 | protected | [$body](../classes/YooKassa-Common-ResponseObject.md#property_body) |  | Тело ответа |
 | protected | [$code](../classes/YooKassa-Common-ResponseObject.md#property_code) |  | HTTP код ответа |
 | protected | [$headers](../classes/YooKassa-Common-ResponseObject.md#property_headers) |  | Массив заголовков ответа |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -25,12 +28,14 @@
 | public | [getBody()](../classes/YooKassa-Common-ResponseObject.md#method_getBody) |  | Возвращает тело ответа |
 | public | [getCode()](../classes/YooKassa-Common-ResponseObject.md#method_getCode) |  | Возвращает HTTP код ответа |
 | public | [getHeaders()](../classes/YooKassa-Common-ResponseObject.md#method_getHeaders) |  | Возвращает массив заголовков ответа |
+
 ---
 ### Details
 * File: [lib/Common/ResponseObject.php](../../lib/Common/ResponseObject.php)
 * Package: YooKassa
 * Class Hierarchy:
   * \YooKassa\Common\ResponseObject
+
 ---
 ## Properties
 <a name="property_body"></a>
@@ -81,6 +86,7 @@ public __construct(mixed $config = null) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\ResponseObject](../classes/YooKassa-Common-ResponseObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -152,10 +158,10 @@ public getHeaders() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

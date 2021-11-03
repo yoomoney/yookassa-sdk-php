@@ -12,6 +12,7 @@ use YooKassa\Model\NotificationType;
 use YooKassa\Model\PaymentInterface;
 use YooKassa\Model\PaymentMethodType;
 use YooKassa\Model\PaymentStatus;
+use YooKassa\Model\Receipt\SettlementType;
 use YooKassa\Model\ReceiptRegistrationStatus;
 
 class NotificationCanceledTest extends \PHPUnit_Framework_TestCase
@@ -50,6 +51,16 @@ class NotificationCanceledTest extends \PHPUnit_Framework_TestCase
         $instance = $this->getTestInstance($value);
         self::assertTrue($instance->getObject() instanceof PaymentInterface);
         self::assertEquals($value['object']['id'], $instance->getObject()->getId());
+    }
+
+    /**
+     * @dataProvider invalidDataProvider
+     * @param array $options
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInvalidFromArray($options)
+    {
+        $this->getTestInstance($options);
     }
 
     /**
@@ -113,5 +124,26 @@ class NotificationCanceledTest extends \PHPUnit_Framework_TestCase
             );
         }
         return $result;
+    }
+
+    public function invalidDataProvider()
+    {
+        return array(
+            array(
+                array(
+                    'type' => SettlementType::PREPAYMENT
+                )
+            ),
+            array(
+                array(
+                    'event' => SettlementType::PREPAYMENT
+                )
+            ),
+            array(
+                array(
+                    'object' => array()
+                )
+            )
+        );
     }
 }

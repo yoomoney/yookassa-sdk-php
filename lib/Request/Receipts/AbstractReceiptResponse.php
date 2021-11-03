@@ -120,7 +120,7 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
      * @param mixed $receiptData
      * @throws \Exception
      */
-    public function __construct($receiptData)
+    public function fromArray($receiptData)
     {
         $this->setId($receiptData['id']);
         $this->setType($receiptData['type']);
@@ -437,7 +437,7 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
      *
      * @throws EmptyPropertyValueException Выбрасывается если передали пустой массив значений
      * @throws InvalidPropertyValueTypeException Выбрасывается если в качестве значения был передан не массив и не
-     * итератор, лабо если одно из переданных значений не реализует интерфейс ReceiptItemInterface
+     * итератор, либо если одно из переданных значений не реализует интерфейс ReceiptItemInterface
      */
     public function setItems($value)
     {
@@ -498,7 +498,9 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
         }
         $this->_settlements = array();
         foreach ($value as $key => $val) {
-            if (is_object($val) && $val instanceof SettlementInterface) {
+            if (is_array($val)) {
+                $this->addSettlement(new Settlement($val));
+            } elseif ($val instanceof SettlementInterface) {
                 $this->addSettlement($val);
             } else {
                 throw new InvalidPropertyValueTypeException(

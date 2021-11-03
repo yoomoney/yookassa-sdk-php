@@ -116,7 +116,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     private $_cursor;
 
     /**
-     * Возвращает дату создания от которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату создания от которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время создания, от (включительно)
      */
     public function getCreatedAtGte()
@@ -125,7 +125,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата создания от которой выбираются платежи
+     * Проверяет, была ли установлена дата создания от которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtGte()
@@ -135,7 +135,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату создания от которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -162,7 +162,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату создания от которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату создания от которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время создания, от (не включая)
      */
     public function getCreatedAtGt()
@@ -171,7 +171,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата создания от которой выбираются платежи
+     * Проверяет, была ли установлена дата создания от которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtGt()
@@ -181,7 +181,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату создания от которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -208,7 +208,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату создания до которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату создания до которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время создания, до (включительно)
      */
     public function getCreatedAtLte()
@@ -217,7 +217,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата создания до которой выбираются платежи
+     * Проверяет, была ли установлена дата создания до которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtLte()
@@ -227,7 +227,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату создания до которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -254,7 +254,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату создания до которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату создания до которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время создания, до (не включая)
      */
     public function getCreatedAtLt()
@@ -263,7 +263,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата создания до которой выбираются платежи
+     * Проверяет, была ли установлена дата создания до которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtLt()
@@ -273,7 +273,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату создания до которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -300,7 +300,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату подтверждения от которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату подтверждения от которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время подтверждения, от (включительно)
      */
     public function getCapturedAtGte()
@@ -309,7 +309,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата подтверждения от которой выбираются платежи
+     * Проверяет, была ли установлена дата подтверждения от которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCapturedAtGte()
@@ -319,7 +319,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату подтверждения от которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время подтверждения, от (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время подтверждения, от (включительно) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -346,7 +346,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату подтверждения от которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату подтверждения от которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время подтверждения, от (не включая)
      */
     public function getCapturedAtGt()
@@ -355,7 +355,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата подтверждения от которой выбираются платежи
+     * Проверяет, была ли установлена дата подтверждения от которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCapturedAtGt()
@@ -365,7 +365,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату подтверждения от которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время подтверждения, от (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время подтверждения, от (не включая) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -392,7 +392,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату подтверждения до которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату подтверждения до которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время подтверждения, до (включительно)
      */
     public function getCapturedAtLte()
@@ -401,7 +401,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата подтверждения до которой выбираются платежи
+     * Проверяет, была ли установлена дата подтверждения до которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCapturedAtLte()
@@ -411,7 +411,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату подтверждения до которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время подтверждения, до (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время подтверждения, до (включительно) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -438,7 +438,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает дату подтверждения до которой будут возвращены платежи или null если дата не была установлена
+     * Возвращает дату подтверждения до которой будут возвращены платежи или null, если дата не была установлена
      * @return \DateTime|null Время подтверждения, до (не включая)
      */
     public function getCapturedAtLt()
@@ -447,7 +447,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет была ли установлена дата подтверждения до которой выбираются платежи
+     * Проверяет, была ли установлена дата подтверждения до которой выбираются платежи
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCapturedAtLt()
@@ -457,7 +457,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает дату подтверждения до которой выбираются платежи
-     * @param \DateTime|string|int|null $value Время подтверждения, до (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время подтверждения, до (не включая) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -484,7 +484,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает статус выбираемых платежей или null если он до этого не был установлен
+     * Возвращает статус выбираемых платежей или null, если он до этого не был установлен
      * @return string|null Статус выбираемых платежей
      */
     public function getStatus()
@@ -493,7 +493,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет был ли установлен статус выбираемых платежей
+     * Проверяет, был ли установлен статус выбираемых платежей
      * @return bool True если статус был установлен, false если нет
      */
     public function hasStatus()
@@ -503,7 +503,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает статус выбираемых платежей
-     * @param string $value Статус выбираемых платежей или null чтобы удалить значение
+     * @param string $value Статус выбираемых платежей или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Выбрасывается если переданное значение не является валидным статусом
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
@@ -528,7 +528,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Возвращает платежный метод выбираемых платежей или null если он до этого не был установлен
+     * Возвращает платежный метод выбираемых платежей или null, если он до этого не был установлен
      * @return string|null Платежный метод выбираемых платежей
      */
     public function getPaymentMethod()
@@ -537,7 +537,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет был ли установлен платежный метод выбираемых платежей
+     * Проверяет, был ли установлен платежный метод выбираемых платежей
      * @return bool True если платежный метод был установлен, false если нет
      */
     public function hasPaymentMethod()
@@ -547,7 +547,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает платежный метод выбираемых платежей
-     * @param string $value Платежный метод выбираемых платежей или null чтобы удалить значение
+     * @param string $value Платежный метод выбираемых платежей или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Выбрасывается если переданное значение не является валидным статусом
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
@@ -581,7 +581,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет был ли установлено ограничение количества объектов платежа
+     * Проверяет, было ли установлено ограничение количества объектов платежа
      * @return bool True если было установлено, false если нет
      */
     public function hasLimit()
@@ -591,9 +591,9 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
 
     /**
      * Устанавливает ограничение количества объектов платежа
-     * @param integer|null $value Ограничение количества объектов платежа или null чтобы удалить значение
+     * @param integer|null $value Ограничение количества объектов платежа или null, чтобы удалить значение
      *
-     * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передано не целое число
+     * @throws InvalidPropertyValueTypeException Выбрасывается, если в метод было передано не целое число
      */
     public function setLimit($value)
     {
@@ -623,7 +623,7 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Проверяет был ли установлена страница выдачи результатов, которую необходимо отобразить
+     * Проверяет, была ли установлена страница выдачи результатов, которую необходимо отобразить
      * @return bool True если была установлена, false если нет
      */
     public function hasCursor()
@@ -632,8 +632,8 @@ class PaymentsRequest extends AbstractRequest implements PaymentsRequestInterfac
     }
 
     /**
-     * Устанавливает cтраницw выдачи результатов, которую необходимо отобразить
-     * @param string $value Страница выдачи результатов или null чтобы удалить значение
+     * Устанавливает страницу выдачи результатов, которую необходимо отобразить
+     * @param string $value Страница выдачи результатов или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
      */

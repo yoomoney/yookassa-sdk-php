@@ -75,7 +75,7 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
 
     /**
      * Возвращает билдер объектов запросов создания платежа
-     * @return CreatePostReceiptRequestBuilder Инстанс билдера объектов запрсов
+     * @return CreatePostReceiptRequestBuilder Инстанс билдера объектов запросов
      */
     public static function builder()
     {
@@ -115,7 +115,7 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
     /**
      * Возвращает информацию о плательщике
      *
-     * @return ReceiptCustomerInterface информация о плательщике
+     * @return ReceiptCustomerInterface Информация о плательщике
      */
     public function getCustomer()
     {
@@ -307,7 +307,7 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
     /**
      * Устанавливает массив оплат, обеспечивающих выдачу товара.
      *
-     * @param SettlementInterface[] $value Массив оплат, обеспечивающих выдачу товара.
+     * @param SettlementInterface[]|array $value Массив оплат, обеспечивающих выдачу товара.
      */
     public function setSettlements($value)
     {
@@ -323,7 +323,7 @@ class CreatePostReceiptRequest extends AbstractRequest implements CreatePostRece
         foreach ($value as $key => $val) {
             if (is_array($val) && !empty($val['type']) && !empty($val['amount'])) {
                 $this->addSettlement(new Settlement($val));
-            } elseif (is_object($val) && $val instanceof SettlementInterface) {
+            } elseif ($val instanceof SettlementInterface) {
                 $this->addSettlement($val);
             } else {
                 throw new InvalidPropertyValueTypeException(

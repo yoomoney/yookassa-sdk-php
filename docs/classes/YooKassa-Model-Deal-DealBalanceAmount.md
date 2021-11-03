@@ -1,0 +1,486 @@
+# [YooKassa API SDK](../home.md)
+
+# Class: \YooKassa\Model\Deal\DealBalanceAmount
+### Namespace: [\YooKassa\Model\Deal](../namespaces/yookassa-model-deal.md)
+---
+**Summary:**
+
+MonetaryAmount - Сумма определенная в валюте
+
+
+---
+### Constants
+* No constants found
+
+---
+### Properties
+| Visibility | Name | Flag | Summary |
+| ----------:| ---- | ---- | ------- |
+| public | [$currency](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#property_currency) |  | Код валюты |
+| public | [$value](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#property_value) |  | Сумма |
+
+---
+### Methods
+| Visibility | Name | Flag | Summary |
+| ----------:| ---- | ---- | ------- |
+| public | [__construct()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method___construct) |  | MonetaryAmount constructor. |
+| public | [__get()](../classes/YooKassa-Common-AbstractObject.md#method___get) |  | Возвращает значение свойства |
+| public | [__isset()](../classes/YooKassa-Common-AbstractObject.md#method___isset) |  | Проверяет наличие свойства |
+| public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
+| public | [__unset()](../classes/YooKassa-Common-AbstractObject.md#method___unset) |  | Удаляет свойство |
+| public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
+| public | [getCurrency()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method_getCurrency) |  | Возвращает валюту |
+| public | [getIntegerValue()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method_getIntegerValue) |  | Возвращает сумму в копейках в виде целого числа |
+| public | [getValue()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method_getValue) |  | Возвращает значение суммы |
+| public | [jsonSerialize()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
+| public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
+| public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
+| public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
+| public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
+| public | [setCurrency()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method_setCurrency) |  | Устанавливает код валюты |
+| public | [setValue()](../classes/YooKassa-Model-Deal-DealBalanceAmount.md#method_setValue) |  | Устанавливает сумму |
+| public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
+| protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
+---
+### Details
+* File: [lib/Model/Deal/DealBalanceAmount.php](../../lib/Model/Deal/DealBalanceAmount.php)
+* Package: YooKassa
+* Class Hierarchy: 
+  * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+  * \YooKassa\Model\Deal\DealBalanceAmount
+* Implements:
+  * [\YooKassa\Model\AmountInterface](../classes/YooKassa-Model-AmountInterface.md)
+
+---
+## Properties
+<a name="property_currency"></a>
+#### public $currency : string
+---
+***Description***
+
+Код валюты
+
+**Type:** <a href="../string"><abbr title="string">string</abbr></a>
+
+**Details:**
+
+
+<a name="property_value"></a>
+#### public $value : int
+---
+***Description***
+
+Сумма
+
+**Type:** <a href="../int"><abbr title="int">int</abbr></a>
+
+**Details:**
+
+
+
+---
+## Methods
+<a name="method___construct" class="anchor"></a>
+#### public __construct() : mixed
+
+```php
+public __construct(array|\YooKassa\Model\Deal\numeric|null $value = null, string|null $currency = null) : mixed
+```
+
+**Summary**
+
+MonetaryAmount constructor.
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array OR \YooKassa\Model\Deal\numeric OR null</code> | value  | Сумма |
+| <code lang="php">string OR null</code> | currency  | Код валюты |
+
+**Returns:** mixed - 
+
+
+<a name="method___get" class="anchor"></a>
+#### public __get() : mixed
+
+```php
+public __get(string $propertyName) : mixed
+```
+
+**Summary**
+
+Возвращает значение свойства
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | propertyName  | Имя свойства |
+
+**Returns:** mixed - Значение свойства
+
+
+<a name="method___isset" class="anchor"></a>
+#### public __isset() : bool
+
+```php
+public __isset(string $propertyName) : bool
+```
+
+**Summary**
+
+Проверяет наличие свойства
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | propertyName  | Имя проверяемого свойства |
+
+**Returns:** bool - True если свойство имеется, false если нет
+
+
+<a name="method___set" class="anchor"></a>
+#### public __set() : mixed
+
+```php
+public __set(string $propertyName, mixed $value) : mixed
+```
+
+**Summary**
+
+Устанавливает значение свойства
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | propertyName  | Имя свойства |
+| <code lang="php">mixed</code> | value  | Значение свойства |
+
+**Returns:** mixed - 
+
+
+<a name="method___unset" class="anchor"></a>
+#### public __unset() : mixed
+
+```php
+public __unset(string $propertyName) : mixed
+```
+
+**Summary**
+
+Удаляет свойство
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | propertyName  | Имя удаляемого свойства |
+
+**Returns:** mixed - 
+
+
+<a name="method_fromArray" class="anchor"></a>
+#### public fromArray() : mixed
+
+```php
+public fromArray(array|\Traversable $sourceArray) : mixed
+```
+
+**Summary**
+
+Устанавливает значения свойств текущего объекта из массива
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array OR \Traversable</code> | sourceArray  | Ассоциативный массив с настройками |
+
+**Returns:** mixed - 
+
+
+<a name="method_getCurrency" class="anchor"></a>
+#### public getCurrency() : string
+
+```php
+public getCurrency() : string
+```
+
+**Summary**
+
+Возвращает валюту
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+**Returns:** string - Код валюты
+
+
+<a name="method_getIntegerValue" class="anchor"></a>
+#### public getIntegerValue() : int
+
+```php
+public getIntegerValue() : int
+```
+
+**Summary**
+
+Возвращает сумму в копейках в виде целого числа
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+**Returns:** int - Сумма в копейках/центах
+
+
+<a name="method_getValue" class="anchor"></a>
+#### public getValue() : string
+
+```php
+public getValue() : string
+```
+
+**Summary**
+
+Возвращает значение суммы
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+**Returns:** string - Сумма
+
+
+<a name="method_jsonSerialize" class="anchor"></a>
+#### public jsonSerialize() : array
+
+```php
+public jsonSerialize() : array
+```
+
+**Summary**
+
+Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+**Returns:** array - 
+
+
+<a name="method_offsetExists" class="anchor"></a>
+#### public offsetExists() : bool
+
+```php
+public offsetExists(string $offset) : bool
+```
+
+**Summary**
+
+Проверяет наличие свойства
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | offset  | Имя проверяемого свойства |
+
+**Returns:** bool - True если свойство имеется, false если нет
+
+
+<a name="method_offsetGet" class="anchor"></a>
+#### public offsetGet() : mixed
+
+```php
+public offsetGet(string $offset) : mixed
+```
+
+**Summary**
+
+Возвращает значение свойства
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | offset  | Имя свойства |
+
+**Returns:** mixed - Значение свойства
+
+
+<a name="method_offsetSet" class="anchor"></a>
+#### public offsetSet() : mixed
+
+```php
+public offsetSet(string $offset, mixed $value) : mixed
+```
+
+**Summary**
+
+Устанавливает значение свойства
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | offset  | Имя свойства |
+| <code lang="php">mixed</code> | value  | Значение свойства |
+
+**Returns:** mixed - 
+
+
+<a name="method_offsetUnset" class="anchor"></a>
+#### public offsetUnset() : mixed
+
+```php
+public offsetUnset(string $offset) : mixed
+```
+
+**Summary**
+
+Удаляет свойство
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | offset  | Имя удаляемого свойства |
+
+**Returns:** mixed - 
+
+
+<a name="method_setCurrency" class="anchor"></a>
+#### public setCurrency() : mixed
+
+```php
+public setCurrency(string $value) : mixed
+```
+
+**Summary**
+
+Устанавливает код валюты
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | value  | Код валюты |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\EmptyPropertyValueException | Генерируется если было передано пустое значение |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Генерируется если было передано значение невалидного типа |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueException | Генерируется если был передан неподдерживаемый код валюты |
+
+**Returns:** mixed - 
+
+
+<a name="method_setValue" class="anchor"></a>
+#### public setValue() : mixed
+
+```php
+public setValue(string $value) : mixed
+```
+
+**Summary**
+
+Устанавливает сумму
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Deal\DealBalanceAmount](../classes/YooKassa-Model-Deal-DealBalanceAmount.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | value  | Сумма |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\EmptyPropertyValueException | Генерируется если было передано пустое значение |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Генерируется если было передано значение невалидного типа |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueException | Генерируется если было передано не валидное значение |
+
+**Returns:** mixed - 
+
+
+<a name="method_toArray" class="anchor"></a>
+#### public toArray() : array
+
+```php
+public toArray() : array
+```
+
+**Summary**
+
+Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации
+Является алиасом метода AbstractObject::jsonSerialize()
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+**Returns:** array - Ассоциативный массив со свойствами текущего объекта
+
+
+<a name="method_getUnknownProperties" class="anchor"></a>
+#### protected getUnknownProperties() : array
+
+```php
+protected getUnknownProperties() : array
+```
+
+**Summary**
+
+Возвращает массив свойств которые не существуют, но были заданы у объекта
+
+**Details:**
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+**Returns:** array - Ассоциативный массив с не существующими у текущего объекта свойствами
+
+
+
+---
+
+### Top Namespaces
+
+* [\YooKassa](../namespaces/yookassa.md)
+
+---
+
+### Reports
+* [Errors - 0](../reports/errors.md)
+* [Markers - 0](../reports/markers.md)
+* [Deprecated - 13](../reports/deprecated.md)
+
+---
+
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
+
+&copy; 2021 YooMoney

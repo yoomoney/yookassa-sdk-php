@@ -37,20 +37,23 @@ use YooKassa\Common\AbstractEnum;
  * |code_verification|Необходимо получить одноразовый код от плательщика для подтверждения платежа|
  * |embedded|Необходимо получить токен для checkout.js|
  * |qr|Необходимо получить QR-код|
+ * |mobile_application|необходимо совершить действия в мобильном приложении|
  */
 class ConfirmationType extends AbstractEnum
 {
-    const REDIRECT          = 'redirect';
-    const EXTERNAL          = 'external';
-    const CODE_VERIFICATION = 'code_verification';
-    const EMBEDDED          = 'embedded';
-    const QR                = 'qr';
+    const REDIRECT           = 'redirect';
+    const EXTERNAL           = 'external';
+    const CODE_VERIFICATION  = 'code_verification';
+    const EMBEDDED           = 'embedded';
+    const QR                 = 'qr';
+    const MOBILE_APPLICATION = 'mobile_application';
 
     protected static $validValues = array(
-        self::REDIRECT          => true,
-        self::EXTERNAL          => true,
-        self::CODE_VERIFICATION => false,
-        self::EMBEDDED          => true,
-        self::QR                => true,
+        self::REDIRECT           => true,
+        self::EXTERNAL           => true,
+        self::CODE_VERIFICATION  => false,
+        self::EMBEDDED           => true,
+        self::QR                 => true,
+        self::MOBILE_APPLICATION => true,
     );
 }

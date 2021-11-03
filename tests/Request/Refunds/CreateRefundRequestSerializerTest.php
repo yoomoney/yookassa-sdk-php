@@ -5,6 +5,12 @@ namespace Tests\YooKassa\Request\Refunds;
 use PHPUnit\Framework\TestCase;
 use YooKassa\Helpers\Random;
 use YooKassa\Model\CurrencyCode;
+use YooKassa\Model\MonetaryAmount;
+use YooKassa\Model\Receipt\PaymentMode;
+use YooKassa\Model\Receipt\PaymentSubject;
+use YooKassa\Model\Source;
+use YooKassa\Model\Deal\RefundDealData;
+use YooKassa\Model\Deal\SettlementPayoutPaymentType;
 use YooKassa\Request\Refunds\CreateRefundRequest;
 use YooKassa\Request\Refunds\CreateRefundRequestSerializer;
 
@@ -29,10 +35,13 @@ class CreateRefundRequestSerializerTest extends TestCase
         if (!empty($options['description'])) {
             $expected['description'] = $options['description'];
         }
+        if (!empty($options['deal'])) {
+            $expected['deal'] = $options['deal'];
+        }
 
         if (!empty($options['receiptItems'])) {
             foreach ($options['receiptItems'] as $item) {
-                $expected['receipt']['items'][] = array(
+                $itemData = array(
                     'description' => $item['title'],
                     'quantity' => empty($item['quantity']) ? 1 : $item['quantity'],
                     'amount' => array(
@@ -41,8 +50,31 @@ class CreateRefundRequestSerializerTest extends TestCase
                     ),
                     'vat_code' => $item['vatCode'],
                 );
+
+                if (!empty($item['payment_mode'])) {
+                    $itemData['payment_mode'] = $item['payment_mode'];
+                }
+
+                if (!empty($item['payment_subject'])) {
+                    $itemData['payment_subject'] = $item['payment_subject'];
+                }
+
+                $expected['receipt']['items'][] = $itemData;
             }
         }
+
+        if (!empty($options['sources'])) {
+            foreach ($options['sources'] as $item) {
+                $expected['sources'][] = array(
+                    'account_id' => $item['account_id'],
+                    'amount' => array(
+                        'value' => $item['amount']['value'],
+                        'currency' => isset($item['amount']['currency']) ? $item['amount']['currency'] : CurrencyCode::RUB,
+                    ),
+                );
+            }
+        }
+
         if (!empty($options['receiptEmail'])) {
             $expected['receipt']['customer']['email'] = $options['receiptEmail'];
         }
@@ -66,7 +98,14 @@ class CreateRefundRequestSerializerTest extends TestCase
                     'amount' => mt_rand(1, 999999),
                     'currency' => $currencies[mt_rand(0, count($currencies) - 1)],
                     'description' => null,
+                    'deal' => null,
                     'receiptItems' => array(),
+                    'sources' => array(
+                        new Source(array(
+                            'account_id' => Random::str(36),
+                            'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB')
+                        )),
+                    )
                 ),
             ),
             array(
@@ -75,16 +114,23 @@ class CreateRefundRequestSerializerTest extends TestCase
                     'amount' => mt_rand(1, 999999),
                     'currency' => $currencies[mt_rand(0, count($currencies) - 1)],
                     'description' => '',
+                    'deal' => '',
                     'receiptItems' => array(
                         array(
                             'title' => Random::str(10),
                             'quantity' => Random::int(1, 10),
                             'price' => Random::int(100, 100),
-                            'vatCode' => Random::int(1, 6),
+                            'vatCode' => Random::int(1, 6)
                         ),
                     ),
+                    'sources' => array(
+                        new Source(array(
+                            'account_id' => Random::str(36),
+                            'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB')
+                        )),
+                    ),
                     'receiptEmail' => Random::str(10),
-                    'taxSystemCode' => Random::int(1, 6),
+                    'taxSystemCode' => Random::int(1, 6)
                 ),
             ),
         );
@@ -94,10 +140,27 @@ class CreateRefundRequestSerializerTest extends TestCase
                 'amount' => mt_rand(1, 999999),
                 'currency' => $currencies[mt_rand(0, count($currencies) - 1)],
                 'description' => uniqid(),
+                'deal' => array(
+                    'refund_settlements' => array(
+                        array(
+                            'type' => SettlementPayoutPaymentType::PAYOUT,
+                            'amount' => array(
+                                'value' => 123.00,
+                                'currency' => 'RUB',
+                            ),
+                        )
+                    ),
+                ),
                 'receiptItems' => $this->getReceipt($i + 1),
                 'receiptEmail' => Random::str(10),
                 'receiptPhone' => Random::str(12, '0123456789'),
                 'taxSystemCode' => Random::int(1, 6),
+                'sources' => array(
+                    new Source(array(
+                        'account_id' => Random::str(36),
+                        'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB')
+                    )),
+                )
             );
             $result[] = array($request);
         }
@@ -130,6 +193,8 @@ class CreateRefundRequestSerializerTest extends TestCase
                 'quantity' => Random::float(1, 100),
                 'price' => Random::int(1, 100),
                 'vatCode' => Random::int(1, 6),
+                'paymentMode' => Random::value(PaymentMode::getValidValues()),
+                'paymentSubject' => Random::value(PaymentSubject::getValidValues())
             );
         }
         return $result;

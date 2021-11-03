@@ -270,7 +270,7 @@ class ConfirmationRedirectTest extends AbstractConfirmationTest
     public function validUrlDataProvider()
     {
         return array(
-            array('http://test.ru'),
+            array('https://test.ru'),
             array(null),
             array(''),
         );

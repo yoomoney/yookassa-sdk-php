@@ -7,15 +7,18 @@
 
 MonetaryAmount - Сумма определенная в валюте
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [$currency](../classes/YooKassa-Model-MonetaryAmount.md#property_currency) |  | Код валюты |
 | public | [$value](../classes/YooKassa-Model-MonetaryAmount.md#property_value) |  | Сумма |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -40,6 +43,7 @@ MonetaryAmount - Сумма определенная в валюте
 | public | [setValue()](../classes/YooKassa-Model-MonetaryAmount.md#method_setValue) |  | Устанавливает сумму |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/MonetaryAmount.php](../../lib/Model/MonetaryAmount.php)
@@ -49,6 +53,7 @@ MonetaryAmount - Сумма определенная в валюте
   * \YooKassa\Model\MonetaryAmount
 * Implements:
   * [\YooKassa\Model\AmountInterface](../classes/YooKassa-Model-AmountInterface.md)
+
 ---
 ## Properties
 <a name="property_currency"></a>
@@ -91,6 +96,7 @@ MonetaryAmount constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Model\MonetaryAmount](../classes/YooKassa-Model-MonetaryAmount.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -113,6 +119,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -134,6 +141,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -155,6 +163,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -177,6 +186,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -198,6 +208,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -270,10 +281,12 @@ public increase(int $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\MonetaryAmount](../classes/YooKassa-Model-MonetaryAmount.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">int</code> | value  | Значение которое будет прибавлено к текущему |
+| <code lang="php">int</code> | value  | Значение, которое будет прибавлено к текущему |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -314,10 +327,12 @@ public multiply(float $coefficient) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\MonetaryAmount](../classes/YooKassa-Model-MonetaryAmount.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">float</code> | coefficient  | Множитель |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -341,6 +356,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -362,6 +378,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -383,6 +400,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -405,6 +423,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -426,10 +445,12 @@ public setCurrency(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\MonetaryAmount](../classes/YooKassa-Model-MonetaryAmount.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Код валюты |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -453,10 +474,12 @@ public setValue(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\MonetaryAmount](../classes/YooKassa-Model-MonetaryAmount.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Сумма |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -514,10 +537,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

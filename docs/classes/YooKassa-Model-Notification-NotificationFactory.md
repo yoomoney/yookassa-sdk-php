@@ -7,6 +7,7 @@
 
 Фабрика для получения конкретного объекта уведомления.
 
+
 ---
 ### Examples
 Пример скрипта обработки уведомления
@@ -79,14 +80,17 @@ try {
 
 
 ```
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [factory()](../classes/YooKassa-Model-Notification-NotificationFactory.md#method_factory) |  |  |
+
 ---
 ### Details
 * File: [lib/Model/Notification/NotificationFactory.php](../../lib/Model/Notification/NotificationFactory.php)
@@ -105,6 +109,7 @@ public factory(array $data) : \YooKassa\Model\Notification\AbstractNotification
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Notification\NotificationFactory](../classes/YooKassa-Model-Notification-NotificationFactory.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -125,10 +130,10 @@ public factory(array $data) : \YooKassa\Model\Notification\AbstractNotification
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

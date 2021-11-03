@@ -49,10 +49,6 @@ abstract class AbstractRefundResponse extends Refund
         $this->setCreatedAt(empty($options['created_at']) ? null : $options['created_at']);
         $this->setAmount(new MonetaryAmount($options['amount']['value'], $options['amount']['currency']));
 
-        if (!empty($options['requestor'])) {
-            $this->setRequestor($options['requestor']);
-        }
-
         if (!empty($options['sources'])) {
             $this->setSources($options['sources']);
         }
@@ -63,6 +59,10 @@ abstract class AbstractRefundResponse extends Refund
 
         if (!empty($options['description'])) {
             $this->setDescription($options['description']);
+        }
+
+        if (!empty($options['deal'])) {
+            $this->setDeal($options['deal']);
         }
     }
 }

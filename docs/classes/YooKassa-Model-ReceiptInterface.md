@@ -10,6 +10,7 @@ Interface ReceiptInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -26,6 +27,7 @@ Interface ReceiptInterface
 ### Details
 * File: [lib/Model/ReceiptInterface.php](../../lib/Model/ReceiptInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -34,6 +36,7 @@ Interface ReceiptInterface
 | property-read |  | Список товаров в заказе |
 | property-read |  | Код системы налогообложения. Число 1-6. |
 | property-read |  | Код системы налогообложения. Число 1-6. |
+
 ---
 ## Methods
 <a name="method_getObjectId" class="anchor"></a>
@@ -151,6 +154,7 @@ public normalize(\YooKassa\Model\AmountInterface $orderAmount, bool $withShippin
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptInterface](../classes/YooKassa-Model-ReceiptInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -173,10 +177,10 @@ public normalize(\YooKassa\Model\AmountInterface $orderAmount, bool $withShippin
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

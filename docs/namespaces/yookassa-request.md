@@ -1,9 +1,14 @@
 # [YooKassa API SDK](../home.md)
 
 # Namespace: \YooKassa\Request
+
 ## Parent: [\YooKassa](../namespaces/yookassa.md)
+
 ### Namespaces
+
+* [\YooKassa\Request\Deals](../namespaces/yookassa-request-deals.md)
 * [\YooKassa\Request\Payments](../namespaces/yookassa-request-payments.md)
+* [\YooKassa\Request\Payouts](../namespaces/yookassa-request-payouts.md)
 * [\YooKassa\Request\Receipts](../namespaces/yookassa-request-receipts.md)
 * [\YooKassa\Request\Refunds](../namespaces/yookassa-request-refunds.md)
 * [\YooKassa\Request\Webhook](../namespaces/yookassa-request-webhook.md)
@@ -19,10 +24,10 @@
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

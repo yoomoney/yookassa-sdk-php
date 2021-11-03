@@ -61,6 +61,12 @@ class BaseClient
     /** Точка входа для запросов к API по чекам */
     const RECEIPTS_PATH = '/receipts';
 
+    /** Точка входа для запросов к API по сделкам */
+    const DEALS_PATH = '/deals';
+
+    /** Точка входа для запросов к API по выплатам */
+    const PAYOUTS_PATH = '/payouts';
+
     /** Имя HTTP заголовка, используемого для передачи idempotence key */
     const IDEMPOTENCY_KEY_HEADER = 'Idempotence-Key';
 
@@ -109,7 +115,7 @@ class BaseClient
      *
      * Значение по умолчанию - 1800 миллисекунд.
      *
-     * @var int значение в миллисекундах
+     * @var int Значение в миллисекундах
      */
     protected $timeout;
 

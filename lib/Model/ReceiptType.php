@@ -50,6 +50,6 @@ class ReceiptType extends AbstractEnum
     protected static $validValues = array(
         self::PAYMENT => true,
         self::REFUND  => true,
-        self::SIMPLE  => true,
+        self::SIMPLE  => false,
     );
 }

@@ -57,7 +57,7 @@ require __DIR__ . '/lib/autoload.php';
 ```php
 use YooKassa\Client;
 ```
-2. Создайте экземпляр объекта клиента и задайте идентификатор магазина и секретный ключ (их можно получить в личном кабинете ЮKassa). [Как выпустить секретный ключ](https://yookassa.ru/docs/support/merchant/payments/implement/keys)
+2. Создайте экземпляр объекта клиента, задайте идентификатор магазина и секретный ключ (их можно получить в личном кабинете ЮKassa). [Как выпустить секретный ключ](https://yookassa.ru/docs/support/merchant/payments/implement/keys)
 ```php
 $client = new Client();
 $client->setAuth('shopId', 'secretKey');
@@ -96,3 +96,12 @@ $client->setAuth('shopId', 'secretKey');
 * [Запрос на создание чека через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека-через-билдер)
 * [Получить информацию о чеке](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-информацию-о-чеке)
 * [Получить список чеков с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-список-чеков-с-фильтрацией)
+
+#### [Работа со сделками](docs/examples/05-deals.md)
+* [Запрос на создание сделки](docs/examples/05-deals.md#Запрос-на-создание-сделки)
+* [Запрос на создание сделки через билдер](docs/examples/05-deals.md#Запрос-на-создание-сделки-через-билдер)
+* [Запрос на создание платежа с привязкой к сделке](docs/examples/05-deals.md#Запрос-на-создание-платежа-с-привязкой-к-сделке)
+* [Запрос на выплату продавцу](docs/examples/05-deals.md#Запрос-на-выплату-продавцу)
+* [Получить информацию о сделке](docs/examples/05-deals.md#Получить-информацию-о-сделке)
+* [Получить список сделок с фильтрацией](docs/examples/05-deals.md#Получить-список-сделок-с-фильтрацией)
+* [Получить информацию о выплате](docs/examples/05-deals.md#Получить-информацию-о-выплате)

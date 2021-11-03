@@ -7,9 +7,11 @@
 
 Актуальный список объектов webhook для переданного OAuth-токена
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -17,6 +19,7 @@
 | public | [__construct()](../classes/YooKassa-Request-Webhook-WebhookListResponse.md#method___construct) |  | Конструктор, устанавливает список полученных от API установленных webhook для переданного OAuth-токена |
 | public | [getItems()](../classes/YooKassa-Request-Webhook-WebhookListResponse.md#method_getItems) |  | Возвращает список установленных webhook для переданного OAuth-токена |
 | public | [getType()](../classes/YooKassa-Request-Webhook-WebhookListResponse.md#method_getType) |  | Возвращает тип ответа. Доступен только `list` |
+
 ---
 ### Details
 * File: [lib/Request/Webhook/WebhookListResponse.php](../../lib/Request/Webhook/WebhookListResponse.php)
@@ -39,6 +42,7 @@ public __construct(array $response) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Webhook\WebhookListResponse](../classes/YooKassa-Request-Webhook-WebhookListResponse.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -93,10 +97,10 @@ public getType() : string
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

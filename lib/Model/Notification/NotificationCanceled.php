@@ -62,13 +62,13 @@ class NotificationCanceled extends AbstractNotification
      * тела пришедшего запроса. При конструировании проверяется валидность типа передаваемого уведомления, если
      * передать уведомление не того типа, будет сгенерировано исключение типа {@link InvalidPropertyValueException}
      *
-     * @param array $source Ассоциативный массив с информацией о уведомлении
+     * @param array $source Ассоциативный массив с информацией об уведомлении
      *
      * @throws InvalidPropertyValueException Генерируется если значение типа нотификации или события не равны
      * "notification" и "payment.canceled" соответственно, что может говорить о том, что переданные в
      * конструктор данные не являются уведомлением нужного типа.
      */
-    public function __construct(array $source)
+    public function fromArray($source)
     {
         $this->_setType(NotificationType::NOTIFICATION);
         $this->_setEvent(NotificationEventType::PAYMENT_CANCELED);

@@ -7,6 +7,7 @@
 
 Класс для создания заголовка User-Agent в запросах к API
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
@@ -14,6 +15,7 @@
 | public | [HEADER](../classes/YooKassa-Client-UserAgent.md#constant_HEADER) |  | Имя заголовка для User-Agent |
 | public | [VERSION_DELIMITER](../classes/YooKassa-Client-UserAgent.md#constant_VERSION_DELIMITER) |  | Разделитель части заголовка и её версии |
 | public | [PART_DELIMITER](../classes/YooKassa-Client-UserAgent.md#constant_PART_DELIMITER) |  | Разделитель между частями заголовка |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -30,12 +32,14 @@
 | public | [setCms()](../classes/YooKassa-Client-UserAgent.md#method_setCms) |  | Устанавливает версию CMS |
 | public | [setFramework()](../classes/YooKassa-Client-UserAgent.md#method_setFramework) |  | Устанавливает версию фреймворка |
 | public | [setModule()](../classes/YooKassa-Client-UserAgent.md#method_setModule) |  | Устанавливает версию модуля |
+
 ---
 ### Details
 * File: [lib/Client/UserAgent.php](../../lib/Client/UserAgent.php)
 * Package: YooKassa
 * Class Hierarchy:
   * \YooKassa\Client\UserAgent
+
 ---
 ## Constants
 <a name="constant_HEADER" class="anchor"></a>
@@ -98,6 +102,7 @@ public createVersion(string $name, string $version) : string
 
 **Details:**
 * Inherited From: [\YooKassa\Client\UserAgent](../classes/YooKassa-Client-UserAgent.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -239,6 +244,7 @@ public setCms(string $name, string $version) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\UserAgent](../classes/YooKassa-Client-UserAgent.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -261,6 +267,7 @@ public setFramework(string $name, string $version) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\UserAgent](../classes/YooKassa-Client-UserAgent.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -283,6 +290,7 @@ public setModule(string $name, string $version) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Client\UserAgent](../classes/YooKassa-Client-UserAgent.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -304,10 +312,10 @@ public setModule(string $name, string $version) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

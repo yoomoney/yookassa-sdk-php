@@ -21,6 +21,7 @@ class ReceiptsResponseTest extends TestCase
         $instance = new ReceiptsResponse($options);
 
         self::assertEquals($options['type'], $instance->getType());
+        self::assertEquals($options['next_cursor'], $instance->getNextCursor());
     }
 
     /**
@@ -33,6 +34,7 @@ class ReceiptsResponseTest extends TestCase
         $instance = new ReceiptsResponse($options);
 
         self::assertEquals(count($options['items']), count($instance->getItems()));
+        self::assertTrue($instance->hasNextCursor());
 
         foreach ($instance->getItems() as $index => $item) {
             self::assertTrue($item instanceof ReceiptResponseInterface);
@@ -53,6 +55,7 @@ class ReceiptsResponseTest extends TestCase
                 array(
                     'type' => 'list',
                     'items' => $this->generateReceipts(),
+                    'next_cursor' => Random::str(36)
                 ),
             ),
         );
@@ -77,7 +80,7 @@ class ReceiptsResponseTest extends TestCase
             'type' => $type,
             'status' => Random::value(array('pending', 'succeeded', 'canceled')),
             'items' => $this->generateItems(),
-            'settlements' => $this->generateItems(),
+            'settlements' => $this->generateSettlements(),
             'tax_system_code' => Random::int(1 ,6),
             $type . '_id' => UUID::v4(),
         );

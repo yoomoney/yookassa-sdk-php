@@ -7,6 +7,7 @@
 
 Класс для формирования тега 1162 на основе кода в формате Data Matrix
 
+
 ---
 ### Examples
 Вариант через метод
@@ -31,11 +32,13 @@ $receiptItem = new \YooKassa\Model\ReceiptItem(array(
 var_dump($receiptItem);
 
 ```
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [PREFIX_DATA_MATRIX](../classes/YooKassa-Helpers-ProductCode.md#constant_PREFIX_DATA_MATRIX) |  | Код типа маркировки DataMatrix |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -53,14 +56,17 @@ var_dump($receiptItem);
 | public | [setSerial()](../classes/YooKassa-Helpers-ProductCode.md#method_setSerial) |  | Устанавливает Серийный номер товара |
 | public | [setUsePrefix()](../classes/YooKassa-Helpers-ProductCode.md#method_setUsePrefix) |  | Устанавливает флаг использования кода типа маркировки |
 | public | [validate()](../classes/YooKassa-Helpers-ProductCode.md#method_validate) |  | Проверяет заполненность необходимых свойств |
+
 ---
 ### Details
 * File: [lib/Helpers/ProductCode.php](../../lib/Helpers/ProductCode.php)
 * Package: YooKassa
 * Class Hierarchy:
   * \YooKassa\Helpers\ProductCode
+
 * See Also:
   * [](https://github.com/yoomoney/yookassa-sdk-php/blob/master/lib/Helpers/ProductCode.php)
+
 ---
 ## Constants
 <a name="constant_PREFIX_DATA_MATRIX" class="anchor"></a>
@@ -88,6 +94,7 @@ ProductCode constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Helpers\ProductCode](../classes/YooKassa-Helpers-ProductCode.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -229,6 +236,7 @@ public setGtin(string $gtin) : \YooKassa\Helpers\ProductCode
 
 **Details:**
 * Inherited From: [\YooKassa\Helpers\ProductCode](../classes/YooKassa-Helpers-ProductCode.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -250,6 +258,7 @@ public setPrefix(string|int $prefix) : \YooKassa\Helpers\ProductCode
 
 **Details:**
 * Inherited From: [\YooKassa\Helpers\ProductCode](../classes/YooKassa-Helpers-ProductCode.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -271,6 +280,7 @@ public setSerial(string $serial) : \YooKassa\Helpers\ProductCode
 
 **Details:**
 * Inherited From: [\YooKassa\Helpers\ProductCode](../classes/YooKassa-Helpers-ProductCode.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -292,6 +302,7 @@ public setUsePrefix(bool $usePrefix) : \YooKassa\Helpers\ProductCode
 
 **Details:**
 * Inherited From: [\YooKassa\Helpers\ProductCode](../classes/YooKassa-Helpers-ProductCode.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -329,10 +340,10 @@ public validate() : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

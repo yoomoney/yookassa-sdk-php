@@ -32,6 +32,8 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\AmountInterface;
 use YooKassa\Model\MonetaryAmount;
+use YooKassa\Model\Receipt;
+use YooKassa\Model\ReceiptInterface;
 
 /**
  * Класс объекта запроса к API
@@ -53,6 +55,10 @@ class AbstractRefundRequest extends AbstractRequest
      */
     private $_amount;
 
+    /**
+     * @var ReceiptInterface
+     */
+    private $_receipt;
 
     /**
      * Возвращает идентификатор платежа для которого создаётся возврат средств
@@ -61,6 +67,15 @@ class AbstractRefundRequest extends AbstractRequest
     public function getPaymentId()
     {
         return $this->_paymentId;
+    }
+
+    /**
+     * Проверяет, был ли установлена идентификатор платежа
+     * @return bool True если идентификатор платежа был установлен, false если нет
+     */
+    public function hasPaymentId()
+    {
+        return !empty($this->_paymentId);
     }
 
     /**
@@ -87,7 +102,7 @@ class AbstractRefundRequest extends AbstractRequest
             }
             $this->_paymentId = (string)$value;
         } else {
-            throw new InvalidPropertyValueException(
+            throw new InvalidPropertyValueTypeException(
                 'Invalid payment id value type in CreateRefundRequest', 0, 'CreateRefundRequest.paymentId', $value
             );
         }
@@ -103,7 +118,7 @@ class AbstractRefundRequest extends AbstractRequest
     }
 
     /**
-     * Проверяет была ли установлена сумма возврата
+     * Проверяет, была ли установлена сумма возврата
      * @return bool True если сумма возврата была установлена, false если нет
      */
     public function hasAmount()
@@ -135,26 +150,71 @@ class AbstractRefundRequest extends AbstractRequest
     }
 
     /**
+     * Возвращает чек, если он есть
+     * @return ReceiptInterface|null Данные фискального чека 54-ФЗ или null, если чека нет
+     */
+    public function getReceipt()
+    {
+        return $this->_receipt;
+    }
+
+    /**
+     * Устанавливает чек
+     * @param ReceiptInterface|array|null $value Инстанс чека или null для удаления информации о чеке
+     * @throws InvalidPropertyValueTypeException Выбрасывается если передан не инстанс класса чека и не null
+     */
+    public function setReceipt($value)
+    {
+        if ($value === null || $value === '') {
+            $this->_receipt = null;
+        } elseif ($value instanceof ReceiptInterface) {
+            $this->_receipt = $value;
+        } elseif (is_array($value)) {
+            $this->_receipt = new Receipt($value);
+        } else {
+            throw new InvalidPropertyValueTypeException('Invalid receipt in Refund', 0, 'Refund.receipt', $value);
+        }
+    }
+
+    /**
+     * Проверяет наличие чека
+     * @return bool True если чек есть, false если нет
+     */
+    public function hasReceipt()
+    {
+        return $this->_receipt !== null && $this->_receipt->notEmpty();
+    }
+
+    /**
      * Валидирует объект запроса
      * @return bool True если запрос валиден и его можно отправить в API, false если нет
      */
     public function validate()
     {
-        if (empty($this->_paymentId)) {
+        if (!$this->hasPaymentId()) {
             $this->setValidationError('Payment id not specified');
             return false;
         }
 
-        if ($this->_amount === null) {
-            $this->setValidationError('Payment amount not specified');
+        if (!$this->hasAmount()) {
+            $this->setValidationError('Refund amount not specified');
             return false;
         }
 
         $value = $this->_amount->getValue();
         if (empty($value) || $value <= 0.0) {
-            $this->setValidationError('Invalid payment amount value: ' . $value);
+            $this->setValidationError('Invalid refund amount value: ' . $value);
 
             return false;
+        }
+
+        if ($this->hasReceipt() && $this->getReceipt()->notEmpty()) {
+            $email = $this->getReceipt()->getCustomer()->getEmail();
+            $phone = $this->getReceipt()->getCustomer()->getPhone();
+            if (empty($email) && empty($phone)) {
+                $this->setValidationError('Both email and phone values are empty in receipt');
+                return false;
+            }
         }
 
         return true;

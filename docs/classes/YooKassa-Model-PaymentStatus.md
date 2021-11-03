@@ -13,6 +13,7 @@ PaymentStatus - Состояние платежа
 |succeeded|Успешно оплачен и подтвержден магазином|
 |canceled|Неуспех оплаты или отменен магазином (cancel)|
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
@@ -21,11 +22,13 @@ PaymentStatus - Состояние платежа
 | public | [WAITING_FOR_CAPTURE](../classes/YooKassa-Model-PaymentStatus.md#constant_WAITING_FOR_CAPTURE) |  | Ожидает подтверждения магазином |
 | public | [SUCCEEDED](../classes/YooKassa-Model-PaymentStatus.md#constant_SUCCEEDED) |  | Успешно оплачен и подтвержден магазином |
 | public | [CANCELED](../classes/YooKassa-Model-PaymentStatus.md#constant_CANCELED) |  | Неуспех оплаты или отменен магазином |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$validValues](../classes/YooKassa-Model-PaymentStatus.md#property_validValues) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -33,6 +36,7 @@ PaymentStatus - Состояние платежа
 | public | [getEnabledValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getEnabledValues) |  | Возвращает значения в enum'е значения которых разрешены |
 | public | [getValidValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getValidValues) |  | Возвращает все значения в enum'e |
 | public | [valueExists()](../classes/YooKassa-Common-AbstractEnum.md#method_valueExists) |  | Проверяет наличие значения в enum'e |
+
 ---
 ### Details
 * File: [lib/Model/PaymentStatus.php](../../lib/Model/PaymentStatus.php)
@@ -40,6 +44,7 @@ PaymentStatus - Состояние платежа
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
   * \YooKassa\Model\PaymentStatus
+
 ---
 ## Constants
 <a name="constant_PENDING" class="anchor"></a>
@@ -76,6 +81,7 @@ SUCCEEDED = 'succeeded'
 ```php
 CANCELED = 'canceled'
 ```
+
 
 
 ---
@@ -138,6 +144,7 @@ Static public valueExists(mixed $value) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -158,10 +165,10 @@ Static public valueExists(mixed $value) : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

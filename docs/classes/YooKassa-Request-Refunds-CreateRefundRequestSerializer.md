@@ -7,14 +7,17 @@
 
 Класс сериалайзера запросов к API на создание нового возврата средств
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [serialize()](../classes/YooKassa-Request-Refunds-CreateRefundRequestSerializer.md#method_serialize) |  | Сериализует переданный объект запроса к API в массив |
+
 ---
 ### Details
 * File: [lib/Request/Refunds/CreateRefundRequestSerializer.php](../../lib/Request/Refunds/CreateRefundRequestSerializer.php)
@@ -37,6 +40,7 @@ public serialize(\YooKassa\Request\Refunds\CreateRefundRequestInterface $request
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\CreateRefundRequestSerializer](../classes/YooKassa-Request-Refunds-CreateRefundRequestSerializer.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -57,10 +61,10 @@ public serialize(\YooKassa\Request\Refunds\CreateRefundRequestInterface $request
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -111,7 +111,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Устанавливает идентификатор платежа или null если требуется его удалить
+     * Устанавливает идентификатор платежа или null, если требуется его удалить
      * @param string|null $value Идентификатор платежа
      *
      * @throws InvalidPropertyValueException Выбрасывается если длина переданной строки не равна 36 символам
@@ -137,7 +137,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена
+     * Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена
      * @return \DateTime|null Время создания, от (включительно)
      */
     public function getCreatedAtGte()
@@ -146,7 +146,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет была ли установлена дата создания от которой выбираются возвраты
+     * Проверяет, была ли установлена дата создания от которой выбираются возвраты
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtGte()
@@ -156,7 +156,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает дату создания от которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -183,7 +183,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена
+     * Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена
      * @return \DateTime|null Время создания, от (не включая)
      */
     public function getCreatedAtGt()
@@ -192,7 +192,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет была ли установлена дата создания от которой выбираются возвраты
+     * Проверяет, была ли установлена дата создания от которой выбираются возвраты
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtGt()
@@ -202,7 +202,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает дату создания от которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -229,7 +229,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена
+     * Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена
      * @return \DateTime|null Время создания, до (включительно)
      */
     public function getCreatedAtLte()
@@ -238,7 +238,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет была ли установлена дата создания до которой выбираются возвраты
+     * Проверяет, была ли установлена дата создания до которой выбираются возвраты
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtLte()
@@ -248,7 +248,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает дату создания до которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -275,7 +275,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена
+     * Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена
      * @return \DateTime|null Время создания, до (не включая)
      */
     public function getCreatedAtLt()
@@ -284,7 +284,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет была ли установлена дата создания до которой выбираются возвраты
+     * Проверяет, была ли установлена дата создания до которой выбираются возвраты
      * @return bool True если дата была установлена, false если нет
      */
     public function hasCreatedAtLt()
@@ -294,7 +294,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает дату создания до которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
      * строка или число, которые не удалось преобразовать в валидную дату)
@@ -321,7 +321,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Возвращает статус выбираемых возвратов или null если он до этого не был установлен
+     * Возвращает статус выбираемых возвратов или null, если он до этого не был установлен
      * @return string|null Статус выбираемых возвратов
      */
     public function getStatus()
@@ -330,7 +330,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет был ли установлен статус выбираемых возвратов
+     * Проверяет, был ли установлен статус выбираемых возвратов
      * @return bool True если статус был установлен, false если нет
      */
     public function hasStatus()
@@ -340,7 +340,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает статус выбираемых возвратов
-     * @param string $value Статус выбираемых платежей или null чтобы удалить значение
+     * @param string $value Статус выбираемых платежей или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueException Выбрасывается если переданное значение не является валидным статусом
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
@@ -374,7 +374,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет был ли установлен токен следующей страницы
+     * Проверяет, был ли установлен токен следующей страницы
      * @return bool True если токен был установлен, false если нет
      */
     public function hasCursor()
@@ -384,7 +384,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает токен следующей страницы выборки
-     * @param string $value Токен следующей страницы выборки или null чтобы удалить значение
+     * @param string $value Токен следующей страницы выборки или null, чтобы удалить значение
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
      */
@@ -411,7 +411,7 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
     }
 
     /**
-     * Проверяет был ли установлено ограничение количества объектов платежа
+     * Проверяет, было ли установлено ограничение количества объектов платежа
      * @return bool True если было установлено, false если нет
      */
     public function hasLimit()
@@ -421,9 +421,9 @@ class RefundsRequest extends AbstractRequest implements RefundsRequestInterface
 
     /**
      * Устанавливает ограничение количества объектов платежа
-     * @param integer|null $value Ограничение количества объектов платежа или null чтобы удалить значение
+     * @param integer|null $value Ограничение количества объектов платежа или null, чтобы удалить значение
      *
-     * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передано не целое число
+     * @throws InvalidPropertyValueTypeException Выбрасывается, если в метод было передано не целое число
      */
     public function setLimit($value)
     {

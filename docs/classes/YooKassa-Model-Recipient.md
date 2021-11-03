@@ -15,6 +15,7 @@
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -23,6 +24,7 @@
 | public | [$accountId](../classes/YooKassa-Model-Recipient.md#property_accountId) |  | Идентификатор магазина |
 | public | [$gateway_id](../classes/YooKassa-Model-Recipient.md#property_gateway_id) |  | Идентификатор шлюза |
 | public | [$gatewayId](../classes/YooKassa-Model-Recipient.md#property_gatewayId) |  | Идентификатор шлюза |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -44,6 +46,7 @@
 | public | [setGatewayId()](../classes/YooKassa-Model-Recipient.md#method_setGatewayId) |  | Устанавливает идентификатор шлюза |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/Recipient.php](../../lib/Model/Recipient.php)
@@ -53,6 +56,7 @@
   * \YooKassa\Model\Recipient
 * Implements:
   * [\YooKassa\Model\RecipientInterface](../classes/YooKassa-Model-RecipientInterface.md)
+
 ---
 ## Properties
 <a name="property_account_id"></a>
@@ -119,6 +123,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -140,6 +145,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -161,6 +167,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -182,6 +189,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -204,6 +212,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -225,6 +234,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -301,6 +311,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -322,6 +333,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -343,6 +355,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -365,6 +378,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -386,10 +400,12 @@ public setAccountId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Recipient](../classes/YooKassa-Model-Recipient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Идентификатор магазина |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -412,10 +428,12 @@ public setGatewayId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Recipient](../classes/YooKassa-Model-Recipient.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Идентификатор шлюза |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -472,10 +490,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

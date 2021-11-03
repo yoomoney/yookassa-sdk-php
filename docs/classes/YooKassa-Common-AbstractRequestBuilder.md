@@ -7,14 +7,17 @@
 
 Базовый класс билдера запросов
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$currentObject](../classes/YooKassa-Common-AbstractRequestBuilder.md#property_currentObject) |  | Инстанс собираемого запроса |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -23,12 +26,14 @@
 | public | [build()](../classes/YooKassa-Common-AbstractRequestBuilder.md#method_build) |  | Строит запрос, валидирует его и возвращает, если все прошло нормально |
 | public | [setOptions()](../classes/YooKassa-Common-AbstractRequestBuilder.md#method_setOptions) |  | Устанавливает свойства запроса из массива |
 | protected | [initCurrentObject()](../classes/YooKassa-Common-AbstractRequestBuilder.md#method_initCurrentObject) |  | Инициализирует пустой запрос |
+
 ---
 ### Details
 * File: [lib/Common/AbstractRequestBuilder.php](../../lib/Common/AbstractRequestBuilder.php)
 * Package: YooKassa
 * Class Hierarchy:
   * \YooKassa\Common\AbstractRequestBuilder
+
 ---
 ## Properties
 <a name="property_currentObject"></a>
@@ -76,15 +81,17 @@ public build(array $options = null) : \YooKassa\Common\AbstractRequest
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRequestBuilder](../classes/YooKassa-Common-AbstractRequestBuilder.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">array</code> | options  | Массив свойств запроса, если нужно их установить перед сборкой |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
 | \YooKassa\Common\Exceptions\InvalidRequestException | Выбрасывается если при валидации запроса произошла ошибка |
-| \YooKassa\Common\Exceptions\InvalidPropertyException | Выбрасывается если не удалось установить один из параметров, переданныч в массиве настроек |
+| \YooKassa\Common\Exceptions\InvalidPropertyException | Выбрасывается если не удалось установить один из параметров, переданных в массиве настроек |
 
 **Returns:** \YooKassa\Common\AbstractRequest - Инстанс собранного запроса
 
@@ -102,10 +109,12 @@ public setOptions(array|\Traversable $options) : \YooKassa\Common\AbstractReques
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRequestBuilder](../classes/YooKassa-Common-AbstractRequestBuilder.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">array OR \Traversable</code> | options  | Массив свойств запроса |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -129,7 +138,7 @@ Abstract protected initCurrentObject() : \YooKassa\Common\AbstractRequest
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractRequestBuilder](../classes/YooKassa-Common-AbstractRequestBuilder.md)
 
-**Returns:** \YooKassa\Common\AbstractRequest - Инстанс запроса который будем собирать
+**Returns:** \YooKassa\Common\AbstractRequest - Инстанс запроса, который будем собирать
 
 
 
@@ -144,10 +153,10 @@ Abstract protected initCurrentObject() : \YooKassa\Common\AbstractRequest
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

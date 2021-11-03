@@ -65,7 +65,7 @@ class TestAbstractRequestBuilder extends AbstractRequestBuilder
 {
     /**
      * Инициализирует пустой запрос
-     * @return TestAbstractRequestClass Инстанс запроса который будем собирать
+     * @return TestAbstractRequestClass Инстанс запроса, который будем собирать
      */
     protected function initCurrentObject()
     {

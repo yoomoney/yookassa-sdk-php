@@ -1,13 +1,18 @@
 # [YooKassa API SDK](../home.md)
 
 # Namespace: \YooKassa\Request\Refunds
+
 ## Parent: [\YooKassa\Request](../namespaces/yookassa-request.md)
+
 ### Interfaces
+
 | Name | Summary |
 | ---- | ------- |
 | [\YooKassa\Request\Refunds\CreateRefundRequestInterface](../classes/YooKassa-Request-Refunds-CreateRefundRequestInterface.md) | Интерфейс объекта запроса на возврат |
 | [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md) | Интерфейс объекта запроса списка возвратов |
+
 ### Classes
+
 | Name | Summary |
 | ---- | ------- |
 | [\YooKassa\Request\Refunds\AbstractRefundResponse](../classes/YooKassa-Request-Refunds-AbstractRefundResponse.md) | Абстрактный класс ответа от API с информацией о возврате |
@@ -32,10 +37,10 @@
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

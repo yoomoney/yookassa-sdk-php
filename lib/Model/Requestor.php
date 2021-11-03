@@ -16,6 +16,7 @@ use YooKassa\Helpers\TypeCast;
  * [разрешил](https://yookassa.ru/developers/partners-api/basics) совершать операции от своего имени `third_party_client`.
  *
  * @package YooKassa
+ * @deprecated Не используется. Будет удален в следующих версиях
  *
  * @property string $type Тип инициатора
  * @property string $accountId Идентификатор магазина

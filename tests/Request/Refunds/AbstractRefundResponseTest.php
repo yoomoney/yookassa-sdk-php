@@ -6,6 +6,8 @@ use PHPUnit\Framework\TestCase;
 use YooKassa\Helpers\Random;
 use YooKassa\Model\AmountInterface;
 use YooKassa\Model\CurrencyCode;
+use YooKassa\Model\Deal\RefundDealInfo;
+use YooKassa\Model\Deal\SettlementPayoutPaymentType;
 use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\ReceiptRegistrationStatus;
 use YooKassa\Model\RefundStatus;
@@ -91,7 +93,7 @@ abstract class AbstractRefundResponseTest extends TestCase
      * @dataProvider validDataProvider
      * @param array $options
      */
-    public function testGetComment($options)
+    public function testGetDescription($options)
     {
         $instance = $this->getTestInstance($options);
         if (empty($options['description'])) {
@@ -117,6 +119,22 @@ abstract class AbstractRefundResponseTest extends TestCase
         }
     }
 
+    /**
+     * @dataProvider validDataProvider
+     * @param array $options
+     */
+    public function testGetDeal($options)
+    {
+        $instance = $this->getTestInstance($options);
+        self::assertTrue($instance->getDeal() instanceof RefundDealInfo);
+
+        self::assertEquals($options['deal']['id'], $instance->getDeal()->getId());
+        $settlements = $instance->getDeal()->getRefundSettlements();
+        if (!empty($settlements)) {
+            self::assertEquals($options['deal']['refund_settlements'][0], $settlements[0]->toArray());
+        }
+    }
+
     public function validDataProvider()
     {
         $result = array();
@@ -139,7 +157,19 @@ abstract class AbstractRefundResponseTest extends TestCase
                         'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
                         'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
                     )),
-                )
+                ),
+                'deal' => array(
+                    'id' => 'dl-285e5ee7-0022-5000-8000-01516a44b147',
+                    'refund_settlements' => array(
+                        array(
+                            'type' => SettlementPayoutPaymentType::PAYOUT,
+                            'amount' => array(
+                                'value' => 123.00,
+                                'currency' => 'RUB',
+                            ),
+                        )
+                    ),
+                ),
             );
             $result[] = array($payment);
         }

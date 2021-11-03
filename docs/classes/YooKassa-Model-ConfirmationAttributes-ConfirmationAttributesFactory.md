@@ -7,15 +7,18 @@
 
 Class ConfirmationAttributesFactory
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [factory()](../classes/YooKassa-Model-ConfirmationAttributes-ConfirmationAttributesFactory.md#method_factory) |  |  |
 | public | [factoryFromArray()](../classes/YooKassa-Model-ConfirmationAttributes-ConfirmationAttributesFactory.md#method_factoryFromArray) |  |  |
+
 ---
 ### Details
 * File: [lib/Model/ConfirmationAttributes/ConfirmationAttributesFactory.php](../../lib/Model/ConfirmationAttributes/ConfirmationAttributesFactory.php)
@@ -34,6 +37,7 @@ public factory(string $type) : \YooKassa\Model\ConfirmationAttributes\AbstractCo
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesFactory](../classes/YooKassa-Model-ConfirmationAttributes-ConfirmationAttributesFactory.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -51,6 +55,7 @@ public factoryFromArray(array $data, string|null $type = null) : \YooKassa\Model
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesFactory](../classes/YooKassa-Model-ConfirmationAttributes-ConfirmationAttributesFactory.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -72,10 +77,10 @@ public factoryFromArray(array $data, string|null $type = null) : \YooKassa\Model
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

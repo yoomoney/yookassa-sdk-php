@@ -10,17 +10,18 @@ Interface RefundInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [getAmount()](../classes/YooKassa-Model-RefundInterface.md#method_getAmount) |  | Возвращает сумму возврата |
 | public | [getCreatedAt()](../classes/YooKassa-Model-RefundInterface.md#method_getCreatedAt) |  | Возвращает дату создания возврата |
+| public | [getDeal()](../classes/YooKassa-Model-RefundInterface.md#method_getDeal) |  | Возвращает сделку, в рамках которой нужно провести возврат. |
 | public | [getDescription()](../classes/YooKassa-Model-RefundInterface.md#method_getDescription) |  | Возвращает комментарий к возврату |
 | public | [getId()](../classes/YooKassa-Model-RefundInterface.md#method_getId) |  | Возвращает идентификатор возврата платежа |
 | public | [getPaymentId()](../classes/YooKassa-Model-RefundInterface.md#method_getPaymentId) |  | Возвращает идентификатор платежа |
 | public | [getReceiptRegistration()](../classes/YooKassa-Model-RefundInterface.md#method_getReceiptRegistration) |  | Возвращает статус регистрации чека |
-| public | [getRequestor()](../classes/YooKassa-Model-RefundInterface.md#method_getRequestor) |  | Возвращает информацию об инициаторе платежа или возврата |
 | public | [getSources()](../classes/YooKassa-Model-RefundInterface.md#method_getSources) |  | Возвращает информацию о распределении денег — сколько и в какой магазин нужно перевести |
 | public | [getStatus()](../classes/YooKassa-Model-RefundInterface.md#method_getStatus) |  | Возвращает статус текущего возврата |
 
@@ -28,6 +29,7 @@ Interface RefundInterface
 ### Details
 * File: [lib/Model/RefundInterface.php](../../lib/Model/RefundInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -42,6 +44,8 @@ Interface RefundInterface
 | property-read |  | Статус регистрации чека |
 | property-read |  | Статус регистрации чека |
 | property-read |  | Комментарий, основание для возврата средств покупателю |
+| property-read |  | Данные о сделке, в составе которой проходит возврат |
+
 ---
 ## Methods
 <a name="method_getId" class="anchor"></a>
@@ -163,23 +167,6 @@ public getDescription() : string
 **Returns:** string - Комментарий, основание для возврата средств покупателю
 
 
-<a name="method_getRequestor" class="anchor"></a>
-#### public getRequestor() : \YooKassa\Model\RequestorInterface
-
-```php
-public getRequestor() : \YooKassa\Model\RequestorInterface
-```
-
-**Summary**
-
-Возвращает информацию об инициаторе платежа или возврата
-
-**Details:**
-* Inherited From: [\YooKassa\Model\RefundInterface](../classes/YooKassa-Model-RefundInterface.md)
-
-**Returns:** \YooKassa\Model\RequestorInterface - 
-
-
 <a name="method_getSources" class="anchor"></a>
 #### public getSources() : \YooKassa\Model\SourceInterface[]
 
@@ -197,6 +184,23 @@ public getSources() : \YooKassa\Model\SourceInterface[]
 **Returns:** \YooKassa\Model\SourceInterface[] - 
 
 
+<a name="method_getDeal" class="anchor"></a>
+#### public getDeal() : \YooKassa\Model\Deal\RefundDealInfo
+
+```php
+public getDeal() : \YooKassa\Model\Deal\RefundDealInfo
+```
+
+**Summary**
+
+Возвращает сделку, в рамках которой нужно провести возврат.
+
+**Details:**
+* Inherited From: [\YooKassa\Model\RefundInterface](../classes/YooKassa-Model-RefundInterface.md)
+
+**Returns:** \YooKassa\Model\Deal\RefundDealInfo - Сделка, в рамках которой нужно провести возврат
+
+
 
 
 ---
@@ -210,10 +214,10 @@ public getSources() : \YooKassa\Model\SourceInterface[]
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

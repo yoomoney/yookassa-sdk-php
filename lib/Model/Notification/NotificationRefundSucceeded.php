@@ -61,7 +61,7 @@ class NotificationRefundSucceeded extends AbstractNotification
      * тела пришедшего запроса. При конструировании проверяется валидность типа передаваемого уведомления, если
      * передать уведомление не того типа, будет сгенерировано исключение типа {@link InvalidPropertyValueException}
      *
-     * @param array $source Ассоциативный массив с информацией о уведомлении
+     * @param array $source Ассоциативный массив с информацией об уведомлении
      *
      * @throws InvalidPropertyValueException|\Exception Генерируется если значение типа нотификации или события не равны
      * "notification" и "refund.succeeded" соответственно, что может говорить о том, что переданные в

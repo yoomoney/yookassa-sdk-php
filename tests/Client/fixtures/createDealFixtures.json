@@ -1,0 +1,8 @@
+{
+  "type": "safe_deal",
+  "fee_moment": "payment_succeeded",
+  "metadata": {
+    "order_id": "37"
+  },
+  "description": "SAFE_DEAL 123554642-2432FF344R"
+}

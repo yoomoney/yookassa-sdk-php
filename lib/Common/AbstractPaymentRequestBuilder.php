@@ -29,6 +29,7 @@ namespace YooKassa\Common;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Model\AmountInterface;
+use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\Receipt;
 use YooKassa\Model\Receipt\ReceiptItemAmount;
@@ -212,7 +213,13 @@ abstract class AbstractPaymentRequestBuilder extends AbstractRequestBuilder
                     empty($item['title']) ? $item['description'] : $item['title'],
                     $item['price'],
                     $item['quantity'],
-                    $item['vatCode']
+                    $item['vatCode'],
+                    isset($item['payment_mode']) ? $item['payment_mode'] : null,
+                    isset($item['payment_subject']) ? $item['payment_subject'] : null,
+                    isset($item['product_code']) ? $item['product_code'] : null,
+                    isset($item['country_of_origin_code']) ? $item['country_of_origin_code'] : null,
+                    isset($item['customs_declaration_number']) ? $item['customs_declaration_number'] : null,
+                    isset($item['excise']) ? $item['excise'] : null
                 );
             }
             $index++;
@@ -237,7 +244,7 @@ abstract class AbstractPaymentRequestBuilder extends AbstractRequestBuilder
      *
      * @return self Инстанс билдера запросов
      */
-    public function addReceiptItem($title, $price, $quantity, $vatCode, $paymentMode = null, $paymentSubject = null)
+    public function addReceiptItem($title, $price, $quantity, $vatCode, $paymentMode = null, $paymentSubject = null, $productCode = null, $countryOfOriginCode = null, $customsDeclarationNumber = null, $excise = null)
     {
         $item = new ReceiptItem();
         $item->setDescription($title);
@@ -246,6 +253,10 @@ abstract class AbstractPaymentRequestBuilder extends AbstractRequestBuilder
         $item->setPrice(new ReceiptItemAmount($price, $this->amount->getCurrency()));
         $item->setPaymentSubject($paymentSubject);
         $item->setPaymentMode($paymentMode);
+        $item->setProductCode($productCode);
+        $item->setCountryOfOriginCode($countryOfOriginCode);
+        $item->setCustomsDeclarationNumber($customsDeclarationNumber);
+        $item->setExcise($excise);
         $this->receipt->addItem($item);
 
         return $this;

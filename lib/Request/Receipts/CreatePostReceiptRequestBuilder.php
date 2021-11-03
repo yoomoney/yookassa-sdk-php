@@ -38,7 +38,7 @@ use YooKassa\Model\ReceiptItemInterface;
 use YooKassa\Model\SettlementInterface;
 
 /**
- * Класс билдера объектов запрсов к API на создание чека
+ * Класс билдера объектов запросов к API на создание чека
  *
  * @example 02-builder.php 91 56 Пример использования билдера
  *
@@ -117,7 +117,7 @@ class CreatePostReceiptRequestBuilder extends AbstractRequestBuilder
     /**
      * Устанавливает информацию о пользователе
      *
-     * @param ReceiptCustomerInterface|array $value информация о плательщике
+     * @param ReceiptCustomerInterface|array $value Информация о плательщике
      * @return self Инстанс билдера запросов
      */
     public function setCustomer($value)
@@ -136,7 +136,7 @@ class CreatePostReceiptRequestBuilder extends AbstractRequestBuilder
     /**
      * Устанавливает список товаров чека
      *
-     * @param ReceiptItemInterface[]|array $value список товаров чека
+     * @param ReceiptItemInterface[]|array $value Список товаров чека
      * @return CreatePostReceiptRequestBuilder
      */
     public function setItems($value)

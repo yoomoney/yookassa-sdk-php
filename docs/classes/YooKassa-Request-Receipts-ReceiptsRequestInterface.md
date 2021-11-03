@@ -10,33 +10,35 @@
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [getCreatedAtGt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtGt) |  | Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена |
-| public | [getCreatedAtGte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtGte) |  | Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена |
-| public | [getCreatedAtLt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtLt) |  | Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена |
-| public | [getCreatedAtLte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtLte) |  | Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена |
+| public | [getCreatedAtGt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtGt) |  | Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена |
+| public | [getCreatedAtGte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtGte) |  | Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена |
+| public | [getCreatedAtLt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtLt) |  | Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена |
+| public | [getCreatedAtLte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCreatedAtLte) |  | Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена |
 | public | [getCursor()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getCursor) |  | Возвращает токен для получения следующей страницы выборки |
-| public | [getLimit()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getLimit) |  | Возвращает ограничение количества объектов или null если оно до этого не было установлено |
+| public | [getLimit()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getLimit) |  | Возвращает ограничение количества объектов или null, если оно до этого не было установлено |
 | public | [getPaymentId()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getPaymentId) |  | Возвращает идентификатор платежа если он задан или null |
 | public | [getRefundId()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getRefundId) |  | Возвращает идентификатор возврата |
-| public | [getStatus()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getStatus) |  | Возвращает статус выбираемых возвратов или null если он до этого не был установлен |
-| public | [hasCreatedAtGt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtGt) |  | Проверяет была ли установлена дата создания от которой выбираются возвраты |
-| public | [hasCreatedAtGte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtGte) |  | Проверяет была ли установлена дата создания от которой выбираются возвраты |
-| public | [hasCreatedAtLt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtLt) |  | Проверяет была ли установлена дата создания до которой выбираются возвраты |
-| public | [hasCreatedAtLte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtLte) |  | Проверяет была ли установлена дата создания до которой выбираются возвраты |
-| public | [hasCursor()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCursor) |  | Проверяет был ли установлен токен следующей страницы |
-| public | [hasLimit()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasLimit) |  | Проверяет было ли установлено ограничение количества объектов |
+| public | [getStatus()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_getStatus) |  | Возвращает статус выбираемых возвратов или null, если он до этого не был установлен |
+| public | [hasCreatedAtGt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtGt) |  | Проверяет, была ли установлена дата создания от которой выбираются возвраты |
+| public | [hasCreatedAtGte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtGte) |  | Проверяет, была ли установлена дата создания от которой выбираются возвраты |
+| public | [hasCreatedAtLt()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtLt) |  | Проверяет, была ли установлена дата создания до которой выбираются возвраты |
+| public | [hasCreatedAtLte()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCreatedAtLte) |  | Проверяет, была ли установлена дата создания до которой выбираются возвраты |
+| public | [hasCursor()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasCursor) |  | Проверяет, был ли установлен токен следующей страницы |
+| public | [hasLimit()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasLimit) |  | Проверяет, было ли установлено ограничение количества объектов |
 | public | [hasPaymentId()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasPaymentId) |  | Проверяет, был ли задан идентификатор платежа |
-| public | [hasRefundId()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasRefundId) |  | Проверяет был ли установлен идентификатор возврата |
-| public | [hasStatus()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasStatus) |  | Проверяет был ли установлен статус выбираемых возвратов |
+| public | [hasRefundId()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasRefundId) |  | Проверяет, был ли установлен идентификатор возврата |
+| public | [hasStatus()](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md#method_hasStatus) |  | Проверяет, был ли установлен статус выбираемых возвратов |
 
 ---
 ### Details
 * File: [lib/Request/Receipts/ReceiptsRequestInterface.php](../../lib/Request/Receipts/ReceiptsRequestInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -50,6 +52,7 @@
 | property-read |  | Статус возврата |
 | property-read |  | Токен для получения следующей страницы выборки |
 | property-read |  | Ограничение количества объектов, отображаемых на одной странице выдачи |
+
 ---
 ## Methods
 <a name="method_getRefundId" class="anchor"></a>
@@ -78,7 +81,7 @@ public hasRefundId() : bool
 
 **Summary**
 
-Проверяет был ли установлен идентификатор возврата
+Проверяет, был ли установлен идентификатор возврата
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -129,7 +132,7 @@ public getCreatedAtGte() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -146,7 +149,7 @@ public hasCreatedAtGte() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания от которой выбираются возвраты
+Проверяет, была ли установлена дата создания от которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -163,7 +166,7 @@ public getCreatedAtGt() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -180,7 +183,7 @@ public hasCreatedAtGt() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания от которой выбираются возвраты
+Проверяет, была ли установлена дата создания от которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -197,7 +200,7 @@ public getCreatedAtLte() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -214,7 +217,7 @@ public hasCreatedAtLte() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания до которой выбираются возвраты
+Проверяет, была ли установлена дата создания до которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -231,7 +234,7 @@ public getCreatedAtLt() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -248,7 +251,7 @@ public hasCreatedAtLt() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания до которой выбираются возвраты
+Проверяет, была ли установлена дата создания до которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -265,7 +268,7 @@ public getStatus() : string|null
 
 **Summary**
 
-Возвращает статус выбираемых возвратов или null если он до этого не был установлен
+Возвращает статус выбираемых возвратов или null, если он до этого не был установлен
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -282,7 +285,7 @@ public hasStatus() : bool
 
 **Summary**
 
-Проверяет был ли установлен статус выбираемых возвратов
+Проверяет, был ли установлен статус выбираемых возвратов
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -316,7 +319,7 @@ public hasCursor() : bool
 
 **Summary**
 
-Проверяет был ли установлен токен следующей страницы
+Проверяет, был ли установлен токен следующей страницы
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -333,7 +336,7 @@ public getLimit() : string|null
 
 **Summary**
 
-Возвращает ограничение количества объектов или null если оно до этого не было установлено
+Возвращает ограничение количества объектов или null, если оно до этого не было установлено
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -350,7 +353,7 @@ public hasLimit() : bool
 
 **Summary**
 
-Проверяет было ли установлено ограничение количества объектов
+Проверяет, было ли установлено ограничение количества объектов
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Receipts\ReceiptsRequestInterface](../classes/YooKassa-Request-Receipts-ReceiptsRequestInterface.md)
@@ -371,10 +374,10 @@ public hasLimit() : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

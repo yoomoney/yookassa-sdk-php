@@ -3,13 +3,20 @@
 namespace Tests\YooKassa\Request\Receipts;
 
 use PHPUnit\Framework\TestCase;
+use YooKassa\Helpers\ProductCode;
 use YooKassa\Helpers\Random;
+use YooKassa\Model\Airline;
+use YooKassa\Model\Receipt\SettlementType;
+use YooKassa\Model\ReceiptType;
 use YooKassa\Request\Receipts\ReceiptResponseInterface;
+use YooKassa\Request\Receipts\ReceiptResponseItem;
 use YooKassa\Request\Receipts\ReceiptResponseItemInterface;
 
 abstract class AbstractReceiptResponseTest extends TestCase
 {
     protected $type;
+
+    protected $valid = true;
 
     /**
      * @param $options
@@ -21,7 +28,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
      * @param $options
      * @return array
      */
-    abstract protected function addSpecificProperties($options);
+    abstract protected function addSpecificProperties($options, $i);
 
     /**
      * @dataProvider validDataProvider
@@ -57,7 +64,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
     {
         $instance = $this->getTestInstance($options);
         if (empty($options['status'])) {
-            self::assertFalse($instance->getStatus());
+            self::assertNull($instance->getStatus());
         } else {
             self::assertEquals($options['status'], $instance->getStatus());
         }
@@ -71,7 +78,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
     {
         $instance = $this->getTestInstance($options);
         if (empty($options['tax_system_code'])) {
-            self::assertFalse($instance->getTaxSystemCode());
+            self::assertNull($instance->getTaxSystemCode());
         } else {
             self::assertEquals($options['tax_system_code'], $instance->getTaxSystemCode());
         }
@@ -100,35 +107,55 @@ abstract class AbstractReceiptResponseTest extends TestCase
 
     public function validDataProvider()
     {
-        return array($this->generateReceipts($this->type));
+        $this->valid = true;
+        $receipts = array();
+        for ($i=0; $i < 10; $i++) {
+            $receipts[] = $this->generateReceipts($this->type, true);
+        }
+        return $receipts;
     }
 
-    private function generateReceipts($type)
+    public function invalidDataProvider()
     {
+        $this->valid = false;
+        $receipts = array();
+        for ($i=0; $i < 10; $i++) {
+            $receipts[] = $this->generateReceipts($this->type, false);
+        }
+        return $receipts;
+    }
+
+    private function generateReceipts($type, $valid)
+    {
+        $this->valid = $valid;
         $return = array();
         $count = Random::int(1, 10);
 
         for ($i=0; $i < $count; $i++) {
-            $return[] = $this->generateReceipt($type);
+            $return[] = $this->generateReceipt($type, $i);
         }
 
         return $return;
     }
 
-    private function generateReceipt($type)
+    private function generateReceipt($type, $i)
     {
         $receipt = array(
             'id' => Random::str(39),
             'type' => $type,
-            'status' => Random::value(array('pending', 'succeeded', 'canceled')),
+            'status' => Random::value(array('pending', 'succeeded', 'canceled', null)),
+            'fiscal_document_number' => Random::int(4),
+            'fiscal_storage_number' => Random::int(16),
+            'fiscal_attribute' => Random::int(10),
+            'registered_at' => date('Y-m-d\TH:i:s.vP', mt_rand(1111111111, time())),
+            'fiscal_provider_id' => Random::str(36),
             'items' => $this->generateItems(),
             'settlements' => $this->generateSettlements(),
-            'tax_system_code' => Random::int(1 ,6),
+            'tax_system_code' => Random::int(1, 6),
+            'on_behalf_of' => Random::int(6)
         );
 
-        $receipt = $this->addSpecificProperties($receipt);
-
-        return $receipt;
+        return $this->addSpecificProperties($receipt, $i);
     }
 
     private function generateItems()
@@ -178,6 +205,101 @@ abstract class AbstractReceiptResponseTest extends TestCase
             ),
             'quantity' => round(Random::float(0.001, 99.999), 3),
             'vat_code' => Random::int(1 ,6),
+        );
+    }
+
+    public function invalidAllDataProvider()
+    {
+        return array(
+            array(array(new ProductCode())),
+            array(array(new Airline())),
+            array(SettlementType::PREPAYMENT),
+            array(0),
+            array('test'),
+            array(10)
+        );
+    }
+
+    public function invalidBoolDataProvider()
+    {
+        return array(
+            array(true),
+            array(false)
+        );
+    }
+
+    public function invalidBoolNullDataProvider()
+    {
+        return array(
+            array(true),
+            array(false),
+            array(null)
+        );
+    }
+
+    public function invalidItemsSettlementsDataProvider()
+    {
+        return array(
+            array(
+                array(
+                    'id' => Random::str(39),
+                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'status' => null,
+                    'items' => null,
+                    'settlements' => null
+                )
+            ),
+            array(
+                array(
+                    'id' => Random::str(39),
+                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'status' => null,
+                    'items' => 1,
+                    'settlements' => 1
+                )
+            ),
+            array(
+                array(
+                    'id' => Random::str(39),
+                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'status' => null,
+                    'items' => array(new Airline()),
+                    'settlements' => array(new Airline())
+                )
+            ),
+            array(null),
+            array(new Airline())
+        );
+    }
+
+    public function invalidFromArray()
+    {
+        return array(
+            array(
+                array(
+                    'id' => Random::str(39),
+                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'status' => null,
+                    'items' => false
+                )
+            ),
+            array(
+                array(
+                    'id' => Random::str(39),
+                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'status' => null,
+                    'items' => 1
+                )
+            ),
+            array(
+                array(
+                    'id' => Random::str(39),
+                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'status' => null,
+                    'items' => array(new ReceiptResponseItem()),
+                    'settlements' => 1
+                )
+            )
         );
     }
 }

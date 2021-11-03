@@ -32,6 +32,7 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\AirlineInterface;
 use YooKassa\Model\AmountInterface;
+use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\Payment;
 use YooKassa\Model\PaymentData\AbstractPaymentData;
 use YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes;
@@ -57,12 +58,15 @@ use YooKassa\Model\RecipientInterface;
  * @property AbstractPaymentData $paymentMethodData Данные используемые для создания метода оплаты
  * @property AbstractPaymentData $payment_method_data Данные используемые для создания метода оплаты
  * @property AbstractConfirmationAttributes $confirmation Способ подтверждения платежа
- * @property bool $savePaymentMethod Сохранить платежные данные для последующего использования. Значение true инициирует создание многоразового payment_method.
- * @property bool $save_payment_method Сохранить платежные данные для последующего использования. Значение true инициирует создание многоразового payment_method.
+ * @property bool $savePaymentMethod Сохранить платежные данные для последующего использования. Значение true инициирует создание многоразового payment_method
+ * @property bool $save_payment_method Сохранить платежные данные для последующего использования. Значение true инициирует создание многоразового payment_method
  * @property bool $capture Автоматически принять поступившую оплату
- * @property string $clientIp IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения.
- * @property string $client_ip IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения.
+ * @property string $clientIp IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения
+ * @property string $client_ip IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения
  * @property Metadata $metadata Метаданные привязанные к платежу
+ * @property PaymentDealInfo $deal Данные о сделке, в составе которой проходит платеж
+ * @property string $merchantCustomerId Идентификатор покупателя в вашей системе, например электронная почта или номер телефона
+ * @property string $merchant_customer_id Идентификатор покупателя в вашей системе, например электронная почта или номер телефона
  */
 class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePaymentRequestInterface
 {
@@ -124,8 +128,19 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     private $_metadata;
 
     /**
+     * @var PaymentDealInfo Данные о сделке, в составе которой проходит платеж. Необходимо передавать, если вы проводите Безопасную сделку
+     */
+    private $_deal;
+
+    /**
+     * @var string Идентификатор покупателя в вашей системе, например электронная почта или номер телефона. Не более 200 символов.
+     * Присутствует, если вы хотите запомнить банковскую карту и отобразить ее при повторном платеже в виджете ЮKassa
+     */
+    private $_merchant_customer_id;
+
+    /**
      * Возвращает объект получателя платежа
-     * @return RecipientInterface|null Объект с информацией о получателе платежа или null если получатель не задан
+     * @return RecipientInterface|null Объект с информацией о получателе платежа или null, если получатель не задан
      */
     public function getRecipient()
     {
@@ -248,7 +263,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Устанавливает идентификатор закиси платёжных данных покупателя
+     * Устанавливает идентификатор записи платёжных данных покупателя
      * @return string Идентификатор записи о сохраненных платежных данных покупателя
      */
     public function getPaymentMethodId()
@@ -307,7 +322,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
 
     /**
      * Устанавливает объект с информацией для создания метода оплаты
-     * @param AbstractPaymentData|null $value Объект с создания метода оплаты или null
+     * @param AbstractPaymentData|null $value Объект создания метода оплаты или null
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если был передан объект невалидного типа
      */
@@ -337,7 +352,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет был ли установлен способ подтверждения платежа
+     * Проверяет, был ли установлен способ подтверждения платежа
      * @return bool True если способ подтверждения платежа был установлен, false если нет
      */
     public function hasConfirmation()
@@ -378,7 +393,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет был ли установлен флаг сохранения платёжных данных
+     * Проверяет, был ли установлен флаг сохранения платёжных данных
      * @return bool True если флаг был установлен, false если нет
      */
     public function hasSavePaymentMethod()
@@ -418,7 +433,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет был ли установлен флаг автоматического принятия поступившей оплаты
+     * Проверяет, был ли установлен флаг автоматического принятия поступившей оплаты
      * @return bool True если флаг автоматического принятия оплаты был установлен, false если нет
      */
     public function hasCapture()
@@ -455,7 +470,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет был ли установлен IPv4 или IPv6-адрес покупателя
+     * Проверяет, был ли установлен IPv4 или IPv6-адрес покупателя
      * @return bool True если IP адрес покупателя был установлен, false если нет
      */
     public function hasClientIp()
@@ -492,7 +507,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет были ли установлены данные авиабилетов
+     * Проверяет, были ли установлены данные авиабилетов
      * @return bool
      */
     function hasAirline()
@@ -519,7 +534,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     }
 
     /**
-     * Проверяет были ли установлены метаданные заказа
+     * Проверяет, были ли установлены метаданные заказа
      * @return bool True если метаданные были установлены, false если нет
      */
     public function hasMetadata()
@@ -538,16 +553,98 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     {
         if ($value === null || (is_array($value) && empty($value))) {
             $this->_metadata = null;
-        } elseif (is_object($value) && $value instanceof Metadata) {
+        } elseif ($value instanceof Metadata) {
             $this->_metadata = $value;
         } elseif (is_array($value)) {
-            $this->_metadata = new Metadata();
-            foreach ($value as $key => $val) {
-                $this->_metadata->offsetSet($key, (string)$val);
-            }
+            $this->_metadata = new Metadata($value);
         } else {
             throw new InvalidPropertyValueTypeException(
                 'Invalid metadata value type in CreatePaymentRequest', 0, 'CreatePaymentRequest.metadata', $value
+            );
+        }
+    }
+
+    /**
+     * Возвращает данные о сделке, в составе которой проходит платеж
+     * @return PaymentDealInfo Данные о сделке, в составе которой проходит платеж.
+     */
+    public function getDeal()
+    {
+        return $this->_deal;
+    }
+
+    /**
+     * Проверяет, были ли установлены данные о сделке
+     * @return bool True если данные о сделке были установлены, false если нет
+     */
+    public function hasDeal()
+    {
+        return !empty($this->_deal);
+    }
+
+    /**
+     * Устанавливает данные о сделке, в составе которой проходит платеж.
+     * @param PaymentDealInfo|array|null $value Данные о сделке, в составе которой проходит платеж
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если переданные данные не удалось интерпретировать как метаданные платежа
+     */
+    public function setDeal($value)
+    {
+        if ($value === null || (is_array($value) && empty($value))) {
+            $this->_deal = null;
+        } elseif ($value instanceof PaymentDealInfo) {
+            $this->_deal = $value;
+        } elseif (is_array($value)) {
+            $this->_deal = new PaymentDealInfo($value);
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid deal value type in CreatePaymentRequest', 0, 'CreatePaymentRequest.deal', $value
+            );
+        }
+    }
+
+    /**
+     * Возвращает идентификатор покупателя в вашей системе
+     * @return string Идентификатор покупателя в вашей системе
+     */
+    public function getMerchantCustomerId()
+    {
+        return $this->_merchant_customer_id;
+    }
+
+    /**
+     * Проверяет, был ли установлен идентификатор покупателя в вашей системе
+     * @return bool True если идентификатор покупателя был установлен, false если нет
+     */
+    public function hasMerchantCustomerId()
+    {
+        return $this->_merchant_customer_id !== null;
+    }
+
+    /**
+     * Устанавливает идентификатор покупателя в вашей системе
+     * @param string $value Идентификатор покупателя в вашей системе, например электронная почта или номер телефона. Не более 200 символов
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если переданный аргумент не является строкой
+     */
+    public function setMerchantCustomerId($value)
+    {
+        if ($value === null || $value === '') {
+            $this->_merchant_customer_id = null;
+        } elseif (TypeCast::canCastToString($value)) {
+            $length = mb_strlen((string)$value, 'utf-8');
+            if ($length > Payment::MAX_LENGTH_MERCHANT_CUSTOMER_ID) {
+                throw new InvalidPropertyValueException(
+                    'The value of the merchant_customer_id parameter is too long. Max length is ' . Payment::MAX_LENGTH_MERCHANT_CUSTOMER_ID,
+                    0,
+                    'CreatePaymentRequest.merchant_customer_id',
+                    $value
+                );
+            }
+            $this->_merchant_customer_id = (string)$value;
+        } else {
+            throw new InvalidPropertyValueTypeException(
+                'Invalid merchant_customer_id value type in CreatePaymentRequest', 0, 'CreatePaymentRequest.merchant_customer_id', $value
             );
         }
     }

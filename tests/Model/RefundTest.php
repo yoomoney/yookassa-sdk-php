@@ -7,7 +7,9 @@ use YooKassa\Helpers\Random;
 use YooKassa\Helpers\StringObject;
 use YooKassa\Model\AmountInterface;
 use YooKassa\Model\CurrencyCode;
+use YooKassa\Model\Deal\RefundDealInfo;
 use YooKassa\Model\MonetaryAmount;
+use YooKassa\Model\Payment;
 use YooKassa\Model\ReceiptRegistrationStatus;
 use YooKassa\Model\Refund;
 use YooKassa\Model\RefundStatus;
@@ -107,6 +109,17 @@ class RefundTest extends TestCase
             $value = array(new Source($value[0]));
         }
         self::assertEquals($value, $instance->getSources());
+    }
+
+    /**
+     * @dataProvider invalidSourcesDataProvider
+     * @param $value
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetInvalidSources($value)
+    {
+        $instance = new Refund();
+        $instance->setSources($value);
     }
 
     /**
@@ -532,7 +545,7 @@ class RefundTest extends TestCase
     }
 
     /**
-     * @dataProvider validCommentDataProvider
+     * @dataProvider validDescriptionDataProvider
      * @param string $value
      */
     public function testGetSetDescription($value)
@@ -552,7 +565,7 @@ class RefundTest extends TestCase
         self::assertEquals((string)$value, $instance->description);
     }
 
-    public function validCommentDataProvider()
+    public function validDescriptionDataProvider()
     {
         return array(
             array(Random::str(1, 249)),
@@ -563,28 +576,28 @@ class RefundTest extends TestCase
     }
 
     /**
-     * @dataProvider invalidCommentDataProvider
+     * @dataProvider invalidDescriptionDataProvider
      * @expectedException \InvalidArgumentException
      * @param mixed $value
      */
-    public function testSetInvalidComment($value)
+    public function testSetInvalidDescription($value)
     {
         $instance = new Refund();
         $instance->setDescription($value);
     }
 
     /**
-     * @dataProvider invalidCommentDataProvider
+     * @dataProvider invalidDescriptionDataProvider
      * @expectedException \InvalidArgumentException
      * @param mixed $value
      */
-    public function testSetterInvalidComment($value)
+    public function testSetterInvalidDescription($value)
     {
         $instance = new Refund();
         $instance->description = $value;
     }
 
-    public function invalidCommentDataProvider()
+    public function invalidDescriptionDataProvider()
     {
         return array(
             array(null),
@@ -595,4 +608,90 @@ class RefundTest extends TestCase
             array(new \stdClass()),
         );
     }
+
+    public function invalidSourcesDataProvider()
+    {
+        return array(
+            array('test'),
+            array(array(new Payment()))
+        );
+    }
+
+    public function invalidRequestorDataProvider()
+    {
+        return array(
+            array('test'),
+            array(false),
+            array(null)
+        );
+    }
+
+    /**
+     * @dataProvider validDealDataProvider
+     * @param mixed $value
+     */
+    public function testGetSetDeal($value)
+    {
+        $instance = new Refund();
+
+        self::assertNull($instance->getDeal());
+        self::assertNull($instance->deal);
+
+        $instance->setDeal($value);
+        self::assertSame($value, $instance->getDeal());
+        self::assertSame($value, $instance->deal);
+
+        $instance = new Refund();
+        $instance->deal = $value;
+        self::assertSame($value, $instance->getDeal());
+        self::assertSame($value, $instance->deal);
+    }
+
+    /**
+     * @return array
+     */
+    public function validDealDataProvider()
+    {
+        return array(
+            array(new RefundDealInfo(array('amount' => 1))),
+            array(new RefundDealInfo(array('amount' => Random::float(0.01, 9999999.99)))),
+        );
+    }
+
+    /**
+     * @dataProvider invalidDealDataProvider
+     * @param mixed $value
+     */
+    public function testSetInvalidDeal($value)
+    {
+        self::setExpectedException('InvalidArgumentException');
+        $instance = new Refund();
+        $instance->setDeal($value);
+    }
+
+    /**
+     * @dataProvider invalidDealDataProvider
+     * @param mixed $value
+     */
+    public function testSetterInvalidDeal($value)
+    {
+        self::setExpectedException('InvalidArgumentException');
+        $instance = new Refund();
+        $instance->deal = $value;
+    }
+
+    /**
+     * @return array
+     */
+    public function invalidDealDataProvider()
+    {
+        return array(
+            array(true),
+            array(false),
+            array(new MonetaryAmount()),
+            array(1),
+            array(new \stdClass()),
+        );
+    }
+
 }

@@ -69,7 +69,7 @@ interface ReceiptResponseItemInterface
 
     /**
      * Возвращает ставку НДС
-     * @return int|null Ставка НДС, число 1-6, или null если ставка не задана
+     * @return int|null Ставка НДС, число 1-6, или null, если ставка не задана
      */
     function getVatCode();
 

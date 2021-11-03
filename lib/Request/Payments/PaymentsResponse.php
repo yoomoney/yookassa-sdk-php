@@ -57,8 +57,7 @@ class PaymentsResponse extends AbstractObject
     {
         $this->items = array();
         foreach ($sourceArray['items'] as $paymentInfo) {
-            $payment = new PaymentResponse($paymentInfo);
-            $this->items[] = $payment;
+            $this->items[] = new PaymentResponse($paymentInfo);
         }
         if (!empty($sourceArray['next_cursor'])) {
             $this->nextCursor = $sourceArray['next_cursor'];
@@ -84,7 +83,7 @@ class PaymentsResponse extends AbstractObject
     }
 
     /**
-     * Проверяет имееотся ли в ответе токен следующей страницы
+     * Проверяет, имеется ли в ответе токен следующей страницы
      * @return bool True если токен следующей страницы есть, false если нет
      */
     public function hasNextCursor()

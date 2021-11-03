@@ -7,11 +7,13 @@
 
 Класс, описывающий метод оплаты банковской картой
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [ISO_3166_CODE_LENGTH](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md#constant_ISO_3166_CODE_LENGTH) |  |  |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -33,6 +35,7 @@
 | public | [$source](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md#property_source) |  | Тип банковской карты |
 | public | [$title](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md#property_title) |  | Название метода оплаты |
 | public | [$type](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md#property_type) |  | Тип объекта |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -74,6 +77,7 @@
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [_setType()](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md#method__setType) |  | Устанавливает тип объекта |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/PaymentMethod/PaymentMethodBankCard.php](../../lib/Model/PaymentMethod/PaymentMethodBankCard.php)
@@ -82,6 +86,7 @@
   * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
   * [\YooKassa\Model\PaymentMethod\AbstractPaymentMethod](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md)
   * \YooKassa\Model\PaymentMethod\PaymentMethodBankCard
+
 ---
 ## Constants
 <a name="constant_ISO_3166_CODE_LENGTH" class="anchor"></a>
@@ -89,6 +94,7 @@
 ```php
 ISO_3166_CODE_LENGTH = 2 : string
 ```
+
 
 
 ---
@@ -329,6 +335,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -350,6 +357,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -371,6 +379,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -393,6 +402,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -414,6 +424,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -660,6 +671,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -681,6 +693,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -702,6 +715,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -724,6 +738,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -745,6 +760,7 @@ public setCardType(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -766,6 +782,7 @@ public setExpiryMonth(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -787,6 +804,7 @@ public setExpiryYear(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -808,6 +826,7 @@ public setFirst6(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -833,6 +852,7 @@ public setId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\AbstractPaymentMethod](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -854,6 +874,7 @@ public setIssuerCountry(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -875,6 +896,7 @@ public setIssuerName(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -896,6 +918,7 @@ public setLast4(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -917,6 +940,7 @@ public setSaved(bool $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\AbstractPaymentMethod](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -938,6 +962,7 @@ public setSource(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodBankCard](../classes/YooKassa-Model-PaymentMethod-PaymentMethodBankCard.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -959,6 +984,7 @@ public setTitle(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\AbstractPaymentMethod](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -998,6 +1024,7 @@ protected _setType(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\AbstractPaymentMethod](../classes/YooKassa-Model-PaymentMethod-AbstractPaymentMethod.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1035,10 +1062,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

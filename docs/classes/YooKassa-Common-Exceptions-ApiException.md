@@ -7,15 +7,18 @@
 
 Неожиданный код ошибки.
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$responseBody](../classes/YooKassa-Common-Exceptions-ApiException.md#property_responseBody) |  |  |
 | protected | [$responseHeaders](../classes/YooKassa-Common-Exceptions-ApiException.md#property_responseHeaders) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -23,6 +26,7 @@
 | public | [__construct()](../classes/YooKassa-Common-Exceptions-ApiException.md#method___construct) |  | Constructor |
 | public | [getResponseBody()](../classes/YooKassa-Common-Exceptions-ApiException.md#method_getResponseBody) |  |  |
 | public | [getResponseHeaders()](../classes/YooKassa-Common-Exceptions-ApiException.md#method_getResponseHeaders) |  |  |
+
 ---
 ### Details
 * File: [lib/Common/Exceptions/ApiException.php](../../lib/Common/Exceptions/ApiException.php)
@@ -30,6 +34,7 @@
 * Class Hierarchy: 
   * [\Exception](\Exception)
   * \YooKassa\Common\Exceptions\ApiException
+
 ---
 ## Properties
 <a name="property_responseBody"></a>
@@ -64,6 +69,7 @@ Constructor
 
 **Details:**
 * Inherited From: [\YooKassa\Common\Exceptions\ApiException](../classes/YooKassa-Common-Exceptions-ApiException.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -113,10 +119,10 @@ public getResponseHeaders() : string[]
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -55,8 +55,7 @@ class CreateCaptureRequestBuilder extends AbstractPaymentRequestBuilder
      * @return CreateCaptureRequestInterface|AbstractRequest Иснатс объекта запроса к API
      *
      * @throws InvalidRequestException Выбрасывается если при валидации запроса произошла ошибка
-     * @throws InvalidPropertyException Выбрасывается если не удалось установить один из параметров, переданных в
-     * массиве настроек
+     * @throws InvalidPropertyException Выбрасывается если не удалось установить один из параметров, переданных в массиве настроек
      */
     public function build(array $options = null)
     {

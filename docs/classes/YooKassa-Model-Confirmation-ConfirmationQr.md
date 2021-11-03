@@ -7,9 +7,11 @@
 
 Способ подтверждения платежа.
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -17,6 +19,7 @@
 | public | [$confirmation_data](../classes/YooKassa-Model-Confirmation-ConfirmationQr.md#property_confirmation_data) |  | URL для создания QR-кода |
 | public | [$confirmationData](../classes/YooKassa-Model-Confirmation-ConfirmationQr.md#property_confirmationData) |  | URL для создания QR-кода |
 | public | [$type](../classes/YooKassa-Model-Confirmation-AbstractConfirmation.md#property_type) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -41,6 +44,7 @@
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
 | protected | [setType()](../classes/YooKassa-Model-Confirmation-AbstractConfirmation.md#method_setType) |  | Устанавливает тип подтверждения платежа |
+
 ---
 ### Details
 * File: [lib/Model/Confirmation/ConfirmationQr.php](../../lib/Model/Confirmation/ConfirmationQr.php)
@@ -49,6 +53,7 @@
   * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
   * [\YooKassa\Model\Confirmation\AbstractConfirmation](../classes/YooKassa-Model-Confirmation-AbstractConfirmation.md)
   * \YooKassa\Model\Confirmation\ConfirmationQr
+
 ---
 ## Properties
 <a name="property_confirmation_data"></a>
@@ -113,6 +118,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -134,6 +140,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -155,6 +162,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -177,6 +185,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -198,6 +207,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -317,6 +327,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -338,6 +349,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -359,6 +371,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -381,6 +394,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -398,6 +412,7 @@ public setConfirmationData(string $confirmationData) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Confirmation\ConfirmationQr](../classes/YooKassa-Model-Confirmation-ConfirmationQr.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -454,6 +469,7 @@ protected setType(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Confirmation\AbstractConfirmation](../classes/YooKassa-Model-Confirmation-AbstractConfirmation.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -474,10 +490,10 @@ protected setType(string $value) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

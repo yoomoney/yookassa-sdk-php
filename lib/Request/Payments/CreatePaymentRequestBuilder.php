@@ -33,18 +33,21 @@ use YooKassa\Common\Exceptions\EmptyPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueException;
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Common\Exceptions\InvalidRequestException;
+use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\Airline;
 use YooKassa\Model\AirlineInterface;
 use YooKassa\Model\ConfirmationAttributes\AbstractConfirmationAttributes;
 use YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesFactory;
+use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\Metadata;
+use YooKassa\Model\Payment;
 use YooKassa\Model\PaymentData\AbstractPaymentData;
 use YooKassa\Model\PaymentData\PaymentDataFactory;
 use YooKassa\Model\Recipient;
 use YooKassa\Model\RecipientInterface;
 
 /**
- * Класс билдера объектов запрсов к API на создание платежа
+ * Класс билдера объектов запросов к API на создание платежа
  *
  * @example 02-builder.php 11 78 Пример использования билдера
  *
@@ -143,7 +146,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
 
     /**
      * Устанавливает информацию об авиабилетах
-     * @param AirlineInterface|array $value объект данных длинной записи или ассоциативный массив с данными
+     * @param AirlineInterface|array $value Объект данных длинной записи или ассоциативный массив с данными
      *
      * @return CreatePaymentRequestBuilder
      */
@@ -190,7 +193,7 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
 
     /**
      * Устанавливает объект с информацией для создания метода оплаты
-     * @param AbstractPaymentData|string|array|null $value Объект с создания метода оплаты или null
+     * @param AbstractPaymentData|string|array|null $value Объект создания метода оплаты или null
      * @param array $options Настройки способа оплаты в виде ассоциативного массива
      * @return CreatePaymentRequestBuilder Инстанс текущего билдера
      *
@@ -300,6 +303,30 @@ class CreatePaymentRequestBuilder extends AbstractPaymentRequestBuilder
     public function setDescription($value)
     {
         $this->currentObject->setDescription($value);
+        return $this;
+    }
+
+    /**
+     * Устанавливает данные о сделке, в составе которой проходит платеж.
+     * @param PaymentDealInfo|array|null $value Данные о сделке, в составе которой проходит платеж
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если переданные данные не удалось интерпретировать как метаданные платежа
+     */
+    public function setDeal($value)
+    {
+        $this->currentObject->setDeal($value);
+        return $this;
+    }
+
+    /**
+     * Устанавливает идентификатор покупателя в вашей системе
+     * @param string $value Идентификатор покупателя в вашей системе, например электронная почта или номер телефона. Не более 200 символов
+     *
+     * @throws InvalidPropertyValueTypeException Выбрасывается если переданный аргумент не является строкой
+     */
+    public function setMerchantCustomerId($value)
+    {
+        $this->currentObject->setMerchantCustomerId($value);
         return $this;
     }
 

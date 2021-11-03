@@ -176,8 +176,11 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
         if (!empty($sourceArray['income_amount'])) {
             $this->setIncomeAmount($this->factoryAmount($sourceArray['income_amount']));
         }
-        if (!empty($sourceArray['requestor'])) {
-            $this->setRequestor($sourceArray['requestor']);
+        if (!empty($sourceArray['deal'])) {
+            $this->setDeal($sourceArray['deal']);
+        }
+        if (!empty($sourceArray['merchant_customer_id'])) {
+            $this->setMerchantCustomerId($sourceArray['merchant_customer_id']);
         }
     }
 

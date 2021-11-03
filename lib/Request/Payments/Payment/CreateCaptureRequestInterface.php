@@ -28,6 +28,7 @@ namespace YooKassa\Request\Payments\Payment;
 
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Model\AmountInterface;
+use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\ReceiptInterface;
 use YooKassa\Model\TransferInterface;
@@ -49,7 +50,7 @@ interface CreateCaptureRequestInterface
     function getAmount();
 
     /**
-     * Проверяет была ли установлена сумма оплаты
+     * Проверяет, была ли установлена сумма оплаты
      * @return bool True если сумма оплаты была установлена, false если нет
      */
     function hasAmount();
@@ -62,7 +63,7 @@ interface CreateCaptureRequestInterface
 
     /**
      * Возвращает чек, если он есть
-     * @return ReceiptInterface|null Данные фискального чека 54-ФЗ или null если чека нет
+     * @return ReceiptInterface|null Данные фискального чека 54-ФЗ или null, если чека нет
      * @since 1.0.2
      */
     function getReceipt();
@@ -98,4 +99,22 @@ interface CreateCaptureRequestInterface
      * @param TransferInterface[]|array|null $value
      */
     function setTransfers($value);
+
+    /**
+     * Проверяет наличие данных о сделке
+     * @return bool
+     */
+    function hasDeal();
+
+    /**
+     * Возвращает данные о сделке
+     * @return PaymentDealInfo
+     */
+    function getDeal();
+
+    /**
+     * Устанавливает данные о сделке
+     * @param PaymentDealInfo|array|null $value
+     */
+    function setDeal($value);
 }

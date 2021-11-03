@@ -36,6 +36,8 @@ use YooKassa\Common\Exceptions\BadApiRequestException;
 use YooKassa\Common\Exceptions\ExtensionNotFoundException;
 use YooKassa\Common\Exceptions\ForbiddenException;
 use YooKassa\Common\Exceptions\InternalServerError;
+use YooKassa\Common\Exceptions\InvalidPropertyValueException;
+use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Common\Exceptions\NotFoundException;
 use YooKassa\Common\Exceptions\ResponseProcessingException;
 use YooKassa\Common\Exceptions\TooManyRequestsException;
@@ -43,9 +45,20 @@ use YooKassa\Common\Exceptions\UnauthorizedException;
 use YooKassa\Common\HttpVerb;
 use YooKassa\Helpers\TypeCast;
 use YooKassa\Helpers\UUID;
+use YooKassa\Model\DealInterface;
 use YooKassa\Model\PaymentInterface;
+use YooKassa\Model\PayoutInterface;
 use YooKassa\Model\RefundInterface;
 use YooKassa\Model\Webhook\Webhook;
+use YooKassa\Request\Deals\CreateDealRequest;
+use YooKassa\Request\Deals\CreateDealRequestInterface;
+use YooKassa\Request\Deals\CreateDealRequestSerializer;
+use YooKassa\Request\Deals\CreateDealResponse;
+use YooKassa\Request\Deals\DealResponse;
+use YooKassa\Request\Deals\DealsRequest;
+use YooKassa\Request\Deals\DealsRequestInterface;
+use YooKassa\Request\Deals\DealsRequestSerializer;
+use YooKassa\Request\Deals\DealsResponse;
 use YooKassa\Request\Payments\CreatePaymentRequest;
 use YooKassa\Request\Payments\CreatePaymentRequestInterface;
 use YooKassa\Request\Payments\CreatePaymentResponse;
@@ -60,6 +73,11 @@ use YooKassa\Request\Payments\PaymentsRequest;
 use YooKassa\Request\Payments\PaymentsRequestInterface;
 use YooKassa\Request\Payments\PaymentsRequestSerializer;
 use YooKassa\Request\Payments\PaymentsResponse;
+use YooKassa\Request\Payouts\CreatePayoutRequest;
+use YooKassa\Request\Payouts\CreatePayoutRequestInterface;
+use YooKassa\Request\Payouts\CreatePayoutRequestSerializer;
+use YooKassa\Request\Payouts\CreatePayoutResponse;
+use YooKassa\Request\Payouts\PayoutResponse;
 use YooKassa\Request\Receipts\AbstractReceiptResponse;
 use YooKassa\Request\Receipts\CreatePostReceiptRequest;
 use YooKassa\Request\Receipts\CreatePostReceiptRequestInterface;
@@ -94,7 +112,7 @@ class Client extends BaseClient
     /**
      * Текущая версия библиотеки
      */
-    const SDK_VERSION = '2.1.9';
+    const SDK_VERSION = '2.2.0';
 
     /**
      * Получить список платежей магазина
@@ -849,6 +867,295 @@ class Client extends BaseClient
             $resultArray = $this->decodeData($response);
             $factory = new ReceiptResponseFactory();
             $result = $factory->factory($resultArray);
+        } else {
+            $this->handleError($response);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Создание сделки.
+     *
+     * Запрос позволяет создать сделку, в рамках которой необходимо принять оплату от покупателя и перечислить ее продавцу.
+     *
+     * Необходимо указать следующие параметры:
+     * <ul>
+     * <li>type — Тип сделки. Фиксированное значение: safe_deal — Безопасная сделка;</li>
+     * <li>fee_moment — Момент перечисления вам вознаграждения платформы. Возможные значения: payment_succeeded — после успешной оплаты; deal_closed — при закрытии сделки после успешной выплаты.</li>
+     * </ul>
+     *
+     * Дополнительные параметры:
+     * <ul>
+     * <li>metadata — Любые дополнительные данные, которые нужны вам для работы (например, номер заказа);</li>
+     * <li>description — Описание сделки (не более 128 символов). Используется для фильтрации при получении списка сделок.</li>
+     * </ul>
+     *
+     * @example 01-client.php 299 18 Запрос на создание сделки
+     *
+     * @param CreateDealRequestInterface|array $deal
+     * @param string|null $idempotenceKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
+     *
+     * @return CreateDealResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     */
+    public function createDeal($deal, $idempotenceKey = null)
+    {
+        $path = self::DEALS_PATH;
+
+        $headers = array();
+
+        if ($idempotenceKey) {
+            $headers[self::IDEMPOTENCY_KEY_HEADER] = $idempotenceKey;
+        } else {
+            $headers[self::IDEMPOTENCY_KEY_HEADER] = UUID::v4();
+        }
+        if (is_array($deal)) {
+            $deal = CreateDealRequest::builder()->build($deal);
+        }
+
+        $serializer     = new CreateDealRequestSerializer();
+        $serializedData = $serializer->serialize($deal);
+        $httpBody       = $this->encodeData($serializedData);
+
+        $response = $this->execute($path, HttpVerb::POST, null, $httpBody, $headers);
+
+        $dealResponse = null;
+        if ($response->getCode() == 200) {
+            $resultArray     = $this->decodeData($response);
+            $dealResponse = new CreateDealResponse($resultArray);
+        } else {
+            $this->handleError($response);
+        }
+
+        return $dealResponse;
+    }
+
+    /**
+     * Получить информацию о сделке
+     *
+     * Запрос позволяет получить информацию о текущем состоянии сделки по её уникальному идентификатору.
+     * Выдает объект чека {@link DealInteface} в актуальном статусе.
+     *
+     * @example 01-client.php 317 8 Получить информацию о сделке
+     *
+     * @param string $dealId Идентификатор сделки
+     *
+     * @return DealInterface|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     */
+    public function getDealInfo($dealId)
+    {
+        if ($dealId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter dealId');
+        } elseif (!TypeCast::canCastToString($dealId)) {
+            throw new \InvalidArgumentException('Invalid dealId value: string required');
+        } elseif (strlen($dealId) < 36 || strlen($dealId) > 50) {
+            throw new \InvalidArgumentException('Invalid dealId value');
+        }
+
+        $path = self::DEALS_PATH.'/'.$dealId;
+
+        $response = $this->execute($path, HttpVerb::GET, null);
+
+        $result = null;
+        if ($response->getCode() == 200) {
+            $resultArray = $this->decodeData($response);
+            $result = new DealResponse($resultArray);
+        } else {
+            $this->handleError($response);
+        }
+
+        return $result;
+    }
+
+    /**
+     * Получить список сделок магазина
+     *
+     * Запрос позволяет получить список сделок, отфильтрованный по заданным критериям.
+     * В ответ на запрос вернется список сделок с учетом переданных параметров. В списке будет информация о сделках,
+     * созданных за последние 3 года. Список будет отсортирован по времени создания сделок в порядке убывания.
+     * Если результатов больше, чем задано в `limit`, список будет выводиться фрагментами.
+     * В этом случае в ответе на запрос вернется фрагмент списка и параметр `next_cursor` с указателем на следующий фрагмент.
+     *
+     * @example 01-client.php 327 27 Получить список сделок с фильтрацией
+     *
+     * @param DealsRequestInterface|array|null $filter
+     *
+     * @return DealsResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     * @throws Exception
+     */
+    public function getDeals($filter = null)
+    {
+        $path = self::DEALS_PATH;
+
+        if ($filter === null) {
+            $queryParams = array();
+        } else {
+            if (is_array($filter)) {
+                $filter = DealsRequest::builder()->build($filter);
+            }
+            $serializer  = new DealsRequestSerializer();
+            $queryParams = $serializer->serialize($filter);
+        }
+
+        $response = $this->execute($path, HttpVerb::GET, $queryParams);
+
+        $dealsResponse = null;
+        if ($response->getCode() == 200) {
+            $responseArray   = $this->decodeData($response);
+            $dealsResponse = new DealsResponse($responseArray);
+        } else {
+            $this->handleError($response);
+        }
+
+        return $dealsResponse;
+    }
+
+    /**
+     * Создание выплаты.
+     *
+     * Запрос позволяет перечислить продавцу оплату за выполненную услугу или проданный товар в рамках Безопасной сделки.
+     * Выплату можно сделать на банковскую карту или на кошелек ЮMoney.
+     *
+     * Обязательный параметр:
+     * <ul>
+     * <li>amount — сумма выплаты. Есть ограничения на минимальный и максимальный размер выплаты и сумму выплат за месяц.</li>
+     * </ul>
+     *
+     * Необходимо указать один из параметров:
+     * <ul>
+     * <li>payout_destination_data — данные платежного средства, на которое нужно сделать выплату;</li>
+     * <li>payout_token — токенизированные данные для выплаты. Например, синоним банковской карты.</li>
+     * </ul>
+     *
+     * Дополнительные параметры:
+     * <ul>
+     * <li>description — описание транзакции (не более 128 символов);</li>
+     * <li>deal — сделка, в рамках которой нужно провести выплату. Необходимо передавать, если вы проводите Безопасную сделку;</li>
+     * <li>metadata — любые дополнительные данные, которые нужны вам для работы (например, номер заказа).</li>
+     * </ul>
+     *
+     * @param CreatePayoutRequestInterface|array $payout
+     * @param string|null $idempotenceKey [Ключ идемпотентности](https://yookassa.ru/developers/using-api/basics?lang=php#idempotence)
+     *
+     * @return CreatePayoutResponse|null
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     *
+     * @example 01-client.php 358 27 Запрос на создание выплаты
+     */
+    public function createPayout($payout, $idempotenceKey = null)
+    {
+        $path = self::PAYOUTS_PATH;
+
+        $headers = array();
+
+        if ($idempotenceKey) {
+            $headers[self::IDEMPOTENCY_KEY_HEADER] = $idempotenceKey;
+        } else {
+            $headers[self::IDEMPOTENCY_KEY_HEADER] = UUID::v4();
+        }
+        if (is_array($payout)) {
+            $payout = CreatePayoutRequest::builder()->build($payout);
+        }
+
+        $serializer     = new CreatePayoutRequestSerializer();
+        $serializedData = $serializer->serialize($payout);
+        $httpBody       = $this->encodeData($serializedData);
+
+        $response = $this->execute($path, HttpVerb::POST, null, $httpBody, $headers);
+
+        $payoutResponse = null;
+        if ($response->getCode() == 200) {
+            $resultArray     = $this->decodeData($response);
+            $payoutResponse = new CreatePayoutResponse($resultArray);
+        } else {
+            $this->handleError($response);
+        }
+
+        return $payoutResponse;
+    }
+
+    /**
+     * Получить информацию о выплате
+     *
+     * Запрос позволяет получить информацию о текущем состоянии выплаты по ее уникальному идентификатору.
+     * Выдает объект выплаты {@link PayoutInterface} в актуальном статусе.
+     *
+     * @param string $payoutId Идентификатор выплаты
+     *
+     * @return PayoutInterface|null Объект выплаты
+     *
+     * @throws ApiException Неожиданный код ошибки.
+     * @throws BadApiRequestException Неправильный запрос. Чаще всего этот статус выдается из-за нарушения правил взаимодействия с API.
+     * @throws ForbiddenException Секретный ключ или OAuth-токен верный, но не хватает прав для совершения операции.
+     * @throws InternalServerError Технические неполадки на стороне ЮKassa. Результат обработки запроса неизвестен. Повторите запрос позднее с тем же ключом идемпотентности.
+     * @throws NotFoundException Ресурс не найден.
+     * @throws ResponseProcessingException Запрос был принят на обработку, но она не завершена.
+     * @throws TooManyRequestsException Превышен лимит запросов в единицу времени. Попробуйте снизить интенсивность запросов.
+     * @throws UnauthorizedException Неверное имя пользователя или пароль или невалидный OAuth-токен при аутентификации.
+     * @throws ExtensionNotFoundException Требуемое PHP расширение не установлено.
+     *
+     * @example 01-client.php 387 8 Получить информацию о выплате
+     */
+    public function getPayoutInfo($payoutId)
+    {
+        if ($payoutId === null) {
+            throw new \InvalidArgumentException('Missing the required parameter payoutId');
+        } elseif (TypeCast::canCastToString($payoutId)) {
+            $length = mb_strlen($payoutId, 'utf-8');
+            if ($length < 36 || $length > 50) {
+                throw new InvalidPropertyValueException('Invalid Payout id value', 0, 'Payout.id', $payoutId);
+            }
+        } else {
+            throw new InvalidPropertyValueTypeException('Invalid payoutId value: string required');
+        }
+
+        $path = self::PAYOUTS_PATH.'/'.$payoutId;
+
+        $response = $this->execute($path, HttpVerb::GET, null);
+
+        $result = null;
+        if ($response->getCode() == 200) {
+            $resultArray = $this->decodeData($response);
+            $result      = new PayoutResponse($resultArray);
         } else {
             $this->handleError($response);
         }

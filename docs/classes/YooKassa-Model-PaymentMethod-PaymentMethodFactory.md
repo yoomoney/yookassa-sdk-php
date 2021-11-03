@@ -7,15 +7,18 @@
 
 Фабрика создания объекта платежных методов из массива
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [factory()](../classes/YooKassa-Model-PaymentMethod-PaymentMethodFactory.md#method_factory) |  | Фабричный метод создания объекта платежных данных по типу |
 | public | [factoryFromArray()](../classes/YooKassa-Model-PaymentMethod-PaymentMethodFactory.md#method_factoryFromArray) |  | Фабричный метод создания объекта платежных данных из массива |
+
 ---
 ### Details
 * File: [lib/Model/PaymentMethod/PaymentMethodFactory.php](../../lib/Model/PaymentMethod/PaymentMethodFactory.php)
@@ -38,6 +41,7 @@ public factory(string $type) : \YooKassa\Model\PaymentMethod\AbstractPaymentMeth
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodFactory](../classes/YooKassa-Model-PaymentMethod-PaymentMethodFactory.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -59,6 +63,7 @@ public factoryFromArray(array $data, string|null $type = null) : \YooKassa\Model
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentMethod\PaymentMethodFactory](../classes/YooKassa-Model-PaymentMethod-PaymentMethodFactory.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -80,10 +85,10 @@ public factoryFromArray(array $data, string|null $type = null) : \YooKassa\Model
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

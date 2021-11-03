@@ -175,7 +175,9 @@ class Receipt extends AbstractObject implements ReceiptInterface
         }
         $this->_settlements = array();
         foreach ($value as $key => $val) {
-            if (is_object($val) && $val instanceof SettlementInterface) {
+            if (is_array($val)) {
+                $this->addSettlement(new Settlement($val));
+            } elseif ($val instanceof SettlementInterface) {
                 $this->addSettlement($val);
             } else {
                 throw new InvalidPropertyValueTypeException(

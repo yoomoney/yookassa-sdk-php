@@ -1,10 +1,15 @@
 # [YooKassa API SDK](../home.md)
 
 # Namespace: \YooKassa\Helpers
+
 ## Parent: [\YooKassa](../namespaces/yookassa.md)
+
 ### Namespaces
+
 * [\YooKassa\Helpers\Config](../namespaces/yookassa-helpers-config.md)
+
 ### Classes
+
 | Name | Summary |
 | ---- | ------- |
 | [\YooKassa\Helpers\ProductCode](../classes/YooKassa-Helpers-ProductCode.md) | Класс для формирования тега 1162 на основе кода в формате Data Matrix |
@@ -25,10 +30,10 @@
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
