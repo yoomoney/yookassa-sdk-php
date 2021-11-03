@@ -12,6 +12,7 @@ PaymentDataB2bSberbankVatDataType - Способ расчёта НДС
 |mixed|Разные ставки НДС для разных товаров|
 |untaxed|Сумма платежа НДС не облагается|
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
@@ -19,11 +20,13 @@ PaymentDataB2bSberbankVatDataType - Способ расчёта НДС
 | public | [CALCULATED](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatDataType.md#constant_CALCULATED) |  | Сумма НДС включена в сумму платежа |
 | public | [MIXED](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatDataType.md#constant_MIXED) |  | Разные ставки НДС для разных товаров |
 | public | [UNTAXED](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatDataType.md#constant_UNTAXED) |  | Сумма платежа НДС не облагается |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$validValues](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatDataType.md#property_validValues) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -31,6 +34,7 @@ PaymentDataB2bSberbankVatDataType - Способ расчёта НДС
 | public | [getEnabledValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getEnabledValues) |  | Возвращает значения в enum'е значения которых разрешены |
 | public | [getValidValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getValidValues) |  | Возвращает все значения в enum'e |
 | public | [valueExists()](../classes/YooKassa-Common-AbstractEnum.md#method_valueExists) |  | Проверяет наличие значения в enum'e |
+
 ---
 ### Details
 * File: [lib/Model/PaymentData/B2b/Sberbank/VatDataType.php](../../lib/Model/PaymentData/B2b/Sberbank/VatDataType.php)
@@ -38,6 +42,7 @@ PaymentDataB2bSberbankVatDataType - Способ расчёта НДС
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
   * \YooKassa\Model\PaymentData\B2b\Sberbank\VatDataType
+
 ---
 ## Constants
 <a name="constant_CALCULATED" class="anchor"></a>
@@ -65,6 +70,7 @@ MIXED = 'mixed'
 ```php
 UNTAXED = 'untaxed'
 ```
+
 
 
 ---
@@ -127,6 +133,7 @@ Static public valueExists(mixed $value) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -147,10 +154,10 @@ Static public valueExists(mixed $value) : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

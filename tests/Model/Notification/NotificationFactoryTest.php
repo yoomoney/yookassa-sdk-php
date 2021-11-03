@@ -90,6 +90,7 @@ class NotificationFactoryTest extends TestCase
             array(array()),
             array(array('type' => 'test')),
             array(array('event' => 'test')),
+            array(array('event' => new \stdClass())),
         );
     }
 

@@ -16,10 +16,17 @@
       },
       "receipt_registered": "succeeded",
       "description": "string",
-      "requestor": {
-        "type": "RequestorThirdPartyService",
-        "client_id": "12345",
-        "client_name": "test"
+      "deal": {
+        "id": "dl-285e5ee7-0022-5000-8000-01516a44b147",
+        "refund_settlements": [
+          {
+            "type": "payout",
+            "amount": {
+              "value": "10.00",
+              "currency": "RUB"
+            }
+          }
+        ]
       }
     }
   ],

@@ -3,15 +3,18 @@
 # Class: \YooKassa\Common\Exceptions\InvalidRequestException
 ### Namespace: [\YooKassa\Common\Exceptions](../namespaces/yookassa-common-exceptions.md)
 ---
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [__construct()](../classes/YooKassa-Common-Exceptions-InvalidRequestException.md#method___construct) |  | InvalidRequestException constructor. |
 | public | [getRequestObject()](../classes/YooKassa-Common-Exceptions-InvalidRequestException.md#method_getRequestObject) |  |  |
+
 ---
 ### Details
 * File: [lib/Common/Exceptions/InvalidRequestException.php](../../lib/Common/Exceptions/InvalidRequestException.php)
@@ -35,6 +38,7 @@ InvalidRequestException constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\Exceptions\InvalidRequestException](../classes/YooKassa-Common-Exceptions-InvalidRequestException.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -70,10 +74,10 @@ public getRequestObject() : \YooKassa\Common\AbstractRequest|null
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

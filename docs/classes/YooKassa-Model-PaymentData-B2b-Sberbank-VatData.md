@@ -7,9 +7,11 @@
 
 Данные об НДС
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -17,6 +19,7 @@
 | public | [$amount](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md#property_amount) |  | Сумма НДС |
 | public | [$rate](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md#property_rate) |  | Данные об НДС в случае, если сумма НДС включена в сумму платежа |
 | public | [$type](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md#property_type) |  | Способ расчёта НДС |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -40,6 +43,7 @@
 | public | [setType()](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md#method_setType) |  | Устанавливает способ расчёта НДС |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/PaymentData/B2b/Sberbank/VatData.php](../../lib/Model/PaymentData/B2b/Sberbank/VatData.php)
@@ -49,6 +53,7 @@
   * \YooKassa\Model\PaymentData\B2b\Sberbank\VatData
 * Implements:
   * [\YooKassa\Model\PaymentData\B2b\Sberbank\VatDataInterface](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatDataInterface.md)
+
 ---
 ## Properties
 <a name="property_amount"></a>
@@ -103,6 +108,7 @@ VatData constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\B2b\Sberbank\VatData](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -126,6 +132,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -147,6 +154,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -168,6 +176,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -190,6 +199,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -211,6 +221,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -300,6 +311,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -321,6 +333,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -342,6 +355,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -364,6 +378,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -385,6 +400,7 @@ public setAmount(\YooKassa\Model\AmountInterface|array|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\B2b\Sberbank\VatData](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -406,10 +422,12 @@ public setRate(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\B2b\Sberbank\VatData](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Налоговая ставка НДС |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -432,10 +450,12 @@ public setType(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentData\B2b\Sberbank\VatData](../classes/YooKassa-Model-PaymentData-B2b-Sberbank-VatData.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Способ расчёта НДС |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -492,10 +512,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

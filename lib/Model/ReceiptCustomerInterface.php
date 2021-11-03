@@ -42,7 +42,7 @@ interface ReceiptCustomerInterface
     /**
      * Возвращает название организации или ФИО физического лица
      *
-     * @return string название организации или ФИО физического лица
+     * @return string Название организации или ФИО физического лица
      */
     function getFullName();
 

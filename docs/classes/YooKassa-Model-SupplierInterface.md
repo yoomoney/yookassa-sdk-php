@@ -16,6 +16,7 @@ Interface SupplierInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -31,6 +32,7 @@ Interface SupplierInterface
 ### Details
 * File: [lib/Model/SupplierInterface.php](../../lib/Model/SupplierInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -38,6 +40,7 @@ Interface SupplierInterface
 | property |  | Наименование поставщика |
 | property |  | Телефон пользователя. Указывается в формате ITU-T E.164 |
 | property |  | ИНН пользователя (10 или 12 цифр) |
+
 ---
 ## Methods
 <a name="method_getName" class="anchor"></a>
@@ -70,6 +73,7 @@ public setName(string|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SupplierInterface](../classes/YooKassa-Model-SupplierInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -108,6 +112,7 @@ public setPhone(string|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SupplierInterface](../classes/YooKassa-Model-SupplierInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -146,6 +151,7 @@ public setInn($value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SupplierInterface](../classes/YooKassa-Model-SupplierInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -167,10 +173,10 @@ public setInn($value) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -3,9 +3,11 @@
 # Class: \YooKassa\Common\LoggerWrapper
 ### Namespace: [\YooKassa\Common](../namespaces/yookassa-common.md)
 ---
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -20,6 +22,7 @@
 | public | [log()](../classes/YooKassa-Common-LoggerWrapper.md#method_log) |  | Logs with an arbitrary level. |
 | public | [notice()](../classes/YooKassa-Common-LoggerWrapper.md#method_notice) |  | Normal but significant events. |
 | public | [warning()](../classes/YooKassa-Common-LoggerWrapper.md#method_warning) |  | Exceptional occurrences that are not errors. |
+
 ---
 ### Details
 * File: [lib/Common/LoggerWrapper.php](../../lib/Common/LoggerWrapper.php)
@@ -44,6 +47,7 @@ LoggerWrapper constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -70,6 +74,7 @@ trigger the SMS alerts and wake you up.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -96,6 +101,7 @@ Example: Application component unavailable, unexpected exception.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -118,6 +124,7 @@ Detailed debug information.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -140,6 +147,7 @@ System is unusable.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -163,6 +171,7 @@ be logged and monitored.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -189,6 +198,7 @@ Example: User logs in, SQL logs.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -211,6 +221,7 @@ Logs with an arbitrary level.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -234,6 +245,7 @@ Normal but significant events.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -261,6 +273,7 @@ that are not necessarily wrong.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\LoggerWrapper](../classes/YooKassa-Common-LoggerWrapper.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -282,10 +295,10 @@ that are not necessarily wrong.
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

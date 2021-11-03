@@ -134,7 +134,7 @@ class ConfirmationQrTest extends AbstractConfirmationTest
     {
         return array(
             array('wechat://pay/testurl?pr=xXxXxX'),
-            array('http://test.ru'),
+            array('https://test.ru'),
             array(null),
             array(''),
         );

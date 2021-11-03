@@ -7,9 +7,11 @@ use YooKassa\Helpers\Random;
 use YooKassa\Model\AmountInterface;
 use YooKassa\Model\CurrencyCode;
 use YooKassa\Model\MonetaryAmount;
+use YooKassa\Model\Payment;
 use YooKassa\Model\Receipt\PaymentMode;
 use YooKassa\Model\Receipt\PaymentSubject;
 use YooKassa\Model\ReceiptItem;
+use YooKassa\Model\Transfer;
 use YooKassa\Request\Payments\Payment\CreateCaptureRequestBuilder;
 
 class CreateCaptureRequestBuilderTest extends TestCase
@@ -462,6 +464,9 @@ class CreateCaptureRequestBuilderTest extends TestCase
                     'receiptEmail'  => Random::str(32),
                     'receiptPhone'  => null,
                     'taxSystemCode' => null,
+                    'transfers' => null,
+                    'deal' => null,
+                    'merchant_customer_id' => null,
                 ),
             ),
         );
@@ -473,6 +478,18 @@ class CreateCaptureRequestBuilderTest extends TestCase
                 'receiptEmail'  => null,
                 'receiptPhone'  => Random::str(10, '0123456789'),
                 'taxSystemCode' => Random::int(1, 6),
+                'transfers' => array(
+                    new Transfer(array(
+                        'account_id' => Random::str(36),
+                        'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                        'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                    )),
+                ),
+                'deal' => array(
+                    'id' => Random::str(36, 50),
+                    'settlements' => array()
+                ),
+                'merchant_customer_id' => Random::str(5, Payment::MAX_LENGTH_MERCHANT_CUSTOMER_ID),
             );
             $result[] = array($request);
         }

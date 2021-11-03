@@ -53,7 +53,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
     }
 
     /**
-     * Устанавливает идентификатор платежа или null если требуется его удалить
+     * Устанавливает идентификатор платежа или null, если требуется его удалить
      * @param string|null $value Идентификатор платежа
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
@@ -68,7 +68,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает статус выбираемых возвратов
-     * @param string $value Статус выбираемых платежей или null чтобы удалить значение
+     * @param string $value Статус выбираемых платежей или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Выбрасывается если переданное значение не является валидным статусом
@@ -82,7 +82,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает ограничение количества объектов возвратов
-     * @param string $value Ограничение количества объектов возвратов или null чтобы удалить значение
+     * @param string $value Ограничение количества объектов возвратов или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего билдера
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод было передана не целое число
@@ -95,7 +95,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает токен следующей страницы выборки
-     * @param string $value Токен следующей страницы выборки или null чтобы удалить значение
+     * @param string $value Токен следующей страницы выборки или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
@@ -108,7 +108,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания от которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
@@ -124,7 +124,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания от которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
@@ -140,7 +140,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания до которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
@@ -156,7 +156,7 @@ class RefundsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания до которой выбираются возвраты
-     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null, чтобы удалить значение
      * @return RefundsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана

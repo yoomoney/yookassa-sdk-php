@@ -66,6 +66,16 @@ class PaymentsResponseTest extends TestCase
         }
     }
 
+    /**
+     * @dataProvider invalidDataProvider
+     * @param array $options
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInvalidData($options)
+    {
+        new PaymentsResponse($options);
+    }
+
     public function validDataProvider()
     {
         return array(
@@ -175,6 +185,10 @@ class PaymentsResponseTest extends TestCase
                                 'return_url' => Random::str(10),
                                 'enforce' => false,
                             ),
+                            'income_amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => Random::value(CurrencyCode::getValidValues()),
+                            )
                         ),
                         array(
                             'id' => Random::str(36),
@@ -194,11 +208,92 @@ class PaymentsResponseTest extends TestCase
                                 'type' => ConfirmationType::REDIRECT,
                                 'confirmation_url' => Random::str(10),
                             ),
+                            'income_amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => Random::value(CurrencyCode::getValidValues()),
+                            )
+                        ),
+                        array(
+                            'id' => Random::str(36),
+                            'status' => PaymentStatus::SUCCEEDED,
+                            'amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => CurrencyCode::EUR,
+                            ),
+                            'description' => Random::str(20),
+                            'created_at' => date(YOOKASSA_DATE),
+                            'payment_method' => array(
+                                'type' => PaymentMethodType::QIWI,
+                            ),
+                            'paid' => true,
+                            'refundable' => true,
+                            'confirmation' => array(
+                                'type' => ConfirmationType::CODE_VERIFICATION,
+                                'confirmation_url' => Random::str(10),
+                            ),
+                            'income_amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => Random::value(CurrencyCode::getValidValues()),
+                            )
+                        ),
+                        array(
+                            'id' => Random::str(36),
+                            'status' => PaymentStatus::SUCCEEDED,
+                            'amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => CurrencyCode::EUR,
+                            ),
+                            'description' => Random::str(20),
+                            'created_at' => date(YOOKASSA_DATE),
+                            'payment_method' => array(
+                                'type' => PaymentMethodType::QIWI,
+                            ),
+                            'paid' => true,
+                            'refundable' => true,
+                            'confirmation' => array(
+                                'type' => ConfirmationType::EMBEDDED,
+                                'confirmation_token' => Random::str(10),
+                                'confirmation_url' => Random::str(10),
+                            ),
+                            'income_amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => Random::value(CurrencyCode::getValidValues()),
+                            )
                         ),
                     ),
                     'next_cursor' => uniqid(),
                 ),
             ),
+        );
+    }
+
+    public function invalidDataProvider()
+    {
+        return array(
+            array(
+                array(
+                    'items' => array(
+                        array(
+                            'id' => Random::str(36),
+                            'status' => PaymentStatus::SUCCEEDED,
+                            'amount' => array(
+                                'value' => Random::int(1, 100000),
+                                'currency' => CurrencyCode::EUR,
+                            ),
+                            'description' => Random::str(20),
+                            'created_at' => date(YOOKASSA_DATE),
+                            'payment_method' => array(
+                                'type' => PaymentMethodType::QIWI,
+                            ),
+                            'paid' => true,
+                            'refundable' => true,
+                            'confirmation' => array(
+                                'confirmation_url' => Random::str(10),
+                            )
+                        )
+                    ),
+                ),
+            )
         );
     }
 }

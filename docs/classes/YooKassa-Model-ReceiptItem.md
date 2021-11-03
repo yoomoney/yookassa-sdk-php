@@ -7,9 +7,11 @@
 
 Информация о товарной позиции в заказе, позиция фискального чека
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -33,6 +35,7 @@
 | public | [$supplier](../classes/YooKassa-Model-ReceiptItem.md#property_supplier) |  | Информация о поставщике товара или услуги |
 | public | [$vat_code](../classes/YooKassa-Model-ReceiptItem.md#property_vat_code) |  | Ставка НДС, число 1-6 |
 | public | [$vatCode](../classes/YooKassa-Model-ReceiptItem.md#property_vatCode) |  | Ставка НДС, число 1-6 |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -80,6 +83,7 @@
 | public | [setVatCode()](../classes/YooKassa-Model-ReceiptItem.md#method_setVatCode) |  | Устанавливает ставку НДС |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/ReceiptItem.php](../../lib/Model/ReceiptItem.php)
@@ -89,6 +93,7 @@
   * \YooKassa\Model\ReceiptItem
 * Implements:
   * [\YooKassa\Model\ReceiptItemInterface](../classes/YooKassa-Model-ReceiptItemInterface.md)
+
 ---
 ## Properties
 <a name="property_amount"></a>
@@ -335,6 +340,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -356,6 +362,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -377,6 +384,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -398,6 +406,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -420,6 +429,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -441,6 +451,7 @@ public applyDiscountCoefficient(float $coefficient) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -462,10 +473,12 @@ public fetchItem(float $count) : \YooKassa\Model\ReceiptItem
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">float</code> | count  | Количество на которое уменьшаем позицию в чеке |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -489,6 +502,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -715,7 +729,7 @@ public getVatCode() : int|null
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
 
-**Returns:** int|null - Ставка НДС, число 1-6, или null если ставка не задана
+**Returns:** int|null - Ставка НДС, число 1-6, или null, если ставка не задана
 
 
 <a name="method_increasePrice" class="anchor"></a>
@@ -731,6 +745,7 @@ public increasePrice(float $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -790,6 +805,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -811,6 +827,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -832,6 +849,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -854,6 +872,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -875,6 +894,7 @@ public setAgentType(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -896,10 +916,12 @@ public setCountryOfOriginCode(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Код страны происхождения товара |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -921,10 +943,12 @@ public setCustomsDeclarationNumber(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Номер таможенной декларации |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -946,10 +970,12 @@ public setDescription(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Наименование товара |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -972,10 +998,12 @@ public setExcise(float $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">float</code> | value  | Сумма акциза товара с учетом копеек |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -997,10 +1025,12 @@ public setIsShipping(bool $value) : \YooKassa\Model\ReceiptItem
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">bool</code> | value  | True если айтем является доставкой, false если нет |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1022,10 +1052,12 @@ public setPaymentMode(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Признак способа расчета |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1047,10 +1079,12 @@ public setPaymentSubject(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Признак предмета расчета |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1072,6 +1106,7 @@ public setPrice(\YooKassa\Model\AmountInterface|array $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1093,10 +1128,12 @@ public setProductCode(string|\YooKassa\Helpers\ProductCode $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string OR \YooKassa\Helpers\ProductCode</code> | value  | Код товара |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1118,10 +1155,12 @@ public setQuantity(int $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">int</code> | value  | Количество |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1145,6 +1184,7 @@ public setSupplier(\YooKassa\Model\SupplierInterface|array $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1166,10 +1206,12 @@ public setVatCode(int $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItem](../classes/YooKassa-Model-ReceiptItem.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">int</code> | value  | Ставка НДС, число 1-6 |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1226,10 +1268,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

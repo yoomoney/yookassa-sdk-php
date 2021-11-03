@@ -100,6 +100,10 @@ class CreateRefundRequestSerializer
             $result['sources'] = $this->serializeSources($request->getSources());
         }
 
+        if ($request->hasDeal()) {
+            $result['deal'] = $request->getDeal()->toArray();
+        }
+
         return $result;
     }
 

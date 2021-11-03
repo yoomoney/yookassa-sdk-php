@@ -7,11 +7,14 @@
 
 Payment - Данные о платеже
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [MAX_LENGTH_DESCRIPTION](../classes/YooKassa-Model-Payment.md#constant_MAX_LENGTH_DESCRIPTION) |  | Максимальная длина строки описания платежа |
+| public | [MAX_LENGTH_MERCHANT_CUSTOMER_ID](../classes/YooKassa-Model-Payment.md#constant_MAX_LENGTH_MERCHANT_CUSTOMER_ID) |  | Максимальная длина строки идентификатора покупателя в вашей системе |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -26,12 +29,15 @@ Payment - Данные о платеже
 | public | [$confirmation](../classes/YooKassa-Model-Payment.md#property_confirmation) |  | Способ подтверждения платежа |
 | public | [$created_at](../classes/YooKassa-Model-Payment.md#property_created_at) |  | Время создания заказа |
 | public | [$createdAt](../classes/YooKassa-Model-Payment.md#property_createdAt) |  | Время создания заказа |
+| public | [$deal](../classes/YooKassa-Model-Payment.md#property_deal) |  | Данные о сделке, в составе которой проходит платеж |
 | public | [$description](../classes/YooKassa-Model-Payment.md#property_description) |  | Описание транзакции |
 | public | [$expires_at](../classes/YooKassa-Model-Payment.md#property_expires_at) |  | Время, до которого можно бесплатно отменить или подтвердить платеж |
 | public | [$expiresAt](../classes/YooKassa-Model-Payment.md#property_expiresAt) |  | Время, до которого можно бесплатно отменить или подтвердить платеж |
 | public | [$id](../classes/YooKassa-Model-Payment.md#property_id) |  | Идентификатор платежа |
 | public | [$income_amount](../classes/YooKassa-Model-Payment.md#property_income_amount) |  | Сумма платежа, которую получит магазин |
 | public | [$incomeAmount](../classes/YooKassa-Model-Payment.md#property_incomeAmount) |  | Сумма платежа, которую получит магазин |
+| public | [$merchant_customer_id](../classes/YooKassa-Model-Payment.md#property_merchant_customer_id) |  | Идентификатор покупателя в вашей системе, например электронная почта или номер телефона |
+| public | [$merchantCustomerId](../classes/YooKassa-Model-Payment.md#property_merchantCustomerId) |  | Идентификатор покупателя в вашей системе, например электронная почта или номер телефона |
 | public | [$metadata](../classes/YooKassa-Model-Payment.md#property_metadata) |  | Метаданные платежа указанные мерчантом |
 | public | [$paid](../classes/YooKassa-Model-Payment.md#property_paid) |  | Признак оплаты заказа |
 | public | [$payment_method](../classes/YooKassa-Model-Payment.md#property_payment_method) |  | Способ проведения платежа |
@@ -42,10 +48,10 @@ Payment - Данные о платеже
 | public | [$refundable](../classes/YooKassa-Model-Payment.md#property_refundable) |  | Возможность провести возврат по API |
 | public | [$refunded_amount](../classes/YooKassa-Model-Payment.md#property_refunded_amount) |  | Сумма возвращенных средств платежа |
 | public | [$refundedAmount](../classes/YooKassa-Model-Payment.md#property_refundedAmount) |  | Сумма возвращенных средств платежа |
-| public | [$requestor](../classes/YooKassa-Model-Payment.md#property_requestor) |  | Инициатор платежа |
 | public | [$status](../classes/YooKassa-Model-Payment.md#property_status) |  | Текущее состояние платежа |
 | public | [$test](../classes/YooKassa-Model-Payment.md#property_test) |  | Признак тестовой операции |
 | public | [$transfers](../classes/YooKassa-Model-Payment.md#property_transfers) |  | Данные о распределении платежа между магазинами |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -59,21 +65,23 @@ Payment - Данные о платеже
 | public | [getAmount()](../classes/YooKassa-Model-Payment.md#method_getAmount) |  | Возвращает сумму |
 | public | [getAuthorizationDetails()](../classes/YooKassa-Model-Payment.md#method_getAuthorizationDetails) |  | Возвращает данные об авторизации платежа |
 | public | [getCancellationDetails()](../classes/YooKassa-Model-Payment.md#method_getCancellationDetails) |  | Возвращает комментарий к статусу canceled: кто отменил платеж и по какой причине |
-| public | [getCapturedAt()](../classes/YooKassa-Model-Payment.md#method_getCapturedAt) |  | Возвращает время подтверждения платежа магазином или null если если время не задано |
+| public | [getCapturedAt()](../classes/YooKassa-Model-Payment.md#method_getCapturedAt) |  | Возвращает время подтверждения платежа магазином или null, если время не задано |
 | public | [getConfirmation()](../classes/YooKassa-Model-Payment.md#method_getConfirmation) |  | Возвращает способ подтверждения платежа |
 | public | [getCreatedAt()](../classes/YooKassa-Model-Payment.md#method_getCreatedAt) |  | Возвращает время создания заказа |
+| public | [getDeal()](../classes/YooKassa-Model-Payment.md#method_getDeal) |  | Возвращает данные о сделке, в составе которой проходит платеж |
 | public | [getDescription()](../classes/YooKassa-Model-Payment.md#method_getDescription) |  | Возвращает описание транзакции |
-| public | [getExpiresAt()](../classes/YooKassa-Model-Payment.md#method_getExpiresAt) |  | Возвращает время до которого можно бесплатно отменить или подтвердить платеж или null если оно не задано |
+| public | [getExpiresAt()](../classes/YooKassa-Model-Payment.md#method_getExpiresAt) |  | Возвращает время до которого можно бесплатно отменить или подтвердить платеж, или null, если оно не задано |
 | public | [getId()](../classes/YooKassa-Model-Payment.md#method_getId) |  | Возвращает идентификатор платежа |
 | public | [getIncomeAmount()](../classes/YooKassa-Model-Payment.md#method_getIncomeAmount) |  | Возвращает сумму платежа, которую получит магазин, значение `amount` за вычетом комиссии ЮKassa |
+| public | [getMerchantCustomerId()](../classes/YooKassa-Model-Payment.md#method_getMerchantCustomerId) |  | Возвращает идентификатор покупателя в вашей системе |
 | public | [getMetadata()](../classes/YooKassa-Model-Payment.md#method_getMetadata) |  | Возвращает метаданные платежа установленные мерчантом |
-| public | [getPaid()](../classes/YooKassa-Model-Payment.md#method_getPaid) |  | Проверяет был ли уже оплачен заказ |
+| public | [getPaid()](../classes/YooKassa-Model-Payment.md#method_getPaid) |  | Проверяет, был ли уже оплачен заказ |
 | public | [getPaymentMethod()](../classes/YooKassa-Model-Payment.md#method_getPaymentMethod) |  | Возвращает используемый способ проведения платежа |
 | public | [getReceiptRegistration()](../classes/YooKassa-Model-Payment.md#method_getReceiptRegistration) |  | Возвращает состояние регистрации фискального чека |
 | public | [getRecipient()](../classes/YooKassa-Model-Payment.md#method_getRecipient) |  | Возвращает получателя платежа |
 | public | [getRefundable()](../classes/YooKassa-Model-Payment.md#method_getRefundable) |  | Проверяет возможность провести возврат по API |
 | public | [getRefundedAmount()](../classes/YooKassa-Model-Payment.md#method_getRefundedAmount) |  | Возвращает сумму возвращенных средств |
-| public | [getRequestor()](../classes/YooKassa-Model-Payment.md#method_getRequestor) |  | Возвращает инициатора платежа |
+| public | [getRequestor()](../classes/YooKassa-Model-Payment.md#method_getRequestor) | *deprecated* | Возвращает инициатора платежа |
 | public | [getStatus()](../classes/YooKassa-Model-Payment.md#method_getStatus) |  | Возвращает состояние платежа |
 | public | [getTest()](../classes/YooKassa-Model-Payment.md#method_getTest) |  | Возвращает признак тестовой операции |
 | public | [getTransfers()](../classes/YooKassa-Model-Payment.md#method_getTransfers) |  | Возвращает массив распределения денег между магазинами |
@@ -88,10 +96,12 @@ Payment - Данные о платеже
 | public | [setCapturedAt()](../classes/YooKassa-Model-Payment.md#method_setCapturedAt) |  | Устанавливает время подтверждения платежа магазином |
 | public | [setConfirmation()](../classes/YooKassa-Model-Payment.md#method_setConfirmation) |  | Устанавливает способ подтверждения платежа |
 | public | [setCreatedAt()](../classes/YooKassa-Model-Payment.md#method_setCreatedAt) |  | Устанавливает время создания заказа |
+| public | [setDeal()](../classes/YooKassa-Model-Payment.md#method_setDeal) |  | Устанавливает данные о сделке, в составе которой проходит платеж |
 | public | [setDescription()](../classes/YooKassa-Model-Payment.md#method_setDescription) |  | Устанавливает описание транзакции |
 | public | [setExpiresAt()](../classes/YooKassa-Model-Payment.md#method_setExpiresAt) |  | Устанавливает время до которого можно бесплатно отменить или подтвердить платеж |
 | public | [setId()](../classes/YooKassa-Model-Payment.md#method_setId) |  | Устанавливает идентификатор платежа |
 | public | [setIncomeAmount()](../classes/YooKassa-Model-Payment.md#method_setIncomeAmount) |  | Устанавливает сумму платежа, которую получит магазин, значение `amount` за вычетом комиссии ЮKassa |
+| public | [setMerchantCustomerId()](../classes/YooKassa-Model-Payment.md#method_setMerchantCustomerId) |  | Устанавливает идентификатор покупателя в вашей системе |
 | public | [setMetadata()](../classes/YooKassa-Model-Payment.md#method_setMetadata) |  | Устанавливает метаданные платежа |
 | public | [setPaid()](../classes/YooKassa-Model-Payment.md#method_setPaid) |  | Устанавливает флаг оплаты заказа |
 | public | [setPaymentMethod()](../classes/YooKassa-Model-Payment.md#method_setPaymentMethod) |  | Устанавливает используемый способ проведения платежа |
@@ -99,12 +109,13 @@ Payment - Данные о платеже
 | public | [setRecipient()](../classes/YooKassa-Model-Payment.md#method_setRecipient) |  | Устанавливает получателя платежа |
 | public | [setRefundable()](../classes/YooKassa-Model-Payment.md#method_setRefundable) |  | Устанавливает возможность провести возврат по API |
 | public | [setRefundedAmount()](../classes/YooKassa-Model-Payment.md#method_setRefundedAmount) |  | Устанавливает сумму возвращенных средств |
-| public | [setRequestor()](../classes/YooKassa-Model-Payment.md#method_setRequestor) |  | Устанавливает инициатора платежа |
+| public | [setRequestor()](../classes/YooKassa-Model-Payment.md#method_setRequestor) | *deprecated* | Устанавливает инициатора платежа |
 | public | [setStatus()](../classes/YooKassa-Model-Payment.md#method_setStatus) |  | Устанавливает статус платежа |
 | public | [setTest()](../classes/YooKassa-Model-Payment.md#method_setTest) |  | Устанавливает признак тестовой операции |
 | public | [setTransfers()](../classes/YooKassa-Model-Payment.md#method_setTransfers) |  | Устанавливает массив распределения денег между магазинами |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/Payment.php](../../lib/Model/Payment.php)
@@ -114,6 +125,7 @@ Payment - Данные о платеже
   * \YooKassa\Model\Payment
 * Implements:
   * [\YooKassa\Model\PaymentInterface](../classes/YooKassa-Model-PaymentInterface.md)
+
 ---
 ## Constants
 <a name="constant_MAX_LENGTH_DESCRIPTION" class="anchor"></a>
@@ -123,6 +135,16 @@ Payment - Данные о платеже
 ```php
 MAX_LENGTH_DESCRIPTION = 128
 ```
+
+
+<a name="constant_MAX_LENGTH_MERCHANT_CUSTOMER_ID" class="anchor"></a>
+###### MAX_LENGTH_MERCHANT_CUSTOMER_ID
+Максимальная длина строки идентификатора покупателя в вашей системе
+
+```php
+MAX_LENGTH_MERCHANT_CUSTOMER_ID = 200
+```
+
 
 
 ---
@@ -247,6 +269,18 @@ MAX_LENGTH_DESCRIPTION = 128
 **Details:**
 
 
+<a name="property_deal"></a>
+#### public $deal : \YooKassa\Model\Deal\PaymentDealInfo
+---
+***Description***
+
+Данные о сделке, в составе которой проходит платеж
+
+**Type:** <a href="../classes/YooKassa-Model-Deal-PaymentDealInfo.html"><abbr title="\YooKassa\Model\Deal\PaymentDealInfo">PaymentDealInfo</abbr></a>
+
+**Details:**
+
+
 <a name="property_description"></a>
 #### public $description : string
 ---
@@ -315,6 +349,30 @@ MAX_LENGTH_DESCRIPTION = 128
 Сумма платежа, которую получит магазин
 
 **Type:** <a href="../classes/YooKassa-Model-AmountInterface.html"><abbr title="\YooKassa\Model\AmountInterface">AmountInterface</abbr></a>
+
+**Details:**
+
+
+<a name="property_merchant_customer_id"></a>
+#### public $merchant_customer_id : string
+---
+***Description***
+
+Идентификатор покупателя в вашей системе, например электронная почта или номер телефона
+
+**Type:** <a href="../string"><abbr title="string">string</abbr></a>
+
+**Details:**
+
+
+<a name="property_merchantCustomerId"></a>
+#### public $merchantCustomerId : string
+---
+***Description***
+
+Идентификатор покупателя в вашей системе, например электронная почта или номер телефона
+
+**Type:** <a href="../string"><abbr title="string">string</abbr></a>
 
 **Details:**
 
@@ -439,18 +497,6 @@ MAX_LENGTH_DESCRIPTION = 128
 **Details:**
 
 
-<a name="property_requestor"></a>
-#### public $requestor : \YooKassa\Model\Requestor
----
-***Description***
-
-Инициатор платежа
-
-**Type:** <a href="../classes/YooKassa-Model-Requestor.html"><abbr title="\YooKassa\Model\Requestor">Requestor</abbr></a>
-
-**Details:**
-
-
 <a name="property_status"></a>
 #### public $status : string
 ---
@@ -503,6 +549,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -524,6 +571,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -545,6 +593,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -566,6 +615,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -588,6 +638,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -609,6 +660,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -685,7 +737,7 @@ public getCapturedAt() : \DateTime|null
 
 **Summary**
 
-Возвращает время подтверждения платежа магазином или null если если время не задано
+Возвращает время подтверждения платежа магазином или null, если время не задано
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
@@ -727,6 +779,23 @@ public getCreatedAt() : \DateTime
 **Returns:** \DateTime - Время создания заказа
 
 
+<a name="method_getDeal" class="anchor"></a>
+#### public getDeal() : \YooKassa\Model\Deal\PaymentDealInfo
+
+```php
+public getDeal() : \YooKassa\Model\Deal\PaymentDealInfo
+```
+
+**Summary**
+
+Возвращает данные о сделке, в составе которой проходит платеж
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
+**Returns:** \YooKassa\Model\Deal\PaymentDealInfo - Данные о сделке, в составе которой проходит платеж.
+
+
 <a name="method_getDescription" class="anchor"></a>
 #### public getDescription() : string
 
@@ -753,7 +822,7 @@ public getExpiresAt() : \DateTime|null
 
 **Summary**
 
-Возвращает время до которого можно бесплатно отменить или подтвердить платеж или null если оно не задано
+Возвращает время до которого можно бесплатно отменить или подтвердить платеж, или null, если оно не задано
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
@@ -799,6 +868,23 @@ public getIncomeAmount() : \YooKassa\Model\MonetaryAmount
 **Returns:** \YooKassa\Model\MonetaryAmount - Сумма платежа, которую получит магазин
 
 
+<a name="method_getMerchantCustomerId" class="anchor"></a>
+#### public getMerchantCustomerId() : string
+
+```php
+public getMerchantCustomerId() : string
+```
+
+**Summary**
+
+Возвращает идентификатор покупателя в вашей системе
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
+**Returns:** string - Идентификатор покупателя в вашей системе
+
+
 <a name="method_getMetadata" class="anchor"></a>
 #### public getMetadata() : \YooKassa\Model\Metadata
 
@@ -825,7 +911,7 @@ public getPaid() : bool
 
 **Summary**
 
-Проверяет был ли уже оплачен заказ
+Проверяет, был ли уже оплачен заказ
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
@@ -881,7 +967,7 @@ public getRecipient() : \YooKassa\Model\RecipientInterface|null
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
 
-**Returns:** \YooKassa\Model\RecipientInterface|null - Получатель платежа или null если получатель не задан
+**Returns:** \YooKassa\Model\RecipientInterface|null - Получатель платежа или null, если получатель не задан
 
 
 <a name="method_getRefundable" class="anchor"></a>
@@ -919,7 +1005,7 @@ public getRefundedAmount() : \YooKassa\Model\AmountInterface
 
 
 <a name="method_getRequestor" class="anchor"></a>
-#### public getRequestor() : \YooKassa\Model\RequestorInterface
+#### (deprecated) - public getRequestor() : \YooKassa\Model\RequestorInterface
 
 ```php
 public getRequestor() : \YooKassa\Model\RequestorInterface
@@ -929,6 +1015,8 @@ public getRequestor() : \YooKassa\Model\RequestorInterface
 
 Возвращает инициатора платежа
 
+**Deprecated**
+DeprecatedНе используется. Будет удален в следующих версиях
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
 
@@ -1016,6 +1104,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1037,6 +1126,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1058,6 +1148,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1080,6 +1171,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1101,6 +1193,7 @@ public setAmount(\YooKassa\Model\AmountInterface $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1122,6 +1215,7 @@ public setAuthorizationDetails(\YooKassa\Model\AuthorizationDetailsInterface $va
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1143,6 +1237,7 @@ public setCancellationDetails(\YooKassa\Model\CancellationDetailsInterface $valu
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1164,10 +1259,12 @@ public setCapturedAt(\DateTime|string|int|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">\DateTime OR string OR int OR null</code> | value  | Время подтверждения платежа магазином |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1190,6 +1287,7 @@ public setConfirmation(\YooKassa\Model\Confirmation\AbstractConfirmation $value)
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1211,16 +1309,45 @@ public setCreatedAt(\DateTime|string|int $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">\DateTime OR string OR int</code> | value  | Время создания заказа |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
 | \YooKassa\Common\Exceptions\EmptyPropertyValueException | Выбрасывается если в метод была передана пустая дата |
 | \YooKassa\Common\Exceptions\InvalidPropertyValueException | Выбрасывается если передали строку, которую не удалось привести к дате |
 | \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException|\Exception | Выбрасывается если был передан аргумент, который невозможно интерпретировать как дату или время |
+
+**Returns:** mixed - 
+
+
+<a name="method_setDeal" class="anchor"></a>
+#### public setDeal() : mixed
+
+```php
+public setDeal(\YooKassa\Model\Deal\PaymentDealInfo|array|null $value) : mixed
+```
+
+**Summary**
+
+Устанавливает данные о сделке, в составе которой проходит платеж
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\Deal\PaymentDealInfo OR array OR null</code> | value  | Данные о сделке, в составе которой проходит платеж |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Выбрасывается если переданные данные не удалось интерпретировать как данные сделки |
 
 **Returns:** mixed - 
 
@@ -1238,10 +1365,12 @@ public setDescription(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  |  |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1264,10 +1393,12 @@ public setExpiresAt(\DateTime|string|int|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">\DateTime OR string OR int OR null</code> | value  | Время, до которого можно бесплатно отменить или подтвердить платеж |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1294,10 +1425,12 @@ public setId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Идентификатор платежа |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1320,10 +1453,38 @@ public setIncomeAmount(\YooKassa\Model\MonetaryAmount $amount) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">\YooKassa\Model\MonetaryAmount</code> | amount  |  |
+
+**Returns:** mixed - 
+
+
+<a name="method_setMerchantCustomerId" class="anchor"></a>
+#### public setMerchantCustomerId() : mixed
+
+```php
+public setMerchantCustomerId(string $value) : mixed
+```
+
+**Summary**
+
+Устанавливает идентификатор покупателя в вашей системе
+
+**Details:**
+* Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | value  | Идентификатор покупателя в вашей системе, например электронная почта или номер телефона. Не более 200 символов |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException | Выбрасывается если переданный аргумент не является строкой |
 
 **Returns:** mixed - 
 
@@ -1341,6 +1502,7 @@ public setMetadata(\YooKassa\Model\Metadata $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1362,10 +1524,12 @@ public setPaid(bool $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">bool</code> | value  | Признак оплаты заказа |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1388,6 +1552,7 @@ public setPaymentMethod(\YooKassa\Model\PaymentMethod\AbstractPaymentMethod $val
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1409,10 +1574,12 @@ public setReceiptRegistration(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Состояние регистрации фискального чека |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1435,6 +1602,7 @@ public setRecipient(\YooKassa\Model\RecipientInterface $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1456,10 +1624,12 @@ public setRefundable(bool $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">bool</code> | value  | Возможность провести возврат по API |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1482,6 +1652,7 @@ public setRefundedAmount(\YooKassa\Model\AmountInterface $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1491,7 +1662,7 @@ public setRefundedAmount(\YooKassa\Model\AmountInterface $value) : mixed
 
 
 <a name="method_setRequestor" class="anchor"></a>
-#### public setRequestor() : mixed
+#### (deprecated) - public setRequestor() : mixed
 
 ```php
 public setRequestor(\YooKassa\Model\RequestorInterface|array $value) : mixed
@@ -1501,8 +1672,11 @@ public setRequestor(\YooKassa\Model\RequestorInterface|array $value) : mixed
 
 Устанавливает инициатора платежа
 
+**Deprecated**
+DeprecatedНе используется. Будет удален в следующих версиях
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1524,10 +1698,12 @@ public setStatus(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Статус платежа |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -1550,6 +1726,7 @@ public setTest(bool $test) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1571,6 +1748,7 @@ public setTransfers(\YooKassa\Model\TransferInterface[] $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -1626,10 +1804,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

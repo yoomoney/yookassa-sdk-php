@@ -28,6 +28,7 @@ namespace YooKassa\Common;
 
 use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Model\AmountInterface;
+use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\Receipt;
 use YooKassa\Model\ReceiptInterface;
 use YooKassa\Model\Transfer;
@@ -69,7 +70,7 @@ class AbstractPaymentRequest extends AbstractRequest
     }
 
     /**
-     * Проверяет была ли установлена сумма оплаты
+     * Проверяет, была ли установлена сумма оплаты
      * @return bool True если сумма оплаты была установлена, false если нет
      */
     public function hasAmount()
@@ -88,7 +89,7 @@ class AbstractPaymentRequest extends AbstractRequest
 
     /**
      * Возвращает чек, если он есть
-     * @return ReceiptInterface|null Данные фискального чека 54-ФЗ или null если чека нет
+     * @return ReceiptInterface|null Данные фискального чека 54-ФЗ или null, если чека нет
      */
     public function getReceipt()
     {

@@ -10,6 +10,7 @@ Interface TransferInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -17,8 +18,8 @@ Interface TransferInterface
 | public | [getAccountId()](../classes/YooKassa-Model-SourceInterface.md#method_getAccountId) |  | Возвращает id магазина с которого будут списаны средства |
 | public | [getAmount()](../classes/YooKassa-Model-SourceInterface.md#method_getAmount) |  | Возвращает сумму оплаты |
 | public | [getPlatformFeeAmount()](../classes/YooKassa-Model-SourceInterface.md#method_getPlatformFeeAmount) |  | Возвращает комиссию за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
-| public | [hasAmount()](../classes/YooKassa-Model-SourceInterface.md#method_hasAmount) |  | Проверяет была ли установлена сумма оплаты |
-| public | [hasPlatformFeeAmount()](../classes/YooKassa-Model-SourceInterface.md#method_hasPlatformFeeAmount) |  | Проверяет была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
+| public | [hasAmount()](../classes/YooKassa-Model-SourceInterface.md#method_hasAmount) |  | Проверяет, была ли установлена сумма оплаты |
+| public | [hasPlatformFeeAmount()](../classes/YooKassa-Model-SourceInterface.md#method_hasPlatformFeeAmount) |  | Проверяет, была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
 | public | [setAccountId()](../classes/YooKassa-Model-SourceInterface.md#method_setAccountId) |  | Устаналивает id магазина-получателя средств |
 | public | [setAmount()](../classes/YooKassa-Model-SourceInterface.md#method_setAmount) |  | Устанавливает сумму оплаты |
 | public | [setPlatformFeeAmount()](../classes/YooKassa-Model-SourceInterface.md#method_setPlatformFeeAmount) |  | Устанавливает комиссию за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
@@ -27,6 +28,7 @@ Interface TransferInterface
 ### Details
 * File: [lib/Model/SourceInterface.php](../../lib/Model/SourceInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -34,6 +36,7 @@ Interface TransferInterface
 | property |  | Сумма возврата |
 | property |  | Комиссия, которую вы удержали при оплате, и хотите вернуть |
 | property |  | Идентификатор магазина, для которого вы хотите провести возврат |
+
 ---
 ## Methods
 <a name="method_setAccountId" class="anchor"></a>
@@ -49,6 +52,7 @@ public setAccountId(string $value) : void
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SourceInterface](../classes/YooKassa-Model-SourceInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -100,7 +104,7 @@ public hasAmount() : bool
 
 **Summary**
 
-Проверяет была ли установлена сумма оплаты
+Проверяет, была ли установлена сумма оплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SourceInterface](../classes/YooKassa-Model-SourceInterface.md)
@@ -121,6 +125,7 @@ public setAmount(\YooKassa\Model\AmountInterface|array $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SourceInterface](../classes/YooKassa-Model-SourceInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -155,7 +160,7 @@ public hasPlatformFeeAmount() : bool
 
 **Summary**
 
-Проверяет была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу
+Проверяет, была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SourceInterface](../classes/YooKassa-Model-SourceInterface.md)
@@ -176,6 +181,7 @@ public setPlatformFeeAmount(\YooKassa\Model\AmountInterface|array $value) : mixe
 
 **Details:**
 * Inherited From: [\YooKassa\Model\SourceInterface](../classes/YooKassa-Model-SourceInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -197,10 +203,10 @@ public setPlatformFeeAmount(\YooKassa\Model\AmountInterface|array $value) : mixe
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

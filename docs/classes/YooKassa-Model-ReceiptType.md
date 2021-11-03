@@ -22,11 +22,13 @@ ReceiptType - Тип чека в онлайн-кассе.
 | public | [PAYMENT](../classes/YooKassa-Model-ReceiptType.md#constant_PAYMENT) |  |  |
 | public | [REFUND](../classes/YooKassa-Model-ReceiptType.md#constant_REFUND) |  |  |
 | public | [SIMPLE](../classes/YooKassa-Model-ReceiptType.md#constant_SIMPLE) |  |  |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$validValues](../classes/YooKassa-Model-ReceiptType.md#property_validValues) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -34,6 +36,7 @@ ReceiptType - Тип чека в онлайн-кассе.
 | public | [getEnabledValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getEnabledValues) |  | Возвращает значения в enum'е значения которых разрешены |
 | public | [getValidValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getValidValues) |  | Возвращает все значения в enum'e |
 | public | [valueExists()](../classes/YooKassa-Common-AbstractEnum.md#method_valueExists) |  | Проверяет наличие значения в enum'e |
+
 ---
 ### Details
 * File: [lib/Model/ReceiptType.php](../../lib/Model/ReceiptType.php)
@@ -41,6 +44,7 @@ ReceiptType - Тип чека в онлайн-кассе.
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
   * \YooKassa\Model\ReceiptType
+
 ---
 ## Constants
 <a name="constant_PAYMENT" class="anchor"></a>
@@ -62,6 +66,7 @@ REFUND = 'refund' : string
 ```php
 SIMPLE = 'simple' : string
 ```
+
 
 
 ---
@@ -124,6 +129,7 @@ Static public valueExists(mixed $value) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -144,10 +150,10 @@ Static public valueExists(mixed $value) : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

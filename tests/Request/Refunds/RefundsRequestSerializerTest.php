@@ -52,10 +52,10 @@ class RefundsRequestSerializerTest extends TestCase
             array(
                 array(
                     'paymentId' => '',
-                    'createAtGte' => '',
-                    'createAtGt' => '',
-                    'createAtLte' => '',
-                    'createAtLt' => '',
+                    'createdAtGte' => '',
+                    'createdAtGt' => '',
+                    'createdAtLte' => '',
+                    'createdAtLt' => '',
                     'status' => '',
                     'cursor' => '',
                     'limit' => '',
@@ -66,10 +66,10 @@ class RefundsRequestSerializerTest extends TestCase
         for ($i = 0; $i < 10; $i++) {
             $request = array(
                 'paymentId' => $this->randomString(36),
-                'createAtGte' => date(YOOKASSA_DATE, mt_rand(1, time())),
-                'createAtGt' => date(YOOKASSA_DATE, mt_rand(1, time())),
-                'createAtLte' => date(YOOKASSA_DATE, mt_rand(1, time())),
-                'createAtLt' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                'createdAtGte' => ($i == 0 ? null : ($i == 1 ? '' : date(YOOKASSA_DATE, mt_rand(1, time())))),
+                'createdAtGt' => ($i == 0 ? null : ($i == 1 ? '' : date(YOOKASSA_DATE, mt_rand(1, time())))),
+                'createdAtLte' => ($i == 0 ? null : ($i == 1 ? '' : date(YOOKASSA_DATE, mt_rand(1, time())))),
+                'createdAtLt' => ($i == 0 ? null : ($i == 1 ? '' : date(YOOKASSA_DATE, mt_rand(1, time())))),
                 'status' => $statuses[mt_rand(0, count($statuses) - 1)],
                 'cursor' => uniqid(),
                 'limit' => mt_rand(1, RefundsRequest::MAX_LIMIT_VALUE),

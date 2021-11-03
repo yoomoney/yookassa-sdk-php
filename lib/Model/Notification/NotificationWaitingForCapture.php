@@ -65,7 +65,7 @@ class NotificationWaitingForCapture extends AbstractNotification
      * тела пришедшего запроса. При конструировании проверяется валидность типа передаваемого уведомления, если
      * передать уведомление не того типа, будет сгенерировано исключение типа {@link InvalidPropertyValueException}
      *
-     * @param array $source Ассоциативный массив с информацией о уведомлении
+     * @param array $source Ассоциативный массив с информацией об уведомлении
      *
      * @throws InvalidPropertyValueException Генерируется если значение типа нотификации или события не равны
      * "notification" и "payment.waiting_for_capture" соответственно, что может говорить о том, что переданные в

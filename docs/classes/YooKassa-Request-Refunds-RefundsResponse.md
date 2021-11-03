@@ -7,9 +7,11 @@
 
 Класс объекта ответа от API со списком возвратов магазина
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -18,6 +20,7 @@
 | public | [getItems()](../classes/YooKassa-Request-Refunds-RefundsResponse.md#method_getItems) |  | Возвращает список возвратов |
 | public | [getNextCursor()](../classes/YooKassa-Request-Refunds-RefundsResponse.md#method_getNextCursor) |  | Возвращает токен следующей страницы, если он задан, или null |
 | public | [hasNextCursor()](../classes/YooKassa-Request-Refunds-RefundsResponse.md#method_hasNextCursor) |  | Проверяет имееотся ли в ответе токен следующей страницы |
+
 ---
 ### Details
 * File: [lib/Request/Refunds/RefundsResponse.php](../../lib/Request/Refunds/RefundsResponse.php)
@@ -40,10 +43,12 @@ public __construct(array $options) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsResponse](../classes/YooKassa-Request-Refunds-RefundsResponse.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">array</code> | options  | Массив настроек, пришедший от API |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -115,10 +120,10 @@ public hasNextCursor() : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -10,6 +10,7 @@ Interface ReceiptItemInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -33,6 +34,7 @@ Interface ReceiptItemInterface
 ### Details
 * File: [lib/Model/ReceiptItemInterface.php](../../lib/Model/ReceiptItemInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -54,6 +56,7 @@ Interface ReceiptItemInterface
 | property-read |  | Номер таможенной декларации (от 1 до 32 символов) |
 | property-read |  | Номер таможенной декларации (от 1 до 32 символов) |
 | property-read |  | Сумма акциза товара с учетом копеек |
+
 ---
 ## Methods
 <a name="method_getDescription" class="anchor"></a>
@@ -138,7 +141,7 @@ public getVatCode() : int|null
 **Details:**
 * Inherited From: [\YooKassa\Model\ReceiptItemInterface](../classes/YooKassa-Model-ReceiptItemInterface.md)
 
-**Returns:** int|null - Ставка НДС, число 1-6, или null если ставка не задана
+**Returns:** int|null - Ставка НДС, число 1-6, или null, если ставка не задана
 
 
 <a name="method_getPaymentSubject" class="anchor"></a>
@@ -303,10 +306,10 @@ public isShipping() : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

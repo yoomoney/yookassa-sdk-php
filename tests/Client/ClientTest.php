@@ -24,10 +24,19 @@ use YooKassa\Common\Exceptions\UnauthorizedException;
 use YooKassa\Common\LoggerWrapper;
 use YooKassa\Helpers\Random;
 use YooKassa\Helpers\StringObject;
+use YooKassa\Model\Deal\DealType;
+use YooKassa\Model\Deal\FeeMoment;
+use YooKassa\Model\PaymentMethodType;
 use YooKassa\Model\ReceiptCustomer;
 use YooKassa\Model\ReceiptItem;
 use YooKassa\Model\ReceiptType;
+use YooKassa\Model\SafeDeal;
 use YooKassa\Model\Settlement;
+use YooKassa\Request\Deals\CreateDealRequest;
+use YooKassa\Request\Deals\CreateDealResponse;
+use YooKassa\Request\Deals\DealResponse;
+use YooKassa\Request\Deals\DealsRequest;
+use YooKassa\Request\Deals\DealsResponse;
 use YooKassa\Request\Payments\CreatePaymentResponse;
 use YooKassa\Request\Payments\CreatePaymentRequest;
 use YooKassa\Request\Payments\Payment\CancelResponse;
@@ -36,6 +45,9 @@ use YooKassa\Request\Payments\Payment\CreateCaptureResponse;
 use YooKassa\Request\Payments\PaymentResponse;
 use YooKassa\Request\Payments\PaymentsRequest;
 use YooKassa\Request\Payments\PaymentsResponse;
+use YooKassa\Request\Payouts\CreatePayoutRequest;
+use YooKassa\Request\Payouts\CreatePayoutResponse;
+use YooKassa\Request\Payouts\PayoutResponse;
 use YooKassa\Request\Receipts\AbstractReceiptResponse;
 use YooKassa\Request\Receipts\CreatePostReceiptRequest;
 use YooKassa\Request\Refunds\CreateRefundRequest;
@@ -1310,6 +1322,408 @@ class ClientTest extends TestCase
             ->setOnBehalfOf('545665')
             ->setItems(array($receiptItem))
             ->build();
+    }
+
+    public function testCreateDeal()
+    {
+        $deal = CreateDealRequest::builder()
+            ->setType(DealType::SAFE_DEAL)
+            ->setFeeMoment(FeeMoment::PAYMENT_SUCCEEDED)
+            ->build();
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('createDealFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->createDeal($deal);
+
+        self::assertSame($curlClientStub, $apiClient->getApiClient());
+        self::assertTrue($response instanceof CreateDealResponse);
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('createDealFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->createDeal(array(
+                'type' => 'safe_deal',
+                'fee_moment' => 'payment_succeeded',
+                'description' => Random::str(36),
+            ), 123);
+
+        self::assertSame($curlClientStub, $apiClient->getApiClient());
+        self::assertTrue($response instanceof CreateDealResponse);
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->any())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                '{"type":"error","code":"request_accepted","retry_after":1800}',
+                array('http_code' => 202)
+            ));
+
+        try {
+            $response = $apiClient
+                ->setApiClient($curlClientStub)
+                ->setAuth('shopId', 'shopPassword')
+                ->createDeal($deal, 123);
+            self::fail('Исключение не было выброшено');
+        } catch (ApiException $e) {
+            self::assertInstanceOf('YooKassa\Common\Exceptions\ResponseProcessingException', $e);
+            return;
+        }
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->any())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                '{"type":"error","code":"request_accepted"}',
+                array('http_code' => 202)
+            ));
+
+        try {
+            $apiClient->setRetryTimeout(0);
+            $response = $apiClient
+                ->setApiClient($curlClientStub)
+                ->setAuth('shopId', 'shopPassword')
+                ->createDeal($deal, 123);
+            self::fail('Исключение не было выброшено');
+        } catch (ResponseProcessingException $e) {
+            self::assertEquals(Client::DEFAULT_DELAY, $e->retryAfter);
+            return;
+        }
+    }
+
+    /**
+     * @dataProvider dealInfoDataProvider
+     * @param mixed $dealId
+     * @param string $exceptionClassName
+     * @throws ApiException
+     * @throws ResponseProcessingException
+     * @throws BadApiRequestException
+     * @throws ForbiddenException
+     * @throws InternalServerError
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws UnauthorizedException
+     * @throws ExtensionNotFoundException
+     */
+    public function testGetDealInfo($dealId, $exceptionClassName = null)
+    {
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($exceptionClassName !== null ? self::never() : self::once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('dealInfoFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+
+        if ($exceptionClassName !== null) {
+            $this->setExpectedException($exceptionClassName);
+        }
+
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->getDealInfo($dealId);
+
+        self::assertTrue($response instanceof DealResponse);
+    }
+
+    public function dealInfoDataProvider()
+    {
+        return array(
+            array(null, '\InvalidArgumentException'),
+            array(Random::str(36)),
+            array(new StringObject(Random::str(36))),
+            array(true, '\InvalidArgumentException'),
+            array(false, '\InvalidArgumentException'),
+            array(0, '\InvalidArgumentException'),
+            array(1, '\InvalidArgumentException'),
+            array(0.1, '\InvalidArgumentException'),
+            array(Random::str(35), '\InvalidArgumentException'),
+            array(Random::str(51), '\InvalidArgumentException'),
+            array(new DateTime(), '\InvalidArgumentException'),
+            array(array(), '\InvalidArgumentException'),
+        );
+    }
+
+    /**
+     * @dataProvider dealsDataProvider
+     * @param mixed $dealsRequest
+     */
+    public function testGetDeals($dealsRequest)
+    {
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects(self::once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('dealsInfoFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->getDeals($dealsRequest);
+
+        $this->assertTrue($response instanceof DealsResponse);
+    }
+
+    public function dealsDataProvider()
+    {
+        return array(
+            array(null),
+            array(DealsRequest::builder()->build()),
+            array(array(
+                'status' => 'closed',
+            )),
+        );
+    }
+
+    public function testCreatePayout()
+    {
+        $payout = CreatePayoutRequest::builder()
+            ->setAmount(array('value' => '320', 'currency' => 'RUB'))
+            ->setPayoutDestinationData(array(
+                'type' => PaymentMethodType::YOO_MONEY,
+                'account_number' => '41001614575714'
+            ))
+            ->setDescription('Выплата по заказу №37')
+            ->setMetadata(array('order_id' => '37'))
+            ->setDeal(array('id' => 'dl-285e5ee7-0022-5000-8000-01516a44b147'))
+            ->build();
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('createPayoutFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->createPayout($payout);
+
+        self::assertSame($curlClientStub, $apiClient->getApiClient());
+        self::assertTrue($response instanceof CreatePayoutResponse);
+
+        $payout = CreatePayoutRequest::builder()
+            ->setAmount(array('value' => '320', 'currency' => 'RUB'))
+            ->setPayoutToken('<Синоним банковской карты>')
+            ->setDescription('Выплата по заказу №37')
+            ->setMetadata(array('order_id' => '37'))
+            ->setDeal(array('id' => 'dl-285e5ee7-0022-5000-8000-01516a44b147'))
+            ->build();
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('createPayoutFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->createPayout($payout);
+
+        self::assertSame($curlClientStub, $apiClient->getApiClient());
+        self::assertTrue($response instanceof CreatePayoutResponse);
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('createPayoutFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->createPayout(array(
+                'amount' => array('value' => '320', 'currency' => 'RUB'),
+                'description' => 'Выплата по заказу №37',
+                'payout_token' => '<Синоним банковской карты>',
+                'deal' => array('id' => 'dl-285e5ee7-0022-5000-8000-01516a44b147'),
+                'metadata' => array('order_id' => '37'),
+            ), 123);
+
+        self::assertSame($curlClientStub, $apiClient->getApiClient());
+        self::assertTrue($response instanceof CreatePayoutResponse);
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->any())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                '{"type":"error","code":"request_accepted","retry_after":1800}',
+                array('http_code' => 202)
+            ));
+
+        try {
+            $response = $apiClient
+                ->setApiClient($curlClientStub)
+                ->setAuth('shopId', 'shopPassword')
+                ->createPayout($payout, 123);
+            self::fail('Исключение не было выброшено');
+        } catch (ApiException $e) {
+            self::assertInstanceOf('YooKassa\Common\Exceptions\ResponseProcessingException', $e);
+            return;
+        }
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->any())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                '{"type":"error","code":"request_accepted"}',
+                array('http_code' => 202)
+            ));
+
+        try {
+            $apiClient->setRetryTimeout(0);
+            $response = $apiClient
+                ->setApiClient($curlClientStub)
+                ->setAuth('shopId', 'shopPassword')
+                ->createPayout($payout, 123);
+            self::fail('Исключение не было выброшено');
+        } catch (ResponseProcessingException $e) {
+            self::assertEquals(Client::DEFAULT_DELAY, $e->retryAfter);
+            return;
+        }
+
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($this->any())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                '{"type":"error","code":"request_accepted"}',
+                array('http_code' => 202)
+            ));
+
+        try {
+            $apiClient->setRetryTimeout(0);
+            $response = $apiClient
+                ->setApiClient($curlClientStub)
+                ->setAuth('shopId', 'shopPassword')
+                ->createPayout(array(
+                    'amount' => array('value' => '320', 'currency' => 'RUB'),
+                    'description' => 'Выплата по заказу №37',
+                    'payout_token' => '<Синоним банковской карты>',
+                    'payout_destination_data' => array('type' => 'bank_card', 'card' => array('number' => '1234567890123456')),
+                    'deal' => array('id' => 'dl-285e5ee7-0022-5000-8000-01516a44b147'),
+                    'metadata' => array('order_id' => '37'),
+                ), 123);
+            self::fail('Исключение не было выброшено');
+        } catch (ResponseProcessingException $e) {
+            self::assertEquals(Client::DEFAULT_DELAY, $e->retryAfter);
+            return;
+        }
+    }
+
+    /**
+     * @dataProvider payoutInfoDataProvider
+     * @param mixed $payoutId
+     * @param string $exceptionClassName
+     * @throws ApiException
+     * @throws ResponseProcessingException
+     * @throws BadApiRequestException
+     * @throws ForbiddenException
+     * @throws InternalServerError
+     * @throws NotFoundException
+     * @throws TooManyRequestsException
+     * @throws UnauthorizedException
+     * @throws ExtensionNotFoundException
+     */
+    public function testGetPayoutInfo($payoutId, $exceptionClassName = null)
+    {
+        $curlClientStub = $this->getCurlClientStub();
+        $curlClientStub
+            ->expects($exceptionClassName !== null ? self::never() : self::once())
+            ->method('sendRequest')
+            ->willReturn(array(
+                array('Header-Name' => 'HeaderValue'),
+                $this->getFixtures('payoutInfoFixtures.json'),
+                array('http_code' => 200)
+            ));
+
+        $apiClient = new Client();
+
+        if ($exceptionClassName !== null) {
+            $this->setExpectedException($exceptionClassName);
+        }
+
+        $response = $apiClient
+            ->setApiClient($curlClientStub)
+            ->setAuth('shopId', 'shopPassword')
+            ->getPayoutInfo($payoutId);
+
+        self::assertTrue($response instanceof PayoutResponse);
+    }
+
+    public function payoutInfoDataProvider()
+    {
+        return array(
+            array(null, '\InvalidArgumentException'),
+            array(Random::str(36)),
+            array(new StringObject(Random::str(36))),
+            array(true, '\InvalidArgumentException'),
+            array(false, '\InvalidArgumentException'),
+            array(0, '\InvalidArgumentException'),
+            array(1, '\InvalidArgumentException'),
+            array(0.1, '\InvalidArgumentException'),
+            array(Random::str(35), '\InvalidArgumentException'),
+            array(Random::str(51), '\InvalidArgumentException'),
+            array(new DateTime(), '\InvalidArgumentException'),
+            array(array(), '\InvalidArgumentException'),
+        );
     }
 
     /**

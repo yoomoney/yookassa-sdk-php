@@ -10,6 +10,7 @@ Interface CreatePaymentRequestInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -19,33 +20,39 @@ Interface CreatePaymentRequestInterface
 | public | [getCapture()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getCapture) |  | Возвращает флаг автоматического принятия поступившей оплаты |
 | public | [getClientIp()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getClientIp) |  | Возвращает IPv4 или IPv6-адрес покупателя |
 | public | [getConfirmation()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getConfirmation) |  | Возвращает способ подтверждения платежа |
+| public | [getDeal()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getDeal) |  | Возвращает данные о сделке, в составе которой проходит платеж |
 | public | [getDescription()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getDescription) |  | Возвращает описание транзакции |
+| public | [getMerchantCustomerId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getMerchantCustomerId) |  | Возвращает идентификатор покупателя в вашей системе |
 | public | [getMetadata()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getMetadata) |  | Возвращает данные оплаты установленные мерчантом |
 | public | [getPaymentMethodData()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getPaymentMethodData) |  | Возвращает данные для создания метода оплаты |
-| public | [getPaymentMethodId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getPaymentMethodId) |  | Устанавливает идентификатор закиси платёжных данных покупателя |
+| public | [getPaymentMethodId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getPaymentMethodId) |  | Устанавливает идентификатор записи платёжных данных покупателя |
 | public | [getPaymentToken()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getPaymentToken) |  | Возвращает одноразовый токен для проведения оплаты |
 | public | [getReceipt()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getReceipt) |  | Возвращает чек, если он есть |
 | public | [getRecipient()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getRecipient) |  | Возвращает объект получателя платежа |
 | public | [getSavePaymentMethod()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getSavePaymentMethod) |  | Возвращает флаг сохранения платёжных данных |
 | public | [getTransfers()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_getTransfers) |  | Возвращает данные о распределении денег — сколько и в какой магазин нужно перевести. |
-| public | [hasAirline()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasAirline) |  | Проверяет были ли установлены данные длинной записи |
-| public | [hasCapture()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasCapture) |  | Проверяет был ли установлен флаг автоматического приняти поступившей оплаты |
-| public | [hasClientIp()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasClientIp) |  | Проверяет был ли установлен IPv4 или IPv6-адрес покупателя |
-| public | [hasConfirmation()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasConfirmation) |  | Проверяет был ли установлен способ подтверждения платежа |
+| public | [hasAirline()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasAirline) |  | Проверяет, были ли установлены данные длинной записи |
+| public | [hasCapture()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasCapture) |  | Проверяет, был ли установлен флаг автоматического приняти поступившей оплаты |
+| public | [hasClientIp()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasClientIp) |  | Проверяет, был ли установлен IPv4 или IPv6-адрес покупателя |
+| public | [hasConfirmation()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasConfirmation) |  | Проверяет, был ли установлен способ подтверждения платежа |
+| public | [hasDeal()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasDeal) |  | Проверяет, были ли установлены данные о сделке |
 | public | [hasDescription()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasDescription) |  | Проверяет наличие описания транзакции в создаваемом платеже |
-| public | [hasMetadata()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasMetadata) |  | Проверяет были ли установлены метаданные заказа |
+| public | [hasMerchantCustomerId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasMerchantCustomerId) |  | Проверяет, был ли установлен идентификатор покупателя в вашей системе |
+| public | [hasMetadata()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasMetadata) |  | Проверяет, были ли установлены метаданные заказа |
 | public | [hasPaymentMethodData()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasPaymentMethodData) |  | Проверяет установлен ли объект с методом оплаты |
 | public | [hasPaymentMethodId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasPaymentMethodId) |  | Проверяет наличие идентификатора записи о платёжных данных покупателя |
 | public | [hasPaymentToken()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasPaymentToken) |  | Проверяет наличие одноразового токена для проведения оплаты |
 | public | [hasReceipt()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasReceipt) |  | Проверяет наличие чека в создаваемом платеже |
 | public | [hasRecipient()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasRecipient) |  | Проверяет наличие получателя платежа в запросе |
-| public | [hasSavePaymentMethod()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasSavePaymentMethod) |  | Проверяет был ли установлен флаг сохранения платёжных данных |
+| public | [hasSavePaymentMethod()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasSavePaymentMethod) |  | Проверяет, был ли установлен флаг сохранения платёжных данных |
 | public | [hasTransfers()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_hasTransfers) |  | Проверяет наличие данных о распределении денег |
 | public | [setAirline()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setAirline) |  | Устанавливает данные авиабилетов |
 | public | [setCapture()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setCapture) |  | Устанавливает флаг автоматического принятия поступившей оплаты |
 | public | [setClientIp()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setClientIp) |  | Устанавливает IP адрес покупателя |
 | public | [setConfirmation()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setConfirmation) |  | Устанавливает способ подтверждения платежа |
+| public | [setDeal()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setDeal) |  | Устанавливает данные о сделке, в составе которой проходит платеж. |
 | public | [setDescription()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setDescription) |  | Устанавливает описание транзакции |
+| public | [setMerchantCustomerId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setMerchantCustomerId) |  | Устанавливает идентификатор покупателя в вашей системе |
 | public | [setMetadata()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setMetadata) |  | Устанавливает метаданные, привязанные к платежу |
 | public | [setPaymentMethodData()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setPaymentMethodData) |  | Устанавливает объект с информацией для создания метода оплаты |
 | public | [setPaymentMethodId()](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md#method_setPaymentMethodId) |  | Устанавливает идентификатор записи о сохранённых данных покупателя |
@@ -58,6 +65,7 @@ Interface CreatePaymentRequestInterface
 ### Details
 * File: [lib/Request/Payments/CreatePaymentRequestInterface.php](../../lib/Request/Payments/CreatePaymentRequestInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -79,6 +87,10 @@ Interface CreatePaymentRequestInterface
 | property-read |  | IPv4 или IPv6-адрес покупателя. Если не указан, используется IP-адрес TCP-подключения. |
 | property-read |  | Метаданные привязанные к платежу |
 | property-read |  | Метаданные привязанные к платежу |
+| property-read |  | Данные о сделке, в составе которой проходит платеж |
+| property-read |  | Идентификатор покупателя в вашей системе, например электронная почта или номер телефона |
+| property-read |  | Идентификатор покупателя в вашей системе, например электронная почта или номер телефона |
+
 ---
 ## Methods
 <a name="method_getRecipient" class="anchor"></a>
@@ -95,7 +107,7 @@ public getRecipient() : \YooKassa\Model\RecipientInterface|null
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
 
-**Returns:** \YooKassa\Model\RecipientInterface|null - Объект с информацией о получателе платежа или null если получатель не задан
+**Returns:** \YooKassa\Model\RecipientInterface|null - Объект с информацией о получателе платежа или null, если получатель не задан
 
 
 <a name="method_hasRecipient" class="anchor"></a>
@@ -128,6 +140,7 @@ public setRecipient(\YooKassa\Model\RecipientInterface|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -200,6 +213,7 @@ public setDescription(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -222,7 +236,7 @@ public getReceipt() : \YooKassa\Model\ReceiptInterface|null
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
 
-**Returns:** \YooKassa\Model\ReceiptInterface|null - Данные фискального чека 54-ФЗ или null если чека нет
+**Returns:** \YooKassa\Model\ReceiptInterface|null - Данные фискального чека 54-ФЗ или null, если чека нет
 
 
 <a name="method_hasReceipt" class="anchor"></a>
@@ -289,6 +303,7 @@ public setPaymentToken(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -306,7 +321,7 @@ public getPaymentMethodId() : string
 
 **Summary**
 
-Устанавливает идентификатор закиси платёжных данных покупателя
+Устанавливает идентификатор записи платёжных данных покупателя
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -344,6 +359,7 @@ public setPaymentMethodId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -399,10 +415,11 @@ public setPaymentMethodData(\YooKassa\Model\PaymentData\AbstractPaymentData|null
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\PaymentData\AbstractPaymentData OR null</code> | value  | Объект с создания метода оплаты или null |
+| <code lang="php">\YooKassa\Model\PaymentData\AbstractPaymentData OR null</code> | value  | Объект создания метода оплаты или null |
 
 **Returns:** mixed - 
 
@@ -433,7 +450,7 @@ public hasConfirmation() : bool
 
 **Summary**
 
-Проверяет был ли установлен способ подтверждения платежа
+Проверяет, был ли установлен способ подтверждения платежа
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -454,6 +471,7 @@ public setConfirmation(\YooKassa\Model\ConfirmationAttributes\AbstractConfirmati
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -488,7 +506,7 @@ public hasSavePaymentMethod() : bool
 
 **Summary**
 
-Проверяет был ли установлен флаг сохранения платёжных данных
+Проверяет, был ли установлен флаг сохранения платёжных данных
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -509,6 +527,7 @@ public setSavePaymentMethod(bool $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -543,7 +562,7 @@ public hasCapture() : bool
 
 **Summary**
 
-Проверяет был ли установлен флаг автоматического приняти поступившей оплаты
+Проверяет, был ли установлен флаг автоматического приняти поступившей оплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -564,6 +583,7 @@ public setCapture(bool $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -598,7 +618,7 @@ public hasClientIp() : bool
 
 **Summary**
 
-Проверяет был ли установлен IPv4 или IPv6-адрес покупателя
+Проверяет, был ли установлен IPv4 или IPv6-адрес покупателя
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -619,6 +639,7 @@ public setClientIp(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -653,7 +674,7 @@ public hasMetadata() : bool
 
 **Summary**
 
-Проверяет были ли установлены метаданные заказа
+Проверяет, были ли установлены метаданные заказа
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -674,6 +695,7 @@ public setMetadata(\YooKassa\Model\Metadata|array|null $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -708,7 +730,7 @@ public hasAirline() : bool
 
 **Summary**
 
-Проверяет были ли установлены данные длинной записи
+Проверяет, были ли установлены данные длинной записи
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
@@ -729,6 +751,7 @@ public setAirline(\YooKassa\Model\AirlineInterface $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -794,10 +817,123 @@ public setTransfers(mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">mixed</code> | value  |  |
+
+**Returns:** mixed - 
+
+
+<a name="method_getDeal" class="anchor"></a>
+#### public getDeal() : \YooKassa\Model\Deal\PaymentDealInfo
+
+```php
+public getDeal() : \YooKassa\Model\Deal\PaymentDealInfo
+```
+
+**Summary**
+
+Возвращает данные о сделке, в составе которой проходит платеж
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
+**Returns:** \YooKassa\Model\Deal\PaymentDealInfo - Данные о сделке, в составе которой проходит платеж.
+
+
+<a name="method_hasDeal" class="anchor"></a>
+#### public hasDeal() : bool
+
+```php
+public hasDeal() : bool
+```
+
+**Summary**
+
+Проверяет, были ли установлены данные о сделке
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
+**Returns:** bool - True если данные о сделке были установлены, false если нет
+
+
+<a name="method_setDeal" class="anchor"></a>
+#### public setDeal() : mixed
+
+```php
+public setDeal(\YooKassa\Model\Deal\PaymentDealInfo|array|null $value) : mixed
+```
+
+**Summary**
+
+Устанавливает данные о сделке, в составе которой проходит платеж.
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\Deal\PaymentDealInfo OR array OR null</code> | value  | Данные о сделке, в составе которой проходит платеж |
+
+**Returns:** mixed - 
+
+
+<a name="method_getMerchantCustomerId" class="anchor"></a>
+#### public getMerchantCustomerId() : string
+
+```php
+public getMerchantCustomerId() : string
+```
+
+**Summary**
+
+Возвращает идентификатор покупателя в вашей системе
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
+**Returns:** string - Идентификатор покупателя в вашей системе
+
+
+<a name="method_hasMerchantCustomerId" class="anchor"></a>
+#### public hasMerchantCustomerId() : bool
+
+```php
+public hasMerchantCustomerId() : bool
+```
+
+**Summary**
+
+Проверяет, был ли установлен идентификатор покупателя в вашей системе
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
+**Returns:** bool - True если идентификатор покупателя был установлен, false если нет
+
+
+<a name="method_setMerchantCustomerId" class="anchor"></a>
+#### public setMerchantCustomerId() : mixed
+
+```php
+public setMerchantCustomerId(string $value) : mixed
+```
+
+**Summary**
+
+Устанавливает идентификатор покупателя в вашей системе
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Payments\CreatePaymentRequestInterface](../classes/YooKassa-Request-Payments-CreatePaymentRequestInterface.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | value  | Идентификатор покупателя в вашей системе, например электронная почта или номер телефона. Не более 200 символов |
 
 **Returns:** mixed - 
 
@@ -815,10 +951,10 @@ public setTransfers(mixed $value) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

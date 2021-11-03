@@ -70,7 +70,7 @@ class RefundReceiptResponse extends AbstractReceiptResponse
     /**
      * Устанавливает идентификатор возврата в ЮKassa
      *
-     * @param string $value идентификатор возврата в ЮKassa
+     * @param string $value Идентификатор возврата в ЮKassa
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в качестве значения была передана не строка
      * @throws InvalidPropertyValueException Выбрасывается если длина переданной строки не равна 36

@@ -7,14 +7,17 @@
 
 Требуемое PHP расширение не установлено.
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [__construct()](../classes/YooKassa-Common-Exceptions-ExtensionNotFoundException.md#method___construct) |  | Constructor |
+
 ---
 ### Details
 * File: [lib/Common/Exceptions/ExtensionNotFoundException.php](../../lib/Common/Exceptions/ExtensionNotFoundException.php)
@@ -38,6 +41,7 @@ Constructor
 
 **Details:**
 * Inherited From: [\YooKassa\Common\Exceptions\ExtensionNotFoundException](../classes/YooKassa-Common-Exceptions-ExtensionNotFoundException.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -59,10 +63,10 @@ Constructor
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

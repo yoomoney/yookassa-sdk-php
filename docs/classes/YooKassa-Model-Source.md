@@ -7,9 +7,11 @@
 
 Класс объекта распределения денег в магазин
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -17,6 +19,7 @@
 | public | [$accountId](../classes/YooKassa-Model-Source.md#property_accountId) |  | Идентификатор магазина, для которого вы хотите провести возврат |
 | public | [$amount](../classes/YooKassa-Model-Source.md#property_amount) |  | Сумма возврата |
 | public | [$platform_fee_amount](../classes/YooKassa-Model-Source.md#property_platform_fee_amount) |  | Комиссия, которую вы удержали при оплате, и хотите вернуть |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -30,8 +33,8 @@
 | public | [getAccountId()](../classes/YooKassa-Model-Source.md#method_getAccountId) |  | Возвращает id магазина с которого будут списаны средства |
 | public | [getAmount()](../classes/YooKassa-Model-Source.md#method_getAmount) |  | Возвращает сумму оплаты |
 | public | [getPlatformFeeAmount()](../classes/YooKassa-Model-Source.md#method_getPlatformFeeAmount) |  | Возвращает комиссию за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
-| public | [hasAmount()](../classes/YooKassa-Model-Source.md#method_hasAmount) |  | Проверяет была ли установлена сумма оплаты |
-| public | [hasPlatformFeeAmount()](../classes/YooKassa-Model-Source.md#method_hasPlatformFeeAmount) |  | Проверяет была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
+| public | [hasAmount()](../classes/YooKassa-Model-Source.md#method_hasAmount) |  | Проверяет, была ли установлена сумма оплаты |
+| public | [hasPlatformFeeAmount()](../classes/YooKassa-Model-Source.md#method_hasPlatformFeeAmount) |  | Проверяет, была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
@@ -42,6 +45,7 @@
 | public | [setPlatformFeeAmount()](../classes/YooKassa-Model-Source.md#method_setPlatformFeeAmount) |  | Устанавливает комиссию за проданные товары и услуги, которая удерживается с магазина в вашу пользу |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Model/Source.php](../../lib/Model/Source.php)
@@ -51,6 +55,7 @@
   * \YooKassa\Model\Source
 * Implements:
   * [\YooKassa\Model\SourceInterface](../classes/YooKassa-Model-SourceInterface.md)
+
 ---
 ## Properties
 <a name="property_accountId"></a>
@@ -105,6 +110,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -126,6 +132,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -147,6 +154,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -168,6 +176,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -190,6 +199,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -211,6 +221,7 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -291,7 +302,7 @@ public hasAmount() : bool
 
 **Summary**
 
-Проверяет была ли установлена сумма оплаты
+Проверяет, была ли установлена сумма оплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Source](../classes/YooKassa-Model-Source.md)
@@ -312,7 +323,7 @@ public hasPlatformFeeAmount() : bool
 
 **Summary**
 
-Проверяет была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу
+Проверяет, была ли установлена комиссия за проданные товары и услуги, которая удерживается с магазина в вашу пользу
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Source](../classes/YooKassa-Model-Source.md)
@@ -354,6 +365,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -375,6 +387,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -396,6 +409,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -418,6 +432,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -439,6 +454,7 @@ public setAccountId(mixed $value) : void
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Source](../classes/YooKassa-Model-Source.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -464,6 +480,7 @@ public setAmount(mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Source](../classes/YooKassa-Model-Source.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -489,6 +506,7 @@ public setPlatformFeeAmount(mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Source](../classes/YooKassa-Model-Source.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -548,10 +566,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

@@ -7,14 +7,17 @@
 
 Класс объекта осуществляющего сериализацию запроса к API на подтверждение заказа
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [serialize()](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestSerializer.md#method_serialize) |  | Сериализует объект запроса к API на подтверждение заказа в ассоциативный массив |
+
 ---
 ### Details
 * File: [lib/Request/Payments/Payment/CreateCaptureRequestSerializer.php](../../lib/Request/Payments/Payment/CreateCaptureRequestSerializer.php)
@@ -37,6 +40,7 @@ public serialize(\YooKassa\Request\Payments\Payment\CreateCaptureRequestInterfac
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\Payment\CreateCaptureRequestSerializer](../classes/YooKassa-Request-Payments-Payment-CreateCaptureRequestSerializer.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -57,10 +61,10 @@ public serialize(\YooKassa\Request\Payments\Payment\CreateCaptureRequestInterfac
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

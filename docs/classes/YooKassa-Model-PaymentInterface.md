@@ -10,6 +10,7 @@ Interface PaymentInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -17,20 +18,20 @@ Interface PaymentInterface
 | public | [getAmount()](../classes/YooKassa-Model-PaymentInterface.md#method_getAmount) |  | Возвращает сумму |
 | public | [getAuthorizationDetails()](../classes/YooKassa-Model-PaymentInterface.md#method_getAuthorizationDetails) |  | Возвращает данные об авторизации платежа |
 | public | [getCancellationDetails()](../classes/YooKassa-Model-PaymentInterface.md#method_getCancellationDetails) |  | Возвращает комментарий к статусу canceled: кто отменил платеж и по какой причине |
-| public | [getCapturedAt()](../classes/YooKassa-Model-PaymentInterface.md#method_getCapturedAt) |  | Возвращает время подтверждения платежа магазином или null если если время не задано |
+| public | [getCapturedAt()](../classes/YooKassa-Model-PaymentInterface.md#method_getCapturedAt) |  | Возвращает время подтверждения платежа магазином или null, если время не задано |
 | public | [getConfirmation()](../classes/YooKassa-Model-PaymentInterface.md#method_getConfirmation) |  | Возвращает способ подтверждения платежа |
 | public | [getCreatedAt()](../classes/YooKassa-Model-PaymentInterface.md#method_getCreatedAt) |  | Возвращает время создания заказа |
-| public | [getExpiresAt()](../classes/YooKassa-Model-PaymentInterface.md#method_getExpiresAt) |  | Возвращает время до которого можно бесплатно отменить или подтвердить платеж или null если оно не задано |
+| public | [getDeal()](../classes/YooKassa-Model-PaymentInterface.md#method_getDeal) |  | Возвращает сделку, в рамках которой нужно провести платеж. |
+| public | [getExpiresAt()](../classes/YooKassa-Model-PaymentInterface.md#method_getExpiresAt) |  | Возвращает время до которого можно бесплатно отменить или подтвердить платеж, или null, если оно не задано |
 | public | [getId()](../classes/YooKassa-Model-PaymentInterface.md#method_getId) |  | Возвращает идентификатор платежа |
 | public | [getIncomeAmount()](../classes/YooKassa-Model-PaymentInterface.md#method_getIncomeAmount) |  | Возвращает сумму перечисляемая магазину за вычетом комиссий платежной системы.(только для успешных платежей) |
 | public | [getMetadata()](../classes/YooKassa-Model-PaymentInterface.md#method_getMetadata) |  | Возвращает метаданные платежа установленные мерчантом |
-| public | [getPaid()](../classes/YooKassa-Model-PaymentInterface.md#method_getPaid) |  | Проверяет был ли уже оплачен заказ |
+| public | [getPaid()](../classes/YooKassa-Model-PaymentInterface.md#method_getPaid) |  | Проверяет, был ли уже оплачен заказ |
 | public | [getPaymentMethod()](../classes/YooKassa-Model-PaymentInterface.md#method_getPaymentMethod) |  | Возвращает используемый способ проведения платежа |
 | public | [getReceiptRegistration()](../classes/YooKassa-Model-PaymentInterface.md#method_getReceiptRegistration) |  | Возвращает состояние регистрации фискального чека |
 | public | [getRecipient()](../classes/YooKassa-Model-PaymentInterface.md#method_getRecipient) |  | Возвращает получателя платежа |
 | public | [getRefundable()](../classes/YooKassa-Model-PaymentInterface.md#method_getRefundable) |  | Возможность провести возврат по API |
 | public | [getRefundedAmount()](../classes/YooKassa-Model-PaymentInterface.md#method_getRefundedAmount) |  | Возвращает сумму возвращенных средств |
-| public | [getRequestor()](../classes/YooKassa-Model-PaymentInterface.md#method_getRequestor) |  | Возвращает инициатора платежа |
 | public | [getStatus()](../classes/YooKassa-Model-PaymentInterface.md#method_getStatus) |  | Возвращает состояние платежа |
 | public | [getTransfers()](../classes/YooKassa-Model-PaymentInterface.md#method_getTransfers) |  | Возвращает данные о распределении платежа между магазинами |
 
@@ -38,6 +39,7 @@ Interface PaymentInterface
 ### Details
 * File: [lib/Model/PaymentInterface.php](../../lib/Model/PaymentInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -71,7 +73,7 @@ Interface PaymentInterface
 | property-read |  | Данные о распределении платежа между магазинами |
 | property-read |  | Сумма платежа, которую получит магазин |
 | property-read |  | Сумма платежа, которую получит магазин |
-| property-read |  | Инициатор платежа |
+
 ---
 ## Methods
 <a name="method_getId" class="anchor"></a>
@@ -122,7 +124,7 @@ public getRecipient() : \YooKassa\Model\RecipientInterface|null
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentInterface](../classes/YooKassa-Model-PaymentInterface.md)
 
-**Returns:** \YooKassa\Model\RecipientInterface|null - Получатель платежа или null если получатель не задан
+**Returns:** \YooKassa\Model\RecipientInterface|null - Получатель платежа или null, если получатель не задан
 
 
 <a name="method_getAmount" class="anchor"></a>
@@ -185,7 +187,7 @@ public getCapturedAt() : \DateTime|null
 
 **Summary**
 
-Возвращает время подтверждения платежа магазином или null если если время не задано
+Возвращает время подтверждения платежа магазином или null, если время не задано
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentInterface](../classes/YooKassa-Model-PaymentInterface.md)
@@ -236,7 +238,7 @@ public getPaid() : bool
 
 **Summary**
 
-Проверяет был ли уже оплачен заказ
+Проверяет, был ли уже оплачен заказ
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentInterface](../classes/YooKassa-Model-PaymentInterface.md)
@@ -304,7 +306,7 @@ public getExpiresAt() : \DateTime|null
 
 **Summary**
 
-Возвращает время до которого можно бесплатно отменить или подтвердить платеж или null если оно не задано
+Возвращает время до которого можно бесплатно отменить или подтвердить платеж, или null, если оно не задано
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentInterface](../classes/YooKassa-Model-PaymentInterface.md)
@@ -392,21 +394,21 @@ public getIncomeAmount() : \YooKassa\Model\MonetaryAmount|null
 **Returns:** \YooKassa\Model\MonetaryAmount|null - 
 
 
-<a name="method_getRequestor" class="anchor"></a>
-#### public getRequestor() : \YooKassa\Model\RequestorInterface
+<a name="method_getDeal" class="anchor"></a>
+#### public getDeal() : \YooKassa\Model\Deal\PaymentDealInfo
 
 ```php
-public getRequestor() : \YooKassa\Model\RequestorInterface
+public getDeal() : \YooKassa\Model\Deal\PaymentDealInfo
 ```
 
 **Summary**
 
-Возвращает инициатора платежа
+Возвращает сделку, в рамках которой нужно провести платеж.
 
 **Details:**
 * Inherited From: [\YooKassa\Model\PaymentInterface](../classes/YooKassa-Model-PaymentInterface.md)
 
-**Returns:** \YooKassa\Model\RequestorInterface - 
+**Returns:** \YooKassa\Model\Deal\PaymentDealInfo - Сделка, в рамках которой нужно провести платеж
 
 
 
@@ -422,10 +424,10 @@ public getRequestor() : \YooKassa\Model\RequestorInterface
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

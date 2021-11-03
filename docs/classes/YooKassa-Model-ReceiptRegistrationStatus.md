@@ -23,11 +23,13 @@
 | public | [PENDING](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_PENDING) |  |  |
 | public | [SUCCEEDED](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_SUCCEEDED) |  |  |
 | public | [CANCELED](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#constant_CANCELED) |  |  |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$validValues](../classes/YooKassa-Model-ReceiptRegistrationStatus.md#property_validValues) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -35,6 +37,7 @@
 | public | [getEnabledValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getEnabledValues) |  | Возвращает значения в enum'е значения которых разрешены |
 | public | [getValidValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getValidValues) |  | Возвращает все значения в enum'e |
 | public | [valueExists()](../classes/YooKassa-Common-AbstractEnum.md#method_valueExists) |  | Проверяет наличие значения в enum'e |
+
 ---
 ### Details
 * File: [lib/Model/ReceiptRegistrationStatus.php](../../lib/Model/ReceiptRegistrationStatus.php)
@@ -42,6 +45,7 @@
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
   * \YooKassa\Model\ReceiptRegistrationStatus
+
 ---
 ## Constants
 <a name="constant_PENDING" class="anchor"></a>
@@ -63,6 +67,7 @@ SUCCEEDED = 'succeeded' : string
 ```php
 CANCELED = 'canceled' : string
 ```
+
 
 
 ---
@@ -125,6 +130,7 @@ Static public valueExists(mixed $value) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -145,10 +151,10 @@ Static public valueExists(mixed $value) : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

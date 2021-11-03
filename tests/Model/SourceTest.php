@@ -34,6 +34,8 @@ class SourceTest extends TestCase
         self::assertNull($instance->amount);
         self::assertNull($instance->platform_fee_amount);
         self::assertNull($instance->accountId);
+        self::assertFalse($instance->hasAmount());
+        self::assertFalse($instance->hasPlatformFeeAmount());
 
         $instance->fromArray($value);
 
@@ -43,6 +45,8 @@ class SourceTest extends TestCase
         self::assertSame($value['amount'], $instance->amount->jsonSerialize());
         self::assertSame($value['platform_fee_amount'], $instance->getPlatformFeeAmount()->jsonSerialize());
         self::assertSame($value['platform_fee_amount'], $instance->platform_fee_amount->jsonSerialize());
+        self::assertTrue($instance->hasAmount());
+        self::assertTrue($instance->hasPlatformFeeAmount());
 
         self::assertSame($value, $instance->jsonSerialize());
     }

@@ -16,6 +16,7 @@
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [HTTP_CODE](../classes/YooKassa-Common-Exceptions-UnauthorizedException.md#constant_HTTP_CODE) |  |  |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
@@ -24,6 +25,7 @@
 | public | [$type](../classes/YooKassa-Common-Exceptions-UnauthorizedException.md#property_type) |  |  |
 | protected | [$responseBody](../classes/YooKassa-Common-Exceptions-ApiException.md#property_responseBody) |  |  |
 | protected | [$responseHeaders](../classes/YooKassa-Common-Exceptions-ApiException.md#property_responseHeaders) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -31,6 +33,7 @@
 | public | [__construct()](../classes/YooKassa-Common-Exceptions-UnauthorizedException.md#method___construct) |  | Constructor |
 | public | [getResponseBody()](../classes/YooKassa-Common-Exceptions-ApiException.md#method_getResponseBody) |  |  |
 | public | [getResponseHeaders()](../classes/YooKassa-Common-Exceptions-ApiException.md#method_getResponseHeaders) |  |  |
+
 ---
 ### Details
 * File: [lib/Common/Exceptions/UnauthorizedException.php](../../lib/Common/Exceptions/UnauthorizedException.php)
@@ -39,6 +42,7 @@
   * [\Exception](\Exception)
   * [\YooKassa\Common\Exceptions\ApiException](../classes/YooKassa-Common-Exceptions-ApiException.md)
   * \YooKassa\Common\Exceptions\UnauthorizedException
+
 ---
 ## Constants
 <a name="constant_HTTP_CODE" class="anchor"></a>
@@ -46,6 +50,7 @@
 ```php
 HTTP_CODE = 401
 ```
+
 
 
 ---
@@ -98,6 +103,7 @@ Constructor
 
 **Details:**
 * Inherited From: [\YooKassa\Common\Exceptions\UnauthorizedException](../classes/YooKassa-Common-Exceptions-UnauthorizedException.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -145,10 +151,10 @@ public getResponseHeaders() : string[]
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

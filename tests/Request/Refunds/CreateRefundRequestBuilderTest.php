@@ -10,6 +10,7 @@ use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\Receipt\PaymentMode;
 use YooKassa\Model\Receipt\PaymentSubject;
 use YooKassa\Model\ReceiptItem;
+use YooKassa\Model\Source;
 use YooKassa\Request\Refunds\CreateRefundRequestBuilder;
 
 class CreateRefundRequestBuilderTest extends TestCase
@@ -506,6 +507,13 @@ class CreateRefundRequestBuilderTest extends TestCase
                     'receiptEmail'  => null,
                     'receiptPhone'  => null,
                     'taxSystemCode' => Random::int(1, 6),
+                    'sources' => array(
+                        new Source(array(
+                            'account_id' => Random::str(36),
+                            'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                            'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                        )),
+                    )
                 ),
             ),
             array(
@@ -521,6 +529,13 @@ class CreateRefundRequestBuilderTest extends TestCase
                     'receiptEmail'  => '',
                     'receiptPhone'  => '',
                     'taxSystemCode' => Random::int(1, 6),
+                    'sources' => array(
+                        new Source(array(
+                            'account_id' => Random::str(36),
+                            'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                            'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                        )),
+                    )
                 ),
             ),
         );
@@ -547,6 +562,13 @@ class CreateRefundRequestBuilderTest extends TestCase
                 'receiptEmail'  => uniqid(),
                 'receiptPhone'  => Random::str(4, 15, '0123456789'),
                 'taxSystemCode' => Random::int(1, 6),
+                'sources' => array(
+                    new Source(array(
+                        'account_id' => Random::str(36),
+                        'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                        'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                    )),
+                )
             );
             $result[] = array($request);
         }

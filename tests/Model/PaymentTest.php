@@ -15,6 +15,7 @@ use YooKassa\Model\PaymentMethod\PaymentMethodQiwi;
 use YooKassa\Model\PaymentStatus;
 use YooKassa\Model\ReceiptRegistrationStatus;
 use YooKassa\Model\Recipient;
+use YooKassa\Model\Requestor;
 use YooKassa\Model\Transfer;
 
 class PaymentTest extends TestCase
@@ -738,6 +739,39 @@ class PaymentTest extends TestCase
         self::assertSame($options['transfers'], $instance->transfers);
     }
 
+    /**
+     * @dataProvider invalidDataProvider
+     * @param array $options
+     * @expectedException \InvalidArgumentException
+     */
+    public function testInvalidTransfers($options)
+    {
+        $instance = new Payment();
+        $instance->setTransfers($options['transfers']);
+    }
+
+    /**
+     * @dataProvider validDataProvider
+     * @param array $options
+     */
+    public function testGetSetIncomeAmount($options)
+    {
+        $instance = new Payment();
+        $instance->setIncomeAmount($options['amount']);
+        self::assertEquals($options['amount'], $instance->getIncomeAmount());
+    }
+
+    /**
+     * @dataProvider invalidDataProvider
+     * @param array $options
+     * @expectedException \InvalidArgumentException
+     */
+    public function testSetInvalidTest($options)
+    {
+        $instance = new Payment();
+        $instance->setTest($options['test']);
+    }
+
     public function validDataProvider()
     {
         $result = array();
@@ -803,6 +837,8 @@ class PaymentTest extends TestCase
                     'created_at' => null,
                     'captured_at' => array(),
                     'receipt_registration' => array(),
+                    'transfers' => 'test',
+                    'test' => null
                 )
             ),
             array(
@@ -822,8 +858,10 @@ class PaymentTest extends TestCase
                     'created_at' => array(),
                     'captured_at' => '23423-234-234',
                     'receipt_registration' => new \stdClass(),
+                    'transfers' => new \stdClass(),
+                    'test' => ''
                 ),
-            ),
+            )
         );
         for ($i = 0; $i < 10; $i++) {
             $payment = array(
@@ -842,6 +880,8 @@ class PaymentTest extends TestCase
                 'created_at' => $i == 0 ? '23423-234-32' : -Random::int(),
                 'captured_at' => -Random::int(),
                 'receipt_registration' => $i == 0 ? true : Random::str(5),
+                'transfers' => new Payment(),
+                'test' => array()
             );
             $result[] = array($payment);
         }

@@ -3,9 +3,11 @@
 # Class: \YooKassa\Common\Exceptions\InvalidPropertyValueException
 ### Namespace: [\YooKassa\Common\Exceptions](../namespaces/yookassa-common-exceptions.md)
 ---
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -13,6 +15,7 @@
 | public | [__construct()](../classes/YooKassa-Common-Exceptions-InvalidPropertyValueException.md#method___construct) |  | InvalidPropertyValueTypeException constructor. |
 | public | [getProperty()](../classes/YooKassa-Common-Exceptions-InvalidPropertyException.md#method_getProperty) |  |  |
 | public | [getValue()](../classes/YooKassa-Common-Exceptions-InvalidPropertyValueException.md#method_getValue) |  |  |
+
 ---
 ### Details
 * File: [lib/Common/Exceptions/InvalidPropertyValueException.php](../../lib/Common/Exceptions/InvalidPropertyValueException.php)
@@ -37,6 +40,7 @@ InvalidPropertyValueTypeException constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\Exceptions\InvalidPropertyValueException](../classes/YooKassa-Common-Exceptions-InvalidPropertyValueException.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -86,10 +90,10 @@ public getValue() : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

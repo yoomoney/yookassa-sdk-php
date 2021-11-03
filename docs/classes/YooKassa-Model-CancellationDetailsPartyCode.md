@@ -7,6 +7,7 @@
 
 CancellationDetailsPartyCode - Возможные инициаторы отмены платежа
 
+
 ---
 ### Constants
 | Visibility | Name | Flag | Summary |
@@ -14,11 +15,13 @@ CancellationDetailsPartyCode - Возможные инициаторы отме�
 | public | [MERCHANT](../classes/YooKassa-Model-CancellationDetailsPartyCode.md#constant_MERCHANT) |  | Продавец товаров и услуг |
 | public | [YOO_KASSA](../classes/YooKassa-Model-CancellationDetailsPartyCode.md#constant_YOO_KASSA) |  | ЮKassa |
 | public | [PAYMENT_NETWORK](../classes/YooKassa-Model-CancellationDetailsPartyCode.md#constant_PAYMENT_NETWORK) |  | «Внешние» участники платежного процесса (например, эмитент, сторонний платежный сервис) |
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | protected | [$validValues](../classes/YooKassa-Model-CancellationDetailsPartyCode.md#property_validValues) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -26,6 +29,7 @@ CancellationDetailsPartyCode - Возможные инициаторы отме�
 | public | [getEnabledValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getEnabledValues) |  | Возвращает значения в enum'е значения которых разрешены |
 | public | [getValidValues()](../classes/YooKassa-Common-AbstractEnum.md#method_getValidValues) |  | Возвращает все значения в enum'e |
 | public | [valueExists()](../classes/YooKassa-Common-AbstractEnum.md#method_valueExists) |  | Проверяет наличие значения в enum'e |
+
 ---
 ### Details
 * File: [lib/Model/CancellationDetailsPartyCode.php](../../lib/Model/CancellationDetailsPartyCode.php)
@@ -33,6 +37,7 @@ CancellationDetailsPartyCode - Возможные инициаторы отме�
 * Class Hierarchy: 
   * [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
   * \YooKassa\Model\CancellationDetailsPartyCode
+
 ---
 ## Constants
 <a name="constant_MERCHANT" class="anchor"></a>
@@ -60,6 +65,7 @@ YOO_KASSA = 'yoo_kassa'
 ```php
 PAYMENT_NETWORK = 'payment_network'
 ```
+
 
 
 ---
@@ -122,6 +128,7 @@ Static public valueExists(mixed $value) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractEnum](../classes/YooKassa-Common-AbstractEnum.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -142,10 +149,10 @@ Static public valueExists(mixed $value) : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

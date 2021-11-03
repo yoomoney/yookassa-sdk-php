@@ -60,12 +60,30 @@ class ConfirmationEmbeddedTest extends AbstractConfirmationTest
         }
     }
 
+    /**
+     * @dataProvider invalidConfirmationTokenDataProvider
+     * @expectedException \InvalidArgumentException
+     * @param $value
+     */
+    public function testIvalidSetConfirmationToken($value)
+    {
+        $instance = $this->getTestInstance();
+        $instance->setConfirmationToken($value);
+    }
+
     public function validConfirmationTokenDataProvider()
     {
         return array(
             array(null),
             array(''),
             array('ct-2454fc2d-000f-5000-9000-12a816bfbb35'),
+        );
+    }
+
+    public function invalidConfirmationTokenDataProvider()
+    {
+        return array(
+            array(new \stdClass())
         );
     }
 }

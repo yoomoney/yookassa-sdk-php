@@ -27,6 +27,7 @@
 namespace YooKassa\Request\Refunds;
 
 use YooKassa\Model\AmountInterface;
+use YooKassa\Model\Deal\RefundDealData;
 use YooKassa\Model\ReceiptInterface;
 use YooKassa\Model\SourceInterface;
 
@@ -38,7 +39,7 @@ use YooKassa\Model\SourceInterface;
  * @property-read string $paymentId Айди платежа для которого создаётся возврат
  * @property-read AmountInterface $amount Сумма возврата
  * @property-read string $description Комментарий к операции возврата, основание для возврата средств покупателю.
- * @property-read ReceiptInterface|null $receipt Инстанс чека или null
+ * @property-read ReceiptInterface|array|null $receipt Инстанс чека или null
  */
 interface CreateRefundRequestInterface
 {
@@ -53,6 +54,12 @@ interface CreateRefundRequestInterface
      * @return AmountInterface Сумма возврата
      */
     function getAmount();
+
+    /**
+     * Проверяет, был ли установлена идентификатор платежа
+     * @return bool True если идентификатор платежа был установлен, false если нет
+     */
+    function hasPaymentId();
 
     /**
      * Устанавливает комментарий к возврату
@@ -79,7 +86,7 @@ interface CreateRefundRequestInterface
     function setReceipt($value);
 
     /**
-     * Возвращает инстанс чека или null если чек не задан
+     * Возвращает инстанс чека или null, если чек не задан
      * @return ReceiptInterface|null Инстанс чека или null
      */
     function getReceipt();
@@ -107,4 +114,22 @@ interface CreateRefundRequestInterface
      * @return bool
      */
     function hasSources();
+
+    /**
+     * Устанавливает информацию о сделке
+     * @param RefundDealData $value Информация о сделке
+     */
+    function setDeal($value);
+
+    /**
+     * Возвращает информацию о сделке
+     * @return RefundDealData Информация о сделке
+     */
+    function getDeal();
+
+    /**
+     * Проверяет наличие информации о сделке
+     * @return bool
+     */
+    function hasDeal();
 }

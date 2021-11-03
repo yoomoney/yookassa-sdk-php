@@ -13,10 +13,10 @@ matrix:
   include:
     - php: 5.5
       dist: trusty
-    - php: 5.4
-      dist: precise
-    - php: 5.3
-      dist: precise
+#    - php: 5.4
+#      dist: precise
+#    - php: 5.3
+#      dist: precise
 
 cache:
   directories:
@@ -33,7 +33,7 @@ before_script:
   - export XDEBUG_MODE=coverage
 
 script:
-  - php vendor/bin/phpunit --configuration phpunit.xml.dist --no-coverage
+  - php -derror_reporting=32759 vendor/bin/phpunit --configuration phpunit.xml.dist --no-coverage
 
 # after_success:
 #   - travis_retry php vendor/bin/php-coveralls

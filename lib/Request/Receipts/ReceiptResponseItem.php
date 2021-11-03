@@ -91,11 +91,11 @@ class ReceiptResponseItem extends AbstractObject implements ReceiptResponseItemI
     private $_supplier;
 
     /**
-     * Конструктор, устанавливает настройки товара из ассоциативного массива
+     * Устанавливает значения свойств текущего объекта из массива
      *
      * @param array $itemData Массив с информацией о товаре, пришедший от API
      */
-    public function __construct($itemData)
+    public function fromArray($itemData)
     {
         $this->setDescription($itemData['description']);
         $this->setQuantity($itemData['quantity']);
@@ -219,7 +219,7 @@ class ReceiptResponseItem extends AbstractObject implements ReceiptResponseItemI
 
     /**
      * Возвращает ставку НДС
-     * @return int|null Ставка НДС, число 1-6, или null если ставка не задана
+     * @return int|null Ставка НДС, число 1-6, или null, если ставка не задана
      */
     public function getVatCode()
     {

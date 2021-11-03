@@ -1,0 +1,14 @@
+{
+  "amount": {
+    "value": "320.00",
+    "currency": "RUB"
+  },
+  "payout_token": "<Синоним банковской карты>",
+  "description": "Выплата по заказу №37",
+  "metadata": {
+    "order_id": "37"
+  },
+  "deal": {
+    "id": "dl-285e5ee7-0022-5000-8000-01516a44b147"
+  }
+}

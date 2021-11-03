@@ -3,19 +3,23 @@
 # Class: \YooKassa\Common\Exceptions\JsonException
 ### Namespace: [\YooKassa\Common\Exceptions](../namespaces/yookassa-common-exceptions.md)
 ---
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [$errorLabels](../classes/YooKassa-Common-Exceptions-JsonException.md#property_errorLabels) |  |  |
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
 | public | [__construct()](../classes/YooKassa-Common-Exceptions-JsonException.md#method___construct) |  |  |
+
 ---
 ### Details
 * File: [lib/Common/Exceptions/JsonException.php](../../lib/Common/Exceptions/JsonException.php)
@@ -23,6 +27,7 @@
 * Class Hierarchy: 
   * [\UnexpectedValueException](\UnexpectedValueException)
   * \YooKassa\Common\Exceptions\JsonException
+
 ---
 ## Properties
 <a name="property_errorLabels"></a>
@@ -44,6 +49,7 @@ public __construct(mixed $message = &quot;&quot;, mixed $code, mixed $previous =
 
 **Details:**
 * Inherited From: [\YooKassa\Common\Exceptions\JsonException](../classes/YooKassa-Common-Exceptions-JsonException.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -66,10 +72,10 @@ public __construct(mixed $message = &quot;&quot;, mixed $code, mixed $previous =
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

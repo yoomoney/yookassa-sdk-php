@@ -67,7 +67,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
     }
 
     /**
-     * Устанавливает идентификатор платежа или null если требуется его удалить
+     * Устанавливает идентификатор платежа или null, если требуется его удалить
      * @param string|null $value Идентификатор платежа
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
@@ -82,7 +82,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает статус выбираемых чеков
-     * @param string $value Статус выбираемых платежей или null чтобы удалить значение
+     * @param string $value Статус выбираемых платежей или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Выбрасывается если переданное значение не является валидным статусом
@@ -96,7 +96,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает ограничение количества объектов чеков
-     * @param string $value Ограничение количества объектов чеков или null чтобы удалить значение
+     * @param string $value Ограничение количества объектов чеков или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего билдера
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод было передана не целое число
@@ -109,7 +109,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает токен следующей страницы выборки
-     * @param string $value Токен следующей страницы выборки или null чтобы удалить значение
+     * @param string $value Токен следующей страницы выборки или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
@@ -122,7 +122,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания от которой выбираются чеки
-     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (не включая) или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
@@ -138,7 +138,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания от которой выбираются чеки
-     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, от (включительно) или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
@@ -154,7 +154,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания до которой выбираются чеки
-     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (не включая) или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана
@@ -170,7 +170,7 @@ class ReceiptsRequestBuilder extends AbstractRequestBuilder
 
     /**
      * Устанавливает дату создания до которой выбираются чеки
-     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null чтобы удалить значение
+     * @param \DateTime|string|int|null $value Время создания, до (включительно) или null, чтобы удалить значение
      * @return ReceiptsRequestBuilder Инстанс текущего объекта билдера
      *
      * @throws InvalidPropertyValueException Генерируется если была передана дата в невалидном формате (была передана

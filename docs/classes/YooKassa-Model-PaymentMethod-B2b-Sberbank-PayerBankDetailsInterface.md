@@ -10,6 +10,7 @@ Interface PayerBankDetailsInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -28,6 +29,7 @@ Interface PayerBankDetailsInterface
 ### Details
 * File: [lib/Model/PaymentMethod/B2b/Sberbank/PayerBankDetailsInterface.php](../../lib/Model/PaymentMethod/B2b/Sberbank/PayerBankDetailsInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -41,6 +43,7 @@ Interface PayerBankDetailsInterface
 | property-read |  | Отделение банка организации |
 | property-read |  | БИК банка организации |
 | property-read |  | Номер счета организации |
+
 ---
 ## Methods
 <a name="method_getFullName" class="anchor"></a>
@@ -209,10 +212,10 @@ public getAccount() : string
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

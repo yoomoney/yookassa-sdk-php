@@ -188,7 +188,7 @@ class ReceiptItemAmount extends AbstractObject implements AmountInterface
 
     /**
      * Увеличивает сумму на указанное значение
-     * @param int $value Значение которое будет прибавлено к текущему
+     * @param int $value Значение, которое будет прибавлено к текущему
      *
      * @throws EmptyPropertyValueException Выбрасывается если передано пустое значение
      * @throws InvalidPropertyValueTypeException Выбрасывается если было передано не число

@@ -7,9 +7,11 @@
 
 Класс объекта ответа от API со списком платежей магазина
 
+
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -22,7 +24,7 @@
 | public | [fromArray()](../classes/YooKassa-Request-Payments-PaymentsResponse.md#method_fromArray) |  | Конструктор, устанавливает свойства объекта из пришедшего из API ассоциативного массива |
 | public | [getItems()](../classes/YooKassa-Request-Payments-PaymentsResponse.md#method_getItems) |  | Возвращает список платежей |
 | public | [getNextCursor()](../classes/YooKassa-Request-Payments-PaymentsResponse.md#method_getNextCursor) |  | Возвращает токен следующей страницы, если он задан, или null |
-| public | [hasNextCursor()](../classes/YooKassa-Request-Payments-PaymentsResponse.md#method_hasNextCursor) |  | Проверяет имееотся ли в ответе токен следующей страницы |
+| public | [hasNextCursor()](../classes/YooKassa-Request-Payments-PaymentsResponse.md#method_hasNextCursor) |  | Проверяет, имеется ли в ответе токен следующей страницы |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
@@ -30,6 +32,7 @@
 | public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
+
 ---
 ### Details
 * File: [lib/Request/Payments/PaymentsResponse.php](../../lib/Request/Payments/PaymentsResponse.php)
@@ -53,6 +56,7 @@ AbstractObject constructor.
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -74,6 +78,7 @@ public __get(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -95,6 +100,7 @@ public __isset(string $propertyName) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -116,6 +122,7 @@ public __set(string $propertyName, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -138,6 +145,7 @@ public __unset(string $propertyName) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -159,10 +167,12 @@ public fromArray(array $sourceArray) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\PaymentsResponse](../classes/YooKassa-Request-Payments-PaymentsResponse.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">array</code> | sourceArray  | Массив настроек, пришедший от API |
+
 ##### Throws:
 | Type | Description |
 | ---- | ----------- |
@@ -214,7 +224,7 @@ public hasNextCursor() : bool
 
 **Summary**
 
-Проверяет имееотся ли в ответе токен следующей страницы
+Проверяет, имеется ли в ответе токен следующей страницы
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Payments\PaymentsResponse](../classes/YooKassa-Request-Payments-PaymentsResponse.md)
@@ -252,6 +262,7 @@ public offsetExists(string $offset) : bool
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -273,6 +284,7 @@ public offsetGet(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -294,6 +306,7 @@ public offsetSet(string $offset, mixed $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -316,6 +329,7 @@ public offsetUnset(string $offset) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -371,10 +385,10 @@ protected getUnknownProperties() : array
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

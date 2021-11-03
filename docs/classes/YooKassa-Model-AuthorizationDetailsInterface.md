@@ -10,6 +10,7 @@ Interface AuthorizationDetailsInterface - Данные об авторизаци
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -21,12 +22,14 @@ Interface AuthorizationDetailsInterface - Данные об авторизаци
 ### Details
 * File: [lib/Model/AuthorizationDetailsInterface.php](../../lib/Model/AuthorizationDetailsInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
 | --- | ------- | ----------- |
 | property-read |  | Retrieval Reference Number — уникальный идентификатор транзакции в системе эмитента |
 | property-read |  | Код авторизации банковской карты |
+
 ---
 ## Methods
 <a name="method_getRrn" class="anchor"></a>
@@ -76,10 +79,10 @@ public getAuthCode() : string|null
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

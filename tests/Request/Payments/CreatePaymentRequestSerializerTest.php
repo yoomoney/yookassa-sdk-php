@@ -11,6 +11,7 @@ use YooKassa\Model\ConfirmationType;
 use YooKassa\Model\CurrencyCode;
 use YooKassa\Model\Leg;
 use YooKassa\Model\Passenger;
+use YooKassa\Model\Payment;
 use YooKassa\Model\PaymentData\B2b\Sberbank\VatDataRate;
 use YooKassa\Model\PaymentData\B2b\Sberbank\VatDataType;
 use YooKassa\Model\PaymentData\PaymentDataAlfabank;
@@ -35,9 +36,10 @@ use YooKassa\Request\Payments\CreatePaymentRequestSerializer;
 class CreatePaymentRequestSerializerTest extends TestCase
 {
     private $fieldMap = array(
-        'payment_token'     => 'paymentToken',
-        'payment_method_id' => 'paymentMethodId',
-        'client_ip'         => 'clientIp',
+        'payment_token'         => 'paymentToken',
+        'payment_method_id'     => 'paymentMethodId',
+        'client_ip'             => 'clientIp',
+        'merchant_customer_id'  => 'merchantCustomerId',
     );
 
     /**
@@ -109,8 +111,6 @@ class CreatePaymentRequestSerializerTest extends TestCase
                     break;
                 case PaymentMethodType::MOBILE_BALANCE:
                 case PaymentMethodType::CASH:
-                    $expected['payment_method_data']['phone'] = $options['paymentMethodData']->getPhone();
-                    break;
                 case PaymentMethodType::SBERBANK:
                     $expected['payment_method_data']['phone'] = $options['paymentMethodData']->getPhone();
                     break;
@@ -208,6 +208,14 @@ class CreatePaymentRequestSerializerTest extends TestCase
             }
         }
 
+        if (!empty($options['deal'])) {
+            $expected['deal'] = $options['deal'];
+        }
+
+        if (!empty($options['merchant_customer_id'])) {
+            $expected['merchant_customer_id'] = $options['merchant_customer_id'];
+        }
+
         self::assertEquals($expected, $data);
     }
 
@@ -286,7 +294,12 @@ class CreatePaymentRequestSerializerTest extends TestCase
                             ),
                             'metadata' => array('test' => Random::str(10, 'ABCDEFGHIJKLMNOPQRSTUVWXYZ')),
                         )
-                    )
+                    ),
+                    'deal' => array(
+                        'id' => Random::str(36, 50),
+                        'settlements' => array()
+                    ),
+                    'merchant_customer_id' => Random::str(36, Payment::MAX_LENGTH_MERCHANT_CUSTOMER_ID),
                 ),
             ),
         );
@@ -362,6 +375,11 @@ class CreatePaymentRequestSerializerTest extends TestCase
                     'tax_system_code' => Random::int(1, 6),
                 ),
                 'airline'           => $airline,
+                'deal' => array(
+                    'id' => Random::str(36, 50),
+                    'settlements' => array()
+                ),
+                'merchant_customer_id' => Random::str(36, Payment::MAX_LENGTH_MERCHANT_CUSTOMER_ID),
             );
             $result[] = array($request);
         }

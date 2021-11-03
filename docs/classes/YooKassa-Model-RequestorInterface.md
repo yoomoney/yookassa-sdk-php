@@ -17,6 +17,7 @@ Interface RequestorInterface
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -34,6 +35,13 @@ Interface RequestorInterface
 ### Details
 * File: [lib/Model/RequestorInterface.php](../../lib/Model/RequestorInterface.php)
 * Package: \YooKassa
+
+---
+### Tags
+| Tag | Version | Description |
+| --- | ------- | ----------- |
+| deprecated |  | Не используется. Будет удален в следующих версиях |
+
 ---
 ## Methods
 <a name="method_getType" class="anchor"></a>
@@ -66,6 +74,7 @@ public setType(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\RequestorInterface](../classes/YooKassa-Model-RequestorInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -104,6 +113,7 @@ public setAccountId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\RequestorInterface](../classes/YooKassa-Model-RequestorInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -142,6 +152,7 @@ public setClientId(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\RequestorInterface](../classes/YooKassa-Model-RequestorInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -180,6 +191,7 @@ public setClientName(string $value) : mixed
 
 **Details:**
 * Inherited From: [\YooKassa\Model\RequestorInterface](../classes/YooKassa-Model-RequestorInterface.md)
+
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
@@ -201,10 +213,10 @@ public setClientName(string $value) : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

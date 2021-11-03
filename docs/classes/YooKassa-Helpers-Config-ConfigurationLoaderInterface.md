@@ -6,6 +6,7 @@
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
@@ -17,6 +18,7 @@
 ### Details
 * File: [lib/Helpers/Config/ConfigurationLoaderInterface.php](../../lib/Helpers/Config/ConfigurationLoaderInterface.php)
 * Package: \Default
+
 ---
 ## Methods
 <a name="method_getConfig" class="anchor"></a>
@@ -58,10 +60,10 @@ public load() : mixed
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

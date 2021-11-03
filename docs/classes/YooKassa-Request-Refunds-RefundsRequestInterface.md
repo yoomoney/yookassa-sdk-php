@@ -10,29 +10,31 @@
 ---
 ### Constants
 * No constants found
+
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [getCreatedAtGt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtGt) |  | Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена |
-| public | [getCreatedAtGte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtGte) |  | Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена |
-| public | [getCreatedAtLt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtLt) |  | Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена |
-| public | [getCreatedAtLte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtLte) |  | Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена |
+| public | [getCreatedAtGt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtGt) |  | Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена |
+| public | [getCreatedAtGte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtGte) |  | Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена |
+| public | [getCreatedAtLt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtLt) |  | Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена |
+| public | [getCreatedAtLte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCreatedAtLte) |  | Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена |
 | public | [getCursor()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getCursor) |  | Возвращает токен для получения следующей страницы выборки |
 | public | [getPaymentId()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getPaymentId) |  | Возвращает идентификатор платежа если он задан или null |
-| public | [getStatus()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getStatus) |  | Возвращает статус выбираемых возвратов или null если он до этого не был установлен |
-| public | [hasCreatedAtGt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtGt) |  | Проверяет была ли установлена дата создания от которой выбираются возвраты |
-| public | [hasCreatedAtGte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtGte) |  | Проверяет была ли установлена дата создания от которой выбираются возвраты |
-| public | [hasCreatedAtLt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtLt) |  | Проверяет была ли установлена дата создания до которой выбираются возвраты |
-| public | [hasCreatedAtLte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtLte) |  | Проверяет была ли установлена дата создания до которой выбираются возвраты |
-| public | [hasCursor()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCursor) |  | Проверяет был ли установлен токен следующей страницы |
+| public | [getStatus()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_getStatus) |  | Возвращает статус выбираемых возвратов или null, если он до этого не был установлен |
+| public | [hasCreatedAtGt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtGt) |  | Проверяет, была ли установлена дата создания от которой выбираются возвраты |
+| public | [hasCreatedAtGte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtGte) |  | Проверяет, была ли установлена дата создания от которой выбираются возвраты |
+| public | [hasCreatedAtLt()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtLt) |  | Проверяет, была ли установлена дата создания до которой выбираются возвраты |
+| public | [hasCreatedAtLte()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCreatedAtLte) |  | Проверяет, была ли установлена дата создания до которой выбираются возвраты |
+| public | [hasCursor()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasCursor) |  | Проверяет, был ли установлен токен следующей страницы |
 | public | [hasPaymentId()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasPaymentId) |  | Проверяет, был ли задан идентификатор платежа |
-| public | [hasStatus()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasStatus) |  | Проверяет был ли установлен статус выбираемых возвратов |
+| public | [hasStatus()](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md#method_hasStatus) |  | Проверяет, был ли установлен статус выбираемых возвратов |
 
 ---
 ### Details
 * File: [lib/Request/Refunds/RefundsRequestInterface.php](../../lib/Request/Refunds/RefundsRequestInterface.php)
 * Package: \YooKassa
+
 ---
 ### Tags
 | Tag | Version | Description |
@@ -45,6 +47,7 @@
 | property-read |  | Статус возврата |
 | property-read |  | Токен для получения следующей страницы выборки |
 | property-read |  | Ограничение количества объектов, отображаемых на одной странице выдачи |
+
 ---
 ## Methods
 <a name="method_getPaymentId" class="anchor"></a>
@@ -90,7 +93,7 @@ public getCreatedAtGte() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -107,7 +110,7 @@ public hasCreatedAtGte() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания от которой выбираются возвраты
+Проверяет, была ли установлена дата создания от которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -124,7 +127,7 @@ public getCreatedAtGt() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания от которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания от которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -141,7 +144,7 @@ public hasCreatedAtGt() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания от которой выбираются возвраты
+Проверяет, была ли установлена дата создания от которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -158,7 +161,7 @@ public getCreatedAtLte() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -175,7 +178,7 @@ public hasCreatedAtLte() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания до которой выбираются возвраты
+Проверяет, была ли установлена дата создания до которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -192,7 +195,7 @@ public getCreatedAtLt() : \DateTime|null
 
 **Summary**
 
-Возвращает дату создания до которой будут возвращены возвраты или null если дата не была установлена
+Возвращает дату создания до которой будут возвращены возвраты или null, если дата не была установлена
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -209,7 +212,7 @@ public hasCreatedAtLt() : bool
 
 **Summary**
 
-Проверяет была ли установлена дата создания до которой выбираются возвраты
+Проверяет, была ли установлена дата создания до которой выбираются возвраты
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -226,7 +229,7 @@ public getStatus() : string|null
 
 **Summary**
 
-Возвращает статус выбираемых возвратов или null если он до этого не был установлен
+Возвращает статус выбираемых возвратов или null, если он до этого не был установлен
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -243,7 +246,7 @@ public hasStatus() : bool
 
 **Summary**
 
-Проверяет был ли установлен статус выбираемых возвратов
+Проверяет, был ли установлен статус выбираемых возвратов
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -277,7 +280,7 @@ public hasCursor() : bool
 
 **Summary**
 
-Проверяет был ли установлен токен следующей страницы
+Проверяет, был ли установлен токен следующей страницы
 
 **Details:**
 * Inherited From: [\YooKassa\Request\Refunds\RefundsRequestInterface](../classes/YooKassa-Request-Refunds-RefundsRequestInterface.md)
@@ -298,10 +301,10 @@ public hasCursor() : bool
 ### Reports
 * [Errors - 0](../reports/errors.md)
 * [Markers - 0](../reports/markers.md)
-* [Deprecated - 7](../reports/deprecated.md)
+* [Deprecated - 13](../reports/deprecated.md)
 
 ---
 
-This document was automatically generated from source code comments on 2021-10-20 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

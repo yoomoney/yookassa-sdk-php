@@ -52,10 +52,11 @@ use YooKassa\Model\TransferInterface;
 class CreatePaymentRequestSerializer
 {
     private static $propertyMap = array(
-        'reference_id'      => 'referenceId',
-        'payment_token'     => 'paymentToken',
-        'payment_method_id' => 'paymentMethodId',
-        'client_ip'         => 'clientIp',
+        'reference_id'          => 'referenceId',
+        'payment_token'         => 'paymentToken',
+        'payment_method_id'     => 'paymentMethodId',
+        'client_ip'             => 'clientIp',
+        'merchant_customer_id'  => 'merchantCustomerId',
     );
 
     private static $paymentDataSerializerMap = array(
@@ -150,6 +151,10 @@ class CreatePaymentRequestSerializer
                     'departure_date'      => $leg->getDepartureDate(),
                 );
             }
+        }
+
+        if ($request->hasDeal()) {
+            $result['deal'] = $request->getDeal()->toArray();
         }
 
         foreach (self::$propertyMap as $name => $property) {

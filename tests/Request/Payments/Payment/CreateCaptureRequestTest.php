@@ -3,6 +3,7 @@
 namespace Tests\YooKassa\Request\Payments\Payment;
 
 use PHPUnit\Framework\TestCase;
+use YooKassa\Helpers\Random;
 use YooKassa\Model\CurrencyCode;
 use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\Receipt;
@@ -37,6 +38,45 @@ class CreateCaptureRequestTest extends TestCase
         self::assertTrue($instance->hasAmount());
         self::assertSame($options['amount'], $instance->getAmount());
         self::assertSame($options['amount'], $instance->amount);
+    }
+
+    /**
+     * @dataProvider validDataProvider
+     * @param $options
+     */
+    public function testDeal($options)
+    {
+        $instance = new CreateCaptureRequest();
+        self::assertFalse($instance->hasDeal());
+        self::assertNull($instance->getDeal());
+        self::assertNull($instance->deal);
+
+        $instance->setDeal($options['deal']);
+        if ($instance->hasDeal()) {
+            self::assertTrue($instance->hasDeal());
+            self::assertSame($options['deal'], $instance->getDeal()->toArray());
+            self::assertSame($options['deal'], $instance->deal->toArray());
+        } else {
+            self::assertFalse($instance->hasDeal());
+            self::assertSame($options['deal'], $instance->getDeal());
+            self::assertSame($options['deal'], $instance->deal);
+        }
+
+        $instance = new CreateCaptureRequest();
+        self::assertFalse($instance->hasDeal());
+        self::assertNull($instance->getDeal());
+        self::assertNull($instance->deal);
+
+        $instance->deal = $options['deal'];
+        if ($instance->hasDeal()) {
+            self::assertTrue($instance->hasDeal());
+            self::assertSame($options['deal'], $instance->getDeal()->toArray());
+            self::assertSame($options['deal'], $instance->deal->toArray());
+        } else {
+            self::assertFalse($instance->hasDeal());
+            self::assertSame($options['deal'], $instance->getDeal());
+            self::assertSame($options['deal'], $instance->deal);
+        }
     }
 
     public function testValidate()
@@ -85,7 +125,10 @@ class CreateCaptureRequestTest extends TestCase
         $currencies = CurrencyCode::getValidValues();
         for ($i = 0; $i < 10; $i++) {
             $request = array(
-                'amount' => new MonetaryAmount(mt_rand(1, 1000000), $currencies[mt_rand(0, count($currencies) - 1)])
+                'amount' => new MonetaryAmount(mt_rand(1, 1000000), $currencies[mt_rand(0, count($currencies) - 1)]),
+                'deal' => $i % 2 ? array(
+                    'settlements' => array()
+                ) : null,
             );
             $result[] = array($request);
         }
