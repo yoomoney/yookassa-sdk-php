@@ -7,6 +7,7 @@ use YooKassa\Helpers\Random;
 use YooKassa\Model\Deal\DealBalanceAmount;
 use YooKassa\Model\Deal\DealStatus;
 use YooKassa\Model\Deal\DealType;
+use YooKassa\Model\Deal\FeeMoment;
 use YooKassa\Model\Metadata;
 use YooKassa\Model\SafeDeal;
 
@@ -443,7 +444,7 @@ class SafeDealTest extends TestCase
     public function testSetInvalidTest($value)
     {
         $instance = new SafeDeal();
-        $instance->setTest($value['paid']);
+        $instance->setTest($value['test']);
     }
 
     /**
@@ -502,6 +503,7 @@ class SafeDealTest extends TestCase
             $payment = array(
                 'id' => Random::str(36),
                 'type' => Random::value(DealType::getValidValues()),
+                'fee_moment' => Random::value(FeeMoment::getValidValues()),
                 'status' => Random::value(DealStatus::getValidValues()),
                 'balance' => new DealBalanceAmount(Random::int(1, 10000), 'RUB'),
                 'payout_balance' => new DealBalanceAmount(Random::int(1, 10000), 'RUB'),
