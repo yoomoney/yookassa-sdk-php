@@ -101,6 +101,9 @@ class PaymentsResponseTest extends TestCase
                             ),
                             'paid' => false,
                             'refundable' => false,
+                            'confirmation' => array(
+                                'type' => ConfirmationType::EXTERNAL,
+                            ),
                         )
                     ),
                     'next_cursor' => uniqid(),

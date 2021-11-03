@@ -147,7 +147,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
             'fiscal_document_number' => Random::int(4),
             'fiscal_storage_number' => Random::int(16),
             'fiscal_attribute' => Random::int(10),
-            'registered_at' => date('Y-m-d\TH:i:s.vP', mt_rand(1111111111, time())),
+            'registered_at' => date(YOOKASSA_DATE, mt_rand(1111111111, time())),
             'fiscal_provider_id' => Random::str(36),
             'items' => $this->generateItems(),
             'settlements' => $this->generateSettlements(),

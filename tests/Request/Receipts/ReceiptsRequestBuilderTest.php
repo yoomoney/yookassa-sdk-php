@@ -189,9 +189,6 @@ class ReceiptsRequestBuilderTest extends TestCase
                     'createdAtGte' => '2017-10-04T19:27:51.407+00:00'
                 )
             ),
-            array(
-                array()
-            )
         );
         for ($i = 0; $i < 8; $i++) {
             $receipts = array(

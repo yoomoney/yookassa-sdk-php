@@ -310,15 +310,16 @@ class PayoutTest extends TestCase
 
         self::assertNull($instance->getDeal());
         self::assertNull($instance->deal);
+        if (isset($options['deal'])) {
+            $instance->setDeal($options['deal']);
+            self::assertSame($options['deal'], $instance->getDeal());
+            self::assertSame($options['deal'], $instance->deal);
 
-        $instance->setDeal($options['deal']);
-        self::assertSame($options['deal'], $instance->getDeal());
-        self::assertSame($options['deal'], $instance->deal);
-
-        $instance = new Payout();
-        $instance->deal = $options['deal'];
-        self::assertSame($options['deal'], $instance->getDeal());
-        self::assertSame($options['deal'], $instance->deal);
+            $instance = new Payout();
+            $instance->deal = $options['deal'];
+            self::assertSame($options['deal'], $instance->getDeal());
+            self::assertSame($options['deal'], $instance->deal);
+        }
     }
 
     /**
