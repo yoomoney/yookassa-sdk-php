@@ -5,8 +5,10 @@ namespace Tests\YooKassa\Request\Payments;
 use PHPUnit\Framework\TestCase;
 use YooKassa\Helpers\Random;
 use YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesExternal;
+use YooKassa\Model\ConfirmationType;
 use YooKassa\Model\CurrencyCode;
 use YooKassa\Model\Deal\PaymentDealInfo;
+use YooKassa\Model\Locale;
 use YooKassa\Model\Metadata;
 use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\Payment;
@@ -350,8 +352,13 @@ class CreatePaymentRequestTest extends TestCase
             self::assertNull($instance->confirmation);
         } else {
             self::assertTrue($instance->hasConfirmation());
-            self::assertSame($options['confirmation'], $instance->getConfirmation());
-            self::assertSame($options['confirmation'], $instance->confirmation);
+            if (is_array($options['confirmation'])) {
+                self::assertSame($options['confirmation'], $instance->getConfirmation()->toArray());
+                self::assertSame($options['confirmation'], $instance->confirmation->toArray());
+            } else {
+                self::assertSame($options['confirmation'], $instance->getConfirmation());
+                self::assertSame($options['confirmation'], $instance->confirmation);
+            }
         }
 
         $instance->setConfirmation(null);
@@ -366,8 +373,13 @@ class CreatePaymentRequestTest extends TestCase
             self::assertNull($instance->confirmation);
         } else {
             self::assertTrue($instance->hasConfirmation());
-            self::assertSame($options['confirmation'], $instance->getConfirmation());
-            self::assertSame($options['confirmation'], $instance->confirmation);
+            if (is_array($options['confirmation'])) {
+                self::assertSame($options['confirmation'], $instance->getConfirmation()->toArray());
+                self::assertSame($options['confirmation'], $instance->confirmation->toArray());
+            } else {
+                self::assertSame($options['confirmation'], $instance->getConfirmation());
+                self::assertSame($options['confirmation'], $instance->confirmation);
+            }
         }
     }
 
@@ -877,8 +889,8 @@ class CreatePaymentRequestTest extends TestCase
                 'paymentMethodId' => uniqid(),
                 'paymentMethodData' => new PaymentDataQiwi(),
                 'confirmation' => new ConfirmationAttributesExternal(),
-                'savePaymentMethod' => mt_rand(0, 1) ? true : false,
-                'capture' => mt_rand(0, 1) ? true : false,
+                'savePaymentMethod' => Random::bool(),
+                'capture' => Random::bool(),
                 'clientIp' => long2ip(mt_rand(0, pow(2, 32))),
                 'metadata' => $i == 0 ? $metadata : array('test' => 'test'),
                 'transfers' => array(
@@ -904,6 +916,47 @@ class CreatePaymentRequestTest extends TestCase
             );
             $result[] = array($request);
         }
+
+        $result[] = array(
+            array(
+                'recipient' => new Recipient(),
+                'amount' => new MonetaryAmount(Random::int(1, 1000000)),
+                'referenceId' => uniqid(),
+                'paymentToken' => uniqid(),
+                'paymentMethodId' => uniqid(),
+                'paymentMethodData' => new PaymentDataQiwi(),
+                'confirmation' => array(
+                    'return_url' => Random::str(10),
+                    'type' => ConfirmationType::MOBILE_APPLICATION,
+                    'locale' => Locale::RUSSIAN,
+                ),
+                'savePaymentMethod' => Random::bool(),
+                'capture' => Random::bool(),
+                'clientIp' => long2ip(mt_rand(0, pow(2, 32))),
+                'metadata' => $i == 0 ? $metadata : array('test' => 'test'),
+                'transfers' => array(
+                    array(
+                        'account_id' => (string)Random::int(11111111, 99999999),
+                        'amount' => array(
+                            'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
+                            'currency' => Random::value(CurrencyCode::getValidValues())
+                        ),
+                        'status' => Random::value(TransferStatus::getValidValues()),
+                        'platform_fee_amount' => array(
+                            'value' => sprintf('%.2f', round(Random::float(0.1, 99.99), 2)),
+                            'currency' => Random::value(CurrencyCode::getValidValues())
+                        ),
+                        'metadata' => $i == 0 ? $metadata : array('test' => 'test'),
+                    )
+                ),
+                'deal' => array(
+                    'id' => Random::str(36, 50),
+                    'settlements' => array()
+                ),
+                'merchant_customer_id' => Random::str(36, 50),
+            )
+        );
+
         return $result;
     }
 

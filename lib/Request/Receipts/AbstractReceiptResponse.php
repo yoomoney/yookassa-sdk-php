@@ -122,10 +122,18 @@ abstract class AbstractReceiptResponse extends AbstractObject implements Receipt
      */
     public function fromArray($receiptData)
     {
-        $this->setId($receiptData['id']);
-        $this->setType($receiptData['type']);
-        $this->setObjectId($this->factoryObjectId($receiptData));
-        $this->setStatus($receiptData['status']);
+        if (!empty($receiptData['id'])) {
+            $this->setId($receiptData['id']);
+        }
+        if (!empty($receiptData['type'])) {
+            $this->setType($receiptData['type']);
+        }
+        if (!empty($receiptData['refund_id']) || !empty($receiptData['payment_id'])) {
+            $this->setObjectId($this->factoryObjectId($receiptData));
+        }
+        if (!empty($receiptData['status'])) {
+            $this->setStatus($receiptData['status']);
+        }
 
         if (!empty($receiptData['tax_system_code'])) {
             $this->setTaxSystemCode($receiptData['tax_system_code']);

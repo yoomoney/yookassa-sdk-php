@@ -361,6 +361,55 @@ abstract class AbstractPaymentResponseTest extends TestCase
                 'captured_at' => date(YOOKASSA_DATE, Random::int(1, time())),
                 'expires_at' => date(YOOKASSA_DATE, Random::int(1, time())),
                 'confirmation' => array(
+                    'type' => ConfirmationType::MOBILE_APPLICATION,
+                    'confirmation_url' => Random::str(10),
+                    'return_url' => Random::str(10),
+                ),
+                'paid' => $trueFalse,
+                'refundable' => $trueFalse,
+                'test' => $trueFalse,
+                'metadata' => array(),
+                'transfers' => array(
+                    new Transfer(array(
+                        'account_id' => Random::str(36),
+                        'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                        'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                        'status' => Random::value(TransferStatus::getValidValues()),
+                    )),
+                ),
+                'income_amount' => array(
+                    'value' => Random::float(0.01, 1000000.0),
+                    'currency' => Random::value(CurrencyCode::getEnabledValues()),
+                ),
+                'deal' => array(
+                    'id' => Random::str(36, 50),
+                    'settlements' => array()
+                ),
+                'merchant_customer_id' => Random::str(5, Payment::MAX_LENGTH_MERCHANT_CUSTOMER_ID),
+            )
+        );
+
+        $trueFalse = Random::bool();
+        $result[] = array(
+            array(
+                'id' => Random::str(36),
+                'status' => Random::value($statuses),
+                'description' => Random::str(128),
+                'recipient' => array(
+                    'account_id' => Random::str(1, 64, '0123456789'),
+                    'gateway_id' => Random::str(1, 256),
+                ),
+                'amount' => array(
+                    'value' => Random::float(0.01, 1000000.0),
+                    'currency' => Random::value(CurrencyCode::getValidValues()),
+                ),
+                'payment_method' => array(
+                    'type' => PaymentMethodType::WECHAT,
+                ),
+                'created_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'captured_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'expires_at' => date(YOOKASSA_DATE, Random::int(1, time())),
+                'confirmation' => array(
                     'type' => 'qr',
                     'confirmation_data' => 'weixin://wxpay/bizpayurl?pr=SqTE9cX'
                 ),

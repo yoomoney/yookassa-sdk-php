@@ -32,6 +32,7 @@ use YooKassa\Model\AuthorizationDetails;
 use YooKassa\Model\CancellationDetails;
 use YooKassa\Model\Confirmation\ConfirmationCodeVerification;
 use YooKassa\Model\Confirmation\ConfirmationEmbedded;
+use YooKassa\Model\Confirmation\ConfirmationMobileApplication;
 use YooKassa\Model\Confirmation\ConfirmationQr;
 use YooKassa\Model\Confirmation\ConfirmationRedirect;
 use YooKassa\Model\Confirmation\ConfirmationExternal;
@@ -94,7 +95,11 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
             $this->setExpiresAt($sourceArray['expires_at']);
         }
         if (!empty($sourceArray['confirmation'])) {
-            $confirmationType = $sourceArray['confirmation']['type'];
+            $confirmationType = null;
+            if (!empty($sourceArray['confirmation']['type'])) {
+                $confirmationType = $sourceArray['confirmation']['type'];
+            }
+
             switch ($confirmationType) {
                 case ConfirmationType::REDIRECT:
                     $confirmation = new ConfirmationRedirect();
@@ -132,6 +137,16 @@ abstract class AbstractPaymentResponse extends Payment implements PaymentInterfa
                         $confirmation->setConfirmationData($sourceArray['confirmation']['confirmation_data']);
                     }
                     break;
+                case ConfirmationType::MOBILE_APPLICATION:
+                    $confirmation = new ConfirmationMobileApplication();
+                    if (!empty($sourceArray['confirmation']['confirmation_url'])) {
+                        $confirmation->setConfirmationUrl($sourceArray['confirmation']['confirmation_url']);
+                    }
+                    if (!empty($sourceArray['confirmation']['return_url'])) {
+                        $confirmation->setReturnUrl($sourceArray['confirmation']['return_url']);
+                    }
+                    break;
+
             }
 
             if (isset($confirmation)) {

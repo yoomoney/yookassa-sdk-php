@@ -95,11 +95,16 @@ URL на который вернется плательщик после под�
 #### public __construct() : mixed
 
 ```php
-public __construct() : mixed
+public __construct(mixed $data = array()) : mixed
 ```
 
 **Details:**
 * Inherited From: [\YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesMobileApplication](../classes/YooKassa-Model-ConfirmationAttributes-ConfirmationAttributesMobileApplication.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">mixed</code> | data  |  |
 
 **Returns:** mixed - 
 
@@ -465,6 +470,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-03 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
