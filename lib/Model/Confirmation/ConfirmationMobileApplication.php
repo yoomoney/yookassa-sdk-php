@@ -51,8 +51,9 @@ class ConfirmationMobileApplication extends AbstractConfirmation
      */
     private $_confirmationUrl;
 
-    public function __construct()
+    public function __construct($data = array())
     {
+        parent::__construct($data);
         $this->setType(ConfirmationType::MOBILE_APPLICATION);
     }
 

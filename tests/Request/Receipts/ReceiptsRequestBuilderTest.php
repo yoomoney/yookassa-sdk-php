@@ -183,10 +183,10 @@ class ReceiptsRequestBuilderTest extends TestCase
                     'status' => RefundStatus::SUCCEEDED,
                     'limit' => 100,
                     'cursor' => '37a5c87d-3984-51e8-a7f3-8de646d39ec15',
-                    'createdAtLt' => '2017-10-04T19:27:51.407+00:00',
-                    'createdAtGt' => '2017-10-04T19:27:51.407+00:00',
-                    'createdAtLte' => '2017-10-04T19:27:51.407+00:00',
-                    'createdAtGte' => '2017-10-04T19:27:51.407+00:00'
+                    'createdAtGte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                    'createdAtGt' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                    'createdAtLte' => date(YOOKASSA_DATE, mt_rand(1, time())),
+                    'createdAtLt' => date(YOOKASSA_DATE, mt_rand(1, time())),
                 )
             ),
         );

@@ -98,17 +98,6 @@ class SupplierTest extends TestCase
                     'phone' => '79000000000'
                 )
             ),
-            array(
-                array(
-                    new Supplier(
-                        array(
-                            'name' => 'John Doe',
-                            'inn' => '6321341814',
-                            'phone' => '79000000000'
-                        )
-                    )
-                )
-            )
         );
 
         for ($i = 0; $i < 7; $i++) {

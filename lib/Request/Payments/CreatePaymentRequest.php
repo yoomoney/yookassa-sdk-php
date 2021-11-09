@@ -32,6 +32,7 @@ use YooKassa\Common\Exceptions\InvalidPropertyValueTypeException;
 use YooKassa\Helpers\TypeCast;
 use YooKassa\Model\AirlineInterface;
 use YooKassa\Model\AmountInterface;
+use YooKassa\Model\ConfirmationAttributes\ConfirmationAttributesFactory;
 use YooKassa\Model\Deal\PaymentDealInfo;
 use YooKassa\Model\Payment;
 use YooKassa\Model\PaymentData\AbstractPaymentData;
@@ -330,7 +331,7 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     {
         if ($value === null || $value === '') {
             $this->_paymentMethodData = null;
-        } elseif (is_object($value) && $value instanceof AbstractPaymentData) {
+        } elseif ($value instanceof AbstractPaymentData) {
             $this->_paymentMethodData = $value;
         } else {
             throw new InvalidPropertyValueTypeException(
@@ -371,7 +372,10 @@ class CreatePaymentRequest extends AbstractPaymentRequest implements CreatePayme
     {
         if ($value === null || $value === '') {
             $this->_confirmation = null;
-        } elseif (is_object($value) && $value instanceof AbstractConfirmationAttributes) {
+        } elseif (is_array($value)) {
+            $factory = new ConfirmationAttributesFactory();
+            $this->_confirmation = $factory->factoryFromArray($value);
+        } elseif ($value instanceof AbstractConfirmationAttributes) {
             $this->_confirmation = $value;
         } else {
             throw new InvalidPropertyValueTypeException(
