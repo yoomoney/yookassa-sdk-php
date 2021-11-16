@@ -87,7 +87,7 @@ class NotificationCanceled extends AbstractNotification
             }
         }
         if (empty($source['object'])) {
-            throw new EmptyPropertyValueException('Parameter object in NotificationSucceeded is empty');
+            throw new EmptyPropertyValueException('Parameter object in NotificationCanceled is empty');
         }
         $this->_object = new PaymentResponse($source['object']);
     }

@@ -12,6 +12,9 @@ NotificationEventType - Тип уведомления
 |payment.succeeded|Успешно оплачен и подтвержден магазином|
 |payment.canceled|Неуспех оплаты или отменен магазином|
 |refund.succeeded|Успешный возврат|
+|deal.closed|Сделка перешла в статус closed|
+|payout.canceled|Выплата перешла в статус canceled|
+|payout.succeeded|Выплата перешла в статус succeeded|
 
 
 ---
@@ -22,6 +25,9 @@ NotificationEventType - Тип уведомления
 | public | [PAYMENT_SUCCEEDED](../classes/YooKassa-Model-NotificationEventType.md#constant_PAYMENT_SUCCEEDED) |  | Успешно оплачен и подтвержден магазином |
 | public | [PAYMENT_CANCELED](../classes/YooKassa-Model-NotificationEventType.md#constant_PAYMENT_CANCELED) |  | Неуспех оплаты или отменен магазином |
 | public | [REFUND_SUCCEEDED](../classes/YooKassa-Model-NotificationEventType.md#constant_REFUND_SUCCEEDED) |  | Успешный возврат |
+| public | [DEAL_CLOSED](../classes/YooKassa-Model-NotificationEventType.md#constant_DEAL_CLOSED) |  | Сделка перешла в статус closed |
+| public | [PAYOUT_CANCELED](../classes/YooKassa-Model-NotificationEventType.md#constant_PAYOUT_CANCELED) |  | Выплата перешла в статус canceled |
+| public | [PAYOUT_SUCCEEDED](../classes/YooKassa-Model-NotificationEventType.md#constant_PAYOUT_SUCCEEDED) |  | Выплата перешла в статус succeeded |
 
 ---
 ### Properties
@@ -80,6 +86,33 @@ PAYMENT_CANCELED = 'payment.canceled'
 
 ```php
 REFUND_SUCCEEDED = 'refund.succeeded'
+```
+
+
+<a name="constant_DEAL_CLOSED" class="anchor"></a>
+###### DEAL_CLOSED
+Сделка перешла в статус closed
+
+```php
+DEAL_CLOSED = 'deal.closed'
+```
+
+
+<a name="constant_PAYOUT_CANCELED" class="anchor"></a>
+###### PAYOUT_CANCELED
+Выплата перешла в статус canceled
+
+```php
+PAYOUT_CANCELED = 'payout.canceled'
+```
+
+
+<a name="constant_PAYOUT_SUCCEEDED" class="anchor"></a>
+###### PAYOUT_SUCCEEDED
+Выплата перешла в статус succeeded
+
+```php
+PAYOUT_SUCCEEDED = 'payout.succeeded'
 ```
 
 
@@ -169,6 +202,6 @@ Static public valueExists(mixed $value) : bool
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

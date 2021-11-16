@@ -86,7 +86,7 @@ class NotificationRefundSucceeded extends AbstractNotification
             }
         }
         if (empty($source['object'])) {
-            throw new EmptyPropertyValueException('Parameter object in NotificationSucceeded is empty');
+            throw new EmptyPropertyValueException('Parameter object in NotificationRefundSucceeded is empty');
         }
         $this->_object = new RefundResponse($source['object']);
     }

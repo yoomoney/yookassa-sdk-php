@@ -548,17 +548,14 @@ class SafeDealTest extends TestCase
             ),
         );
         $invalidData = array(
-            array(null),
-            array(''),
-            array(new \stdClass()),
-            array('invalid_value'),
-            array(0),
-            array(3234),
-            array(true),
-            array(false),
-            array(0.43),
+            null,
+            '',
+            new \stdClass(),
+            'invalid_value',
+            new Metadata(),
+            Random::str(5, 10),
         );
-        for ($i = 0; $i < 9; $i++) {
+        for ($i = 0; $i < 6; $i++) {
             $payment = array(
                 'id' => Random::str($i < 5 ? mt_rand(1, 35) : mt_rand(37, 64)),
                 'status' => $invalidData[$i],
@@ -566,7 +563,7 @@ class SafeDealTest extends TestCase
                 'payout_balance' => $invalidData[$i],
                 'test' => $invalidData[$i],
                 'created_at' => $invalidData[$i],
-                'expires_at' => $invalidData[$i],
+                'expires_at' => $invalidData[$i]
             );
             $result[] = array($payment);
         }

@@ -52,7 +52,7 @@ use YooKassa\Model\Payout\PayoutDestinationFactory;
  * @property PayoutDealInfo $deal Сделка, в рамках которой нужно провести выплату
  * @property CancellationDetailsInterface $cancellationDetails Комментарий к отмене выплаты
  * @property CancellationDetailsInterface $cancellation_details Комментарий к отмене выплаты
- * @property Metadata $metadata Метаданные платежа указанные мерчантом
+ * @property Metadata $metadata Метаданные выплаты указанные мерчантом
  * @property bool $test Признак тестовой операции
  */
 class Payout extends AbstractObject implements PayoutInterface
@@ -61,7 +61,7 @@ class Payout extends AbstractObject implements PayoutInterface
     const MAX_LENGTH_DESCRIPTION = 128;
 
     /**
-     * @var string Идентификатор платежа
+     * @var string Идентификатор выплаты
      */
     private $_id;
 
@@ -71,7 +71,7 @@ class Payout extends AbstractObject implements PayoutInterface
     private $_amount;
 
     /**
-     * @var string Текущее состояние платежа
+     * @var string Текущее состояние выплаты
      */
     private $_status;
 
@@ -168,8 +168,8 @@ class Payout extends AbstractObject implements PayoutInterface
     }
 
     /**
-     * Возвращает состояние платежа
-     * @return string Текущее состояние платежа
+     * Возвращает состояние выплаты
+     * @return string Текущее состояние выплаты
      */
     public function getStatus()
     {
@@ -177,8 +177,8 @@ class Payout extends AbstractObject implements PayoutInterface
     }
 
     /**
-     * Устанавливает статус платежа
-     * @param string $value Статус платежа
+     * Устанавливает статус выплаты
+     * @param string $value Статус выплаты
      *
      * @throws InvalidPropertyValueException Выбрасывается если переданная строка не является валидным статусом
      * @throws InvalidPropertyValueTypeException Выбрасывается если в метод была передана не строка
@@ -236,8 +236,8 @@ class Payout extends AbstractObject implements PayoutInterface
     }
 
     /**
-     * Возвращает используемый способ проведения платежа
-     * @return AbstractPaymentMethod Способ проведения платежа
+     * Возвращает используемый способ проведения выплаты
+     * @return AbstractPaymentMethod Способ проведения выплаты
      */
     public function getPayoutDestination()
     {
@@ -245,8 +245,8 @@ class Payout extends AbstractObject implements PayoutInterface
     }
 
     /**
-     * Устанавливает используемый способ проведения платежа
-     * @param AbstractPayoutDestination|array $value Способ проведения платежа
+     * Устанавливает используемый способ проведения выплаты
+     * @param AbstractPayoutDestination|array $value Способ проведения выплаты
      */
     public function setPayoutDestination($value)
     {
@@ -298,8 +298,8 @@ class Payout extends AbstractObject implements PayoutInterface
     }
 
     /**
-     * Возвращает метаданные платежа установленные мерчантом
-     * @return Metadata Метаданные платежа указанные мерчантом
+     * Возвращает метаданные выплаты установленные мерчантом
+     * @return Metadata Метаданные выплаты указанные мерчантом
      */
     public function getMetadata()
     {
@@ -307,8 +307,8 @@ class Payout extends AbstractObject implements PayoutInterface
     }
 
     /**
-     * Устанавливает метаданные платежа
-     * @param Metadata|array $value Метаданные платежа указанные мерчантом
+     * Устанавливает метаданные выплаты
+     * @param Metadata|array $value Метаданные выплаты указанные мерчантом
      */
     public function setMetadata($value)
     {

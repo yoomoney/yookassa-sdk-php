@@ -15,7 +15,7 @@
 | [\YooKassa\Model\Payout\PayoutDestinationBankCard](../classes/YooKassa-Model-Payout-PayoutDestinationBankCard.md) | PaymentDataBankCard Платежные данные для проведения оплаты при помощи банковской карты |
 | [\YooKassa\Model\Payout\PayoutDestinationBankCardCard](../classes/YooKassa-Model-Payout-PayoutDestinationBankCardCard.md) | Данные банковской карты Необходим при оплате PCI-DSS данными. |
 | [\YooKassa\Model\Payout\PayoutDestinationFactory](../classes/YooKassa-Model-Payout-PayoutDestinationFactory.md) | Фабрика создания объекта платежных методов из массива |
-| [\YooKassa\Model\Payout\PayoutDestinationType](../classes/YooKassa-Model-Payout-PayoutDestinationType.md) | PayoutDestinationType - Виды выплат |Код|Описание| --- | --- |yoo_money|Платеж из кошелька ЮMoney| |bank_card|Платеж с произвольной банковской карты| |
+| [\YooKassa\Model\Payout\PayoutDestinationType](../classes/YooKassa-Model-Payout-PayoutDestinationType.md) | PayoutDestinationType - Виды выплат |Код|Описание| --- | --- |yoo_money|Выплата в кошелек ЮMoney| |bank_card|Выплата на произвольную банковскую карту| |
 | [\YooKassa\Model\Payout\PayoutDestinationYooMoney](../classes/YooKassa-Model-Payout-PayoutDestinationYooMoney.md) | Класс, описывающий метод оплаты, при оплате через ЮMoney |
 
 ---
@@ -33,6 +33,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

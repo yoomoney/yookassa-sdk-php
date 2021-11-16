@@ -26,7 +26,7 @@
 | public | [$deal](../classes/YooKassa-Model-Payout.md#property_deal) |  | Сделка, в рамках которой нужно провести выплату |
 | public | [$description](../classes/YooKassa-Model-Payout.md#property_description) |  | Описание транзакции |
 | public | [$id](../classes/YooKassa-Model-Payout.md#property_id) |  | Идентификатор выплаты |
-| public | [$metadata](../classes/YooKassa-Model-Payout.md#property_metadata) |  | Метаданные платежа указанные мерчантом |
+| public | [$metadata](../classes/YooKassa-Model-Payout.md#property_metadata) |  | Метаданные выплаты указанные мерчантом |
 | public | [$payout_destination](../classes/YooKassa-Model-Payout.md#property_payout_destination) |  | Способ проведения выплаты |
 | public | [$payoutDestination](../classes/YooKassa-Model-Payout.md#property_payoutDestination) |  | Способ проведения выплаты |
 | public | [$status](../classes/YooKassa-Model-Payout.md#property_status) |  | Текущее состояние выплаты |
@@ -48,9 +48,9 @@
 | public | [getDeal()](../classes/YooKassa-Model-Payout.md#method_getDeal) |  | Возвращает сделку, в рамках которой нужно провести выплату |
 | public | [getDescription()](../classes/YooKassa-Model-Payout.md#method_getDescription) |  | Возвращает описание транзакции |
 | public | [getId()](../classes/YooKassa-Model-Payout.md#method_getId) |  | Возвращает идентификатор выплаты |
-| public | [getMetadata()](../classes/YooKassa-Model-Payout.md#method_getMetadata) |  | Возвращает метаданные платежа установленные мерчантом |
-| public | [getPayoutDestination()](../classes/YooKassa-Model-Payout.md#method_getPayoutDestination) |  | Возвращает используемый способ проведения платежа |
-| public | [getStatus()](../classes/YooKassa-Model-Payout.md#method_getStatus) |  | Возвращает состояние платежа |
+| public | [getMetadata()](../classes/YooKassa-Model-Payout.md#method_getMetadata) |  | Возвращает метаданные выплаты установленные мерчантом |
+| public | [getPayoutDestination()](../classes/YooKassa-Model-Payout.md#method_getPayoutDestination) |  | Возвращает используемый способ проведения выплаты |
+| public | [getStatus()](../classes/YooKassa-Model-Payout.md#method_getStatus) |  | Возвращает состояние выплаты |
 | public | [getTest()](../classes/YooKassa-Model-Payout.md#method_getTest) |  | Возвращает признак тестовой операции |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
@@ -63,9 +63,9 @@
 | public | [setDeal()](../classes/YooKassa-Model-Payout.md#method_setDeal) |  | Устанавливает сделку, в рамках которой нужно провести выплату |
 | public | [setDescription()](../classes/YooKassa-Model-Payout.md#method_setDescription) |  | Устанавливает описание транзакции |
 | public | [setId()](../classes/YooKassa-Model-Payout.md#method_setId) |  | Устанавливает идентификатор выплаты |
-| public | [setMetadata()](../classes/YooKassa-Model-Payout.md#method_setMetadata) |  | Устанавливает метаданные платежа |
-| public | [setPayoutDestination()](../classes/YooKassa-Model-Payout.md#method_setPayoutDestination) |  | Устанавливает используемый способ проведения платежа |
-| public | [setStatus()](../classes/YooKassa-Model-Payout.md#method_setStatus) |  | Устанавливает статус платежа |
+| public | [setMetadata()](../classes/YooKassa-Model-Payout.md#method_setMetadata) |  | Устанавливает метаданные выплаты |
+| public | [setPayoutDestination()](../classes/YooKassa-Model-Payout.md#method_setPayoutDestination) |  | Устанавливает используемый способ проведения выплаты |
+| public | [setStatus()](../classes/YooKassa-Model-Payout.md#method_setStatus) |  | Устанавливает статус выплаты |
 | public | [setTest()](../classes/YooKassa-Model-Payout.md#method_setTest) |  | Устанавливает признак тестовой операции |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
@@ -205,7 +205,7 @@ MAX_LENGTH_DESCRIPTION = 128
 ---
 ***Description***
 
-Метаданные платежа указанные мерчантом
+Метаданные выплаты указанные мерчантом
 
 **Type:** <a href="../classes/YooKassa-Model-Metadata.html"><abbr title="\YooKassa\Model\Metadata">Metadata</abbr></a>
 
@@ -516,12 +516,12 @@ public getMetadata() : \YooKassa\Model\Metadata
 
 **Summary**
 
-Возвращает метаданные платежа установленные мерчантом
+Возвращает метаданные выплаты установленные мерчантом
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md)
 
-**Returns:** \YooKassa\Model\Metadata - Метаданные платежа указанные мерчантом
+**Returns:** \YooKassa\Model\Metadata - Метаданные выплаты указанные мерчантом
 
 
 <a name="method_getPayoutDestination" class="anchor"></a>
@@ -533,12 +533,12 @@ public getPayoutDestination() : \YooKassa\Model\PaymentMethod\AbstractPaymentMet
 
 **Summary**
 
-Возвращает используемый способ проведения платежа
+Возвращает используемый способ проведения выплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md)
 
-**Returns:** \YooKassa\Model\PaymentMethod\AbstractPaymentMethod - Способ проведения платежа
+**Returns:** \YooKassa\Model\PaymentMethod\AbstractPaymentMethod - Способ проведения выплаты
 
 
 <a name="method_getStatus" class="anchor"></a>
@@ -550,12 +550,12 @@ public getStatus() : string
 
 **Summary**
 
-Возвращает состояние платежа
+Возвращает состояние выплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md)
 
-**Returns:** string - Текущее состояние платежа
+**Returns:** string - Текущее состояние выплаты
 
 
 <a name="method_getTest" class="anchor"></a>
@@ -841,7 +841,7 @@ public setMetadata(\YooKassa\Model\Metadata|array $value) : mixed
 
 **Summary**
 
-Устанавливает метаданные платежа
+Устанавливает метаданные выплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md)
@@ -849,7 +849,7 @@ public setMetadata(\YooKassa\Model\Metadata|array $value) : mixed
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\Metadata OR array</code> | value  | Метаданные платежа указанные мерчантом |
+| <code lang="php">\YooKassa\Model\Metadata OR array</code> | value  | Метаданные выплаты указанные мерчантом |
 
 **Returns:** mixed - 
 
@@ -863,7 +863,7 @@ public setPayoutDestination(\YooKassa\Model\Payout\AbstractPayoutDestination|arr
 
 **Summary**
 
-Устанавливает используемый способ проведения платежа
+Устанавливает используемый способ проведения выплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md)
@@ -871,7 +871,7 @@ public setPayoutDestination(\YooKassa\Model\Payout\AbstractPayoutDestination|arr
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Model\Payout\AbstractPayoutDestination OR array</code> | value  | Способ проведения платежа |
+| <code lang="php">\YooKassa\Model\Payout\AbstractPayoutDestination OR array</code> | value  | Способ проведения выплаты |
 
 **Returns:** mixed - 
 
@@ -885,7 +885,7 @@ public setStatus(string $value) : mixed
 
 **Summary**
 
-Устанавливает статус платежа
+Устанавливает статус выплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md)
@@ -893,7 +893,7 @@ public setStatus(string $value) : mixed
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">string</code> | value  | Статус платежа |
+| <code lang="php">string</code> | value  | Статус выплаты |
 
 ##### Throws:
 | Type | Description |
@@ -977,6 +977,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
