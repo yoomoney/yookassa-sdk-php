@@ -29,8 +29,8 @@ PayoutCancellationDetails - Комментарий к отмене выплат�
 | public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
 | public | [__unset()](../classes/YooKassa-Common-AbstractObject.md#method___unset) |  | Удаляет свойство |
 | public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
-| public | [getParty()](../classes/YooKassa-Model-Payout-PayoutCancellationDetails.md#method_getParty) |  | Возвращает участника процесса платежа, который принял решение об отмене транзакции |
-| public | [getReason()](../classes/YooKassa-Model-Payout-PayoutCancellationDetails.md#method_getReason) |  | Возвращает причину отмены платежа |
+| public | [getParty()](../classes/YooKassa-Model-Payout-PayoutCancellationDetails.md#method_getParty) |  | Возвращает участника процесса выплаты, который принял решение об отмене транзакции |
+| public | [getReason()](../classes/YooKassa-Model-Payout-PayoutCancellationDetails.md#method_getReason) |  | Возвращает причину отмены выплаты |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
@@ -222,12 +222,12 @@ public getParty() : string
 
 **Summary**
 
-Возвращает участника процесса платежа, который принял решение об отмене транзакции
+Возвращает участника процесса выплаты, который принял решение об отмене транзакции
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout\PayoutCancellationDetails](../classes/YooKassa-Model-Payout-PayoutCancellationDetails.md)
 
-**Returns:** string - Инициатор отмены платежа
+**Returns:** string - Инициатор отмены выплаты
 
 
 <a name="method_getReason" class="anchor"></a>
@@ -239,12 +239,12 @@ public getReason() : string
 
 **Summary**
 
-Возвращает причину отмены платежа
+Возвращает причину отмены выплаты
 
 **Details:**
 * Inherited From: [\YooKassa\Model\Payout\PayoutCancellationDetails](../classes/YooKassa-Model-Payout-PayoutCancellationDetails.md)
 
-**Returns:** string - Причина отмены платежа
+**Returns:** string - Причина отмены выплаты
 
 
 <a name="method_jsonSerialize" class="anchor"></a>
@@ -448,6 +448,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

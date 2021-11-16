@@ -494,6 +494,6 @@ protected setType(string $value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

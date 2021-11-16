@@ -1,7 +1,7 @@
 <?php
 
 
-namespace Tests\Model\Notification;
+namespace Tests\YooKassa\Model\Notification;
 
 use YooKassa\Helpers\Random;
 use YooKassa\Model\CurrencyCode;

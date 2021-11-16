@@ -33,8 +33,8 @@ use YooKassa\Model\PaymentMethodType;
  * PayoutDestinationType - Виды выплат
  * |Код|Описание|
  * --- | ---
- * |yoo_money|Платеж из кошелька ЮMoney|
- * |bank_card|Платеж с произвольной банковской карты|
+ * |yoo_money|Выплата в кошелек ЮMoney|
+ * |bank_card|Выплата на произвольную банковскую карту|
  */
 class PayoutDestinationType extends AbstractEnum
 {

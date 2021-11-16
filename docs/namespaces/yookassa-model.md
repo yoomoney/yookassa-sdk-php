@@ -56,7 +56,7 @@
 | [\YooKassa\Model\Locale](../classes/YooKassa-Model-Locale.md) | Locale - Язык интерфейса, писем и смс, которые будет видеть или получать пользователь |Код|Описание| --- | --- |ru_RU|Русский| |en_US|English| |
 | [\YooKassa\Model\Metadata](../classes/YooKassa-Model-Metadata.md) | Metadata - Метаданные платежа указанные мерчантом. |
 | [\YooKassa\Model\MonetaryAmount](../classes/YooKassa-Model-MonetaryAmount.md) | MonetaryAmount - Сумма определенная в валюте |
-| [\YooKassa\Model\NotificationEventType](../classes/YooKassa-Model-NotificationEventType.md) | NotificationEventType - Тип уведомления |Код|Описание| --- | --- |payment.waiting_for_capture|Успешно оплачен покупателем, ожидает подтверждения магазином (capture или aviso)| |payment.succeeded|Успешно оплачен и подтвержден магазином| |payment.canceled|Неуспех оплаты или отменен магазином| |refund.succeeded|Успешный возврат| |
+| [\YooKassa\Model\NotificationEventType](../classes/YooKassa-Model-NotificationEventType.md) | NotificationEventType - Тип уведомления |Код|Описание| --- | --- |payment.waiting_for_capture|Успешно оплачен покупателем, ожидает подтверждения магазином (capture или aviso)| |payment.succeeded|Успешно оплачен и подтвержден магазином| |payment.canceled|Неуспех оплаты или отменен магазином| |refund.succeeded|Успешный возврат| |deal.closed|Сделка перешла в статус closed| |payout.canceled|Выплата перешла в статус canceled| |payout.succeeded|Выплата перешла в статус succeeded| |
 | [\YooKassa\Model\NotificationType](../classes/YooKassa-Model-NotificationType.md) | Базовый класс генерируемых enum&#039;ов |
 | [\YooKassa\Model\Passenger](../classes/YooKassa-Model-Passenger.md) | Класс описывающий данные пассажира |
 | [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md) | Payment - Данные о платеже |
@@ -95,6 +95,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

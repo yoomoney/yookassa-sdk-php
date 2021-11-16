@@ -51,9 +51,9 @@ class PayoutCancellationDetails extends AbstractObject implements CancellationDe
     private $_reason = '';
 
     /**
-     * Возвращает участника процесса платежа, который принял решение об отмене транзакции
+     * Возвращает участника процесса выплаты, который принял решение об отмене транзакции
      *
-     * @return string Инициатор отмены платежа
+     * @return string Инициатор отмены выплаты
      */
     public function getParty()
     {
@@ -61,9 +61,9 @@ class PayoutCancellationDetails extends AbstractObject implements CancellationDe
     }
 
     /**
-     * Возвращает причину отмены платежа
+     * Возвращает причину отмены выплаты
      *
-     * @return string Причина отмены платежа
+     * @return string Причина отмены выплаты
      */
     public function getReason()
     {

@@ -43,6 +43,10 @@ class NotificationFactory
         NotificationEventType::REFUND_SUCCEEDED            => 'NotificationRefundSucceeded',
         NotificationEventType::PAYMENT_SUCCEEDED           => 'NotificationSucceeded',
         NotificationEventType::PAYMENT_WAITING_FOR_CAPTURE => 'NotificationWaitingForCapture',
+
+        NotificationEventType::DEAL_CLOSED                 => 'NotificationDealClosed',
+        NotificationEventType::PAYOUT_CANCELED             => 'NotificationPayoutCanceled',
+        NotificationEventType::PAYOUT_SUCCEEDED            => 'NotificationPayoutSucceeded',
     );
 
     /**
