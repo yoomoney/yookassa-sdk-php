@@ -18,19 +18,21 @@ AuthorizationDetails - Данные об авторизации платежа
 | ----------:| ---- | ---- | ------- |
 | public | [$authCode](../classes/YooKassa-Model-AuthorizationDetails.md#property_authCode) |  | Код авторизации банковской карты |
 | public | [$rrn](../classes/YooKassa-Model-AuthorizationDetails.md#property_rrn) |  | Retrieval Reference Number — уникальный идентификатор транзакции в системе эмитента |
+| public | [$threeDSecure](../classes/YooKassa-Model-AuthorizationDetails.md#property_threeDSecure) |  | Данные о прохождении пользователем аутентификации по 3‑D Secure |
 
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [__construct()](../classes/YooKassa-Model-AuthorizationDetails.md#method___construct) |  | AbstractObject constructor. |
+| public | [__construct()](../classes/YooKassa-Common-AbstractObject.md#method___construct) |  | AbstractObject constructor. |
 | public | [__get()](../classes/YooKassa-Common-AbstractObject.md#method___get) |  | Возвращает значение свойства |
 | public | [__isset()](../classes/YooKassa-Common-AbstractObject.md#method___isset) |  | Проверяет наличие свойства |
 | public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
 | public | [__unset()](../classes/YooKassa-Common-AbstractObject.md#method___unset) |  | Удаляет свойство |
-| public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
+| public | [fromArray()](../classes/YooKassa-Model-AuthorizationDetails.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
 | public | [getAuthCode()](../classes/YooKassa-Model-AuthorizationDetails.md#method_getAuthCode) |  | Возвращает код авторизации банковской карты |
 | public | [getRrn()](../classes/YooKassa-Model-AuthorizationDetails.md#method_getRrn) |  | Возвращает уникальный идентификатор транзакции |
+| public | [getThreeDSecure()](../classes/YooKassa-Model-AuthorizationDetails.md#method_getThreeDSecure) |  | Возвращает данные о прохождении пользователем аутентификации по 3‑D Secure |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
@@ -38,6 +40,7 @@ AuthorizationDetails - Данные об авторизации платежа
 | public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
 | public | [setAuthCode()](../classes/YooKassa-Model-AuthorizationDetails.md#method_setAuthCode) |  | Устанавливает код авторизации банковской карты |
 | public | [setRrn()](../classes/YooKassa-Model-AuthorizationDetails.md#method_setRrn) |  | Устанавливает уникальный идентификатор транзакции |
+| public | [setThreeDSecure()](../classes/YooKassa-Model-AuthorizationDetails.md#method_setThreeDSecure) |  | Устанавливает данные о прохождении пользователем аутентификации по 3‑D Secure |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
 
@@ -76,6 +79,18 @@ Retrieval Reference Number — уникальный идентификатор �
 **Details:**
 
 
+<a name="property_threeDSecure"></a>
+#### public $threeDSecure : \YooKassa\Model\ThreeDSecure
+---
+***Description***
+
+Данные о прохождении пользователем аутентификации по 3‑D Secure
+
+**Type:** <a href="../classes/YooKassa-Model-ThreeDSecure.html"><abbr title="\YooKassa\Model\ThreeDSecure">ThreeDSecure</abbr></a>
+
+**Details:**
+
+
 
 ---
 ## Methods
@@ -83,7 +98,7 @@ Retrieval Reference Number — уникальный идентификатор �
 #### public __construct() : mixed
 
 ```php
-public __construct(string|null $rrn = null, string|null $authCode = null) : mixed
+public __construct(array $data = array()) : mixed
 ```
 
 **Summary**
@@ -91,13 +106,12 @@ public __construct(string|null $rrn = null, string|null $authCode = null) : mixe
 AbstractObject constructor.
 
 **Details:**
-* Inherited From: [\YooKassa\Model\AuthorizationDetails](../classes/YooKassa-Model-AuthorizationDetails.md)
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
 
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">string OR null</code> | rrn  | Уникальный идентификатор транзакции |
-| <code lang="php">string OR null</code> | authCode  | Код авторизации банковской карты |
+| <code lang="php">array</code> | data  |  |
 
 **Returns:** mixed - 
 
@@ -195,7 +209,7 @@ public __unset(string $propertyName) : mixed
 #### public fromArray() : mixed
 
 ```php
-public fromArray(array|\Traversable $sourceArray) : mixed
+public fromArray(mixed $sourceArray) : mixed
 ```
 
 **Summary**
@@ -203,12 +217,12 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 Устанавливает значения свойств текущего объекта из массива
 
 **Details:**
-* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+* Inherited From: [\YooKassa\Model\AuthorizationDetails](../classes/YooKassa-Model-AuthorizationDetails.md)
 
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">array OR \Traversable</code> | sourceArray  | Ассоциативный массив с настройками |
+| <code lang="php">mixed</code> | sourceArray  | Ассоциативный массив с настройками |
 
 **Returns:** mixed - 
 
@@ -245,6 +259,23 @@ public getRrn() : string|null
 * Inherited From: [\YooKassa\Model\AuthorizationDetails](../classes/YooKassa-Model-AuthorizationDetails.md)
 
 **Returns:** string|null - Уникальный идентификатор транзакции
+
+
+<a name="method_getThreeDSecure" class="anchor"></a>
+#### public getThreeDSecure() : \YooKassa\Model\ThreeDSecure|null
+
+```php
+public getThreeDSecure() : \YooKassa\Model\ThreeDSecure|null
+```
+
+**Summary**
+
+Возвращает данные о прохождении пользователем аутентификации по 3‑D Secure
+
+**Details:**
+* Inherited From: [\YooKassa\Model\AuthorizationDetails](../classes/YooKassa-Model-AuthorizationDetails.md)
+
+**Returns:** \YooKassa\Model\ThreeDSecure|null - Объект с данными о прохождении пользователем аутентификации по 3‑D Secure
 
 
 <a name="method_jsonSerialize" class="anchor"></a>
@@ -372,6 +403,11 @@ public setAuthCode($value) : mixed
 | ---- | ---- | ----------- |
 | <code lang="php"></code> | value  |  |
 
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
+
 **Returns:** mixed - 
 
 
@@ -393,6 +429,38 @@ public setRrn($value) : mixed
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php"></code> | value  |  |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
+
+**Returns:** mixed - 
+
+
+<a name="method_setThreeDSecure" class="anchor"></a>
+#### public setThreeDSecure() : mixed
+
+```php
+public setThreeDSecure(\YooKassa\Model\ThreeDSecure|array $value) : mixed
+```
+
+**Summary**
+
+Устанавливает данные о прохождении пользователем аутентификации по 3‑D Secure
+
+**Details:**
+* Inherited From: [\YooKassa\Model\AuthorizationDetails](../classes/YooKassa-Model-AuthorizationDetails.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">\YooKassa\Model\ThreeDSecure OR array</code> | value  | Данные о прохождении аутентификации по 3‑D Secure |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
 
 **Returns:** mixed - 
 
@@ -448,6 +516,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-07 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

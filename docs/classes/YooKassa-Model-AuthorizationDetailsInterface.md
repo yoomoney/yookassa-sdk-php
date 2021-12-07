@@ -17,6 +17,7 @@ Interface AuthorizationDetailsInterface - Данные об авторизаци
 | ----------:| ---- | ---- | ------- |
 | public | [getAuthCode()](../classes/YooKassa-Model-AuthorizationDetailsInterface.md#method_getAuthCode) |  | Возвращает код авторизации банковской карты |
 | public | [getRrn()](../classes/YooKassa-Model-AuthorizationDetailsInterface.md#method_getRrn) |  | Возвращает Retrieval Reference Number — уникальный идентификатор транзакции в системе эмитента |
+| public | [getThreeDSecure()](../classes/YooKassa-Model-AuthorizationDetailsInterface.md#method_getThreeDSecure) |  | Возвращает данные о прохождении пользователем аутентификации по 3‑D Secure |
 
 ---
 ### Details
@@ -29,6 +30,7 @@ Interface AuthorizationDetailsInterface - Данные об авторизаци
 | --- | ------- | ----------- |
 | property-read |  | Retrieval Reference Number — уникальный идентификатор транзакции в системе эмитента |
 | property-read |  | Код авторизации банковской карты |
+| property-read |  | Данные о прохождении пользователем аутентификации по 3‑D Secure |
 
 ---
 ## Methods
@@ -66,6 +68,23 @@ public getAuthCode() : string|null
 **Returns:** string|null - Код авторизации банковской карты
 
 
+<a name="method_getThreeDSecure" class="anchor"></a>
+#### public getThreeDSecure() : \YooKassa\Model\ThreeDSecure|null
+
+```php
+public getThreeDSecure() : \YooKassa\Model\ThreeDSecure|null
+```
+
+**Summary**
+
+Возвращает данные о прохождении пользователем аутентификации по 3‑D Secure
+
+**Details:**
+* Inherited From: [\YooKassa\Model\AuthorizationDetailsInterface](../classes/YooKassa-Model-AuthorizationDetailsInterface.md)
+
+**Returns:** \YooKassa\Model\ThreeDSecure|null - Объект с данными о прохождении пользователем аутентификации по 3‑D Secure
+
+
 
 
 ---
@@ -83,6 +102,6 @@ public getAuthCode() : string|null
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-07 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

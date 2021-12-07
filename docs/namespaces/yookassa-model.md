@@ -77,6 +77,7 @@
 | [\YooKassa\Model\Settlement](../classes/YooKassa-Model-Settlement.md) | Class Settlement |
 | [\YooKassa\Model\Source](../classes/YooKassa-Model-Source.md) | Класс объекта распределения денег в магазин |
 | [\YooKassa\Model\Supplier](../classes/YooKassa-Model-Supplier.md) | Информация о поставщике товара или услуги. |
+| [\YooKassa\Model\ThreeDSecure](../classes/YooKassa-Model-ThreeDSecure.md) | ThreeDSecure - Данные о прохождении пользователем аутентификации по 3‑D Secure для подтверждения платежа. |
 | [\YooKassa\Model\Transfer](../classes/YooKassa-Model-Transfer.md) | Класс объекта распределения денег в магазин |
 | [\YooKassa\Model\TransferStatus](../classes/YooKassa-Model-TransferStatus.md) | PaymentStatus - Статус операции распределения средств конечному получателю |Код|Описание| --- | --- |pending|Ожидает оплаты покупателем| |waiting_for_capture|Успешно оплачен покупателем, ожидает подтверждения магазином (capture или aviso)| |succeeded|Успешно оплачен и получен магазином| |canceled|Неуспех оплаты или отменен магазином (cancel)| |
 
@@ -95,6 +96,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2021-11-16 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-07 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
