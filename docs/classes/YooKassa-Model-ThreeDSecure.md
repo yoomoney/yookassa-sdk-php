@@ -1,12 +1,11 @@
 # [YooKassa API SDK](../home.md)
 
-# Class: \YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCard
-### Namespace: [\YooKassa\Request\Payouts\PayoutDestinationData](../namespaces/yookassa-request-payouts-payoutdestinationdata.md)
+# Class: \YooKassa\Model\ThreeDSecure
+### Namespace: [\YooKassa\Model](../namespaces/yookassa-model.md)
 ---
 **Summary:**
 
-Класс PayoutDestinationDataBankCard
-Платежные данные для проведения оплаты при помощи банковской карты
+ThreeDSecure - Данные о прохождении пользователем аутентификации по 3‑D Secure для подтверждения платежа.
 
 
 ---
@@ -17,80 +16,48 @@
 ### Properties
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [$card](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md#property_card) |  | Данные банковской карты |
-| public | [$type](../classes/YooKassa-Request-Payouts-PayoutDestinationData-AbstractPayoutDestinationData.md#property_type) |  | Тип метода оплаты |
-| public | [$type](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md#property_type) |  | Тип метода оплаты |
+| public | [$applied](../classes/YooKassa-Model-ThreeDSecure.md#property_applied) |  | Отображение пользователю формы для прохождения аутентификации по 3‑D Secure. |
 
 ---
 ### Methods
 | Visibility | Name | Flag | Summary |
 | ----------:| ---- | ---- | ------- |
-| public | [__construct()](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md#method___construct) |  |  |
+| public | [__construct()](../classes/YooKassa-Common-AbstractObject.md#method___construct) |  | AbstractObject constructor. |
 | public | [__get()](../classes/YooKassa-Common-AbstractObject.md#method___get) |  | Возвращает значение свойства |
 | public | [__isset()](../classes/YooKassa-Common-AbstractObject.md#method___isset) |  | Проверяет наличие свойства |
 | public | [__set()](../classes/YooKassa-Common-AbstractObject.md#method___set) |  | Устанавливает значение свойства |
 | public | [__unset()](../classes/YooKassa-Common-AbstractObject.md#method___unset) |  | Удаляет свойство |
 | public | [fromArray()](../classes/YooKassa-Common-AbstractObject.md#method_fromArray) |  | Устанавливает значения свойств текущего объекта из массива |
-| public | [getCard()](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md#method_getCard) |  | Возвращает данные банковской карты |
-| public | [getType()](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md#method_getType) |  | Возвращает тип метода оплаты |
+| public | [getApplied()](../classes/YooKassa-Model-ThreeDSecure.md#method_getApplied) |  | Возвращает признак отображения пользователю формы для прохождения аутентификации по 3‑D Secure |
 | public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
 | public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
 | public | [offsetUnset()](../classes/YooKassa-Common-AbstractObject.md#method_offsetUnset) |  | Удаляет свойство |
-| public | [setCard()](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md#method_setCard) |  | Устанавливает данные банковской карты |
+| public | [setApplied()](../classes/YooKassa-Model-ThreeDSecure.md#method_setApplied) |  | Устанавливает признак отображения пользователю формы для прохождения аутентификации по 3‑D Secure |
 | public | [toArray()](../classes/YooKassa-Common-AbstractObject.md#method_toArray) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации Является алиасом метода AbstractObject::jsonSerialize() |
-| protected | [_setType()](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md#method__setType) |  | Устанавливает тип метода оплаты |
 | protected | [getUnknownProperties()](../classes/YooKassa-Common-AbstractObject.md#method_getUnknownProperties) |  | Возвращает массив свойств которые не существуют, но были заданы у объекта |
 
 ---
 ### Details
-* File: [lib/Request/Payouts/PayoutDestinationData/PayoutDestinationDataBankCard.php](../../lib/Request/Payouts/PayoutDestinationData/PayoutDestinationDataBankCard.php)
+* File: [lib/Model/ThreeDSecure.php](../../lib/Model/ThreeDSecure.php)
 * Package: Default
-* Class Hierarchy:   
+* Class Hierarchy: 
   * [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
-  * [\YooKassa\Model\Payout\AbstractPayoutDestination](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md)
-  * [\YooKassa\Request\Payouts\PayoutDestinationData\AbstractPayoutDestinationData](../classes/YooKassa-Request-Payouts-PayoutDestinationData-AbstractPayoutDestinationData.md)
-  * \YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCard
+  * \YooKassa\Model\ThreeDSecure
 
 ---
 ## Properties
-<a name="property_card"></a>
-#### public $card : \YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard
+<a name="property_applied"></a>
+#### public $applied : bool
 ---
 ***Description***
 
-Данные банковской карты
+Отображение пользователю формы для прохождения аутентификации по 3‑D Secure.
 
-**Type:** <a href="../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCardCard.html"><abbr title="\YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard">PayoutDestinationDataBankCardCard</abbr></a>
-
-**Details:**
-
-
-<a name="property_type"></a>
-#### public $type : string
----
-***Description***
-
-Тип метода оплаты
-
-**Type:** <a href="../string"><abbr title="string">string</abbr></a>
+**Type:** <a href="../bool"><abbr title="bool">bool</abbr></a>
 
 **Details:**
-* Inherited From: [\YooKassa\Request\Payouts\PayoutDestinationData\AbstractPayoutDestinationData](../classes/YooKassa-Request-Payouts-PayoutDestinationData-AbstractPayoutDestinationData.md)
-
-
-<a name="property_type"></a>
-#### public $type : string
----
-***Description***
-
-Тип метода оплаты
-
-**Type:** <a href="../string"><abbr title="string">string</abbr></a>
-
-**Details:**
-* Inherited From: [\YooKassa\Model\Payout\AbstractPayoutDestination](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md)
 
 
 
@@ -100,11 +67,20 @@
 #### public __construct() : mixed
 
 ```php
-public __construct() : mixed
+public __construct(array $data = array()) : mixed
 ```
 
+**Summary**
+
+AbstractObject constructor.
+
 **Details:**
-* Inherited From: [\YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCard](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md)
+* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">array</code> | data  |  |
 
 **Returns:** mixed - 
 
@@ -220,38 +196,21 @@ public fromArray(array|\Traversable $sourceArray) : mixed
 **Returns:** mixed - 
 
 
-<a name="method_getCard" class="anchor"></a>
-#### public getCard() : \YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard
+<a name="method_getApplied" class="anchor"></a>
+#### public getApplied() : bool|null
 
 ```php
-public getCard() : \YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard
+public getApplied() : bool|null
 ```
 
 **Summary**
 
-Возвращает данные банковской карты
+Возвращает признак отображения пользователю формы для прохождения аутентификации по 3‑D Secure
 
 **Details:**
-* Inherited From: [\YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCard](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md)
+* Inherited From: [\YooKassa\Model\ThreeDSecure](../classes/YooKassa-Model-ThreeDSecure.md)
 
-**Returns:** \YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard - Данные банковской карты
-
-
-<a name="method_getType" class="anchor"></a>
-#### public getType() : string
-
-```php
-public getType() : string
-```
-
-**Summary**
-
-Возвращает тип метода оплаты
-
-**Details:**
-* Inherited From: [\YooKassa\Model\Payout\AbstractPayoutDestination](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md)
-
-**Returns:** string - Тип метода оплаты
+**Returns:** bool|null - Признак отображения пользователю формы для прохождения аутентификации по 3‑D Secure
 
 
 <a name="method_jsonSerialize" class="anchor"></a>
@@ -360,24 +319,29 @@ public offsetUnset(string $offset) : mixed
 **Returns:** mixed - 
 
 
-<a name="method_setCard" class="anchor"></a>
-#### public setCard() : mixed
+<a name="method_setApplied" class="anchor"></a>
+#### public setApplied() : mixed
 
 ```php
-public setCard(\YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard|array $value) : mixed
+public setApplied(bool $value) : mixed
 ```
 
 **Summary**
 
-Устанавливает данные банковской карты
+Устанавливает признак отображения пользователю формы для прохождения аутентификации по 3‑D Secure
 
 **Details:**
-* Inherited From: [\YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCard](../classes/YooKassa-Request-Payouts-PayoutDestinationData-PayoutDestinationDataBankCard.md)
+* Inherited From: [\YooKassa\Model\ThreeDSecure](../classes/YooKassa-Model-ThreeDSecure.md)
 
 ##### Parameters:
 | Type | Name | Description |
 | ---- | ---- | ----------- |
-| <code lang="php">\YooKassa\Request\Payouts\PayoutDestinationData\PayoutDestinationDataBankCardCard OR array</code> | value  | Данные банковской карты |
+| <code lang="php">bool</code> | value  | Данные о прохождении аутентификации по 3‑D Secure |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \YooKassa\Common\Exceptions\InvalidPropertyValueTypeException |  |
 
 **Returns:** mixed - 
 
@@ -398,28 +362,6 @@ public toArray() : array
 * Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
 
 **Returns:** array - Ассоциативный массив со свойствами текущего объекта
-
-
-<a name="method__setType" class="anchor"></a>
-#### protected _setType() : mixed
-
-```php
-protected _setType(string $value) : mixed
-```
-
-**Summary**
-
-Устанавливает тип метода оплаты
-
-**Details:**
-* Inherited From: [\YooKassa\Model\Payout\AbstractPayoutDestination](../classes/YooKassa-Model-Payout-AbstractPayoutDestination.md)
-
-##### Parameters:
-| Type | Name | Description |
-| ---- | ---- | ----------- |
-| <code lang="php">string</code> | value  | Тип метода оплаты |
-
-**Returns:** mixed - 
 
 
 <a name="method_getUnknownProperties" class="anchor"></a>
