@@ -33,6 +33,7 @@ namespace YooKassa\Model;
  *
  * @property-read string $rrn Retrieval Reference Number — уникальный идентификатор транзакции в системе эмитента
  * @property-read string $authCode Код авторизации банковской карты
+ * @property-read ThreeDSecure $threeDSecure Данные о прохождении пользователем аутентификации по 3‑D Secure
  */
 interface AuthorizationDetailsInterface
 {
@@ -48,4 +49,9 @@ interface AuthorizationDetailsInterface
      */
     function getAuthCode();
 
+    /**
+     * Возвращает данные о прохождении пользователем аутентификации по 3‑D Secure
+     * @return ThreeDSecure|null Объект с данными о прохождении пользователем аутентификации по 3‑D Secure
+     */
+    function getThreeDSecure();
 }
