@@ -1,3 +1,9 @@
+### v2.2.4 от 09.12.2021
+* Фикс метода jsonSerialize() для ReceiptResponseItem
+* Добавлена проверка на параметр platform_fee_amount при создании запроса для двухстадийного платежа 
+* Обновлены тесты
+* Обновлен readme
+
 ### v2.2.3 от 07.12.2021
 * Добавлена обработка параметра authorization_details.three_d_secure.applied в объекте платежа
 

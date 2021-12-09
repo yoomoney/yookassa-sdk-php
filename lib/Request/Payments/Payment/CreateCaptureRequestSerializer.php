@@ -144,10 +144,16 @@ class CreateCaptureRequestSerializer
     {
         $result = array();
         foreach ($transfers as $transfer) {
-            $result[] = array(
+            $item = array(
                 'account_id' => $transfer->getAccountId(),
                 'amount' => $this->serializeAmount($transfer->getAmount())
             );
+
+            if ($transfer->hasPlatformFeeAmount()) {
+                $item['platform_fee_amount'] = $this->serializeAmount($transfer->getPlatformFeeAmount());
+            }
+
+            $result[] = $item;
         }
 
         return $result;
