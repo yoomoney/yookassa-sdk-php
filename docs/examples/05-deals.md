@@ -192,9 +192,7 @@ $request = array(
 );
 $idempotenceKey = uniqid('', true);
 try {
-    $idempotenceKey = uniqid('', true);
-    $result = $client->createPayout($request, $idempotenceKey
-    );
+    $result = $client->createPayout($request, $idempotenceKey);
 } catch (\Exception $e) {
     $result = $e;
 }

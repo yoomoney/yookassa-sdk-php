@@ -79,6 +79,15 @@ class CreateCaptureRequestSerializerTest extends TestCase
                             'currency' => isset($transfers['amount']['currency']) ? $transfers['amount']['currency'] : CurrencyCode::RUB
                         );
                     }
+                    if (!empty($transfers['platform_fee_amount'])) {
+                        $transferData['platform_fee_amount'] = array(
+                            'value' => $transfers['platform_fee_amount']['value'],
+                            'currency' =>
+                                isset($transfers['platform_fee_amount']['currency'])
+                                    ? $transfers['amount']['currency']
+                                    : CurrencyCode::RUB
+                        );
+                    }
                     $expected['transfers'][] = $transferData;
                 }
             }
@@ -125,7 +134,8 @@ class CreateCaptureRequestSerializerTest extends TestCase
                     'transfers' => array(
                         new Transfer(array(
                             'account_id' => Random::str(36),
-                            'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB')
+                            'amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
+                            'platform_fee_amount' => new MonetaryAmount(Random::int(1, 1000), 'RUB'),
                         )),
                     )
                 )

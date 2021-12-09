@@ -358,4 +358,19 @@ class ReceiptResponseItem extends AbstractObject implements ReceiptResponseItemI
 
         return $amount;
     }
+
+    /**
+     * @inheritdoc
+     *
+     * @return array
+     */
+    public function jsonSerialize()
+    {
+        $result = parent::jsonSerialize();
+
+        $result['amount'] = $result['price'];
+        unset($result['price']);
+
+        return $result;
+    }
 }

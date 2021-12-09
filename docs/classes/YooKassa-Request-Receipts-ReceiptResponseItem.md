@@ -45,7 +45,7 @@
 | public | [getQuantity()](../classes/YooKassa-Request-Receipts-ReceiptResponseItem.md#method_getQuantity) |  | Возвращает количество товара |
 | public | [getSupplier()](../classes/YooKassa-Request-Receipts-ReceiptResponseItem.md#method_getSupplier) |  | Возвращает информацию о поставщике товара или услуги |
 | public | [getVatCode()](../classes/YooKassa-Request-Receipts-ReceiptResponseItem.md#method_getVatCode) |  | Возвращает ставку НДС |
-| public | [jsonSerialize()](../classes/YooKassa-Common-AbstractObject.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
+| public | [jsonSerialize()](../classes/YooKassa-Request-Receipts-ReceiptResponseItem.md#method_jsonSerialize) |  | Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации |
 | public | [offsetExists()](../classes/YooKassa-Common-AbstractObject.md#method_offsetExists) |  | Проверяет наличие свойства |
 | public | [offsetGet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetGet) |  | Возвращает значение свойства |
 | public | [offsetSet()](../classes/YooKassa-Common-AbstractObject.md#method_offsetSet) |  | Устанавливает значение свойства |
@@ -476,10 +476,14 @@ public jsonSerialize() : array
 Возвращает ассоциативный массив со свойствами текущего объекта для его дальнейшей JSON сериализации
 
 **Details:**
-* Inherited From: [\YooKassa\Common\AbstractObject](../classes/YooKassa-Common-AbstractObject.md)
+* Inherited From: [\YooKassa\Request\Receipts\ReceiptResponseItem](../classes/YooKassa-Request-Receipts-ReceiptResponseItem.md)
 
-**Returns:** array - Ассоциативный массив со свойствами текущего объекта
+**Returns:** array - 
 
+##### Tags
+| Tag | Version | Description |
+| --- | ------- | ----------- |
+| inheritdoc |  |  |
 
 <a name="method_offsetExists" class="anchor"></a>
 #### public offsetExists() : bool
@@ -804,6 +808,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-12-07 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-09 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

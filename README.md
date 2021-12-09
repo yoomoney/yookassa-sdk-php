@@ -6,7 +6,7 @@
 [![Monthly Downloads](https://poser.pugx.org/yoomoney/yookassa-sdk-php/d/monthly)](https://packagist.org/packages/yoomoney/yookassa-sdk-php)
 [![License](https://poser.pugx.org/yoomoney/yookassa-sdk-php/license)](https://packagist.org/packages/yoomoney/yookassa-sdk-php)
 
-Russian | [English](https://github.com/yoomoney/yookassa-sdk-php/blob/master/README.en.md)
+Russian | [English](README.en.md)
 
 Клиент для работы с платежами по [API ЮKassa](https://yookassa.ru/developers/api)
 Подходит тем, у кого способ подключения к ЮKassa называется API.
@@ -66,38 +66,38 @@ $client->setAuth('shopId', 'secretKey');
    
    [Подробнее в документации к API ЮKassa](https://yookassa.ru/developers/api#create_payment).
    
-   [Подробнее в документации к SDK ЮKassa](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/readme.md).
+   [Подробнее в документации к SDK ЮKassa](docs/readme.md).
 
 ## Примеры использования SDK
 
-#### [Настройки SDK API ЮKassa](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md)
-* [Аутентификация](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Аутентификация)
-* [Статистические данные об используемом окружении](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Статистические-данные-об-используемом-окружении)
-* [Получение информации о магазине](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Получение-информации-о-магазине)
-* [Работа с Webhook](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Работа-с-Webhook)
-* [Входящие уведомления](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/01-configuration.md#Входящие-уведомления)
+#### [Настройки SDK API ЮKassa](docs/examples/01-configuration.md)
+* [Аутентификация](docs/examples/01-configuration.md#Аутентификация)
+* [Статистические данные об используемом окружении](docs/examples/01-configuration.md#Статистические-данные-об-используемом-окружении)
+* [Получение информации о магазине](docs/examples/01-configuration.md#Получение-информации-о-магазине)
+* [Работа с Webhook](docs/examples/01-configuration.md#Работа-с-Webhook)
+* [Входящие уведомления](docs/examples/01-configuration.md#Входящие-уведомления)
 
-#### [Работа с платежами](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md)
-* [Запрос на создание платежа](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-создание-платежа)
-* [Запрос на создание платежа через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-создание-платежа-через-билдер)
-* [Запрос на частичное подтверждение платежа](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-частичное-подтверждение-платежа)
-* [Запрос на отмену незавершенного платежа](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Запрос-на-отмену-незавершенного-платежа)
-* [Получить информацию о платеже](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Получить-информацию-о-платеже)
-* [Получить список платежей с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/02-payments.md#Получить-список-платежей-с-фильтрацией)
+#### [Работа с платежами](docs/examples/02-payments.md)
+* [Запрос на создание платежа](docs/examples/02-payments.md#Запрос-на-создание-платежа)
+* [Запрос на создание платежа через билдер](docs/examples/02-payments.md#Запрос-на-создание-платежа-через-билдер)
+* [Запрос на частичное подтверждение платежа](docs/examples/02-payments.md#Запрос-на-частичное-подтверждение-платежа)
+* [Запрос на отмену незавершенного платежа](docs/examples/02-payments.md#Запрос-на-отмену-незавершенного-платежа)
+* [Получить информацию о платеже](docs/examples/02-payments.md#Получить-информацию-о-платеже)
+* [Получить список платежей с фильтрацией](docs/examples/02-payments.md#Получить-список-платежей-с-фильтрацией)
 
-#### [Работа с возвратами](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md)
-* [Запрос на создание возврата](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Запрос-на-создание-возврата)
-* [Запрос на создание возврата через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Запрос-на-создание-возврата-через-билдер)
-* [Получить информацию о возврате](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Получить-информацию-о-возврате)
-* [Получить список возвратов с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/03-refunds.md#Получить-список-возвратов-с-фильтрацией)
+#### [Работа с возвратами](docs/examples/03-refunds.md)
+* [Запрос на создание возврата](docs/examples/03-refunds.md#Запрос-на-создание-возврата)
+* [Запрос на создание возврата через билдер](docs/examples/03-refunds.md#Запрос-на-создание-возврата-через-билдер)
+* [Получить информацию о возврате](docs/examples/03-refunds.md#Получить-информацию-о-возврате)
+* [Получить список возвратов с фильтрацией](docs/examples/03-refunds.md#Получить-список-возвратов-с-фильтрацией)
 
-#### [Работа с чеками](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md)
-* [Запрос на создание чека](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека)
-* [Запрос на создание чека через билдер](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Запрос-на-создание-чека-через-билдер)
-* [Получить информацию о чеке](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-информацию-о-чеке)
-* [Получить список чеков с фильтрацией](https://github.com/yoomoney/yookassa-sdk-php/blob/master/docs/examples/04-receipts.md#Получить-список-чеков-с-фильтрацией)
+#### [Работа с чеками](docs/examples/04-receipts.md)
+* [Запрос на создание чека](docs/examples/04-receipts.md#Запрос-на-создание-чека)
+* [Запрос на создание чека через билдер](docs/examples/04-receipts.md#Запрос-на-создание-чека-через-билдер)
+* [Получить информацию о чеке](docs/examples/04-receipts.md#Получить-информацию-о-чеке)
+* [Получить список чеков с фильтрацией](docs/examples/04-receipts.md#Получить-список-чеков-с-фильтрацией)
 
-#### [Работа со сделками](docs/examples/05-deals.md)
+#### [Работа с безопасными сделками](docs/examples/05-deals.md)
 * [Запрос на создание сделки](docs/examples/05-deals.md#Запрос-на-создание-сделки)
 * [Запрос на создание сделки через билдер](docs/examples/05-deals.md#Запрос-на-создание-сделки-через-билдер)
 * [Запрос на создание платежа с привязкой к сделке](docs/examples/05-deals.md#Запрос-на-создание-платежа-с-привязкой-к-сделке)
