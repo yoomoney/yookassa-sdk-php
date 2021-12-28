@@ -17,6 +17,8 @@ Interface ReceiptItemInterface
 | ----------:| ---- | ---- | ------- |
 | public | [getAmount()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getAmount) |  | Возвращает общую стоимость покупаемого товара в копейках/центах |
 | public | [getDescription()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getDescription) |  | Возвращает название товара |
+| public | [getPaymentMode()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getPaymentMode) |  | Возвращает признак способа расчета |
+| public | [getPaymentSubject()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getPaymentSubject) |  | Возвращает признак предмета расчета |
 | public | [getPrice()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getPrice) |  | Возвращает цену товара |
 | public | [getQuantity()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getQuantity) |  | Возвращает количество товара |
 | public | [getSupplier()](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md#method_getSupplier) |  | Возвращает информацию о поставщике товара или услуги |
@@ -125,6 +127,40 @@ public getVatCode() : int|null
 **Returns:** int|null - Ставка НДС, число 1-6, или null, если ставка не задана
 
 
+<a name="method_getPaymentSubject" class="anchor"></a>
+#### public getPaymentSubject() : string|null
+
+```php
+public getPaymentSubject() : string|null
+```
+
+**Summary**
+
+Возвращает признак предмета расчета
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Receipts\ReceiptResponseItemInterface](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md)
+
+**Returns:** string|null - Признак предмета расчета
+
+
+<a name="method_getPaymentMode" class="anchor"></a>
+#### public getPaymentMode() : string|null
+
+```php
+public getPaymentMode() : string|null
+```
+
+**Summary**
+
+Возвращает признак способа расчета
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Receipts\ReceiptResponseItemInterface](../classes/YooKassa-Request-Receipts-ReceiptResponseItemInterface.md)
+
+**Returns:** string|null - Признак способа расчета
+
+
 <a name="method_getSupplier" class="anchor"></a>
 #### public getSupplier() : \YooKassa\Model\SupplierInterface
 
@@ -159,6 +195,6 @@ public getSupplier() : \YooKassa\Model\SupplierInterface
 
 ---
 
-This document was automatically generated from source code comments on 2021-12-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-28 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

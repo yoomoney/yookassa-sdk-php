@@ -39,6 +39,7 @@
 | public | [__construct()](../classes/YooKassa-Client-BaseClient.md#method___construct) |  | Constructor |
 | public | [getApiClient()](../classes/YooKassa-Client-BaseClient.md#method_getApiClient) |  | Возвращает CURL клиента для работы с API |
 | public | [getConfig()](../classes/YooKassa-Client-BaseClient.md#method_getConfig) |  | Возвращает настройки клиента |
+| public | [isNotificationIPTrusted()](../classes/YooKassa-Client-BaseClient.md#method_isNotificationIPTrusted) |  | Метод проверяет, находится ли IP адрес среди IP адресов Юkassa, с которых отправляются уведомления |
 | public | [setApiClient()](../classes/YooKassa-Client-BaseClient.md#method_setApiClient) |  | Устанавливает CURL клиента для работы с API |
 | public | [setAuth()](../classes/YooKassa-Client-BaseClient.md#method_setAuth) |  | Устанавливает авторизацию по логин/паролю |
 | public | [setAuthToken()](../classes/YooKassa-Client-BaseClient.md#method_setAuthToken) |  | Устанавливает авторизацию по Oauth-токену |
@@ -313,6 +314,33 @@ public getConfig() : array
 * Inherited From: [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
 
 **Returns:** array - 
+
+
+<a name="method_isNotificationIPTrusted" class="anchor"></a>
+#### public isNotificationIPTrusted() : bool
+
+```php
+public isNotificationIPTrusted(string $ip) : bool
+```
+
+**Summary**
+
+Метод проверяет, находится ли IP адрес среди IP адресов Юkassa, с которых отправляются уведомления
+
+**Details:**
+* Inherited From: [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | ip  | - IPv4 или IPv6 адрес webhook уведомления |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \Exception | - исключение будет выброшено, если будет передан IP адрес неверного формата |
+
+**Returns:** bool - 
 
 
 <a name="method_setApiClient" class="anchor"></a>
@@ -639,6 +667,6 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-12-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-28 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
