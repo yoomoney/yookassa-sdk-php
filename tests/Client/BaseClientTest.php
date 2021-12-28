@@ -2,12 +2,10 @@
 
 namespace Tests\YooKassa\Client;
 
-use YooKassa\Client;
 use YooKassa\Client\ApiClientInterface;
 use YooKassa\Client\BaseClient;
 use PHPUnit\Framework\TestCase;
 use YooKassa\Client\CurlClient;
-use YooKassa\Common\LoggerWrapper;
 use YooKassa\Helpers\Config\ConfigurationLoader;
 use YooKassa\Helpers\Random;
 
@@ -85,6 +83,32 @@ class BaseClientTest extends TestCase
         self::assertEquals($client->getConfig(), $instance->getConfig());
     }
 
+    /**
+     * @dataProvider validIPv4DataProvider
+     * @param $ip
+     */
+    public function testIsIPInTrustedRangeValid($ip)
+    {
+        $instance = $this->getInstance();
+
+        $checkResult = $instance->isNotificationIPTrusted($ip);
+
+        self::assertEquals(true, $checkResult);
+    }
+
+    /**
+     * @dataProvider inValidIPv4DataProvider
+     * @param $ip
+     */
+    public function testIsIPInTrustedRangeInValid($ip)
+    {
+        $instance = $this->getInstance();
+
+        $checkResult = $instance->isNotificationIPTrusted($ip);
+
+        self::assertEquals(false, $checkResult);
+    }
+
     public function validDataProvider()
     {
         return array(
@@ -122,6 +146,37 @@ class BaseClientTest extends TestCase
                     'shopPassword' => null
                 )
             )
+        );
+    }
+
+    public function validIPv4DataProvider()
+    {
+        return array(
+            array('185.71.76.' . rand(1, 31)),
+            array('185.71.77.' . rand(1, 31)),
+            array('77.75.153.' . rand(1, 127)),
+            array('77.75.154.' . rand(128, 254)),
+            array('77.75.156.11'),
+            array('77.75.156.35'),
+            array('2a02:5180:0000:2669:0000:0000:0000:7d35'),
+            array('2a02:5180:0000:2655:0000:0000:7d35:0000'),
+            array('2a02:5180:0000:1533:0000:7d35:0000:0000'),
+            array('2a02:5180:0000:2669:7d35:0000:0000:0000'),
+        );
+    }
+
+    public function inValidIPv4DataProvider()
+    {
+        return array(
+            array('185.71.76.32'),
+            array('185.71.77.32'),
+            array('185.71.153.128'),
+            array('185.71.154.' . rand(1, 128)),
+            array('127.0.0.1'),
+            array('77.75.156.12'),
+            array('192.168.1.1'),
+            array('8701:746f:d4f1:d39d:9dcc:6ea2:875e:7d35'),
+            array('::1'),
         );
     }
 }

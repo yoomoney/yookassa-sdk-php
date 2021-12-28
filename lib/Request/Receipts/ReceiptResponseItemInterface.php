@@ -74,6 +74,18 @@ interface ReceiptResponseItemInterface
     function getVatCode();
 
     /**
+     * Возвращает признак предмета расчета
+     * @return string|null Признак предмета расчета
+     */
+    function getPaymentSubject();
+
+    /**
+     * Возвращает признак способа расчета
+     * @return string|null Признак способа расчета
+     */
+    function getPaymentMode();
+
+    /**
      * Возвращает информацию о поставщике товара или услуги
      * @return SupplierInterface
      */

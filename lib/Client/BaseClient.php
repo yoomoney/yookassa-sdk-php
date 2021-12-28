@@ -43,6 +43,7 @@ use YooKassa\Common\LoggerWrapper;
 use YooKassa\Common\ResponseObject;
 use YooKassa\Helpers\Config\ConfigurationLoader;
 use YooKassa\Helpers\Config\ConfigurationLoaderInterface;
+use YooKassa\Helpers\SecurityHelper;
 
 class BaseClient
 {
@@ -289,6 +290,22 @@ class BaseClient
         $this->attempts = $attempts;
 
         return $this;
+    }
+
+
+    /**
+     * Метод проверяет, находится ли IP адрес среди IP адресов Юkassa, с которых отправляются уведомления
+     *
+     * @param string $ip - IPv4 или IPv6 адрес webhook уведомления
+     * @return bool
+     *
+     * @throws Exception - исключение будет выброшено, если будет передан IP адрес неверного формата
+     */
+    public function isNotificationIPTrusted($ip)
+    {
+        $securityHelper = new SecurityHelper();
+
+        return $securityHelper->isIPTrusted($ip);
     }
 
     /**

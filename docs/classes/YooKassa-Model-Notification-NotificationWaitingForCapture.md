@@ -28,6 +28,13 @@ try {
     $notificationObject = $factory->factory($data);
     $responseObject = $notificationObject->getObject();
 
+    $client = new \YooKassa\Client();
+
+    if (!$client->isNotificationIPTrusted($_SERVER['REMOTE_ADDR'])) {
+        header('HTTP/1.1 400 Something went wrong');
+        exit();
+    }
+
     if ($notificationObject->getEvent() === \YooKassa\Model\NotificationEventType::PAYMENT_SUCCEEDED) {
         $someData = array(
             'paymentId' => $responseObject->getId(),
@@ -65,7 +72,6 @@ try {
     // Специфичная логика
     // ...
 
-    $client = new \YooKassa\Client();
     $client->setAuth('xxxxxx', 'test_XXXXXXX');
 
     // Получим актуальную информацию о платеже
@@ -597,6 +603,6 @@ protected getUnknownProperties() : array
 
 ---
 
-This document was automatically generated from source code comments on 2021-12-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-28 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney

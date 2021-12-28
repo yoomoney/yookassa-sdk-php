@@ -180,6 +180,13 @@ try {
     $factory = new \YooKassa\Model\Notification\NotificationFactory();
     $notificationObject = $factory->factory($data);
     $responseObject = $notificationObject->getObject();
+    
+    $client = new \YooKassa\Client();
+
+    if (!$client->isNotificationIPTrusted($_SERVER['REMOTE_ADDR'])) {
+        header('HTTP/1.1 400 Something went wrong');
+        exit();
+    }
 
     if ($notificationObject->getEvent() === \YooKassa\Model\NotificationEventType::PAYMENT_SUCCEEDED) {
         $someData = array(
@@ -218,7 +225,6 @@ try {
     // Специфичная логика
     // ...
 
-    $client = new \YooKassa\Client();
     $client->setAuth('xxxxxx', 'test_XXXXXXX');
 
     // Получим актуальную информацию о платеже

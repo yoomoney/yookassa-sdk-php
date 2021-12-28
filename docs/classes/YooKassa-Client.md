@@ -77,6 +77,7 @@ $client->setAuthToken('token_XXXXXXX');
 | public | [getRefundInfo()](../classes/YooKassa-Client.md#method_getRefundInfo) |  | Получить информацию о возврате |
 | public | [getRefunds()](../classes/YooKassa-Client.md#method_getRefunds) |  | Получить список возвратов платежей |
 | public | [getWebhooks()](../classes/YooKassa-Client.md#method_getWebhooks) |  | Список созданных Webhook |
+| public | [isNotificationIPTrusted()](../classes/YooKassa-Client-BaseClient.md#method_isNotificationIPTrusted) |  | Метод проверяет, находится ли IP адрес среди IP адресов Юkassa, с которых отправляются уведомления |
 | public | [me()](../classes/YooKassa-Client.md#method_me) |  | Информация о магазине |
 | public | [removeWebhook()](../classes/YooKassa-Client.md#method_removeWebhook) |  | Удаление Webhook |
 | public | [setApiClient()](../classes/YooKassa-Client-BaseClient.md#method_setApiClient) |  | Устанавливает CURL клиента для работы с API |
@@ -234,7 +235,7 @@ DEFAULT_ATTEMPTS_COUNT = 3
 Текущая версия библиотеки
 
 ```php
-SDK_VERSION = '2.2.4'
+SDK_VERSION = '2.2.5'
 ```
 
 
@@ -1683,6 +1684,33 @@ var_dump($response);
 ```
 
 
+<a name="method_isNotificationIPTrusted" class="anchor"></a>
+#### public isNotificationIPTrusted() : bool
+
+```php
+public isNotificationIPTrusted(string $ip) : bool
+```
+
+**Summary**
+
+Метод проверяет, находится ли IP адрес среди IP адресов Юkassa, с которых отправляются уведомления
+
+**Details:**
+* Inherited From: [\YooKassa\Client\BaseClient](../classes/YooKassa-Client-BaseClient.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | ip  | - IPv4 или IPv6 адрес webhook уведомления |
+
+##### Throws:
+| Type | Description |
+| ---- | ----------- |
+| \Exception | - исключение будет выброшено, если будет передан IP адрес неверного формата |
+
+**Returns:** bool - 
+
+
 <a name="method_me" class="anchor"></a>
 #### public me() : array|null
 
@@ -2140,6 +2168,6 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2021-12-09 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2021-12-28 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2021 YooMoney
