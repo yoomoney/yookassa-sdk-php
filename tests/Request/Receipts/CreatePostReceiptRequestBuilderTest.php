@@ -282,7 +282,7 @@ class CreatePostReceiptRequestBuilderTest extends TestCase
                         )
                     ),
                     'tax_system_code' => Random::int(1, 6),
-                    'type' => $type,
+                    'type' => 'payment',
                     'send' => true,
                     'settlements' => array(
                         array(

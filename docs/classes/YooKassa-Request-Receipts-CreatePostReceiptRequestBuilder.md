@@ -96,6 +96,7 @@ var_dump($response);
 | public | [setCustomer()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md#method_setCustomer) |  | Устанавливает информацию о пользователе |
 | public | [setItems()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md#method_setItems) |  | Устанавливает список товаров чека |
 | public | [setObjectId()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md#method_setObjectId) |  | Устанавливает Id объекта чека |
+| public | [setObjectType()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md#method_setObjectType) |  | Устанавливает тип объекта чека |
 | public | [setOnBehalfOf()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md#method_setOnBehalfOf) |  | Устанавливает идентификатор магазина, от имени которого нужно отправить чек. |
 | public | [setOptions()](../classes/YooKassa-Common-AbstractRequestBuilder.md#method_setOptions) |  | Устанавливает свойства запроса из массива |
 | public | [setSend()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md#method_setSend) |  | Устанавливает признак отложенной отправки чека. |
@@ -329,6 +330,28 @@ public setObjectId(string $value) : \YooKassa\Request\Receipts\CreatePostReceipt
 **Returns:** \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder - 
 
 
+<a name="method_setObjectType" class="anchor"></a>
+#### public setObjectType() : \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder
+
+```php
+public setObjectType(string $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder
+```
+
+**Summary**
+
+Устанавливает тип объекта чека
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequestBuilder.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | value  | Тип объекта чека |
+
+**Returns:** \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder - 
+
+
 <a name="method_setOnBehalfOf" class="anchor"></a>
 #### public setOnBehalfOf() : \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder
 
@@ -505,6 +528,6 @@ protected initCurrentObject() : \YooKassa\Request\Receipts\CreatePostReceiptRequ
 
 ---
 
-This document was automatically generated from source code comments on 2022-01-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-02 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

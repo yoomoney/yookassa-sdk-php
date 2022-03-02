@@ -11,7 +11,7 @@
       "email": "cms@yoomoney.ru"
     }
   ],
-  "version": "2.2.6",
+  "version": "2.2.7",
   "require": {
     "php": ">=5.3.0",
     "ext-curl": "*",
@@ -23,6 +23,25 @@
     "ext-xml": "*",
     "phpunit/phpunit": "^4.8.35 || ^5.7",
     "mockery/mockery": "^0.9.9"
+  },
+  "scripts": {
+    "test": [
+      "@phpunit",
+      "@phpcbf",
+      "@phpcs",
+      "@phpmd"
+    ],
+    "ci": [
+      "@phplint",
+      "@phpunit",
+      "@phpcs",
+      "@phpmd"
+    ],
+    "phplint": "vendor/bin/parallel-lint --exclude vendor/ --exclude .idea/ -e php,module,inc,install,profile,theme .",
+    "phpunit": "vendor/bin/phpunit --configuration=phpunit.xml.dist",
+    "phpcs": "vendor/bin/phpcs --ignore=vendor/,.idea/ --standard=phpcs.xml --extensions=php,module,inc,install,profile,theme,css,info,txt,md,yml --report=full .",
+    "phpcbf": "vendor/bin/phpcbf --ignore=vendor/,.idea/ --standard=phpcs.xml --extensions=php,module,inc,install,profile,theme,css,info,txt,md,yml .",
+    "phpmd": "vendor/bin/phpmd --exclude vendor/,.idea/ --suffixes php,module,inc,install,profile,theme . text phpmd.xml"
   },
   "autoload": {
     "psr-4": {

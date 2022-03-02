@@ -86,9 +86,9 @@ class CreatePostReceiptRequestSerializer
     {
         $result = array();
 
-        if ($request->getType() === ReceiptType::PAYMENT) {
+        if ($request->getObjectType() === ReceiptType::PAYMENT) {
             $result['payment_id'] = $request->getObjectId();
-        } elseif ($request->getType() === ReceiptType::REFUND) {
+        } elseif ($request->getObjectType() === ReceiptType::REFUND) {
             $result['refund_id'] = $request->getObjectId();
         }
 
