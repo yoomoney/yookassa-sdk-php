@@ -94,6 +94,7 @@ var_dump($response);
 | public | [getItems()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_getItems) |  | Возвращает список позиций в текущем чеке |
 | public | [getLastValidationError()](../classes/YooKassa-Common-AbstractRequest.md#method_getLastValidationError) |  | Возвращает последнюю ошибку валидации |
 | public | [getObjectId()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_getObjectId) |  | Возвращает Id объекта чека |
+| public | [getObjectType()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_getObjectType) |  | Возвращает тип объекта чека |
 | public | [getOnBehalfOf()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_getOnBehalfOf) |  | Возвращает идентификатор магазина, от имени которого нужно отправить чек. |
 | public | [getSend()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_getSend) |  | Возвращает признак отложенной отправки чека. |
 | public | [getSettlements()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_getSettlements) |  | Возвращает массив оплат, обеспечивающих выдачу товара. |
@@ -109,6 +110,7 @@ var_dump($response);
 | public | [setCustomer()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setCustomer) |  | Устанавливает информацию о плательщике |
 | public | [setItems()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setItems) |  | Устанавливает список позиций в чеке |
 | public | [setObjectId()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setObjectId) |  | Устанавливает Id объекта чека |
+| public | [setObjectType()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setObjectType) |  | Устанавливает тип объекта чека |
 | public | [setOnBehalfOf()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setOnBehalfOf) |  | Устанавливает идентификатор магазина, от имени которого нужно отправить чек. |
 | public | [setSend()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setSend) |  | Устанавливает признак отложенной отправки чека. |
 | public | [setSettlements()](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md#method_setSettlements) |  | Устанавливает массив оплат, обеспечивающих выдачу товара. |
@@ -409,6 +411,23 @@ public getObjectId() : string
 * Inherited From: [\YooKassa\Request\Receipts\CreatePostReceiptRequest](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md)
 
 **Returns:** string - Id объекта чека
+
+
+<a name="method_getObjectType" class="anchor"></a>
+#### public getObjectType() : string
+
+```php
+public getObjectType() : string
+```
+
+**Summary**
+
+Возвращает тип объекта чека
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Receipts\CreatePostReceiptRequest](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md)
+
+**Returns:** string - Тип объекта чека
 
 
 <a name="method_getOnBehalfOf" class="anchor"></a>
@@ -719,6 +738,28 @@ public setObjectId(string $value) : \YooKassa\Request\Receipts\CreatePostReceipt
 **Returns:** \YooKassa\Request\Receipts\CreatePostReceiptRequestInterface - 
 
 
+<a name="method_setObjectType" class="anchor"></a>
+#### public setObjectType() : mixed
+
+```php
+public setObjectType(string $value) : mixed
+```
+
+**Summary**
+
+Устанавливает тип объекта чека
+
+**Details:**
+* Inherited From: [\YooKassa\Request\Receipts\CreatePostReceiptRequest](../classes/YooKassa-Request-Receipts-CreatePostReceiptRequest.md)
+
+##### Parameters:
+| Type | Name | Description |
+| ---- | ---- | ----------- |
+| <code lang="php">string</code> | value  | Тип объекта чека |
+
+**Returns:** mixed - 
+
+
 <a name="method_setOnBehalfOf" class="anchor"></a>
 #### public setOnBehalfOf() : mixed
 
@@ -930,6 +971,6 @@ protected setValidationError(string $value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2022-01-21 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-02 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

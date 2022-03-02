@@ -35,6 +35,7 @@ use YooKassa\Model\MonetaryAmount;
 use YooKassa\Model\ReceiptCustomer;
 use YooKassa\Model\ReceiptCustomerInterface;
 use YooKassa\Model\ReceiptItemInterface;
+use YooKassa\Model\ReceiptType;
 use YooKassa\Model\SettlementInterface;
 
 /**
@@ -232,6 +233,18 @@ class CreatePostReceiptRequestBuilder extends AbstractRequestBuilder
     }
 
     /**
+     * Устанавливает тип объекта чека
+     *
+     * @param string $value Тип объекта чека
+     * @return CreatePostReceiptRequestBuilder
+     */
+    public function setObjectType($value)
+    {
+        $this->currentObject->setObjectType($value);
+        return $this;
+    }
+
+    /**
      * Строит и возвращает объект запроса для отправки в API ЮKassa
      *
      * @param array|null $options Массив параметров для установки в объект запроса
@@ -246,8 +259,10 @@ class CreatePostReceiptRequestBuilder extends AbstractRequestBuilder
 
             if (!empty($options['payment_id'])) {
                 $this->setObjectId($options['payment_id']);
+                $this->setObjectType(ReceiptType::PAYMENT);
             } elseif (!empty($options['refund_id'])) {
                 $this->setObjectId($options['refund_id']);
+                $this->setObjectType(ReceiptType::REFUND);
             }
         }
 
