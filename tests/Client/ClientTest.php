@@ -1004,7 +1004,7 @@ class ClientTest extends TestCase
             ->setApiClient($curlClientStub)
             ->setAuth('shopId', 'shopPassword')
             ->getPaymentInfo(Random::str(36));
-        
+
     }
 
     public function testConfig()
@@ -1316,7 +1316,7 @@ class ClientTest extends TestCase
         return CreatePostReceiptRequest::builder()
             ->setCustomer($customer)
             ->setType(ReceiptType::PAYMENT)
-            ->setObjectId('1da5c87d-0984-50e8-a7f3-8de646dd9ec9')
+            ->setObjectId('1da5c87d-0984-50e8-a7f3-8de646dd9ec9', ReceiptType::PAYMENT)
             ->setSend(true)
             ->setSettlements(array($settlement))
             ->setOnBehalfOf('545665')

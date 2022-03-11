@@ -16,7 +16,7 @@
 try {
     $receiptBuilder = \YooKassa\Request\Receipts\CreatePostReceiptRequest::builder();
     $receiptBuilder->setType(\YooKassa\Model\ReceiptType::PAYMENT)
-        ->setObjectId('24b94598-000f-5000-9000-1b68e7b15f3f')
+        ->setObjectId('24b94598-000f-5000-9000-1b68e7b15f3f', \YooKassa\Model\ReceiptType::PAYMENT) // payment_id
         ->setCustomer(array(
             'email' => 'john.doe@merchant.com',
             'phone' => '71111111111',
@@ -971,6 +971,6 @@ protected setValidationError(string $value) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-02 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

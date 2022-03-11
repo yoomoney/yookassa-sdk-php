@@ -16,7 +16,7 @@
 try {
     $receiptBuilder = \YooKassa\Request\Receipts\CreatePostReceiptRequest::builder();
     $receiptBuilder->setType(\YooKassa\Model\ReceiptType::PAYMENT)
-        ->setObjectId('24b94598-000f-5000-9000-1b68e7b15f3f')
+        ->setObjectId('24b94598-000f-5000-9000-1b68e7b15f3f', \YooKassa\Model\ReceiptType::PAYMENT) // payment_id
         ->setCustomer(array(
             'email' => 'john.doe@merchant.com',
             'phone' => '71111111111',
@@ -312,7 +312,7 @@ public setItems(\YooKassa\Model\ReceiptItemInterface[]|array $value) : \YooKassa
 #### public setObjectId() : \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder
 
 ```php
-public setObjectId(string $value) : \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder
+public setObjectId(string $value, string|null $type = null) : \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder
 ```
 
 **Summary**
@@ -326,6 +326,7 @@ public setObjectId(string $value) : \YooKassa\Request\Receipts\CreatePostReceipt
 | Type | Name | Description |
 | ---- | ---- | ----------- |
 | <code lang="php">string</code> | value  | Id объекта чека |
+| <code lang="php">string OR null</code> | type  | Тип объекта чека |
 
 **Returns:** \YooKassa\Request\Receipts\CreatePostReceiptRequestBuilder - 
 
@@ -528,6 +529,6 @@ protected initCurrentObject() : \YooKassa\Request\Receipts\CreatePostReceiptRequ
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-02 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

@@ -235,7 +235,7 @@ DEFAULT_ATTEMPTS_COUNT = 3
 Текущая версия библиотеки
 
 ```php
-SDK_VERSION = '2.2.7'
+SDK_VERSION = '2.2.8'
 ```
 
 
@@ -2168,6 +2168,6 @@ protected handleError(\YooKassa\Common\ResponseObject $response) : mixed
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-02 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

@@ -243,7 +243,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
             array(
                 array(
                     'id' => Random::str(39),
-                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'type' => Random::value(ReceiptType::getEnabledValues()),
                     'status' => null,
                     'items' => null,
                     'settlements' => null
@@ -252,7 +252,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
             array(
                 array(
                     'id' => Random::str(39),
-                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'type' => Random::value(ReceiptType::getEnabledValues()),
                     'status' => null,
                     'items' => 1,
                     'settlements' => 1
@@ -261,7 +261,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
             array(
                 array(
                     'id' => Random::str(39),
-                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'type' => Random::value(ReceiptType::getEnabledValues()),
                     'status' => null,
                     'items' => array(new Airline()),
                     'settlements' => array(new Airline())
@@ -278,7 +278,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
             array(
                 array(
                     'id' => Random::str(39),
-                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'type' => Random::value(ReceiptType::getEnabledValues()),
                     'status' => null,
                     'items' => false
                 )
@@ -286,7 +286,7 @@ abstract class AbstractReceiptResponseTest extends TestCase
             array(
                 array(
                     'id' => Random::str(39),
-                    'type' => Random::value(ReceiptType::getValidValues()),
+                    'type' => Random::value(ReceiptType::getEnabledValues()),
                     'status' => null,
                     'items' => 1
                 )

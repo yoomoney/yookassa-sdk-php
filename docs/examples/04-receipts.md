@@ -80,7 +80,7 @@ try {
     $inputDataMatrix = '010463003407001221SxMGorvNuq6Wk91fgr92sdfsdfghfgjh';
     $receiptBuilder = \YooKassa\Request\Receipts\CreatePostReceiptRequest::builder();
     $receiptBuilder->setType(\YooKassa\Model\ReceiptType::PAYMENT)
-        ->setObjectId('24b94598-000f-5000-9000-1b68e7b15f3f')
+        ->setObjectId('24b94598-000f-5000-9000-1b68e7b15f3f', \YooKassa\Model\ReceiptType::PAYMENT) // payment_id
         ->setCustomer(array(
             'email' => 'john.doe@merchant.com',
             'phone' => '71111111111',
