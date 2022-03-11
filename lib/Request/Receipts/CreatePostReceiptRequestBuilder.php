@@ -224,11 +224,15 @@ class CreatePostReceiptRequestBuilder extends AbstractRequestBuilder
      * Устанавливает Id объекта чека
      *
      * @param string $value Id объекта чека
+     * @param string|null $type Тип объекта чека
      * @return CreatePostReceiptRequestBuilder
      */
-    public function setObjectId($value)
+    public function setObjectId($value, $type=null)
     {
         $this->currentObject->setObjectId($value);
+        if (!empty($type)) {
+            $this->currentObject->setObjectType($type);
+        }
         return $this;
     }
 

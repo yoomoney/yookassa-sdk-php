@@ -525,7 +525,7 @@ class CreatePostReceiptRequestTest extends TestCase
      */
     public function validDataProvider()
     {
-        $type = Random::value(ReceiptType::getValidValues());
+        $type = Random::value(ReceiptType::getEnabledValues());
         $result = array(
 
             array(
@@ -570,7 +570,7 @@ class CreatePostReceiptRequestTest extends TestCase
             ),
         );
         for ($i = 0; $i < 10; $i++) {
-            $type = Random::value(ReceiptType::getValidValues());
+            $type = Random::value(ReceiptType::getEnabledValues());
             $request = array(
                 'customer' => array(
                     'full_name' => Random::str(128),

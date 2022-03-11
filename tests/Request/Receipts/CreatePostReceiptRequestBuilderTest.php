@@ -107,6 +107,32 @@ class CreatePostReceiptRequestBuilderTest extends TestCase
     }
 
     /**
+     * @dataProvider validDataProvider
+     *
+     * @param $options
+     */
+    public function testSetObjectId($options)
+    {
+        $builder = new CreatePostReceiptRequestBuilder();
+
+        $instance = $builder->build($options);
+
+        if (empty($options['payment_id']) && empty($options['refund_id'])) {
+            self::assertNull($instance->getObjectId());
+        } else {
+            self::assertNotNull($instance->getObjectId());
+            if (!empty($options['payment_id'])) {
+                self::assertEquals($options['payment_id'], $instance->getObjectId());
+                self::assertEquals(ReceiptType::PAYMENT, $instance->getObjectType());
+            }
+            if (!empty($options['refund_id'])) {
+                self::assertEquals($options['refund_id'], $instance->getObjectId());
+                self::assertEquals(ReceiptType::REFUND, $instance->getObjectType());
+            }
+        }
+    }
+
+    /**
      * @dataProvider invalidVatIdDataProvider
      * @expectedException \InvalidArgumentException
      *
@@ -259,7 +285,7 @@ class CreatePostReceiptRequestBuilderTest extends TestCase
 
     public function validDataProvider()
     {
-        $type = Random::value(ReceiptType::getValidValues());
+        $type = Random::value(ReceiptType::getEnabledValues());
         $result = array(
             array(
                 array(
@@ -298,7 +324,7 @@ class CreatePostReceiptRequestBuilderTest extends TestCase
             ),
         );
         for ($i = 0; $i < 10; $i++) {
-            $type = Random::value(ReceiptType::getValidValues());
+            $type = Random::value(ReceiptType::getEnabledValues());
             $request = array(
                 'customer' => array(
                     'full_name' => Random::str(128),
