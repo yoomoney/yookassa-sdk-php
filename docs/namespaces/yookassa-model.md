@@ -60,7 +60,7 @@
 | [\YooKassa\Model\NotificationType](../classes/YooKassa-Model-NotificationType.md) | Базовый класс генерируемых enum&#039;ов |
 | [\YooKassa\Model\Passenger](../classes/YooKassa-Model-Passenger.md) | Класс описывающий данные пассажира |
 | [\YooKassa\Model\Payment](../classes/YooKassa-Model-Payment.md) | Payment - Данные о платеже |
-| [\YooKassa\Model\PaymentMethodType](../classes/YooKassa-Model-PaymentMethodType.md) | PaymentMethodType - Тип источника средств для проведения платежа |Код|Описание| --- | --- |yoo_money|Платеж из кошелька ЮMoney| |bank_card|Платеж с произвольной банковской карты| |sberbank|Платеж СбербанкОнлайн| |cash|Платеж наличными| |mobile_balance|Платеж с баланса мобильного телефона| |apple_pay|Платеж ApplePay| |google_pay|Платеж Google Pay| |qiwi|Платеж из кошелька Qiwi| |webmoney|Платеж из кошелька Webmoney| |alfabank|Платеж через Альфа-Клик| |b2b_sberbank|Сбербанк Бизнес Онлайн| |tinkoff_bank|Интернет-банк Тинькофф| |psb|ПромсвязьБанк| |installments|Заплатить по частям| |wechat|Платеж через WeChat| |
+| [\YooKassa\Model\PaymentMethodType](../classes/YooKassa-Model-PaymentMethodType.md) | PaymentMethodType - Тип источника средств для проведения платежа |Код|Описание| --- | --- |yoo_money|Платеж из кошелька ЮMoney| |bank_card|Платеж с произвольной банковской карты| |sberbank|Платеж СбербанкОнлайн| |cash|Платеж наличными| |mobile_balance|Платеж с баланса мобильного телефона| |apple_pay|Платеж ApplePay| |google_pay|Платеж Google Pay| |qiwi|Платеж из кошелька Qiwi| |webmoney|Платеж из кошелька Webmoney| |alfabank|Платеж через Альфа-Клик| |b2b_sberbank|Сбербанк Бизнес Онлайн| |tinkoff_bank|Интернет-банк Тинькофф| |psb|ПромсвязьБанк| |installments|Заплатить по частям| |wechat|Платеж через WeChat| |wechat|Платеж через через сервис быстрых платежей| |
 | [\YooKassa\Model\PaymentStatus](../classes/YooKassa-Model-PaymentStatus.md) | PaymentStatus - Состояние платежа |Код|Описание| --- | --- |pending|Ожидает оплаты покупателем| |waiting_for_capture|Успешно оплачен покупателем, ожидает подтверждения магазином (capture или aviso)| |succeeded|Успешно оплачен и подтвержден магазином| |canceled|Неуспех оплаты или отменен магазином (cancel)| |
 | [\YooKassa\Model\Payout](../classes/YooKassa-Model-Payout.md) | Payout - Данные о выплате |
 | [\YooKassa\Model\PayoutStatus](../classes/YooKassa-Model-PayoutStatus.md) | PayoutStatus - Статус выплаты |Код|Описание| --- | --- |pending|Выплата создана и ожидает подтверждения от эмитента| |succeeded|Выплата успешно завершена| |canceled|Выплата отменена| |
@@ -96,6 +96,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

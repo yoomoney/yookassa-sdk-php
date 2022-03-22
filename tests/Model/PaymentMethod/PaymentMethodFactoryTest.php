@@ -126,7 +126,7 @@ class PaymentMethodFactoryTest extends TestCase
                     'type'     => PaymentMethodType::ALFABANK,
                     'login'    => Random::str(10, 20),
                     'id'       => Random::str(1, 64),
-                    'saved'    => Random::int() % 2 ? true : false,
+                    'saved'    => Random::bool(),
                     'title'    => Random::str(10, 20),
                 ),
             ),
@@ -134,7 +134,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'     => PaymentMethodType::GOOGLE_PAY,
                     'id'       => Random::str(1, 64),
-                    'saved'    => Random::int() % 2 ? true : false,
+                    'saved'    => Random::bool(),
                     'title'    => Random::str(10, 20),
                 ),
             ),
@@ -142,7 +142,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'     => PaymentMethodType::APPLE_PAY,
                     'id'       => Random::str(1, 64),
-                    'saved'    => Random::int() % 2 ? true : false,
+                    'saved'    => Random::bool(),
                     'title'    => Random::str(10, 20),
                 ),
             ),
@@ -150,7 +150,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'        => PaymentMethodType::BANK_CARD,
                     'id'          => Random::str(1, 64),
-                    'saved'       => Random::int() % 2 ? true : false,
+                    'saved'       => Random::bool(),
                     'title'       => Random::str(10, 20),
                     'last4'       => Random::str(4, '0123456789'),
                     'first6'      => Random::str(6, '0123456789'),
@@ -163,7 +163,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'         => PaymentMethodType::BANK_CARD,
                     'id'           => Random::str(1, 64),
-                    'saved'        => Random::int() % 2 ? true : false,
+                    'saved'        => Random::bool(),
                     'title'        => Random::str(10, 20),
                     'last4'        => Random::str(4, '0123456789'),
                     'first6'       => Random::str(6, '0123456789'),
@@ -176,7 +176,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'     => PaymentMethodType::CASH,
                     'id'       => Random::str(1, 64),
-                    'saved'    => Random::int() % 2 ? true : false,
+                    'saved'    => Random::bool(),
                     'title'    => Random::str(10, 20),
                 ),
             ),
@@ -184,7 +184,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'     => PaymentMethodType::MOBILE_BALANCE,
                     'id'       => Random::str(1, 64),
-                    'saved'    => Random::int() % 2 ? true : false,
+                    'saved'    => Random::bool(),
                     'title'    => Random::str(10, 20),
                     'phone'    => Random::str(4, 15, '0123456789'),
                 ),
@@ -194,7 +194,7 @@ class PaymentMethodFactoryTest extends TestCase
                     'type'     => PaymentMethodType::SBERBANK,
                     'phone'    => Random::str(4, 15, '0123456789'),
                     'id'       => Random::str(1, 64),
-                    'saved'    => Random::int() % 2 ? true : false,
+                    'saved'    => Random::bool(),
                     'title'    => Random::str(10, 20),
                 ),
             ),
@@ -203,7 +203,7 @@ class PaymentMethodFactoryTest extends TestCase
                     'type'          => PaymentMethodType::YOO_MONEY,
                     'accountNumber' => Random::str(31, '0123456789'),
                     'id'            => Random::str(1, 64),
-                    'saved'         => Random::int() % 2 ? true : false,
+                    'saved'         => Random::bool(),
                     'title'         => Random::str(10, 20),
                 ),
             ),
@@ -212,7 +212,7 @@ class PaymentMethodFactoryTest extends TestCase
                     'type'           => PaymentMethodType::YOO_MONEY,
                     'account_number' => Random::str(31, '0123456789'),
                     'id'             => Random::str(1, 64),
-                    'saved'          => Random::int() % 2 ? true : false,
+                    'saved'          => Random::bool(),
                     'title'          => Random::str(10, 20),
                 ),
             ),
@@ -220,7 +220,7 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'           => PaymentMethodType::INSTALLMENTS,
                     'id'             => Random::str(1, 64),
-                    'saved'          => true,
+                    'saved'          => Random::bool(),
                     'title'          => Random::str(10, 20),
                 ),
             ),
@@ -228,14 +228,22 @@ class PaymentMethodFactoryTest extends TestCase
                 array(
                     'type'           => PaymentMethodType::B2B_SBERBANK,
                     'id'             => Random::str(1, 64),
-                    'saved'          => false,
+                    'saved'          => Random::bool(),
                 ),
             ),
             array(
                 array(
                     'type'           => PaymentMethodType::TINKOFF_BANK,
                     'id'             => Random::str(1, 64),
-                    'saved'          => false,
+                    'saved'          => Random::bool(),
+                ),
+            ),
+            array(
+                array(
+                    'type'           => PaymentMethodType::SBP,
+                    'id'             => Random::str(1, 64),
+                    'saved'          => Random::bool(),
+                    'title'          => Random::str(10, 20),
                 ),
             ),
         );

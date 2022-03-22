@@ -3,7 +3,7 @@
 /**
  * The MIT License
  *
- * Copyright (c) 2020 "YooMoney", NBСO LLC
+ * Copyright (c) 2022 "YooMoney", NBСO LLC
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
  * of this software and associated documentation files (the "Software"), to deal
@@ -47,6 +47,7 @@ use YooKassa\Common\AbstractEnum;
  * |psb|ПромсвязьБанк|
  * |installments|Заплатить по частям|
  * |wechat|Платеж через WeChat|
+ * |wechat|Платеж через через сервис быстрых платежей|
  */
 class PaymentMethodType extends AbstractEnum
 {
@@ -83,6 +84,8 @@ class PaymentMethodType extends AbstractEnum
      * @deprecated Будет удален в следующих версиях
      */
     const WECHAT         = 'wechat';
+    /** Оплата через сервис быстрых платежей */
+    const SBP            = 'sbp';
 
     protected static $validValues = array(
         self::YOO_MONEY      => true,
@@ -99,6 +102,7 @@ class PaymentMethodType extends AbstractEnum
         self::INSTALLMENTS   => true,
         self::B2B_SBERBANK   => true,
         self::PSB            => false,
-        self::WECHAT         => true,
+        self::WECHAT         => false,
+        self::SBP            => true,
     );
 }
