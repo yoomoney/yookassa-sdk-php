@@ -27,6 +27,7 @@
 | [\YooKassa\Model\PaymentMethod\PaymentMethodPsb](../classes/YooKassa-Model-PaymentMethod-PaymentMethodPsb.md) | Абстрактный класс, описывающий основные свойства и методы платежных методов |
 | [\YooKassa\Model\PaymentMethod\PaymentMethodQiwi](../classes/YooKassa-Model-PaymentMethod-PaymentMethodQiwi.md) | Класс, описывающий метод оплаты, при оплате через Qiwi |
 | [\YooKassa\Model\PaymentMethod\PaymentMethodSberbank](../classes/YooKassa-Model-PaymentMethod-PaymentMethodSberbank.md) | Класс, описывающий метод оплаты, при оплате через Сбербанк Онлайн |
+| [\YooKassa\Model\PaymentMethod\PaymentMethodSbp](../classes/YooKassa-Model-PaymentMethod-PaymentMethodSbp.md) | Класс, описывающий метод оплаты, при оплате через сервис быстрых платежей |
 | [\YooKassa\Model\PaymentMethod\PaymentMethodTinkoffBank](../classes/YooKassa-Model-PaymentMethod-PaymentMethodTinkoffBank.md) | Класс, описывающий метод оплаты, при оплате через Tinkoff |
 | [\YooKassa\Model\PaymentMethod\PaymentMethodWebmoney](../classes/YooKassa-Model-PaymentMethod-PaymentMethodWebmoney.md) | Класс, описывающий метод оплаты, при оплате через Webmoney. |
 | [\YooKassa\Model\PaymentMethod\PaymentMethodWechat](../classes/YooKassa-Model-PaymentMethod-PaymentMethodWechat.md) | Абстрактный класс, описывающий основные свойства и методы платежных методов |
@@ -47,6 +48,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

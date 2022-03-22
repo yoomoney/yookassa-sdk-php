@@ -163,6 +163,11 @@ class PaymentDataFactoryTest extends TestCase
                     'type' => PaymentMethodType::TINKOFF_BANK,
                 ),
             ),
+            array(
+                array(
+                    'type' => PaymentMethodType::SBP,
+                ),
+            ),
         );
         foreach (PaymentMethodType::getEnabledValues() as $value) {
             $result[] = array(array('type' => $value));

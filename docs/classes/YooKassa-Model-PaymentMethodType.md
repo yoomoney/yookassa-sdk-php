@@ -23,6 +23,7 @@ PaymentMethodType - Тип источника средств для провед
 |psb|ПромсвязьБанк|
 |installments|Заплатить по частям|
 |wechat|Платеж через WeChat|
+|wechat|Платеж через через сервис быстрых платежей|
 
 
 ---
@@ -44,6 +45,7 @@ PaymentMethodType - Тип источника средств для провед
 | public | [PSB](../classes/YooKassa-Model-PaymentMethodType.md#constant_PSB) |  | ПромсвязьБанк |
 | public | [INSTALLMENTS](../classes/YooKassa-Model-PaymentMethodType.md#constant_INSTALLMENTS) |  | Заплатить по частям |
 | public | [WECHAT](../classes/YooKassa-Model-PaymentMethodType.md#constant_WECHAT) | *deprecated* | Оплата через WeChat |
+| public | [SBP](../classes/YooKassa-Model-PaymentMethodType.md#constant_SBP) |  | Оплата через сервис быстрых платежей |
 
 ---
 ### Properties
@@ -206,6 +208,15 @@ WECHAT = 'wechat'
 **deprecated**
 Будет удален в следующих версиях
 
+<a name="constant_SBP" class="anchor"></a>
+###### SBP
+Оплата через сервис быстрых платежей
+
+```php
+SBP = 'sbp'
+```
+
+
 
 ---
 ## Properties
@@ -292,6 +303,6 @@ Static public valueExists(mixed $value) : bool
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney

@@ -31,7 +31,7 @@
 #### [lib/Model/PaymentMethodType.php](../../lib/Model/PaymentMethodType.php)
 | Line | Element | Description |
 | ---- | ------- | ----------- |
-| 85 | \YooKassa\Model\PaymentMethodType::WECHAT | Будет удален в следующих версиях |
+| 86 | \YooKassa\Model\PaymentMethodType::WECHAT | Будет удален в следующих версиях |
 <a id="lib/Model/Receipt.php"></a>
 #### [lib/Model/Receipt.php](../../lib/Model/Receipt.php)
 | Line | Element | Description |
@@ -72,6 +72,6 @@
 
 ---
 
-This document was automatically generated from source code comments on 2022-03-11 using [phpDocumentor](http://www.phpdoc.org/)
+This document was automatically generated from source code comments on 2022-03-22 using [phpDocumentor](http://www.phpdoc.org/)
 
 &copy; 2022 YooMoney
