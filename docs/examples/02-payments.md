@@ -174,7 +174,7 @@ try {
     $request->setDescription($request->getDescription() . ' - merchant comment');
 
     $idempotenceKey = uniqid('', true);
-    $response = $client->createPayment($request);
+    $response = $client->createPayment($request, $idempotenceKey);
     
     //получаем confirmationUrl для дальнейшего редиректа
     $confirmationUrl = $response->getConfirmation()->getConfirmationUrl();
